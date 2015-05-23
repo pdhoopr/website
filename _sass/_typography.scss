@@ -23,10 +23,6 @@ body {
   font-family: $pt_sans;
   font-size: 125%;
   line-height: 1.5;
-
-  @media #{$mq_mobile} {
-    font-weight: 500;
-  }
 }
 
 /* Header font styles */
@@ -37,7 +33,6 @@ h4,
 h5,
 h6 {
   font-family: $ubuntu;
-  font-weight: 500;
 
   @media #{$mq_mobile} {
     font-weight: 700;
