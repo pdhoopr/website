@@ -38,7 +38,7 @@ h6 {
 
 p {
   @media #{$mq_mobile} {
-    font-size: 1.375rem;
+    font-size: 1.3333rem;
   }
 }
 
@@ -203,7 +203,7 @@ em {
   .project_summary h2.title {
     font-size: 2.5rem;
     @media #{$mq_mobile} {
-      font-size: 1.9rem !important;
+      font-size: 2rem !important;
     }
   }
 
