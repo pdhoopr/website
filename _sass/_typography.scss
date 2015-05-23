@@ -134,6 +134,10 @@ em {
 
   .tooltip {
     text-transform: uppercase;
+
+    @media #{$mq_mobile} {
+      font-size: 1.25rem;
+    }
   }
 
   .nav-item {
