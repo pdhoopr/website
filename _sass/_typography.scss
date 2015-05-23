@@ -36,6 +36,12 @@ h6 {
   font-weight: 500;
 }
 
+p {
+  @media #{$mq_mobile} {
+    font-size: 1.375rem;
+  }
+}
+
 /* Bold and slight letter spacing strong tags */
 strong {
   font-weight: 700;
