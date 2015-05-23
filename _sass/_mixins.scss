@@ -1,0 +1,24 @@
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+
+/**
+ * Mixin that will vertically align an element in the middle of
+ * its container.
+ */
+@mixin vertical-align {
+  position: relative;
+  top: 45%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/**
+ * Mixin that will horizontally align an element in the center of
+ * its container.
+ */
+@mixin horizontal-align {
+  position: absolute;
+  left: 47.5%;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" class="height-100p">
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic|Ubuntu' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>{{ site.name }}</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/svg4everybody.ie8.min.js"></script>
+  </head>
+<body class="height-100p">
+  <div id="wrapper" class="layout-{{ page.layout }} height-100p">
+    <header id="masthead" class="width-100p">
+      <div class="logo float-left">
+        <a href="{{ site.url }}">
+          <h1>
+            <span class="letter display-inline-block">&lt;</span><span class="letter display-inline-block">P</span><span class="letter letter-animate display-inline-block">A</span><span class="letter letter-animate display-inline-block">T</span><span class="letter letter-animate display-inline-block">R</span><span class="letter letter-animate display-inline-block">I</span><span class="letter letter-animate display-inline-block">C</span><span class="letter letter-animate display-inline-block">K</span><span class="letter letter-animate display-inline-block">&gt;</span><span class="letter letter-animate display-inline-block">&lt;</span><span class="letter letter-animate display-inline-block">/</span><span class="letter display-inline-block">H</span><span class="letter letter-animate display-inline-block">O</span><span class="letter letter-animate display-inline-block">O</span><span class="letter letter-animate display-inline-block">P</span><span class="letter letter-animate display-inline-block">E</span><span class="letter letter-animate display-inline-block">R</span><span class="letter display-inline-block">&gt;</span>
+          </h1>
+        </a>
+      </div>
+      {% if page.layout == "home" %}
+      <img src="/img/hero/hero_picture_20150510.jpg" class="border-radius-50p">
+      {% endif %}
+      <nav class="main-nav clearfix">
+        {% if page.layout == "home" %}
+        {% for item in site.data.nav %}
+        <div class="nav-item nav-{{ item.id }} center-align display-inline-block">
+          <a href="#{{ item.id }}" title="{{ item.title }}">
+            <span class="fa fa-{{ item.icon }}"></span>
+            <div class="tooltip font-size-1">{{ item.title }}</div>
+          </a>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% if page.layout == "portfolio" %}
+        <div class="nav-item center-align display-inline-block">
+          <a href="{{ site.url }}/portfolio/{{ page.previous }}" title="{{ page.previous_title }}">
+            <span class="fa fa-angle-left"></span>
+            <div class="tooltip font-size-1">PREVIOUS</div>
+          </a>
+        </div>
+        <div class="nav-item center-align display-inline-block">
+          <a href="{{ site.url }}/portfolio/{{ page.next }}" title="{{ page.next_title }}">
+            <span class="fa fa-angle-right"></span>
+            <div class="tooltip font-size-1">NEXT</div>
+          </a>
+        </div>
+        {% endif %}
+      </nav>
+    </header>
