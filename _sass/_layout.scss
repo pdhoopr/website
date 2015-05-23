@@ -151,7 +151,7 @@ img {
   /* Scrolling styles */
   &.scroll-header {
     @media #{$mq_mobile} {
-      padding: 0;
+      padding: 0.25rem 2rem 0;
     }
 
     .main-nav {
@@ -259,6 +259,10 @@ img {
 
 .layout-portfolio #masthead {
   position: fixed;
+
+  @media #{$mq_mobile} {
+    padding: 0.25rem 2rem 0;
+  }
 
   .logo {
     padding-top: 0.75rem;
@@ -480,6 +484,10 @@ img {
     right: -5%;
     z-index: 10;
     padding: 0 0.375rem;
+
+    @media #{$mq_mobile} {
+      right: -2.5%;
+    }
 
     .phone_top {
       margin: 0.25rem 0 0.75rem;
