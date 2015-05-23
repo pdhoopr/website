@@ -269,6 +269,7 @@ img {
 
     @media #{$mq_mobile} {
       float: left;
+      padding-top: 0;
     }
   }
 
