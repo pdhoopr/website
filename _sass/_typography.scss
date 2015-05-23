@@ -155,6 +155,12 @@ em {
 
 .layout-portfolio #masthead {
   font-size: 2rem;
+
+  .logo {
+    @media #{$mq_mobile} {
+      font-size: 3rem;
+    }
+  }
 }
 
 
