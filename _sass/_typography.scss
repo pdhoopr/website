@@ -54,7 +54,7 @@ em {
 
   .layout-portfolio & {
     @media #{$mq_mobile} {
-      font-size: 1.65rem !important;
+      font-size: 1.75rem !important;
     }
   }
 }
@@ -184,6 +184,12 @@ em {
 }
 
 .portfolio-page {
+  .project_summary h2.title {
+    font-size: 3rem;
+    @media #{$mq_mobile} {
+      font-size: 2rem !important;
+    }
+  }
 
   /* Phone wireframe styles */
   .phone {
