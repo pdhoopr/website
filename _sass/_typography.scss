@@ -23,6 +23,10 @@ body {
   font-family: $pt_sans;
   font-size: 125%;
   line-height: 1.5;
+
+  @media #{$mq_mobile} {
+    font-weight: 500;
+  }
 }
 
 /* Header font styles */
