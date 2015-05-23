@@ -138,9 +138,8 @@ img {
    ========================================================================== */
 
 #masthead {
-
   /* Fixed header with some padding and always on top */
-  padding: 1rem 2rem;
+  padding: 0.25rem 2rem 0;
   position: fixed;
   z-index: 100;
 
@@ -151,8 +150,6 @@ img {
 
   /* Scrolling styles */
   &.scroll-header {
-    padding: 0.25rem 2rem;
-
     @media #{$mq_mobile} {
       padding: 0;
     }
@@ -167,7 +164,7 @@ img {
     }
 
     .logo {
-      padding-top: 1rem;
+      padding-top: 0.75rem;
     }
   }
 
@@ -261,15 +258,10 @@ img {
 }
 
 .layout-portfolio #masthead {
-  padding: 0.25rem 2rem;
   position: fixed;
 
-  @media #{$mq_mobile} {
-    padding: 0.25rem 1.5rem;
-  }
-
   .logo {
-    padding-top: 1rem;
+    padding-top: 0.75rem;
 
     @media #{$mq_mobile} {
       float: left;
