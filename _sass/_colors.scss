@@ -82,17 +82,15 @@ a:active {
           border-bottom: 0;
         }
       }
-    }
-  }
 
-  /* Underline active nav link based on section currently on */
-  .about-active,
-  .portfolio-active,
-  .contact-active {
-    border-bottom-color: $yellow !important;
+      /* Underline active nav link based on section currently on */
+      &.active {
+        border-bottom-color: $yellow !important;
 
-    &:hover {
-      border-bottom: 4px solid $yellow !important;
+        &:hover {
+          border-bottom: 4px solid $yellow !important;
+        }
+      }
     }
   }
 }

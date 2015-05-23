@@ -151,7 +151,7 @@ img {
   /* Scrolling styles */
   &.scroll-header {
     @media #{$mq_mobile} {
-      padding: 0.25rem 2rem 0;
+      padding: 0.25rem 2rem 85px;
     }
 
     .main-nav {
