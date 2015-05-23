@@ -144,11 +144,16 @@ img {
   z-index: 100;
 
   @media #{$mq_mobile} {
+    padding: 0;
     position: static;
   }
 
   /* Scrolling styles */
   &.scroll-header {
+    @media #{$mq_mobile} {
+      padding: 0.25rem 2rem 0;
+    }
+
     .main-nav {
       @media #{$mq_mobile} {
         position: fixed;
@@ -254,6 +259,10 @@ img {
 
 .layout-portfolio #masthead {
   position: fixed;
+
+  @media #{$mq_mobile} {
+    padding: 0.25rem 2rem 0;
+  }
 
   .logo {
     padding-top: 0.75rem;
