@@ -33,10 +33,7 @@ h4,
 h5,
 h6 {
   font-family: $ubuntu;
-
-  @media #{$mq_mobile} {
-    font-weight: 700;
-  }
+  font-weight: 500;
 }
 
 /* Bold and slight letter spacing strong tags */
