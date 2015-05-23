@@ -476,6 +476,10 @@ img {
     z-index: 10;
     padding: 0 0.375rem;
 
+    @media #{$mq_mobile} {
+      right: 0;
+    }
+
     .phone_top {
       margin: 0.25rem 0 0.75rem;
     }
