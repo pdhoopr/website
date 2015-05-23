@@ -100,10 +100,14 @@ $(document).ready(function () {
       if (direction === 'down') {
         masthead.addClass('scroll-header');
         navAbout.addClass('active');
+        navPortfolio.removeClass('active');
+        navContact.removeClass('active');
       }
       else {
         masthead.removeClass('scroll-header');
         navAbout.removeClass('active');
+        navPortfolio.removeClass('active');
+        navContact.removeClass('active');
       }
     },{
       offset: function() {
@@ -123,10 +127,12 @@ $(document).ready(function () {
       if (direction === 'down') {
         navAbout.removeClass('active');
         navPortfolio.addClass('active');
+        navContact.removeClass('active');
       }
       else {
         navAbout.addClass('active');
         navPortfolio.removeClass('active');
+        navContact.removeClass('active');
       }
     },{
       offset: function() {
@@ -144,10 +150,12 @@ $(document).ready(function () {
      */
     var contactWaypoint = contact.waypoint(function(direction) {
       if (direction === 'down') {
+        navAbout.removeClass('active');
         navPortfolio.removeClass('active');
         navContact.addClass('active');
       }
       else {
+        navAbout.removeClass('active');
         navPortfolio.addClass('active');
         navContact.removeClass('active');
       }
