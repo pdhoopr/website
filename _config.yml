@@ -1,6 +1,6 @@
 name: "Patrick Hooper"
 description: "Portfolio Site"
-url: "http://localhost:4000"
+url: "http://patrickhooper.github.io"
 markdown: rdiscount
 permalink: pretty
 exclude: [bin, .gems, Gemfile, Gemfile.lock, Icon]
