@@ -1,0 +1,11 @@
+- id: about
+  title: About
+  icon: heartbeat
+
+- id: portfolio
+  title: Portfolio
+  icon: lightbulb-o
+
+- id: contact
+  title: Contact
+  icon: coffee

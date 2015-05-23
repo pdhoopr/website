@@ -1,0 +1,32 @@
+---
+title: portfolio
+---
+
+<div class="grid-container">
+  <h2 class="title center-align font-size-2_5 padding-bottom-3">{ PORTFOLIO }</h2>
+  {% for project in site.data.portfolio %}
+  <div class="project {{ project.title }} grid-{{ project.grid }} tablet-grid-{{ project.grid }} mobile-grid-100">
+    <a href="{{ site.url }}/portfolio/{{ project.title }}">
+      <div class="project_logo">
+        <svg viewBox="{{ project.viewbox }}">
+          <use xlink:href="/img/portfolio/logos/logos.svg#portfolio_{{ project.title }}"></use>
+        </svg>
+      </div>
+      <div class="project_overlay">
+        <h4 class="font-size-1_25">
+          <span class="project_name">{{ project.name }}</span>
+          <span class="project_platforms">
+            {% if project.desktop %}
+            <span class="fa fa-desktop"></span>
+            {% endif %}
+            {% if project.mobile %}
+            <span class="fa fa-lg fa-mobile"></span>
+            {% endif %}
+          </span>
+        </h4>
+        <p class="project_roles font-size-1">{{ project.roles }}</p>
+        <p class="project_tech font-size-1">{{ project.technologies }}</p>
+      </div>
+  </div>
+  {% endfor %}
+</div>

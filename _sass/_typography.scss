@@ -1,0 +1,213 @@
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/* General
+   ========================================================================== */
+
+/* Root font size */
+html {
+  font-size: 100%;
+
+  @media #{$mq_tablet} {
+    font-size: 90%;
+  }
+
+  @media #{$mq_mobile} {
+    font-size: 75%;
+  }
+}
+
+/* Body font styles and line height */
+body {
+  font-family: $pt_sans;
+  font-size: 125%;
+  line-height: 1.5;
+}
+
+/* Header font styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $ubuntu;
+  font-weight: 500;
+}
+
+/* Bold and slight letter spacing strong tags */
+strong {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Italics for em tags */
+em {
+  font-style: italic;
+}
+
+.title {
+  @media #{$mq_mobile} {
+    text-align: center !important;
+  }
+
+  .layout-portfolio & {
+    @media #{$mq_mobile} {
+      font-size: 1.65rem !important;
+    }
+  }
+}
+
+/* Text align classes */
+.center-align {
+  text-align: center;
+  @media #{$mq_mobile} {
+    text-align: left;
+  }
+}
+
+.layout-portfolio .center-align {
+  @media #{$mq_mobile} {
+    text-align: center;
+  }
+}
+
+/* Font family classes */
+.font-fam-ubuntu {
+  font-family: $ubuntu;
+}
+
+/* Font size classes */
+.font-size-1 {
+  font-size: 1rem;
+}
+
+.font-size-1_25 {
+  font-size: 1.25rem;
+}
+
+.font-size-1_5 {
+  font-size: 1.5rem;
+}
+
+.font-size-1_75 {
+  font-size: 1.75rem;
+}
+
+.font-size-2 {
+  font-size: 2rem;
+}
+
+.font-size-2_5 {
+  font-size: 2.5rem;
+}
+
+/* Text decoration styles */
+.text-decor-underline {
+  &, &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Header
+   ========================================================================== */
+
+#masthead {
+  font-family: $ubuntu;
+  font-size: 2.5rem;
+
+  @media #{$mq_mobile} {
+    text-align: center;
+  }
+
+  /* Font size while scrolling */
+  &.scroll-header {
+    font-size: 2rem;
+  }
+
+  .logo {
+    @media #{$mq_mobile} {
+      font-size: 4.5rem;
+    }
+  }
+
+  .tooltip {
+    text-transform: uppercase;
+  }
+
+  .nav-item {
+    @media #{$mq_mobile} {
+      text-align: center;
+    }
+  }
+}
+
+.layout-portfolio #masthead {
+  font-size: 2rem;
+}
+
+
+/* Hero
+   ========================================================================== */
+
+/* Font size for taglines */
+#hero {
+  .hero-animate {
+    @media #{$mq_mobile} {
+      text-align: center;
+    }
+  }
+
+  .tagline {
+    font-size: 5rem;
+
+    @media #{$mq_tablet} {
+      font-size: 4rem;
+    }
+
+    @media #{$mq_mobile} {
+      font-size: 2rem;
+    }
+  }
+}
+
+/* Portfolio
+   ========================================================================== */
+
+#portfolio {
+
+  /* Italicize roles */
+  .project_roles {
+    font-style: italic;
+  }
+}
+
+.portfolio-page {
+
+  /* Phone wireframe styles */
+  .phone {
+    .phone_camera,
+    .phone_top-parts,
+    .phone_button {
+      line-height: 0.75;
+    }
+  }
+}
+
+/* Contact
+   ========================================================================== */
+
+#contact {
+  font-family: $ubuntu;
+
+  .center-align {
+    @media #{$mq_mobile} {
+      text-align: center;
+    }
+  }
+
+  .credit {
+    font-size: 0.75rem;
+  }
+}

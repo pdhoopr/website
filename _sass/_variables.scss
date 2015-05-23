@@ -1,0 +1,24 @@
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+/* Media Queries
+   ========================================================================== */
+$mq_mobile: "(max-width: 767px)";
+$mq_tablet: "(min-width: 768px) and (max-width: 1024px)";
+$mq_not_desktop: "(max-width: 1024px)";
+
+/* ==========================================================================
+   Colors
+   ========================================================================== */
+$body_gray: #666;
+$middle_gray: #ccc;
+$yellow: #FFDB00;
+$blue: #101E43;
+$white: #fff;
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+$ubuntu: "Ubuntu", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$pt_sans: "PT Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;

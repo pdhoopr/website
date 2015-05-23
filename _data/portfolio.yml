@@ -1,0 +1,53 @@
+- title: wgi-buzz
+  grid: 33
+  viewbox: 0 0 400 800
+  name: wgi.buzz
+  desktop: true
+  mobile: true
+  roles: UI, UX, Full-Stack, Data Visualization
+  technologies: D3.js, Google Apps, Google App Engine
+
+- title: wgi-intranet
+  grid: 66
+  viewbox: 0 0 800 200
+  name: WGI Intranet
+  desktop: true
+  mobile: true
+  roles: UX, Full-Stack
+  technologies: Drupal + <a class="text-decor-underline" href="https://www.drupal.org/project/zen" target="_blank">Zen</a>, Turn.js
+
+- title: ms-omearas-multiage
+  grid: 33
+  viewbox: 0 0 400 400
+  name: Ms. O'Meara's Multiage
+  desktop: true
+  mobile: true
+  roles: Logo, UI, UX, Full-Stack
+  technologies: WordPress + <a class="text-decor-underline" href="http://underscores.me/" target="_blank">Underscores</a>
+
+- title: university-of-michigan-athletics
+  grid: 33
+  viewbox: 0 0 400 400
+  name: University of Michigan Athletics
+  desktop: true
+  mobile: false
+  roles: Process Optimization
+  technologies: Google Apps
+
+- title: jahleh-and-patricks-wedding
+  grid: 66
+  viewbox: 0 0 800 200
+  name: Jahleh and Patrick's Wedding
+  desktop: true
+  mobile: true
+  roles: UI, Full-Stack
+  technologies: Google App Engine
+
+- title: florida-engineering-society-treasure-coast
+  grid: 100
+  viewbox: 0 0 1200 200
+  name: Florida Engineering Society - Treasure Coast
+  desktop: true
+  mobile: true
+  roles: UI, UX, Full-Stack
+  technologies: WordPress + <a class="text-decor-underline" href="http://www.elegantthemes.com/gallery/divi/" target="_blank">Divi</a>
