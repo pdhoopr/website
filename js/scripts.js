@@ -6,8 +6,7 @@ $(document).ready(function () {
 
   /* Variables
      ======================================================================== */
-  var windowHeight = $(window).height(),
-      wrapper = $('#wrapper'),
+  var wrapper = $('#wrapper'),
       masthead = $('#masthead'),
       mainNav = $('.main-nav'),
       letters = $('.letter-animate'),
