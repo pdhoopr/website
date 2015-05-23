@@ -543,6 +543,10 @@ img {
   /* Give all icons except the first left margin */
   .contact-icons :not(:first-child) {
     margin-left: 5%;
+
+    @media #{$mq_mobile} {
+      margin-left: 8%;
+    }
   }
 }
 
