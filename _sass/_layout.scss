@@ -333,10 +333,11 @@ img {
     padding: 0;
     position: relative;
 
-    .project_logo svg {
-      float: left;
-      height: auto;
-      width: 100%;
+    .project_logo {
+      svg,
+      img {
+        float: left;
+      }
     }
 
     .project_overlay {

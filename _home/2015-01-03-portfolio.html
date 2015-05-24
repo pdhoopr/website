@@ -7,7 +7,7 @@ title: portfolio
   {% for project in site.data.portfolio %}
   <div class="project {{ project.title }} grid-{{ project.grid }} tablet-grid-{{ project.grid }} mobile-grid-100">
     <a href="{{ site.url }}/portfolio/{{ project.title }}">
-      <div class="project_logo">
+      <div class="project_logo clearfix">
         <svg viewBox="{{ project.viewbox }}">
           <use xlink:href="/img/portfolio/logos/logos.svg#portfolio_{{ project.title }}"></use>
         </svg>
