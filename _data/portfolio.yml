@@ -1,6 +1,7 @@
 - title: wgi-buzz
   grid: 33
   viewbox: 0 0 400 800
+  padding: 200
   name: wgi.buzz
   desktop: true
   mobile: true
@@ -10,6 +11,7 @@
 - title: wgi-intranet
   grid: 66
   viewbox: 0 0 800 200
+  padding: 25
   name: WGI Intranet
   desktop: true
   mobile: true
@@ -19,6 +21,7 @@
 - title: ms-omearas-multiage
   grid: 33
   viewbox: 0 0 400 400
+  padding: 100
   name: Ms. O'Meara's Multiage
   desktop: true
   mobile: true
@@ -28,6 +31,7 @@
 - title: university-of-michigan-athletics
   grid: 33
   viewbox: 0 0 400 400
+  padding: 100
   name: University of Michigan Athletics
   desktop: true
   mobile: false
@@ -37,6 +41,7 @@
 - title: jahleh-and-patricks-wedding
   grid: 66
   viewbox: 0 0 800 200
+  padding: 25
   name: Jahleh and Patrick's Wedding
   desktop: true
   mobile: true
@@ -46,6 +51,7 @@
 - title: florida-engineering-society-treasure-coast
   grid: 100
   viewbox: 0 0 1200 200
+  padding: 16.6667
   name: Florida Engineering Society - Treasure Coast
   desktop: true
   mobile: true
