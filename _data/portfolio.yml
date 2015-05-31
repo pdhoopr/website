@@ -26,7 +26,7 @@
   desktop: true
   mobile: true
   roles: UI, UX, Full-Stack, Data Visualization
-  technologies: D3.js, Google Apps, Google App Engine
+  technologies: D3.js, Google Apps, Google App Engine (Python)
 
 - title: jahleh-and-patricks-wedding
   grid: 66
@@ -36,7 +36,7 @@
   desktop: true
   mobile: true
   roles: UI, Full-Stack
-  technologies: Google App Engine
+  technologies: Google App Engine (Python)
 
 - title: ms-omearas-multiage
   grid: 33
@@ -46,7 +46,7 @@
   desktop: true
   mobile: true
   roles: Logo, UI, UX, Full-Stack
-  technologies: WordPress + <a class="text-decor-underline" href="http://underscores.me/" target="_blank">Underscores</a>
+  technologies: WordPress + <a class="text-decor-underline" href="http://underscores.me/" target="_blank">Underscores</a>, Sass
 
 - title: university-of-michigan-athletics
   grid: 33
@@ -66,7 +66,7 @@
   desktop: true
   mobile: true
   roles: UX, Full-Stack
-  technologies: Drupal + <a class="text-decor-underline" href="https://www.drupal.org/project/zen" target="_blank">Zen</a>, Turn.js
+  technologies: Drupal + <a class="text-decor-underline" href="https://www.drupal.org/project/zen" target="_blank">Zen</a>, Sass, Turn.js
 
 - title: florida-engineering-society-treasure-coast
   grid: 100
