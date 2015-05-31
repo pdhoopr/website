@@ -6,7 +6,7 @@
   desktop: true
   mobile: true
   roles: UI, UX, Full-Stack
-  technologies: WordPress + <a class="text-decor-underline" href="http://www.elegantthemes.com/gallery/divi/" target="_blank">Divi</a>
+  technologies: WordPress + Divi
 
 - title: msi
   grid: 40
@@ -16,7 +16,7 @@
   desktop: true
   mobile: true
   roles: UI, UX, Full-Stack
-  technologies: WordPress + <a class="text-decor-underline" href="http://themeforest.net/item/visia-responsive-one-page-retina-wordpress-theme/5602067" target="_blank">Visia</a>
+  technologies: WordPress + Visia
 
 - title: wgi-buzz
   grid: 33
@@ -46,7 +46,7 @@
   desktop: true
   mobile: true
   roles: Logo, UI, UX, Full-Stack
-  technologies: WordPress + <a class="text-decor-underline" href="http://underscores.me/" target="_blank">Underscores</a>, Sass
+  technologies: WordPress + Underscores, Sass
 
 - title: university-of-michigan-athletics
   grid: 33
@@ -66,7 +66,7 @@
   desktop: true
   mobile: true
   roles: UX, Full-Stack
-  technologies: Drupal + <a class="text-decor-underline" href="https://www.drupal.org/project/zen" target="_blank">Zen</a>, Sass, Turn.js
+  technologies: Drupal + Zen, Sass, Turn.js
 
 - title: florida-engineering-society-treasure-coast
   grid: 100
@@ -76,4 +76,4 @@
   desktop: true
   mobile: true
   roles: UI, UX, Full-Stack
-  technologies: WordPress + <a class="text-decor-underline" href="http://www.elegantthemes.com/gallery/divi/" target="_blank">Divi</a>
+  technologies: WordPress + Divi
