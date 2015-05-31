@@ -1,3 +1,23 @@
+- title: jmorton
+  grid: 60
+  viewbox: 0 0 720 200
+  padding: 27.7778
+  name: JMorton
+  desktop: true
+  mobile: true
+  roles: UI, UX, Full-Stack
+  technologies: WordPress + <a class="text-decor-underline" href="http://www.elegantthemes.com/gallery/divi/" target="_blank">Divi</a>
+
+- title: msi
+  grid: 40
+  viewbox: 0 0 480 200
+  padding: 41.6667
+  name: MSi
+  desktop: true
+  mobile: true
+  roles: UI, UX, Full-Stack
+  technologies: WordPress + <a class="text-decor-underline" href="http://themeforest.net/item/visia-responsive-one-page-retina-wordpress-theme/5602067" target="_blank">Visia</a>
+
 - title: wgi-buzz
   grid: 33
   viewbox: 0 0 400 800
@@ -8,15 +28,15 @@
   roles: UI, UX, Full-Stack, Data Visualization
   technologies: D3.js, Google Apps, Google App Engine
 
-- title: wgi-intranet
+- title: jahleh-and-patricks-wedding
   grid: 66
   viewbox: 0 0 800 200
   padding: 25
-  name: WGI Intranet
+  name: Jahleh and Patrick's Wedding
   desktop: true
   mobile: true
-  roles: UX, Full-Stack
-  technologies: Drupal + <a class="text-decor-underline" href="https://www.drupal.org/project/zen" target="_blank">Zen</a>, Turn.js
+  roles: UI, Full-Stack
+  technologies: Google App Engine
 
 - title: ms-omearas-multiage
   grid: 33
@@ -38,15 +58,15 @@
   roles: Process Optimization
   technologies: Google Apps
 
-- title: jahleh-and-patricks-wedding
+- title: wgi-intranet
   grid: 66
   viewbox: 0 0 800 200
   padding: 25
-  name: Jahleh and Patrick's Wedding
+  name: WGI Intranet
   desktop: true
   mobile: true
-  roles: UI, Full-Stack
-  technologies: Google App Engine
+  roles: UX, Full-Stack
+  technologies: Drupal + <a class="text-decor-underline" href="https://www.drupal.org/project/zen" target="_blank">Zen</a>, Turn.js
 
 - title: florida-engineering-society-treasure-coast
   grid: 100
