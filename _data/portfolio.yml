@@ -26,7 +26,7 @@
   desktop: true
   mobile: true
   roles: UI, UX, Full-Stack, Data Visualization
-  technologies: D3.js, Google Apps, Google App Engine (Python)
+  technologies: D3.js, Google Apps, Google App Engine
 
 - title: jahleh-and-patricks-wedding
   grid: 66
@@ -36,7 +36,7 @@
   desktop: true
   mobile: true
   roles: UI, Full-Stack
-  technologies: Google App Engine (Python)
+  technologies: Google App Engine
 
 - title: ms-omearas-multiage
   grid: 33
