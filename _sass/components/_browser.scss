@@ -1,0 +1,74 @@
+/* ==========================================================================
+   Browser Wireframe
+   ========================================================================== */
+
+/* Styles for browser wireframe */
+.browser {
+  border: 2px solid $middle_gray;
+  border-radius: 4px;
+  padding: 0;
+
+  /* Styles for browser controls (URL, buttons) */
+  .browser_controls {
+    border-bottom: 2px solid $middle_gray;
+    height: 48px;
+    padding: 0.4em 0;
+    position: relative;
+
+    /* Shrink height on small devices */
+    @include breakpoint($mq_small) {
+      height: 36px;
+    }
+
+    /* Styles for browser buttons */
+    .browser_buttons {
+      display: inline-block;
+      list-style-type: none;
+      height: 28px;
+      padding-left: 0.2em;
+      text-align: center;
+
+      /* Styles for individual buttons (green, yellow, red) */
+      .browser_button {
+        border-radius: 50%;
+        display: inline-block;
+        height: 8px;
+        vertical-align: middle;
+        width: 8px;
+
+        /* Red button */
+        &.first {
+          background-color: red;
+        }
+
+        /* Yellow Button */
+        &.second {
+          background-color: orange;
+        }
+
+        /* Green button */
+        &.third {
+          background-color: green;
+        }
+      }
+    }
+
+    /* Styles for browser URL */
+    .browser_url {
+      border: 2px solid $middle_gray;
+      border-radius: 4px;
+      display: inline-block;
+      font-size: 1rem;
+      left: 44px;
+      padding-left: 8px;
+      position: absolute;
+      right: 4px;
+    }
+  }
+
+  /* Styles for browser image */
+  .browser_photo img {
+    float: left;
+    max-width: 100%;
+  }
+}

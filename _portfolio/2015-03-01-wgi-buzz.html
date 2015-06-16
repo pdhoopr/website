@@ -7,133 +7,65 @@ previous_title: JMorton
 title: wgi-buzz
 name: wgi.buzz
 roles: UI, UX, Full-Stack, Data Visualization
-technologies: <a class="text-decor-underline" href="http://d3js.org/" target="_blank">D3.js</a>, Google Apps, Google App Engine (Python)
+technologies: <a class="underline" href="http://d3js.org/" target="_blank">D3.js</a>, Google Apps, Google App Engine (Python)
 description: What started as an experiment in using Google Apps to take a form and the accompanying workflow paperless at Wantman Group, Inc. (WGI) became a full-fledged internal think tank tasked with solving real business problems. What kind of think tank would it be without a name, logo and website, right?
-browser_url: wgi.buzz
-browser_image: portfolio_wgi-buzz_preview_20150426.jpg
-phone_image: portfolio_wgi-buzz_preview_mobile_20150426.jpg
 ---
 
 <article class="portfolio-page {{ page.title }}">
   <div class="grid-container">
     <div class="project_summary">
-      <h2 class="title center-align font-size-2_5 padding-bottom-1_5">{{ page.name }}</h2>
-      <div class="project_photos position-relative grid-100">
-        {% include browser.html %}
-        {% include phone.html %}
+      <h2 class="title">{{ page.name }}</h2>
+      <div class="project_photos grid-100 tablet-grid-100 mobile-grid-100">
+        {% include browser.html url="wgi.buzz" image="portfolio_wgi-buzz_preview_20150426" extension="jpg" %}
+        {% include phone.html image="portfolio_wgi-buzz_preview_mobile_20150426" extension="jpg" alt="| Mobile" class="grid-30 tablet-grid-30 mobile-grid-30" %}
       </div>
-      <h3 class="title center-align font-size-2 padding-bottom-1_5">{ OVERVIEW }</h3>
+      <h3 class="subtitle">{ OVERVIEW }</h3>
       <p class="project_roles"><strong>Roles:</strong> {{ page.roles }}</p>
-      <p class="project_tech padding-bottom-1_5"><strong>Technologies:</strong> {{ page.technologies }}</p>
-      <p class="project_description padding-bottom-1_5">{{ page.description }}</p>
+      <p class="project_tech"><strong>Technologies:</strong> {{ page.technologies }}</p>
+      <p class="project_description">{{ page.description }}</p>
     </div>
-    <div class="project_section grid-100 grid-parent">
-      <div class="section_description grid-33 push-66">
-        <h3 class="title center-align font-size-2 padding-bottom-1_5">{ HOME }</h3>
+    <div class="project_section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+      <div class="section_description grid-33 push-66 tablet-grid-100 mobile-grid-100">
+        <h3 class="subtitle">{ HOME }</h3>
         <p>wgi.buzz needed a way for users to easily access the various tools available to them. The solution was to organize those tools by category on a splash page. For a little extra flair, each category was given a photo. When that category is clicked, the photo slides away to reveal links to the resources.</p>
       </div>
-      <div class="section_photos grid-66 pull-33">
-        <div class="browser border-2-gray border-radius-4">
-          <div class="browser_controls padding-0_5-0 position-relative">
-            <ul class="browser_buttons center-align display-inline-block">
-              <li class="browser_button first border-radius-50p display-inline-block"></li>
-              <li class="browser_button second border-radius-50p display-inline-block"></li>
-              <li class="browser_button third border-radius-50p display-inline-block"></li>
-            </ul>
-            <span class="browser_url border-2-gray border-radius-4 display-inline-block font-size-1 position-absolute">wgi.buzz</span>
-          </div>
-        <div class="browser_photo clearfix">
-          <img class="float-left max-width-100p lazy" data-src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_20150427.gif"
-          data-src-retina="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_20150427@2x.gif" alt="{{ page.name }} | Home">
-          <noscript><img class="float-left max-width-100p lazy" src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_20150427.gif" alt="{{ page.name }} | Home"></noscript>
-        </div>
-      </div>
+      <div class="section_photos grid-66 pull-33 tablet-grid-100 mobile-grid-100">
+        {% include browser.html url="wgi.buzz" image="portfolio_wgi-buzz_20150427" extension="gif" alt="| Home" %}
       </div>
     </div>
-    <div class="project_section grid-100 grid-parent">
-      <div class="section_description grid-33">
-        <h3 class="title center-align font-size-2 padding-bottom-1_5">{ E-FORMS }</h3>
+    <div class="project_section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+      <div class="section_description grid-33 tablet-grid-100 mobile-grid-100">
+        <h3 class="subtitle">{ E-FORMS }</h3>
         <p>The original reason wgi.buzz was started was to reinvent a paper form as an online form fit for the 21st century. The specific form was called the Project Initiation Form and manifested itself as a Google Apps Script form with conditional fields, dynamically created fields, and file uploads. Upon submission, it writes to a Google Sheet, is electronically transmitted to the approver, and then forward to the Accounting division.</p>
       </div>
-      <div class="section_photos grid-66">
-        <div class="browser border-2-gray border-radius-4">
-          <div class="browser_controls padding-0_5-0 position-relative">
-            <ul class="browser_buttons center-align display-inline-block">
-              <li class="browser_button first border-radius-50p display-inline-block"></li>
-              <li class="browser_button second border-radius-50p display-inline-block"></li>
-              <li class="browser_button third border-radius-50p display-inline-block"></li>
-            </ul>
-            <span class="browser_url border-2-gray border-radius-4 display-inline-block font-size-1 position-absolute">wgi.buzz/e-forms</span>
-          </div>
-        <div class="browser_photo clearfix overflow-y-auto">
-          <img class="float-left max-width-100p lazy" data-src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_e-forms_20150427.jpg" data-src-retina="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_e-forms_20150427@2x.jpg" alt="{{ page.name }} | E-Forms">
-          <noscript><img class="float-left max-width-100p lazy" src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_e-forms_20150427.jpg" alt="{{ page.name }} | E-Forms"></noscript>
-        </div>
-      </div>
+      <div class="section_photos grid-66 tablet-grid-100 mobile-grid-100">
+        {% include browser.html url="wgi.buzz/e-forms" image="portfolio_wgi-buzz_e-forms_20150427" extension="jpg" alt="| E-Forms" scroll="scroll" %}
       </div>
     </div>
-    <div class="project_section grid-100 grid-parent">
-      <div class="section_description grid-33 push-66">
-        <h3 class="title center-align font-size-2 padding-bottom-1_5">{ OPPORTUNITIES }</h3>
+    <div class="project_section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+      <div class="section_description grid-33 push-66 tablet-grid-100 mobile-grid-100">
+        <h3 class="subtitle">{ OPPORTUNITIES }</h3>
         <p>WGI needed a method to track its efforts trying to bring in new work. Thus, the Opportunities section of wgi.buzz was born. It places each project and its 3 phases on a timeline. Users can hover over each phase to see more information. It also has a filter so project mangers can zero in on their division. The data is housed in a collaborative Google Sheet accessed by the Google Drive API.</p>
       </div>
-      <div class="section_photos grid-66 pull-33">
-        <div class="browser border-2-gray border-radius-4">
-          <div class="browser_controls padding-0_5-0 position-relative">
-            <ul class="browser_buttons center-align display-inline-block">
-              <li class="browser_button first border-radius-50p display-inline-block"></li>
-              <li class="browser_button second border-radius-50p display-inline-block"></li>
-              <li class="browser_button third border-radius-50p display-inline-block"></li>
-            </ul>
-            <span class="browser_url border-2-gray border-radius-4 display-inline-block font-size-1 position-absolute">wgi.buzz/opportunities</span>
-          </div>
-        <div class="browser_photo clearfix">
-          <img class="float-left max-width-100p lazy" data-src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_opportunities_20150427.gif" data-src-retina="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_opportunities_20150427@2x.gif" alt="{{ page.name }} | Opportunities">
-          <noscript><img class="float-left max-width-100p lazy" src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_opportunities_20150427.gif" alt="{{ page.name }} | Opportunities"></noscript>
-        </div>
-      </div>
+      <div class="section_photos grid-66 pull-33 tablet-grid-100 mobile-grid-100">
+        {% include browser.html url="wgi.buzz/opportunities" image="portfolio_wgi-buzz_opportunities_20150427" extension="gif" alt="| Opportunities" %}
       </div>
     </div>
-    <div class="project_section grid-100 grid-parent">
-      <div class="section_description grid-33">
-        <h3 class="title center-align font-size-2 padding-bottom-1_5">{ SALES GOALS }</h3>
+    <div class="project_section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+      <div class="section_description grid-33 tablet-grid-100 mobile-grid-100">
+        <h3 class="subtitle">{ SALES GOALS }</h3>
         <p>WGI sets annual sales goals for its project managers, but until now had no reliable, centralized system for tracking performance against the goals. Using an easy-to-update Google Sheet and the Google Drive API to feed a chart that would (hopefully) make United Way proud, users can now view goals by location and interact with the chart to see the current sales and goal.</p>
       </div>
-      <div class="section_photos grid-66">
-        <div class="browser border-2-gray border-radius-4">
-          <div class="browser_controls padding-0_5-0 position-relative">
-            <ul class="browser_buttons center-align display-inline-block">
-              <li class="browser_button first border-radius-50p display-inline-block"></li>
-              <li class="browser_button second border-radius-50p display-inline-block"></li>
-              <li class="browser_button third border-radius-50p display-inline-block"></li>
-            </ul>
-            <span class="browser_url border-2-gray border-radius-4 display-inline-block font-size-1 position-absolute">wgi.buzz/sales/goals</span>
-          </div>
-        <div class="browser_photo clearfix">
-          <img class="float-left max-width-100p lazy" data-src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_sales-goals_20150427.gif" data-src-retina="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_sales-goals_20150427@2x.gif" alt="{{ page.name }} | Sales Goals">
-          <noscript><img class="float-left max-width-100p lazy" src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_sales-goals_20150427.gif" alt="{{ page.name }} | Sales Goals"></noscript>
-        </div>
-      </div>
+      <div class="section_photos grid-66 tablet-grid-100 mobile-grid-100">
+        {% include browser.html url="wgi.buzz/sales/goals" image="portfolio_wgi-buzz_sales-goals_20150427" extension="gif" alt="| Sales Goals" %}
       </div>
     </div>
-    <div class="project_section grid-100 grid-parent">
-      <div class="section_description grid-100">
-        <h3 class="title center-align font-size-2 padding-bottom-1_5">{ MOBILE }</h3>
+    <div class="project_section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+      <div class="section_description grid-100 tablet-grid-100 mobile-grid-100">
+        <h3 class="subtitle">{ MOBILE }</h3>
       </div>
-      <div class="section_photos center-align grid-100">
-        <div class="phone mobile border-2-gray">
-          <div class="phone_top center-align">
-            <div class="phone_camera"><span class="border-radius-50p display-inline-block"></span></div>
-            <div class="phone_top-parts"><span class="phone_sensor border-radius-50p display-inline-block"></span><span class="phone_speaker border-radius-4 display-inline-block"></span></div>
-          </div>
-          <div class="clearfix phone_photo border-2-gray overflow-y-auto">
-            <img class="float-left max-width-100p lazy" data-src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_mobile_20150427.jpg" data-src-retina="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_mobile_20150427@2x.jpg" alt="{{ page.name }} | Home | Mobile">
-            <noscript><img class="float-left max-width-100p lazy" src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_mobile_20150427.jpg" alt="{{ page.name }} | Home | Mobile"></noscript>
-          </div>
-          <div class="phone_bottom center-align">
-            <div class="phone_button"><span class="border-2-gray border-radius-50p display-inline-block"></span></div>
-          </div>
-        </div>
+      <div class="section_photos photos-mobile grid-100 tablet-grid-100 mobile-grid-100">
+        {% include phone.html image="portfolio_wgi-buzz_mobile_20150427" extension="jpg" alt="| Home | Mobile" class="mobile" scroll="scroll" %}
       </div>
     </div>
   </div>
