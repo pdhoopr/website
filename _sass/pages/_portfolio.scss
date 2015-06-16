@@ -1,0 +1,263 @@
+/* ==========================================================================
+   Portfolio
+   ========================================================================== */
+.layout-portfolio {
+
+  /* Header
+     ========================================================================== */
+
+  /* Styles for the header (logo, navigation) on a portfolio page */
+  #masthead {
+    background-color: rgba(16, 30, 67, 1);
+    font-size: 2rem;
+    position: fixed;
+
+    /* Styles for small devices */
+    @include breakpoint($mq_small) {
+      padding: 0.125em 1em 0;
+    }
+
+    /* Styles applied to the header when the page is scrolling */
+    &.scroll-header {
+      background-color: rgba(16, 30, 67, 0.75);
+    }
+
+    /* Styles for a portfolio page logo */
+    .logo {
+      padding-top: 0.375em;
+
+      /* Styles for small devices */
+      @include breakpoint($mq_small) {
+        float: left;
+        font-size: 3rem;
+        padding-top: 0.083333em;
+      }
+    }
+
+    /* Styles for the navigation */
+    .main-nav {
+      background-color: transparent;
+      box-shadow: none;
+
+      /* Styles for small devices */
+      @include breakpoint($mq_small) {
+        float: right;
+        position: static;
+        width: auto;
+      }
+
+      /* Styles for a specific navigation item */
+      .nav-item {
+        border-bottom: 4px solid transparent;
+
+        /* Styles for small devices */
+        @include breakpoint($mq_small) {
+          width: auto;
+        }
+
+        /* Styles for all but the first navigation item */
+        &:not(:first-of-type) {
+          margin-left: 1em;
+        }
+
+        /* Styles applied when hovering over a navigation item */
+        &:hover {
+          border-bottom: 4px solid;
+
+          /* Negate hover styles on touch devices */
+          .touch & {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  /* Content
+     ========================================================================== */
+
+  /* Styles for the main content on a portfolio page */
+  .portfolio-page {
+    padding-top: 84px;
+
+    /* Styles for titles (page title) and subtitle (section titles) */
+    .title,
+    .subtitle {
+      font-size: 2rem;
+      padding-bottom: 0.75em;
+      text-align: center;
+
+      /* Styles for small devices */
+      @include breakpoint($mq_small) {
+        font-size: 1.75rem;
+      }
+    }
+
+    /* Styles for medium devices */
+    @include breakpoint($mq_medium) {
+      padding-top: 75px;
+    }
+
+    /* Styles for small devices */
+    @include breakpoint($mq_small) {
+      padding-top: 65px;
+    }
+
+    /* Styles for the summary section of a project */
+    .project_summary {
+
+      /* Styles for the project title */
+      .title {
+        font-size: 3rem;
+        margin-top: 0.5em;
+        padding-bottom: 0.5em;
+
+        /* Styles for small devices */
+        @include breakpoint($mq_small) {
+          font-size: 2rem;
+        }
+      }
+
+      /* Styles for the project photos (overview/preview photos) */
+      .project_photos {
+        margin: 0 auto 2.4em;
+        max-width: 640px;
+        position: relative;
+      }
+
+      /* Styles for project subtitles (the titles of smaller sections) */
+      .subtitle {
+        margin-top: 0.75em;
+      }
+
+      /* Styles for project roles and technologies used */
+      .project_tech,
+      .project_description {
+        padding-bottom: 1.2em;
+      }
+
+      /* Styles for the the button to go to the live site */
+      .view-project {
+        text-align: center;
+
+        /* Styles for the button */
+        .btn {
+          color: $blue;
+          margin: 0.85714em 0;
+
+          /* Styles for hovering over a button (invert colors) */
+          &:hover {
+            background-color: $blue;
+            border-color: $blue;
+            color: $white;
+
+            /* Negate hover styles on touch devices */
+            .touch & {
+              background-color: transparent;
+              color: $blue
+            }
+          }
+        }
+      }
+
+      /* Styles for the big phone button on small devices */
+      .phone_button span {
+        @include breakpoint($mq_small) {
+          height: 24px !important;
+          width: 24px !important;
+        }
+      }
+    }
+
+    /* Styles for a section of a project */
+    .project_section {
+      padding: 1.2em 0;
+
+      /* Styles for the description of a project on small and medium devices */
+      .section_description {
+        @include breakpoint($mq_not_large) {
+          margin-bottom: 1.33333em;
+        }
+      }
+
+      /* Styles specifically for a browser in a project section */
+      .browser {
+        margin: 0 auto;
+        max-width: 725px;
+
+        /* Styles specifically for a browser photo in a project section */
+        .browser_photo {
+          max-height: 388px;
+          overflow: hidden;
+        }
+      }
+
+      /* Styles specifically for a mobile project images */
+      .photos-mobile {
+        text-align: center;
+      }
+
+      /* Styles specifically for a phone in a project section */
+      .phone {
+        margin: 0 auto;
+        max-width: 355px;
+
+        /* Styles specifically for a mobile phone */
+        &.mobile {
+          display: inline-block;
+          margin: 0 auto;
+          position: static;
+          width: 30%;
+
+          /* Styles specifically for all but the first mobile phone */
+          &:not(:first-of-type) {
+            margin-left: 0.8em;
+          }
+
+          /* Styles specifically for mobile phones on small and medium devices */
+          @include breakpoint($mq_not_large) {
+            display: block;
+            margin-bottom: 1.33333em;
+            width: 100%;
+
+            /* Styles specifically for all but the first phone */
+            &:not(:first-of-type) {
+              margin: 0 auto;
+              margin-bottom: 1.3333em;
+            }
+          }
+        }
+
+        /* Styles specifically for a phone photo in a project section */
+        .phone_photo {
+          max-height: 568px;
+          overflow: hidden;
+        }
+      }
+    }
+
+    /* Styles specifically the University of Michigan Athletics project */
+    &.university-of-michigan-athletics {
+      .project_section {
+        padding: 1.2em;
+
+        /* Styles for small devices */
+        @include breakpoint($mq_small) {
+          padding: 1.2em 0;
+        }
+      }
+    }
+  }
+
+  /* Footer
+     ========================================================================== */
+
+  /* Styles for the Contact section on a portfolio page */
+  #contact {
+    padding: 1.2em 0 0.6em;
+
+    .contact-icons {
+      padding-bottom: 0.6em;
+    }
+  }
+}

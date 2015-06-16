@@ -4,9 +4,15 @@
 
 /* Media Queries
    ========================================================================== */
-$mq_mobile: "(max-width: 767px)";
-$mq_tablet: "(min-width: 768px) and (max-width: 1024px)";
-$mq_not_desktop: "(max-width: 1024px)";
+$small_max: 46rem;
+$medium_min: 46.0625rem;
+$medium_max: 62rem;
+$large_min: 62.0625rem;
+$large_max : 75rem;
+
+$mq_small: max-width $small_max;
+$mq_medium: $medium_min $medium_max;
+$mq_not_large: max-width $medium_max;
 
 /* ==========================================================================
    Colors

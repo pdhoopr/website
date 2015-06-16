@@ -7,161 +7,71 @@ previous_title: MSi
 title: jmorton
 name: JMorton
 roles: UI, UX, Full-Stack
-technologies: WordPress + <a class="text-decor-underline" href="http://www.elegantthemes.com/gallery/divi/" target="_blank">Divi</a>
+technologies: WordPress + <a class="underline" href="http://www.elegantthemes.com/gallery/divi/" target="_blank">Divi</a>
 description: JMorton, a fledgling but bustling planning / landscape architecture company, was looking for website to reflect their character and values in an elegant, professional way. They fell in love with the end result&#58; a simple, content-oriented design that focused on what was important to them, and of course the use of their lovely blue throughout the site.
-browser_url: jmortonla.com
-browser_image: portfolio_jmorton_preview_20150530.jpg
-phone_image: portfolio_jmorton_preview_mobile_20150530.jpg
 ---
 
 <article class="portfolio-page {{ page.title }}">
   <div class="grid-container">
     <div class="project_summary">
-      <h2 class="title center-align font-size-2_5 padding-bottom-1_5">{{ page.name }}</h2>
-      <div class="project_photos position-relative grid-100">
-        {% include browser.html %}
-        {% include phone.html %}
+      <h2 class="title">{{ page.name }}</h2>
+      <div class="project_photos grid-100 tablet-grid-100 mobile-grid-100">
+        {% include browser.html url="jmortonla.com" image="portfolio_jmorton_preview_20150530" extension="jpg" %}
+        {% include phone.html image="portfolio_jmorton_preview_mobile_20150530" extension="jpg" alt="| Mobile" class="grid-30 tablet-grid-30 mobile-grid-30" %}
       </div>
-      <h3 class="title center-align font-size-2 padding-bottom-1_5">{ OVERVIEW }</h3>
+      <h3 class="subtitle">{ OVERVIEW }</h3>
       <p class="project_roles"><strong>Roles:</strong> {{ page.roles }}</p>
-      <p class="project_tech padding-bottom-1_5"><strong>Technologies:</strong> {{ page.technologies }}</p>
+      <p class="project_tech"><strong>Technologies:</strong> {{ page.technologies }}</p>
       <p class="project_description">{{ page.description }}</p>
-      <div class="view-project center-align">
-        <a class="btn cursor-pointer display-inline-block font-fam-ubuntu font-size-1_5" href="http://jmortonla.com" target="_blank">Go to Live Site <span class="fa fa-angle-right"></span></a>
+      <div class="view-project">
+        <a class="btn" href="http://jmortonla.com" target="_blank">Go to Live Site <span class="fa fa-angle-right"></span></a>
       </div>
     </div>
-    <div class="project_section grid-100 grid-parent">
-      <div class="section_description grid-33 push-66">
-        <h3 class="title center-align font-size-2 padding-bottom-1_5">{ HOME }</h3>
+    <div class="project_section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+      <div class="section_description grid-33 push-66 tablet-grid-100 mobile-grid-100">
+        <h3 class="subtitle">{ HOME }</h3>
         <p>The home page presents visitors with what's most important&#58; a short video accompanied by a little bit of text explaining what JMorton is all about.</p>
       </div>
-      <div class="section_photos grid-66 pull-33">
-        <div class="browser border-2-gray border-radius-4">
-          <div class="browser_controls padding-0_5-0 position-relative">
-            <ul class="browser_buttons center-align display-inline-block">
-              <li class="browser_button first border-radius-50p display-inline-block"></li>
-              <li class="browser_button second border-radius-50p display-inline-block"></li>
-              <li class="browser_button third border-radius-50p display-inline-block"></li>
-            </ul>
-            <span class="browser_url border-2-gray border-radius-4 display-inline-block font-size-1 position-absolute">jmortonla.com</span>
-          </div>
-        <div class="browser_photo clearfix">
-          <img class="float-left max-width-100p lazy" data-src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_20150530.jpg" data-src-retina="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_20150530@2x.jpg" alt="{{ page.name }} | Home">
-          <noscript><img class="float-left max-width-100p" src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_20150530.jpg" alt="{{ page.name }} | Home"></noscript>
-        </div>
-      </div>
+      <div class="section_photos grid-66 pull-33 tablet-grid-100 mobile-grid-100">
+        {% include browser.html url="jmortonla.com" image="portfolio_jmorton_20150530" extension="jpg" alt="| Home" %}
       </div>
     </div>
-    <div class="project_section grid-100 grid-parent">
-      <div class="section_description grid-33">
-        <h3 class="title center-align font-size-2 padding-bottom-1_5">{ ABOUT US }</h3>
+    <div class="project_section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+      <div class="section_description grid-33 tablet-grid-100 mobile-grid-100">
+        <h3 class="subtitle">{ ABOUT US }</h3>
         <p>This page puts faces to names and gives more detailed information about the JMorton team. The black and white photos fit in seamlessly with the clean design and help give it a classic look and feel.</p>
       </div>
-      <div class="section_photos grid-66">
-        <div class="browser border-2-gray border-radius-4">
-          <div class="browser_controls padding-0_5-0 position-relative">
-            <ul class="browser_buttons center-align display-inline-block">
-              <li class="browser_button first border-radius-50p display-inline-block"></li>
-              <li class="browser_button second border-radius-50p display-inline-block"></li>
-              <li class="browser_button third border-radius-50p display-inline-block"></li>
-            </ul>
-            <span class="browser_url border-2-gray border-radius-4 display-inline-block font-size-1 position-absolute">jmortonla.com/about-us</span>
-          </div>
-        <div class="browser_photo clearfix">
-          <img class="float-left max-width-100p lazy" data-src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_about-us_20150530.jpg" data-src-retina="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_about-us_20150530@2x.jpg" alt="{{ page.name }} | About Us">
-          <noscript><img class="float-left max-width-100p" src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_about-us_20150530.jpg" alt="{{ page.name }} | About Us"></noscript>
-        </div>
-      </div>
+      <div class="section_photos grid-66 tablet-grid-100 mobile-grid-100">
+        {% include browser.html url="jmortonla.com/about-us" image="portfolio_jmorton_about-us_20150530" extension="jpg" alt="| About Us" %}
       </div>
     </div>
-    <div class="project_section grid-100 grid-parent">
-      <div class="section_description grid-33 push-66">
-        <h3 class="title center-align font-size-2 padding-bottom-1_5">{ PROJECTS }</h3>
+    <div class="project_section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+      <div class="section_description grid-33 push-66 tablet-grid-100 mobile-grid-100">
+        <h3 class="subtitle">{ PROJECTS }</h3>
         <p>The project sections highlight photos and project names from the chief areas JMorton does business in. A few choice photos they felt best represented these projects were used, but not too many so the simple, unimposing feel of the site was maintained.</p>
       </div>
-      <div class="section_photos grid-66 pull-33">
-        <div class="browser border-2-gray border-radius-4">
-          <div class="browser_controls padding-0_5-0 position-relative">
-            <ul class="browser_buttons center-align display-inline-block">
-              <li class="browser_button first border-radius-50p display-inline-block"></li>
-              <li class="browser_button second border-radius-50p display-inline-block"></li>
-              <li class="browser_button third border-radius-50p display-inline-block"></li>
-            </ul>
-            <span class="browser_url border-2-gray border-radius-4 display-inline-block font-size-1 position-absolute">jmortonla.com/projects</span>
-          </div>
-        <div class="browser_photo clearfix">
-          <img class="float-left max-width-100p lazy" data-src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_projects_20150530.gif" data-src-retina="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_projects_20150530@2x.gif" alt="{{ page.name }} | Projects">
-          <noscript><img class="float-left max-width-100p lazy" src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_projects_20150530.gif" alt="{{ page.name }} | Projects"></noscript>
-        </div>
-      </div>
+      <div class="section_photos grid-66 pull-33 tablet-grid-100 mobile-grid-100">
+        {% include browser.html url="jmortonla.com/projects" image="portfolio_jmorton_projects_20150530" extension="gif" alt="| Projects" %}
       </div>
     </div>
-    <div class="project_section grid-100 grid-parent">
-      <div class="section_description grid-33">
-        <h3 class="title center-align font-size-2 padding-bottom-1_5">{ GIVING BACK }</h3>
+    <div class="project_section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+      <div class="section_description grid-33 tablet-grid-100 mobile-grid-100">
+        <h3 class="subtitle">{ GIVING BACK }</h3>
         <p>The people at JMorton put a lot of emphasis on community. They wanted to show this and the great organizations they work with, so a news-like feed was organized to hightlight this and give more photos/information about each one.</p>
       </div>
-      <div class="section_photos grid-66">
-        <div class="browser border-2-gray border-radius-4">
-          <div class="browser_controls padding-0_5-0 position-relative">
-            <ul class="browser_buttons center-align display-inline-block">
-              <li class="browser_button first border-radius-50p display-inline-block"></li>
-              <li class="browser_button second border-radius-50p display-inline-block"></li>
-              <li class="browser_button third border-radius-50p display-inline-block"></li>
-            </ul>
-            <span class="browser_url border-2-gray border-radius-4 display-inline-block font-size-1 position-absolute">jmortonla.com/giving-back</span>
-          </div>
-        <div class="browser_photo clearfix">
-          <img class="float-left max-width-100p lazy" data-src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_giving-back_20150530.jpg" data-src-retina="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_giving-back_20150530@2x.jpg" alt="{{ page.name }} | Giving Back">
-          <noscript><img class="float-left max-width-100p" src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_giving-back_20150530.jpg" alt="{{ page.name }} | Giving Back"></noscript>
-        </div>
-      </div>
+      <div class="section_photos grid-66 tablet-grid-100 mobile-grid-100">
+        {% include browser.html url="jmortonla.com/giving-back" image="portfolio_jmorton_giving-back_20150530" extension="jpg" alt="| Giving Back" %}
       </div>
     </div>
-    <div class="project_section grid-100 grid-parent">
-      <div class="section_description grid-100">
-        <h3 class="title center-align font-size-2 padding-bottom-1_5">{ MOBILE }</h3>
+    <div class="project_section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+      <div class="section_description grid-100 tablet-grid-100 mobile-grid-100">
+        <h3 class="subtitle">{ MOBILE }</h3>
       </div>
-      <div class="section_photos center-align grid-100">
-        <div class="phone mobile border-2-gray">
-          <div class="phone_top center-align">
-            <div class="phone_camera"><span class="border-radius-50p display-inline-block"></span></div>
-            <div class="phone_top-parts"><span class="phone_sensor border-radius-50p display-inline-block"></span><span class="phone_speaker border-radius-4 display-inline-block"></span></div>
-          </div>
-          <div class="clearfix phone_photo border-2-gray">
-            <img class="float-left max-width-100p lazy" data-src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_mobile_20150530.jpg" data-src-retina="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_mobile_20150530@2x.jpg" alt="{{ page.name }} | Home | Mobile">
-            <noscript><img class="float-left max-width-100p" src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_mobile_20150530.jpg" alt="{{ page.name }} | Home | Mobile"></noscript>
-          </div>
-          <div class="phone_bottom center-align">
-            <div class="phone_button"><span class="border-2-gray border-radius-50p display-inline-block"></span></div>
-          </div>
-        </div>
-        <div class="phone mobile border-2-gray">
-          <div class="phone_top center-align">
-            <div class="phone_camera"><span class="border-radius-50p display-inline-block"></span></div>
-            <div class="phone_top-parts"><span class="phone_sensor border-radius-50p display-inline-block"></span><span class="phone_speaker border-radius-4 display-inline-block"></span></div>
-          </div>
-          <div class="clearfix phone_photo border-2-gray">
-            <img class="float-left max-width-100p lazy" data-src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_projects_mobile_20150530.jpg" data-src-retina="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_projects_mobile_20150530@2x.jpg" alt="{{ page.name }} | Projects | Mobile">
-            <noscript><img class="float-left max-width-100p" src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_projects_mobile_20150530.jpg" alt="{{ page.name }} | Projects | Mobile"></noscript>
-          </div>
-          <div class="phone_bottom center-align">
-            <div class="phone_button"><span class="border-2-gray border-radius-50p display-inline-block"></span></div>
-          </div>
-        </div>
-        <div class="phone mobile border-2-gray">
-          <div class="phone_top center-align">
-            <div class="phone_camera"><span class="border-radius-50p display-inline-block"></span></div>
-            <div class="phone_top-parts"><span class="phone_sensor border-radius-50p display-inline-block"></span><span class="phone_speaker border-radius-4 display-inline-block"></span></div>
-          </div>
-          <div class="clearfix phone_photo border-2-gray">
-            <img class="float-left max-width-100p lazy" data-src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_menu_mobile_20150530.jpg" data-src-retina="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_menu_mobile_20150530@2x.jpg" alt="{{ page.name }} | Menu | Mobile">
-            <noscript><img class="float-left max-width-100p" src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_menu_mobile_20150530.jpg" alt="{{ page.name }} | Menu | Mobile"></noscript>
-          </div>
-          <div class="phone_bottom center-align">
-            <div class="phone_button"><span class="border-2-gray border-radius-50p display-inline-block"></span></div>
-          </div>
-        </div>
+      <div class="section_photos photos-mobile grid-100 tablet-grid-100 mobile-grid-100">
+        {% include phone.html image="portfolio_jmorton_mobile_20150530" extension="jpg" alt="| Home | Mobile" class="mobile" %}
+        {% include phone.html image="portfolio_jmorton_projects_mobile_20150530" extension="jpg" alt="| Projects | Mobile" class="mobile" %}
+        {% include phone.html image="portfolio_jmorton_menu_mobile_20150530" extension="jpg" alt="| Menu | Mobile" class="mobile" %}
       </div>
     </div>
+  </div>
 </article>

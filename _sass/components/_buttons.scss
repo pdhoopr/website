@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+/* Styles for buttons */
+.btn {
+  border: 2px solid;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $ubuntu;
+  font-size: 1.75rem;
+  padding: 0.571428em 2.285714em;
+  transition: all 0.3s;
+
+  /* Hover styles */
+  &:hover {
+    transition: all 0.3s;
+  }
+}

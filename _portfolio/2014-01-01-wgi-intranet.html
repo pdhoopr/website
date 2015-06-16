@@ -7,204 +7,85 @@ previous_title: Jahleh and Patrick's Wedding
 title: wgi-intranet
 name: WGI Intranet
 roles: UX, Full-Stack
-technologies: Drupal + <a class="text-decor-underline" href="https://www.drupal.org/project/zen" target="_blank">Zen</a>, <a class="text-decor-underline" href="http://sass-lang.com/" target="_blank">Sass</a>, <a class="text-decor-underline" href="http://www.turnjs.com/" target="_blank">Turn.js</a>
+technologies: Drupal + <a class="underline" href="https://www.drupal.org/project/zen" target="_blank">Zen</a>, <a class="underline" href="http://sass-lang.com/" target="_blank">Sass</a>, <a class="underline" href="http://www.turnjs.com/" target="_blank">Turn.js</a>
 description: Wantman Group, Inc. (WGI) had a dated intranet running on a difficult-to-use, proprietary platform provided by an external company. They gave me the opportunity to build them a new one, so I gave them an intranet with more bells and whistles than before using a UI design provided by their Marketing division.
-browser_url: wgiintranet.com
-browser_image: portfolio_wgi-intranet_preview_20150426.jpg
-phone_image: portfolio_wgi-intranet_preview_mobile_20150426.jpg
 ---
 
 <article class="portfolio-page {{ page.title }}">
   <div class="grid-container">
     <div class="project_summary">
-      <h2 class="title center-align font-size-2_5 padding-bottom-1_5">{{ page.name }}</h2>
-      <div class="project_photos position-relative grid-100">
-        {% include browser.html %}
-        {% include phone.html %}
+      <h2 class="title">{{ page.name }}</h2>
+      <div class="project_photos grid-100 tablet-grid-100 mobile-grid-100">
+        {% include browser.html url="wgiintranet.com" image="portfolio_wgi-intranet_preview_20150426" extension="jpg" %}
+        {% include phone.html image="portfolio_wgi-intranet_preview_mobile_20150426" extension="jpg" alt="| Mobile" class="grid-30 tablet-grid-30 mobile-grid-30" %}
       </div>
-      <h3 class="title center-align font-size-2 padding-bottom-1_5">{ OVERVIEW }</h3>
+      <h3 class="subtitle">{ OVERVIEW }</h3>
       <p class="project_roles"><strong>Roles:</strong> {{ page.roles }}</p>
-      <p class="project_tech padding-bottom-1_5"><strong>Technologies:</strong> {{ page.technologies }}</p>
-      <p class="project_description padding-bottom-1_5">{{ page.description }}</p>
+      <p class="project_tech"><strong>Technologies:</strong> {{ page.technologies }}</p>
+      <p class="project_description">{{ page.description }}</p>
     </div>
-    <div class="project_section grid-100 grid-parent">
-      <div class="section_description grid-33 push-66">
-        <h3 class="title center-align font-size-2 padding-bottom-1_5">{ HOME }</h3>
+    <div class="project_section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+      <div class="section_description grid-33 push-66 tablet-grid-100 mobile-grid-100">
+        <h3 class="subtitle">{ HOME }</h3>
         <p>The home page provides highlights of the most important information from around the intranet and within the company. This means icons for commonly used links, a hero slider for strongly emphasized events or news, accordions for employee happenings (birthdays and anniversaries), sliders for news/events, and a (collapsible) sidebar for less important but still fun tidbits.</p>
       </div>
-      <div class="section_photos grid-66 pull-33">
-        <div class="browser border-2-gray border-radius-4">
-          <div class="browser_controls padding-0_5-0 position-relative">
-            <ul class="browser_buttons center-align display-inline-block">
-              <li class="browser_button first border-radius-50p display-inline-block"></li>
-              <li class="browser_button second border-radius-50p display-inline-block"></li>
-              <li class="browser_button third border-radius-50p display-inline-block"></li>
-            </ul>
-            <span class="browser_url border-2-gray border-radius-4 display-inline-block font-size-1 position-absolute">wgiintranet.com</span>
-          </div>
-        <div class="browser_photo clearfix">
-          <img class="float-left max-width-100p lazy" data-src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_20150428.jpg"
-          data-src-retina="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_20150428@2x.jpg" alt="{{ page.name }} | Home">
-          <noscript><img class="float-left max-width-100p lazy" src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_20150428.jpg" alt="{{ page.name }} | Home"></noscript>
-        </div>
-      </div>
+      <div class="section_photos grid-66 pull-33 tablet-grid-100 mobile-grid-100">
+        {% include browser.html url="wgiintranet.com" image="portfolio_wgi-intranet_20150428" extension="jpg" alt="| Home" %}
       </div>
     </div>
-    <div class="project_section grid-100 grid-parent">
-      <div class="section_description grid-33">
-        <h3 class="title center-align font-size-2 padding-bottom-1_5">{ EVENTS }</h3>
+    <div class="project_section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+      <div class="section_description grid-33 tablet-grid-100 mobile-grid-100">
+        <h3 class="subtitle">{ EVENTS }</h3>
         <p>The events and news pages are blog-style lists of teasers and thumbnail photos. They give you a glimpse of what each article is about, and if you're interested you can click through to a specific one for more information.</p>
       </div>
-      <div class="section_photos grid-66">
-        <div class="browser border-2-gray border-radius-4">
-          <div class="browser_controls padding-0_5-0 position-relative">
-            <ul class="browser_buttons center-align display-inline-block">
-              <li class="browser_button first border-radius-50p display-inline-block"></li>
-              <li class="browser_button second border-radius-50p display-inline-block"></li>
-              <li class="browser_button third border-radius-50p display-inline-block"></li>
-            </ul>
-            <span class="browser_url border-2-gray border-radius-4 display-inline-block font-size-1 position-absolute">wgiintranet.com/events</span>
-          </div>
-        <div class="browser_photo clearfix">
-          <img class="float-left max-width-100p lazy" data-src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_events_20150428.jpg" data-src-retina="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_events_20150428@2x.jpg" alt="{{ page.name }} | Events">
-          <noscript><img class="float-left max-width-100p lazy" src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_events_20150428.jpg" alt="{{ page.name }} | Events"></noscript>
-        </div>
-      </div>
+      <div class="section_photos grid-66 tablet-grid-100 mobile-grid-100">
+        {% include browser.html url="wgiintranet.com/events" image="portfolio_wgi-intranet_events_20150428" extension="jpg" alt="| Events" %}
       </div>
     </div>
-    <div class="project_section grid-100 grid-parent">
-      <div class="section_description grid-33 push-66">
-        <h3 class="title center-align font-size-2 padding-bottom-1_5">{ PHOTOS }</h3>
+    <div class="project_section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+      <div class="section_description grid-33 push-66 tablet-grid-100 mobile-grid-100">
+        <h3 class="subtitle">{ PHOTOS }</h3>
         <p>Photos from company events are stored in Picasa and linked to from this page. Each album gets a thumbnail photo and name that links out to the respective Picasa page. These are presented to users in a simple, clean thumbnail grid.</p>
       </div>
-      <div class="section_photos grid-66 pull-33">
-        <div class="browser border-2-gray border-radius-4">
-          <div class="browser_controls padding-0_5-0 position-relative">
-            <ul class="browser_buttons center-align display-inline-block">
-              <li class="browser_button first border-radius-50p display-inline-block"></li>
-              <li class="browser_button second border-radius-50p display-inline-block"></li>
-              <li class="browser_button third border-radius-50p display-inline-block"></li>
-            </ul>
-            <span class="browser_url border-2-gray border-radius-4 display-inline-block font-size-1 position-absolute">wgiintranet.com/photos</span>
-          </div>
-        <div class="browser_photo clearfix">
-          <img class="float-left max-width-100p lazy" data-src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_photos_20150428.jpg"
-          data-src-retina="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_photos_20150428@2x.jpg" alt="{{ page.name }} | Photos">
-          <noscript><img class="float-left max-width-100p lazy" src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_photos_20150428.jpg" alt="{{ page.name }} | Photos"></noscript>
-        </div>
-      </div>
+      <div class="section_photos grid-66 pull-33 tablet-grid-100 mobile-grid-100">
+        {% include browser.html url="wgiintranet.com/photos" image="portfolio_wgi-intranet_photos_20150428" extension="jpg" alt="| Photos" %}
       </div>
     </div>
-    <div class="project_section grid-100 grid-parent">
-      <div class="section_description grid-33">
-        <h3 class="title center-align font-size-2 padding-bottom-1_5">{ DIVISIONS }</h3>
+    <div class="project_section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+      <div class="section_description grid-33 tablet-grid-100 mobile-grid-100">
+        <h3 class="subtitle">{ DIVISIONS }</h3>
         <p>Division pages are resource repositories for each division within the company. Each one has a customized photo header and links to helpful resources. The landing page gives you a glimpse of some of the popular links, and if you're looking to dig deeper into the vault, you can click through the the full division page.</p>
       </div>
-      <div class="section_photos grid-66">
-        <div class="browser border-2-gray border-radius-4">
-          <div class="browser_controls padding-0_5-0 position-relative">
-            <ul class="browser_buttons center-align display-inline-block">
-              <li class="browser_button first border-radius-50p display-inline-block"></li>
-              <li class="browser_button second border-radius-50p display-inline-block"></li>
-              <li class="browser_button third border-radius-50p display-inline-block"></li>
-            </ul>
-            <span class="browser_url border-2-gray border-radius-4 display-inline-block font-size-1 position-absolute">wgiintranet.com/divisions</span>
-          </div>
-        <div class="browser_photo clearfix">
-          <img class="float-left max-width-100p lazy" data-src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_divisions_20150428.jpg" data-src-retina="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_divisions_20150428@2x.jpg" alt="{{ page.name }} | Divisions">
-          <noscript><img class="float-left max-width-100p lazy" src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_divisions_20150428.jpg" alt="{{ page.name }} | Divisions"></noscript>
-        </div>
-      </div>
+      <div class="section_photos grid-66 tablet-grid-100 mobile-grid-100">
+        {% include browser.html url="wgiintranet.com/divisions" image="portfolio_wgi-intranet_divisions_20150428" extension="jpg" alt="| Divisions" %}
       </div>
     </div>
-    <div class="project_section grid-100 grid-parent">
-      <div class="section_description grid-33 push-66">
-        <h3 class="title center-align font-size-2 padding-bottom-1_5">{ DIRECTORY }</h3>
+    <div class="project_section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+      <div class="section_description grid-33 push-66 tablet-grid-100 mobile-grid-100">
+        <h3 class="subtitle">{ DIRECTORY }</h3>
         <p>The directory is a (dangerously addictive) way to put a face to a name within the company. It also provides the basic contact information that accompanies said face. Why so addictive? The picture and contact information are presented on a rotating card; picture on the front, contact on the back. When you hover or touch, the card twirls. For rows and rows of people, things can get out of hand quickly...in the best possible way.</p>
       </div>
-      <div class="section_photos grid-66 pull-33">
-        <div class="browser border-2-gray border-radius-4">
-          <div class="browser_controls padding-0_5-0 position-relative">
-            <ul class="browser_buttons center-align display-inline-block">
-              <li class="browser_button first border-radius-50p display-inline-block"></li>
-              <li class="browser_button second border-radius-50p display-inline-block"></li>
-              <li class="browser_button third border-radius-50p display-inline-block"></li>
-            </ul>
-            <span class="browser_url border-2-gray border-radius-4 display-inline-block font-size-1 position-absolute">wgiintranet.com/directory</span>
-          </div>
-        <div class="browser_photo clearfix">
-          <img class="float-left max-width-100p lazy" data-src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_directory_20150428.gif" data-src-retina="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_directory_20150428@2x.gif" alt="{{ page.name }} | Directory">
-          <noscript><img class="float-left max-width-100p lazy" src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_directory_20150428.gif" alt="{{ page.name }} | Directory"></noscript>
-        </div>
-      </div>
+      <div class="section_photos grid-66 pull-33 tablet-grid-100 mobile-grid-100">
+        {% include browser.html url="wgiintranet.com/directory" image="portfolio_wgi-intranet_directory_20150428" extension="gif" alt="| Directory" %}
       </div>
     </div>
-    <div class="project_section grid-100 grid-parent">
-      <div class="section_description grid-33">
-        <h3 class="title center-align font-size-2 padding-bottom-1_5">{ TRAINING }</h3>
+    <div class="project_section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+      <div class="section_description grid-33 tablet-grid-100 mobile-grid-100">
+        <h3 class="subtitle">{ TRAINING }</h3>
         <p>The training section contains a pretty awesome interactive manual built using Turn.js. It allows users to read all about different features and uses of the intranet, all within the comfort of their browser. With animated page turning, keyboard navigation, a table of contents, and lots of images, it's a very easy-to-use and rewarding resource.</p>
       </div>
-      <div class="section_photos grid-66">
-        <div class="browser border-2-gray border-radius-4">
-          <div class="browser_controls padding-0_5-0 position-relative">
-            <ul class="browser_buttons center-align display-inline-block">
-              <li class="browser_button first border-radius-50p display-inline-block"></li>
-              <li class="browser_button second border-radius-50p display-inline-block"></li>
-              <li class="browser_button third border-radius-50p display-inline-block"></li>
-            </ul>
-            <span class="browser_url border-2-gray border-radius-4 display-inline-block font-size-1 position-absolute">wgiintranet.com/training</span>
-          </div>
-        <div class="browser_photo clearfix">
-          <img class="float-left max-width-100p lazy" data-src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_training_20150428.gif" data-src-retina="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_training_20150428@2x.gif" alt="{{ page.name }} | Training">
-          <noscript><img class="float-left max-width-100p lazy" src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_training_20150428.gif" alt="{{ page.name }} | Training"></noscript>
-        </div>
-      </div>
+      <div class="section_photos grid-66 tablet-grid-100 mobile-grid-100">
+        {% include browser.html url="wgiintranet.com/training" image="portfolio_wgi-intranet_training_20150428" extension="gif" alt="| Training" %}
       </div>
     </div>
-    <div class="project_section grid-100 grid-parent">
-      <div class="section_description grid-100">
-        <h3 class="title center-align font-size-2 padding-bottom-1_5">{ MOBILE }</h3>
+    <div class="project_section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+      <div class="section_description grid-100 tablet-grid-100 mobile-grid-100">
+        <h3 class="subtitle">{ MOBILE }</h3>
       </div>
-      <div class="section_photos center-align grid-100">
-        <div class="phone mobile border-2-gray">
-          <div class="phone_top center-align">
-            <div class="phone_camera"><span class="border-radius-50p display-inline-block"></span></div>
-            <div class="phone_top-parts"><span class="phone_sensor border-radius-50p display-inline-block"></span><span class="phone_speaker border-radius-4 display-inline-block"></span></div>
-          </div>
-          <div class="clearfix phone_photo border-2-gray">
-            <img class="float-left max-width-100p lazy" data-src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_mobile_20150428.jpg" data-src-retina="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_mobile_20150428@2x.jpg" alt="{{ page.name }} | Home | Mobile">
-            <noscript><img class="float-left max-width-100p lazy" src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_mobile_20150428.jpg" alt="{{ page.name }} | Home | Mobile"></noscript>
-          </div>
-          <div class="phone_bottom center-align">
-            <div class="phone_button"><span class="border-2-gray border-radius-50p display-inline-block"></span></div>
-          </div>
-        </div>
-        <div class="phone mobile border-2-gray">
-          <div class="phone_top center-align">
-            <div class="phone_camera"><span class="border-radius-50p display-inline-block"></span></div>
-            <div class="phone_top-parts"><span class="phone_sensor border-radius-50p display-inline-block"></span><span class="phone_speaker border-radius-4 display-inline-block"></span></div>
-          </div>
-          <div class="clearfix phone_photo border-2-gray">
-            <img class="float-left max-width-100p lazy" data-src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_offices_mobile_20150428.jpg" data-src-retina="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_offices_mobile_20150428@2x.jpg" alt="{{ page.name }} | Offices | Mobile">
-            <noscript><img class="float-left max-width-100p lazy" src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_offices_mobile_20150428.jpg" alt="{{ page.name }} | Offices | Mobile"></noscript>
-          </div>
-          <div class="phone_bottom center-align">
-            <div class="phone_button"><span class="border-2-gray border-radius-50p display-inline-block"></span></div>
-          </div>
-        </div>
-        <div class="phone mobile border-2-gray">
-          <div class="phone_top center-align">
-            <div class="phone_camera"><span class="border-radius-50p display-inline-block"></span></div>
-            <div class="phone_top-parts"><span class="phone_sensor border-radius-50p display-inline-block"></span><span class="phone_speaker border-radius-4 display-inline-block"></span></div>
-          </div>
-          <div class="clearfix phone_photo border-2-gray">
-            <img class="float-left max-width-100p lazy" data-src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_menu_mobile_20150428.jpg" data-src-retina="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_menu_mobile_20150428@2x.jpg" alt="{{ page.name }} | Menu | Mobile">
-            <noscript><img class="float-left max-width-100p lazy" src="/img/portfolio/{{ page.title }}/portfolio_{{ page.title }}_menu_mobile_20150428.jpg" alt="{{ page.name }} | Menu | Mobile"></noscript>
-          </div>
-          <div class="phone_bottom center-align">
-            <div class="phone_button"><span class="border-2-gray border-radius-50p display-inline-block"></span></div>
-          </div>
-        </div>
+      <div class="section_photos photos-mobile grid-100 tablet-grid-100 mobile-grid-100">
+        {% include phone.html image="portfolio_wgi-intranet_mobile_20150428" extension="jpg" alt="| Home | Mobile" class="mobile" %}
+        {% include phone.html image="portfolio_wgi-intranet_offices_mobile_20150428" extension="jpg" alt="| Offices | Mobile" class="mobile" %}
+        {% include phone.html image="portfolio_wgi-intranet_menu_mobile_20150428" extension="jpg" alt="| Menu | Mobile" class="mobile" %}
       </div>
     </div>
   </div>
