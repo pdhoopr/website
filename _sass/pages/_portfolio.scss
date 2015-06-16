@@ -144,6 +144,7 @@
         .btn {
           color: $blue;
           margin: 0.85714em 0;
+          text-tran: uppercase;
 
           /* Styles for hovering over a button (invert colors) */
           &:hover {
@@ -156,6 +157,10 @@
               background-color: transparent;
               color: $blue
             }
+          }
+
+          .fa {
+            margin-left: 0.375em;
           }
         }
       }
