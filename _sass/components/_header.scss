@@ -25,6 +25,7 @@
     background-color: rgba(16, 30, 67, 0.75);
     box-shadow: 0px 0px 8px #222;
     font-size: 2rem;
+    padding: 0.125em 1em 0;
 
     /* Styles for small devices */
     @include breakpoint($mq_small) {
