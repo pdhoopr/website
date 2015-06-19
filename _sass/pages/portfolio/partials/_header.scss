@@ -8,12 +8,8 @@
   #masthead {
     background-color: rgba(16, 30, 67, 1);
     font-size: 2rem;
+    padding: 0.125em 1em 0;
     position: fixed;
-
-    /* Styles for small devices */
-    @include breakpoint($mq_small) {
-      padding: 0.125em 1em 0;
-    }
 
     /* Styles applied to the header when the page is scrolling */
     &.scroll-header {
