@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Home
+   ========================================================================== */
+
+/* Styles for home sections (About, Portfolio, Contact) */
+.home_section {
+  padding: 4.8em 0;
+
+  /* Styles for small devices */
+  @include breakpoint($mq_small) {
+    padding: 4.8em 0 0;
+  }
+
+  /* Styles for section titles */
+  .title {
+    font-size: 3rem;
+    padding-bottom: 1em;
+    text-align: center;
+  }
+}
+
+/* Imports for other sections of Home */
+@import "partials/hero";
+@import "partials/about";
+@import "partials/portfolio";

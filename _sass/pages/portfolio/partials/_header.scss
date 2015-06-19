@@ -1,0 +1,75 @@
+/* ==========================================================================
+   Portfolio | Header
+   ========================================================================== */
+.layout-portfolio {
+
+  /* Portfolio | Header | Masthead
+  ========================================================================== */
+  #masthead {
+    background-color: rgba(16, 30, 67, 1);
+    font-size: 2rem;
+    position: fixed;
+
+    /* Styles for small devices */
+    @include breakpoint($mq_small) {
+      padding: 0.125em 1em 0;
+    }
+
+    /* Styles applied to the header when the page is scrolling */
+    &.scroll-header {
+      background-color: rgba(16, 30, 67, 0.75);
+    }
+  }
+
+  /* Portfolio | Header | Logo
+  ========================================================================== */
+  .logo {
+    padding-top: 0.375em;
+
+    /* Styles for small devices */
+    @include breakpoint($mq_small) {
+      float: left;
+      font-size: 3rem;
+      padding-top: 0.083333em;
+    }
+  }
+
+  /* Portfolio | Header | Main Nav
+  ========================================================================== */
+  .main-nav {
+    background-color: transparent;
+    box-shadow: none;
+
+    /* Styles for small devices */
+    @include breakpoint($mq_small) {
+      float: right;
+      position: static;
+      width: auto;
+    }
+
+    /* Styles for a specific navigation item */
+    .nav-item {
+      border-bottom: 4px solid transparent;
+
+      /* Styles for small devices */
+      @include breakpoint($mq_small) {
+        width: auto;
+      }
+
+      /* Styles for all but the first navigation item */
+      &:not(:first-of-type) {
+        margin-left: 1em;
+      }
+
+      /* Styles applied when hovering over a navigation item */
+      &:hover {
+        border-bottom: 4px solid;
+
+        /* Negate hover styles on touch devices */
+        .touch & {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+}

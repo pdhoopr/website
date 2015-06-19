@@ -1,0 +1,47 @@
+/* ==========================================================================
+   Logo
+   ========================================================================== */
+
+/* Styles for logo */
+.logo {
+  float: left;
+  padding-top: 0.3em;
+
+  /* Styles for small devices */
+  @include breakpoint($mq_small) {
+    float: none;
+    font-size: 4.5rem;
+    padding-top: 0;
+  }
+
+  /* Styles for a letter in the logo */
+  .letter {
+    display: inline-block;
+
+    /* Styles for an animated logo letter */
+    &.letter-animate {
+      @include breakpoint($mq_small) {
+        display: none;
+      }
+    }
+
+    /* Styles for a collapsed logo letter */
+    &.letter-collapsed {
+      max-width: 0;
+      opacity: 0;
+      transition: all 0.3s ease-out;
+    }
+  }
+
+  /* Styles for collapsed header when hovering over logo (expand) */
+  &:hover .letter-collapsed {
+    max-width: 37px;
+    opacity: 1;
+    transition: all 0.3s ease-out;
+
+    /* Negate hover styles for touch devices */
+    .touch & {
+      display: none;
+    }
+  }
+}

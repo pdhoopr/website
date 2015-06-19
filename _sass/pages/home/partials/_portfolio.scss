@@ -1,0 +1,75 @@
+/* ==========================================================================
+   Home | Portfolio
+   ========================================================================== */
+
+/* Styles for Portfolio section */
+#portfolio {
+
+  /* Styles for small devices */
+  @include breakpoint($mq_small) {
+    padding-bottom: 2.4em;
+  }
+
+  /* Styles for a project in the Portfolio */
+  .project {
+    padding: 0;
+    position: relative;
+
+    /* Styles for a project logo */
+    .project_logo {
+      height: 0;
+      position: relative;
+      width: 100%;
+
+      /* Styles for SVG and images in a logo */
+      svg,
+      img {
+        left: 0;
+        position: absolute;
+        top: 0;
+      }
+    }
+
+    /* Styles for project overlays (informational hover overlays) */
+    .project_overlay {
+      background-color: rgba(60, 60, 60, 0.75);
+      bottom: 0;
+      color: $white;
+      display: none;
+      left: 0;
+      padding: 0.5em 1em;
+      position: absolute;
+      width: 100%;
+
+      /* Styles for headings in overlays */
+      h4 {
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  /* Styles for platforms of a project */
+  .project_platforms {
+
+    /* Styles for the desktop icon (computer) */
+    .fa-desktop {
+      margin-left: 0.25em;
+    }
+
+    /* Styles for the mobile icon (phone) */
+    .fa-mobile {
+      vertical-align: -10%;
+    }
+  }
+
+  /* Styles for roles of a project */
+  .project_roles {
+    font-size: 1rem;
+    font-style: italic;
+  }
+
+  /* Styles for technologies used in a project */
+  .project_tech {
+    font-size: 1rem;
+  }
+}

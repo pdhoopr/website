@@ -1,0 +1,86 @@
+/* ==========================================================================
+   Navigation | Main
+   ========================================================================== */
+
+/* Styles for navigation */
+.main-nav {
+  float: right;
+
+  /* Styles for small devices */
+  @include breakpoint($mq_small) {
+    float: none;
+    width: 100%;
+  }
+
+  /* Styles for an individual navigation item */
+  .nav-item {
+    border-bottom: 4px solid transparent;
+    display: inline-block;
+    text-align: center;
+
+    /* Styles for small devices */
+    @include breakpoint($mq_small) {
+      float: left;
+      width: 33.3333%;
+    }
+
+    /* Styles for all but the first navigation item */
+    &:not(:first-of-type) {
+      margin-left: 1em;
+
+      /* Styles for small devices */
+      @include breakpoint($mq_small) {
+        margin-left: 0;
+      }
+    }
+
+    /* Styles for hovering over a nav item (yellow underline) */
+    &:hover {
+      border-bottom-color: $yellow;
+
+      /* Negate hover styles on touch devices */
+      .touch & {
+        border-bottom: 0;
+      }
+
+      /* Styles for hovering over navigation icons */
+      .fa {
+        transform: scale(1.5);
+        transition: 0.3s;
+
+        /* Negate hover styles on touch devices */
+        .touch & {
+          transform: scale(1);
+        }
+      }
+    }
+
+    /* Styles for an active navigation item */
+    &.active {
+      border-bottom-color: $yellow !important;
+
+      /* Styles for hovering over an active navigation item */
+      &:hover {
+        border-bottom: 4px solid $yellow !important;
+      }
+    }
+
+    /* Styles for navigation icons */
+    .fa {
+      transition: 0.3s;
+    }
+
+    /* Styles navigation item text/tooltip */
+    .tooltip {
+      font-size: 1rem;
+      margin-top: -0.25em;
+      padding-bottom: 0.25em;
+      text-transform: uppercase;
+
+      /* Styles for small devices */
+      @include breakpoint($mq_small) {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
