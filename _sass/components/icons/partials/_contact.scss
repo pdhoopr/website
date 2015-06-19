@@ -12,7 +12,7 @@
     margin-left: 5%;
 
     /* Styles for small devices */
-    @include breakpoint($mq_small) {
+    @include breakpoint($mq_not_large) {
       margin-left: 8%;
     }
   }

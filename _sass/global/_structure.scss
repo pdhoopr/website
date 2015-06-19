@@ -42,7 +42,7 @@ img {
   overflow-y: auto !important;
 
   /* No scrolling vertically on small devices */
-  @include breakpoint($mq_small) {
+  @include breakpoint($mq_not_large) {
     overflow-y: hidden !important;
   }
 }
