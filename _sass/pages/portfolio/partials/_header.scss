@@ -14,6 +14,18 @@
     /* Styles applied to the header when the page is scrolling */
     &.scroll-header {
       background-color: rgba(16, 30, 67, 0.75);
+
+      .logo {
+        @include breakpoint($mq_small) {
+          padding-top: 0.083333em;
+        }
+      }
+
+      .main-nav {
+        background-color: transparent;
+        box-shadow: none;
+        position: static;
+      }
     }
   }
 
@@ -24,7 +36,6 @@
 
     /* Styles for small devices */
     @include breakpoint($mq_small) {
-      float: left;
       font-size: 3rem;
       padding-top: 0.083333em;
     }
