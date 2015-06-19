@@ -1,0 +1,34 @@
+/* ==========================================================================
+   Home | About
+   ========================================================================== */
+
+/* Styles About section */
+#about {
+  background: $yellow url(/img/about/about_background.jpg) fixed;
+  background-size: cover;
+  color: $white;
+
+  /* Styles for motto */
+  .motto {
+    font-size: 2rem;
+    padding-bottom: 1.5em;
+    text-align: center;
+
+    /* Styles for small devices */
+    @include breakpoint($mq_small) {
+      text-align: left;
+    }
+  }
+
+  /* Styles for resume line */
+  .resume {
+    font-size: 1.5rem;
+    padding: 2em 0;
+    text-align: center;
+
+    /* Styles for small devices */
+    @include breakpoint($mq_small) {
+      text-align: left;
+    }
+  }
+}

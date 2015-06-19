@@ -11,9 +11,9 @@
 /* =========================================================================
    Vendors
    ========================================================================= */
-@import "vendors/sassy-maps/memo.scss";
-@import "vendors/breakpoint/breakpoint.scss";
-@import "vendors/font-awesome/font-awesome.scss";
+@import "vendors/sassy-maps/memo";
+@import "vendors/breakpoint/breakpoint";
+@import "vendors/font-awesome/font-awesome";
 
 /* =========================================================================
    Global
@@ -25,19 +25,21 @@
 /* =========================================================================
    Layout
    ========================================================================= */
-@import "layout/grid";
+@import "layout/grid/grid";
+@import "layout/header";
+@import "layout/footer";
 
 /* =========================================================================
    Components
    ========================================================================= */
-@import "components/header";
+@import "components/logo";
+@import "components/navigation/navigation";
 @import "components/buttons";
-@import "components/browser";
-@import "components/phone";
-@import "components/footer";
+@import "components/icons/icons";
+@import "components/wireframes/wireframes";
 
 /* =========================================================================
    Pages
    ========================================================================= */
-@import "pages/home";
-@import "pages/portfolio";
+@import "pages/home/home";
+@import "pages/portfolio/portfolio";

@@ -1,80 +1,7 @@
 /* ==========================================================================
-   Portfolio
+   Portfolio | Content
    ========================================================================== */
 .layout-portfolio {
-
-  /* Header
-     ========================================================================== */
-
-  /* Styles for the header (logo, navigation) on a portfolio page */
-  #masthead {
-    background-color: rgba(16, 30, 67, 1);
-    font-size: 2rem;
-    position: fixed;
-
-    /* Styles for small devices */
-    @include breakpoint($mq_small) {
-      padding: 0.125em 1em 0;
-    }
-
-    /* Styles applied to the header when the page is scrolling */
-    &.scroll-header {
-      background-color: rgba(16, 30, 67, 0.75);
-    }
-
-    /* Styles for a portfolio page logo */
-    .logo {
-      padding-top: 0.375em;
-
-      /* Styles for small devices */
-      @include breakpoint($mq_small) {
-        float: left;
-        font-size: 3rem;
-        padding-top: 0.083333em;
-      }
-    }
-
-    /* Styles for the navigation */
-    .main-nav {
-      background-color: transparent;
-      box-shadow: none;
-
-      /* Styles for small devices */
-      @include breakpoint($mq_small) {
-        float: right;
-        position: static;
-        width: auto;
-      }
-
-      /* Styles for a specific navigation item */
-      .nav-item {
-        border-bottom: 4px solid transparent;
-
-        /* Styles for small devices */
-        @include breakpoint($mq_small) {
-          width: auto;
-        }
-
-        /* Styles for all but the first navigation item */
-        &:not(:first-of-type) {
-          margin-left: 1em;
-        }
-
-        /* Styles applied when hovering over a navigation item */
-        &:hover {
-          border-bottom: 4px solid;
-
-          /* Negate hover styles on touch devices */
-          .touch & {
-            border-bottom: 0;
-          }
-        }
-      }
-    }
-  }
-
-  /* Content
-     ========================================================================== */
 
   /* Styles for the main content on a portfolio page */
   .portfolio-page {
@@ -103,7 +30,21 @@
       padding-top: 65px;
     }
 
-    /* Styles for the summary section of a project */
+    /* Portfolio | Content (University of Michigan Athletics)
+    ========================================================================== */
+    &.university-of-michigan-athletics {
+      .project_section {
+        padding: 1.2em;
+
+        /* Styles for small devices */
+        @include breakpoint($mq_small) {
+          padding: 1.2em 0;
+        }
+      }
+    }
+
+    /* Portfolio | Content | Project Summary
+    ========================================================================== */
     .project_summary {
 
       /* Styles for the project title */
@@ -174,7 +115,8 @@
       }
     }
 
-    /* Styles for a section of a project */
+    /* Portfolio | Content | Project Section
+    ========================================================================== */
     .project_section {
       padding: 1.2em 0;
 
@@ -239,30 +181,6 @@
           overflow: hidden;
         }
       }
-    }
-
-    /* Styles specifically the University of Michigan Athletics project */
-    &.university-of-michigan-athletics {
-      .project_section {
-        padding: 1.2em;
-
-        /* Styles for small devices */
-        @include breakpoint($mq_small) {
-          padding: 1.2em 0;
-        }
-      }
-    }
-  }
-
-  /* Footer
-     ========================================================================== */
-
-  /* Styles for the Contact section on a portfolio page */
-  #contact {
-    padding: 1.2em 0 0.6em;
-
-    .contact-icons {
-      padding-bottom: 0.6em;
     }
   }
 }

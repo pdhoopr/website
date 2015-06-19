@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Icons | Contact
+   ========================================================================== */
+
+/* Styles for icons in Contact */
+.contact-icons {
+  padding-bottom: 2.4em;
+  text-align: center;
+
+  /* Styles for all but first icon */
+  :not(:first-child) {
+    margin-left: 5%;
+
+    /* Styles for small devices */
+    @include breakpoint($mq_small) {
+      margin-left: 8%;
+    }
+  }
+
+  /* Styles for hover over an icon (change color) */
+  span:hover {
+    color: $middle_gray;
+
+    .touch & {
+      color: $body_gray;
+    }
+  }
+}
