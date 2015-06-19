@@ -36,6 +36,7 @@
 
     /* Styles for small devices */
     @include breakpoint($mq_small) {
+      float: left;
       font-size: 3rem;
       padding-top: 0.083333em;
     }
