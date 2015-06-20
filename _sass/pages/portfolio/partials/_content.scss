@@ -50,8 +50,9 @@
       /* Styles for the project title */
       .title {
         font-size: 3rem;
-        margin-top: 0.5em;
-        padding-bottom: 0.5em;
+        line-height: 1.25;
+        margin-top: 0.75em;
+        padding-bottom: 0.75em;
 
         /* Styles for small devices */
         @include breakpoint($mq_small) {
