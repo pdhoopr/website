@@ -13,11 +13,6 @@
       font-size: 2rem;
       padding-bottom: 0.75em;
       text-align: center;
-
-      /* Styles for small devices */
-      @include breakpoint($mq_small) {
-        font-size: 1.75rem;
-      }
     }
 
     /* Styles for medium devices */
@@ -33,6 +28,12 @@
     /* Portfolio | Content (University of Michigan Athletics)
     ========================================================================== */
     &.university-of-michigan-athletics {
+      .subtitle {
+        @include breakpoint($mq_small) {
+          font-size: 1.75rem;
+        }
+      }
+
       .project_section {
         padding: 1.2em;
 
