@@ -24,3 +24,25 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
+/**
+ * Mixin that will set colors and animate for button hovers.
+ */
+@mixin button-hover($background-color, $color) {
+  color: $background-color;
+  transition: all 0.3s;
+
+  /* Hover styles */
+  &:hover {
+    background-color: $background-color;
+    border-color: $background-color;
+    color: $color;
+    transition: all 0.3s;
+  }
+
+  /* Negate hover styles on touch devices */
+  .touch & {
+    background-color: transparent;
+    color: $background-color;
+  }
+}

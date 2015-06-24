@@ -86,22 +86,10 @@
 
         /* Styles for the button */
         .btn {
-          color: $blue;
           margin: 0.85714em 0;
           text-transform: uppercase;
 
-          /* Styles for hovering over a button (invert colors) */
-          &:hover {
-            background-color: $blue;
-            border-color: $blue;
-            color: $white;
-
-            /* Negate hover styles on touch devices */
-            .touch & {
-              background-color: transparent;
-              color: $blue
-            }
-          }
+          @include button-hover($blue, $white);
 
           .fa {
             margin-left: 0.375em;
