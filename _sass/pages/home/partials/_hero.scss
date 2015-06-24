@@ -45,20 +45,7 @@
 
       /* Styles for button */
       .btn {
-        font-size: 1.75rem;
-
-        /* Styles for hovering over button (invert colors) */
-        &:hover {
-          background-color: $yellow;
-          border-color: $yellow;
-          color: $blue;
-        }
-
-        /* Negate hover styles on touch devices */
-        .touch & {
-          background-color: transparent;
-          color: $yellow;
-        }
+        @include button-hover($yellow, $blue);
       }
     }
   }
