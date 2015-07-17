@@ -8,15 +8,15 @@
   roles: UI, UX, Full-Stack, Data Visualization
   technologies: D3.js, Google Apps, Google App Engine
 
-- title: jahleh-and-patricks-wedding
+- title: wgi-informer
   grid: 66
   viewbox: 0 0 800 200
   padding: 25
-  name: Jahleh and Patrick's Wedding
+  name: WGI Informer
   desktop: true
   mobile: true
-  roles: UI, Full-Stack
-  technologies: Google App Engine
+  roles: Logo, UI, UX, Full-Stack
+  technologies: WordPress + UnderScores, Materialize, Font Awesome, Masonry, Sass, Breakpoint
 
 - title: ms-omearas-multiage
   grid: 33
@@ -38,12 +38,12 @@
   roles: Process Optimization
   technologies: Google Apps
 
-- title: wgi-informer
+- title: jahleh-and-patricks-wedding
   grid: 66
   viewbox: 0 0 800 200
   padding: 25
-  name: WGI Informer
+  name: Jahleh and Patrick's Wedding
   desktop: true
   mobile: true
-  roles: Logo, UI, UX, Full-Stack
-  technologies: WordPress + UnderScores, Materialize, Font Awesome, Masonry, Sass, Breakpoint
+  roles: UI, Full-Stack
+  technologies: Google App Engine
