@@ -16,7 +16,7 @@
   desktop: true
   mobile: true
   roles: Logo, UI, UX, Full-Stack
-  technologies: WordPress + UnderScores, Materialize, Font Awesome, Masonry, Sass, Breakpoint
+  technologies: WordPress + UnderScores, Materialize, Font Awesome, Masonry, Mapbox, Sass, Breakpoint
 
 - title: jahleh-and-patricks-wedding
   grid: 66
