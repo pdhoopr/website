@@ -1,7 +1,7 @@
 - title: wgi-buzz
   grid: 33
-  viewbox: 0 0 400 800
-  padding: 200
+  viewbox: 0 0 400 600
+  padding: 150
   name: WGI.buzz
   desktop: true
   mobile: true
@@ -10,8 +10,8 @@
 
 - title: wgi-informer
   grid: 66
-  viewbox: 0 0 800 200
-  padding: 25
+  viewbox: 0 0 800 150
+  padding: 18.75
   name: WGI Informer
   desktop: true
   mobile: true
@@ -20,8 +20,8 @@
 
 - title: jahleh-and-patricks-wedding
   grid: 66
-  viewbox: 0 0 800 200
-  padding: 25
+  viewbox: 0 0 800 150
+  padding: 18.75
   name: Jahleh and Patrick's Wedding
   desktop: true
   mobile: true
@@ -30,8 +30,8 @@
 
 - title: ms-omearas-multiage
   grid: 33
-  viewbox: 0 0 400 400
-  padding: 100
+  viewbox: 0 0 400 300
+  padding: 75
   name: Ms. O'Meara's Multiage
   desktop: true
   mobile: true
@@ -40,8 +40,8 @@
 
 - title: university-of-michigan-athletics
   grid: 33
-  viewbox: 0 0 400 400
-  padding: 100
+  viewbox: 0 0 400 300
+  padding: 75
   name: University of Michigan Athletics
   desktop: true
   mobile: false
