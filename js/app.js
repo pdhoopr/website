@@ -229,7 +229,7 @@ if (wrapper.hasClass('layout-home')) {
 
     /* Slides up/down project logo overlay when it's hovered over on non-touch devices */
     $('.project').hover(function() {
-      $(this).find('.project_overlay').slideToggle(300);
+      $(this).find('.project_overlay').css('max-height', $(this).height()).slideToggle(300);
     });
   }
 }
