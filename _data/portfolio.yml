@@ -6,7 +6,7 @@
   desktop: true
   mobile: true
   roles: UI, UX, Full-Stack, Data Visualization
-  technologies: D3.js, Google Apps, Google App Engine
+  technologies: D3.js, Underscore.js, noUiSlider, Google Apps, Google App Engine
 
 - title: wgi-informer
   grid: 66
