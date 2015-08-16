@@ -5,7 +5,7 @@
 
   /* Styles for the main content on a portfolio page */
   .portfolio-page {
-    padding-top: 60px;
+    padding-top: 64px;
 
     /* Styles for titles (page title) and subtitle (section titles) */
     .title,
@@ -13,16 +13,6 @@
       font-size: 2rem;
       padding-bottom: 0.75em;
       text-align: center;
-    }
-
-    /* Styles for medium devices */
-    @include breakpoint($mq_medium) {
-      padding-top: 55px;
-    }
-
-    /* Styles for small devices */
-    @include breakpoint($mq_small) {
-      padding-top: 46px;
     }
 
     /* Portfolio | Content (University of Michigan Athletics)
