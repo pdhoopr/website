@@ -6,10 +6,15 @@
 #masthead {
   color: $yellow;
   font-family: $ubuntu;
-  padding: 0.5em 1.5em 0;
+  padding: 0.6em 1.2em 0;
   position: fixed;
   width: 100%;
   z-index: 100;
+
+  /* Alter padding on medium devices */
+  @include breakpoint($mq_medium) {
+    padding: 0.66667em 1.33333em 0;
+  }
 
   /* Styles for small devices */
   @include breakpoint($mq_small) {

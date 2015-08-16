@@ -12,7 +12,7 @@
     /* Styles for small devices */
     @include breakpoint($mq_small) {
       background: rgba(16, 30, 67, 1);
-      padding: 0.5em 1em 0;
+      padding: 0.8em 1em 0;
     }
 
     /* Styles applied to the header when the page is scrolling */
@@ -34,7 +34,7 @@
     /* Styles for small devices */
     @include breakpoint($mq_small) {
       float: left;
-      font-size: 2.25rem;
+      font-size: 2.66667rem;
       padding: 0;
     }
   }
@@ -68,7 +68,7 @@
 
         /* Styles for small devices */
         @include breakpoint($mq_small) {
-          margin-right: 1em;
+          margin-right: 0.625em;
         }
       }
 

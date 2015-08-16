@@ -18,8 +18,13 @@
   }
 }
 
-/* Reduce grid container padding on small devices */
+/* Reduce grid container padding on small devices, increase on medium */
 .grid-container {
+  @include breakpoint($mq_medium) {
+    padding-left: 1.33333em;
+    padding-right: 1.33333em;
+  }
+
   @include breakpoint($mq_small) {
     padding-left: 1em;
     padding-right: 1em;

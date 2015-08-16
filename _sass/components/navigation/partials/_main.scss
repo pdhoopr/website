@@ -17,9 +17,20 @@
     border-bottom: 4px solid transparent;
     cursor: pointer;
     display: inline-block;
+    font-size: 1.5rem;
     padding-bottom: 0.5em;
     text-align: center;
     transition: 0.3s;
+
+    /* Styles for medium devices */
+    @include breakpoint($mq_medium) {
+      font-size: 1.66667rem;
+    }
+
+    /* Styles for small devices */
+    @include breakpoint($mq_small) {
+      font-size: 2rem;
+    }
 
     /* Styles for small devices */
     @include breakpoint($mq_small) {
@@ -30,7 +41,7 @@
 
     /* Styles for first nav item */
     &:first-of-type {
-      margin-right: 1.5em;
+      margin-right: 1em;
 
       /* Styles for small devices */
       @include breakpoint($mq_small) {
@@ -77,12 +88,21 @@
       margin-right: 0.25em;
       transition: 0.3s;
       vertical-align: -5%;
+
+      /* Styles for medium devices */
+      @include breakpoint($mq_medium) {
+        font-size: 1.94444rem;
+      }
+
+      /* Styles for small devices */
+      @include breakpoint($mq_small) {
+        font-size: 2.33333rem;
+      }
     }
 
     /* Styles navigation item text/tooltip */
     .tooltip {
       display: inline-block;
-      font-size: 1.5rem;
     }
   }
 }
