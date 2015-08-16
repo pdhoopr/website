@@ -5,7 +5,3 @@
 - id: portfolio
   title: Portfolio
   icon: lightbulb-o
-
-- id: contact
-  title: Contact
-  icon: coffee

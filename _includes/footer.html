@@ -1,19 +1,10 @@
       <footer id="contact" class="home_section">
         <div class="grid-container">
-          {% if page.layout == "home" %}
-          <h2 class="title">{ CONTACT }</h2>
-          {% endif %}
           <div class="contact-icons">
             {% for method in site.data.contact %}
             <a href="{{ method.link }}" title="{{ method.title }}" target="_blank"><span class="fa fa-2x fa-{{ method.icon }}"></span></a>
             {% endfor %}
           </div>
-          {% if page.layout == "home" %}
-          <div class="location">
-            <span class="fa fa-2x fa-map-marker"></span>
-            <p>Palm Beach Gardens, FL</p>
-          </div>
-          {% endif %}
           <div class="credit">
             <p>Made with <span class="fa fa-heart"></span> and <a class="underline" href="http://jekyllrb.com/" target="_blank">Jekyll</a></p>
           </div>

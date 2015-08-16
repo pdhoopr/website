@@ -6,18 +6,11 @@
 #contact {
   background-color: #222;
   font-family: $ubuntu;
-  padding-bottom: 0.6em;
-  padding-top: 2.4em;
+  padding: 1.2em 0 0.6em;
 
-  /* Styles for location/city */
-  .location {
+  /* Icon styles */
+  .contact-icons {
     padding-bottom: 1.2em;
-    text-align: center;
-
-    /* Styles for location paragraph */
-    p {
-      font-size: 1rem;
-    }
   }
 
   /* Styles for credit to Jekyll */
