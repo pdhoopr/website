@@ -5,3 +5,15 @@
 /* Unsemantic Grid System (http://unsemantic.com/)
    ========================================================================== */
 @import "partials/unsemantic-grid-responsive-tablet";
+
+.grid-42,
+.tablet-grid-42 {
+  @extend .grid-40;
+  @extend .tablet-grid-40;
+
+  width: 41.5%;
+
+  @include breakpoint($mq_small) {
+    width: 100%;
+  }
+}
