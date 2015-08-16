@@ -9,14 +9,24 @@
   technologies: D3.js, Underscore.js, noUiSlider, Google Apps, Google App Engine
 
 - title: wgi-informer
-  grid: 66
-  viewbox: 0 0 800 150
-  padding: 18.75
+  grid: 42
+  viewbox: 0 0 500 150
+  padding: 30
   name: WGI Informer
   desktop: true
   mobile: true
   roles: Logo, UI, UX, Full-Stack
   technologies: WordPress + Underscores, Materialize, Font Awesome, Masonry, Mapbox, Typeform, Sass, Breakpoint
+
+- title: wgiki
+  grid: 25
+  viewbox: 0 0 300 150
+  padding: 50
+  name: WGIki
+  desktop: true
+  mobile: true
+  roles: Logo, UI, UX, Full-Stack
+  technologies: WordPress + Underscores, Materialize, Font Awesome, Typeform, Sass, Breakpoint
 
 - title: jahleh-and-patricks-wedding
   grid: 66
