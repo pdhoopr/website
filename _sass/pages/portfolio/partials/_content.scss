@@ -15,16 +15,6 @@
       text-align: center;
     }
 
-    /* Styles for medium devices */
-    @include breakpoint($mq_medium) {
-      padding-top: 55px;
-    }
-
-    /* Styles for small devices */
-    @include breakpoint($mq_small) {
-      padding-top: 46px;
-    }
-
     /* Portfolio | Content (University of Michigan Athletics)
     ========================================================================== */
     &.university-of-michigan-athletics {
