@@ -131,7 +131,7 @@ if (wrapper.hasClass('layout-home')) {
         return Modernizr.mq('(min-width: 46.0625rem)') ? masthead.height() + 8 : mainNav.height() + 9;
       }
       else {
-        return Modernizr.mq('(min-width: 46.0625rem)') ? masthead.height() : mainNav.height();
+        return Modernizr.mq('(min-width: 46.0625rem)') ? masthead.height() - 8 : mainNav.height() - 9;
       }
     }
   });
@@ -154,7 +154,7 @@ if (wrapper.hasClass('layout-home')) {
         return Modernizr.mq('(min-width: 46.0625rem)') ? masthead.height() + 8 : mainNav.height() + 9;
       }
       else {
-        return Modernizr.mq('(min-width: 46.0625rem)') ? masthead.height() : mainNav.height();
+        return Modernizr.mq('(min-width: 46.0625rem)') ? masthead.height() - 8 : mainNav.height() - 9;
       }
     }
   });
