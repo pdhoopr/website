@@ -17,23 +17,26 @@
     border-bottom: 4px solid transparent;
     cursor: pointer;
     display: inline-block;
+    padding-bottom: 0.5em;
     text-align: center;
 
     /* Styles for small devices */
     @include breakpoint($mq_small) {
       float: left;
-      width: 33.3333%;
+      padding-top: 0.5em;
+      width: 50%;
     }
 
-    /* Styles for all but the first navigation item */
-    &:not(:first-of-type) {
-      margin-left: 1em;
+    /* Styles for first nav item */
+    &:first-of-type {
+      margin-right: 1.5em;
 
       /* Styles for small devices */
       @include breakpoint($mq_small) {
-        margin-left: 0;
+        margin-right: 0;
       }
     }
+
 
     /* Styles for hovering over a nav item (yellow underline) */
     &:hover {
@@ -68,20 +71,16 @@
 
     /* Styles for navigation icons */
     .fa {
+      font-size: 1.75rem;
+      margin-right: 0.25em;
       transition: 0.3s;
+      vertical-align: -5%;
     }
 
     /* Styles navigation item text/tooltip */
     .tooltip {
-      font-size: 1rem;
-      margin-top: -0.25em;
-      padding-bottom: 0.25em;
-      text-transform: uppercase;
-
-      /* Styles for small devices */
-      @include breakpoint($mq_small) {
-        font-size: 1.25rem;
-      }
+      display: inline-block;
+      font-size: 1.5rem;
     }
   }
 }

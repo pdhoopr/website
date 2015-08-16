@@ -5,13 +5,14 @@
 /* Styles for logo */
 .logo {
   float: left;
-  padding-top: 0.3em;
+  font-size: 2.5rem;
+  line-height: 1;
 
   /* Styles for small devices */
   @include breakpoint($mq_small) {
     float: none;
-    font-size: 4.5rem;
-    padding-top: 0;
+    font-size: 4rem;
+    padding: 0.25em 0;
   }
 
   /* Styles for a letter in the logo */

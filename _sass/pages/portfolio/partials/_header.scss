@@ -7,23 +7,17 @@
   ========================================================================== */
   #masthead {
     background-color: rgba(16, 30, 67, 1);
-    font-size: 2rem;
-    padding: 0.125em 1em 0 0.75em;
     position: fixed;
 
+    /* Styles for small devices */
     @include breakpoint($mq_small) {
-      padding: 0.125em 0.75em 0 0.5em;
+      background: rgba(16, 30, 67, 1);
+      padding: 0.5em 1em 0;
     }
 
     /* Styles applied to the header when the page is scrolling */
     &.scroll-header {
       background-color: rgba(16, 30, 67, 0.75);
-
-      .logo {
-        @include breakpoint($mq_small) {
-          padding-top: 0.083333em;
-        }
-      }
 
       .main-nav {
         background-color: transparent;
@@ -36,13 +30,12 @@
   /* Portfolio | Header | Logo
   ========================================================================== */
   .logo {
-    padding-top: 0.375em;
 
     /* Styles for small devices */
     @include breakpoint($mq_small) {
       float: left;
-      font-size: 3rem;
-      padding-top: 0.083333em;
+      font-size: 2.25rem;
+      padding: 0;
     }
   }
 
@@ -62,15 +55,21 @@
     /* Styles for a specific navigation item */
     .nav-item {
       border-bottom: 4px solid transparent;
+      padding-bottom: 0.5em;
 
       /* Styles for small devices */
       @include breakpoint($mq_small) {
+        padding-top: 0;
         width: auto;
       }
 
-      /* Styles for all but the first navigation item */
-      &:not(:first-of-type) {
-        margin-left: 1em;
+      /* Styles for first nav item */
+      &:first-of-type {
+
+        /* Styles for small devices */
+        @include breakpoint($mq_small) {
+          margin-right: 1em;
+        }
       }
 
       /* Styles applied when hovering over a navigation item */
@@ -81,6 +80,12 @@
         .touch & {
           border-bottom: 0;
         }
+      }
+
+      /* Give right "Next" arrow a margin on the left, not right */
+      .fa.fa-angle-right {
+        margin-left: 0.25em;
+        margin-right: 0;
       }
     }
   }

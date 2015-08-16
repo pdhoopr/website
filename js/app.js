@@ -10,16 +10,16 @@ var wrapper = $('#wrapper'),
     letters = $('.letter-animate'),
     navAbout = $('.nav-about'),
     navPortfolio = $('.nav-portfolio'),
-    navContact = $('.nav-contact'),
     hero = $('#hero'),
     heroAnimate = $('#hero .hero-animate'),
+    heroArrow = $('#hero .hero_arrow'),
     fadeHeroDiv,
+    fadeHeroArrow,
     taglines = $('.tagline'), // Hide all taglines initially
     i = 0, // Counter for taglines
     learnMore = $('.learn-more'),
     about = $('#about'),
     portfolio = $('#portfolio'),
-    contact = $('#contact'),
     project = $('.portfolio-page');
 
 /* Functions
@@ -69,6 +69,18 @@ if (Modernizr.mq('(min-width: 46.0625rem)')) {
     opacity: 0,
     top: '75%'
   });
+
+  /**
+   * Tween Hero arrow from border properties over the duration
+   * of the tween.
+   */
+  fadeHeroArrow = TweenMax.to(heroArrow, 0.3, {
+    borderLeftWidth: 320,
+    borderRightWidth: 320,
+    borderTopWidth: 0,
+    bottom: 0,
+    marginLeft: -320
+  });
 }
 
 /* ScrollMagic Scenes
@@ -85,6 +97,14 @@ var heroScene = new ScrollMagic.Scene({
 })
 .setTween(fadeHeroDiv); // Use the fadeHeroDiv tween defined
 
+/* Scene to smush hero arrow up into itself when scrolling */
+var heroArrow = new ScrollMagic.Scene({
+  triggerElement: '#hero',
+  triggerHook: 'onLeave', // Start when trigger starts leaving viewport
+  duration: '75%' // End when viewport has moved 75%
+})
+.setTween(fadeHeroArrow);
+
 /* Waypoints
    ======================================================================== */
 
@@ -99,13 +119,11 @@ if (wrapper.hasClass('layout-home')) {
       masthead.addClass('scroll-header');
       navAbout.addClass('active');
       navPortfolio.removeClass('active');
-      navContact.removeClass('active');
     }
     else {
       masthead.removeClass('scroll-header');
       navAbout.removeClass('active');
       navPortfolio.removeClass('active');
-      navContact.removeClass('active');
     }
   },{
     offset: function() {
@@ -125,12 +143,10 @@ if (wrapper.hasClass('layout-home')) {
     if (direction === 'down') {
       navAbout.removeClass('active');
       navPortfolio.addClass('active');
-      navContact.removeClass('active');
     }
     else {
       navAbout.addClass('active');
       navPortfolio.removeClass('active');
-      navContact.removeClass('active');
     }
   },{
     offset: function() {
@@ -141,24 +157,6 @@ if (wrapper.hasClass('layout-home')) {
         return Modernizr.mq('(min-width: 46.0625rem)') ? masthead.height() - 8 : mainNav.height() - 9;
       }
     }
-  });
-
-  /**
-   * Toggles active class for Contact and removes for Portfolio
-   */
-  var contactWaypoint = contact.waypoint(function(direction) {
-    if (direction === 'down') {
-      navAbout.removeClass('active');
-      navPortfolio.removeClass('active');
-      navContact.addClass('active');
-    }
-    else {
-      navAbout.removeClass('active');
-      navPortfolio.addClass('active');
-      navContact.removeClass('active');
-    }
-  },{
-    offset: 'bottom-in-view'
   });
 }
 
@@ -220,8 +218,8 @@ if (wrapper.hasClass('layout-home')) {
       learnMore.animate({opacity: 1}, 3000);
     }, 8000);
 
-    /* Add hero scene to controller */
-    scrollMagicController.addScene([heroScene]);
+    /* Add hero scenes to controller */
+    scrollMagicController.addScene([heroScene, heroArrow]);
   }
 
   /* Do the following only if this is not a touch device */

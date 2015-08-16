@@ -17,3 +17,19 @@
     width: 100%;
   }
 }
+
+/* Reduce grid container padding on small devices */
+.grid-container {
+  @include breakpoint($mq_small) {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+
+/* Remove padding for mobile-grid-100 on small devices */
+.mobile-grid-100 {
+  @include breakpoint($mq_small) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
