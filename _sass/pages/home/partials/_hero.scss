@@ -30,10 +30,11 @@
   .hero_arrow {
     border-left: 32px solid transparent;
     border-right: 32px solid transparent;
-    border-top: 32px solid rgba(16, 30, 67, 0.85);
+    border-top: 32px solid rgb(16, 30, 67);
     bottom: -32px;
     content: '';
     height: 0;
+    left: 50%;
     margin-left: -32px;
     position: absolute;
     width: 0;
