@@ -5,11 +5,6 @@
 /* Styles for Portfolio section */
 #portfolio {
 
-  /* Styles for small devices */
-  @include breakpoint($mq_small) {
-    padding-bottom: 2.4em;
-  }
-
   /* Styles for a project in the Portfolio */
   .project {
     padding: 0;

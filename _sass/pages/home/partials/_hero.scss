@@ -4,14 +4,16 @@
 
 /* Styles the Hero section */
 #hero {
-  background: $blue url(/img/hero/hero_background.jpg) fixed;
-  background-size: cover;
-  color: $yellow;
-  height: 95%;
+  display: none;
 
-  /* Styles for small devices */
-  @include breakpoint($mq_small) {
-    display: none;
+
+  /* Styles for medium and up devices */
+  @include breakpoint($mq_medium) {
+    background: $blue url(/img/hero/hero_background.jpg) fixed;
+    background-size: cover;
+    color: $yellow;
+    display: block;
+    height: 95%;
   }
 
   /* Styles for the hero (textured) overlay */
@@ -49,6 +51,7 @@
     .tagline {
       display: none;
       font-size: 5rem;
+      line-height: 1;
     }
 
     /* Styles for Learn More button */
@@ -56,7 +59,7 @@
       opacity: 0;
       position: relative;
       text-align: center;
-      top: 4.8em;
+      top: 5em;
 
       /* Styles for button */
       .btn {

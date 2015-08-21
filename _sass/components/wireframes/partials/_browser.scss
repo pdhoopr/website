@@ -11,13 +11,14 @@
   /* Styles for browser controls (URL, buttons) */
   .browser_controls {
     border-bottom: 2px solid $middle_gray;
-    height: 48px;
-    padding: 0.4em 0;
+    height: 36px;
+    padding: 0.2em 0;
     position: relative;
 
-    /* Shrink height on small devices */
-    @include breakpoint($mq_small) {
-      height: 36px;
+    /* Shrink height on medium and up devices */
+    @include breakpoint($mq_medium) {
+      padding: 0.4em 0;
+      height: 48px;
     }
 
     /* Styles for browser buttons */

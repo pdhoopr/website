@@ -10,27 +10,33 @@
     /* Styles for titles (page title) and subtitle (section titles) */
     .title,
     .subtitle {
-      font-size: 2rem;
+      font-size: 1.25rem;
       padding-bottom: 0.75em;
       text-align: center;
+
+      @include breakpoint($mq_medium) {
+        font-size: 2rem;
+      }
     }
 
     /* Portfolio | Content (University of Michigan Athletics)
     ========================================================================== */
     &.university-of-michigan-athletics {
       .subtitle {
-        /* Styles for small devices */
-        @include breakpoint($mq_small) {
-          font-size: 1.75rem;
+        font-size: 1.25rem;
+
+        /* Styles for medium and up devices */
+        @include breakpoint($mq_medium) {
+          font-size: 2rem;
         }
       }
 
       .project_section {
-        padding: 1.2em;
+        padding: 1.2em 0;
 
-        /* Styles for small devices */
-        @include breakpoint($mq_small) {
-          padding: 1.2em 0;
+        /* Styles for medium and up devices */
+        @include breakpoint($mq_medium) {
+          padding: 1.2em;
         }
       }
     }
@@ -41,14 +47,14 @@
 
       /* Styles for the project title */
       .title {
-        font-size: 3rem;
+        font-size: 2rem;
         line-height: 1;
         margin-top: 0.75em;
         padding-bottom: 0.75em;
 
-        /* Styles for small devices */
-        @include breakpoint($mq_small) {
-          font-size: 2.75rem;
+        /* Styles for medium and up devices */
+        @include breakpoint($mq_medium) {
+          font-size: 3rem;
         }
       }
 
@@ -86,14 +92,6 @@
           }
         }
       }
-
-      /* Styles for the big phone button on small devices */
-      .phone_button span {
-        @include breakpoint($mq_small) {
-          height: 24px !important;
-          width: 24px !important;
-        }
-      }
     }
 
     /* Portfolio | Content | Project Section
@@ -101,10 +99,13 @@
     .project_section {
       padding: 1.2em 0;
 
-      /* Styles for the description of a project on small and medium devices */
+      /* Styles for the description of a project */
       .section_description {
-        @include breakpoint($mq_not_large) {
-          margin-bottom: 1.33333em;
+        margin-bottom: 1.33333em;
+
+        /* No margin on large and up devices */
+        @include breakpoint($mq_large) {
+          margin-bottom: 0;
         }
       }
 
@@ -132,26 +133,26 @@
 
         /* Styles specifically for a mobile phone */
         &.mobile {
-          display: inline-block;
-          margin: 0 auto;
+          display: block;
+          margin-bottom: 1.33333em;
           position: static;
-          width: 30%;
+          width: 100%;
+
+          /* Styles for large and up devices */
+          @include breakpoint($mq_large) {
+            display: inline-block;
+            margin: 0 auto;
+            width: 30%;
+          }
 
           /* Styles specifically for all but the first mobile phone */
           &:not(:first-of-type) {
-            margin-left: 0.8em;
-          }
+            margin: 0 auto;
+            margin-bottom: 1.3333em;
 
-          /* Styles specifically for mobile phones on small and medium devices */
-          @include breakpoint($mq_not_large) {
-            display: block;
-            margin-bottom: 1.33333em;
-            width: 100%;
-
-            /* Styles specifically for all but the first phone */
-            &:not(:first-of-type) {
-              margin: 0 auto;
-              margin-bottom: 1.3333em;
+            /* Styles for large and up devices */
+            @include breakpoint($mq_large) {
+              margin-left: 0.8em;
             }
           }
         }

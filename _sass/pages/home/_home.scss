@@ -4,18 +4,23 @@
 
 /* Styles for home sections (About, Portfolio, Contact) */
 .home_section {
-  padding: 4.8em 0;
+  padding: 2em 0;
 
-  /* Styles for small devices */
-  @include breakpoint($mq_small) {
-    padding: 4em 0 0;
+  /* Increase padding on medium and up devices */
+  @include breakpoint($mq_medium) {
+    padding: 3em 0;
   }
 
   /* Styles for section titles */
   .title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     padding-bottom: 1em;
     text-align: center;
+
+    /* Increase font size on medium and up devices */
+    @include breakpoint($mq_medium) {
+      font-size: 3rem;
+    }
   }
 }
 

@@ -4,12 +4,15 @@
 
 /* Styles for navigation */
 .main-nav {
-  float: right;
+  @extend .clearfix;
 
-  /* Styles for small devices */
-  @include breakpoint($mq_small) {
-    float: none;
-    width: 100%;
+  float: none;
+  width: 100%;
+
+  /* Styles for medium and up devices */
+  @include breakpoint($mq_medium) {
+    float: right;
+    width: auto;
   }
 
   /* Styles for an individual navigation item */
@@ -17,35 +20,31 @@
     border-bottom: 4px solid transparent;
     cursor: pointer;
     display: inline-block;
-    font-size: 1.5rem;
-    padding-bottom: 0.5em;
+    float: left;
+    font-size: 1.25rem;
+    padding-bottom: 9px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 13px;
     text-align: center;
     transition: 0.3s;
+    width: 50%;
 
-    /* Styles for medium devices */
+    /* Styles for medium and up devices */
     @include breakpoint($mq_medium) {
-      font-size: 1.66667rem;
-    }
-
-    /* Styles for small devices */
-    @include breakpoint($mq_small) {
-      font-size: 2rem;
-    }
-
-    /* Styles for small devices */
-    @include breakpoint($mq_small) {
-      float: left;
-      padding-top: 0.5em;
-      width: 50%;
+      float: none;
+      padding-bottom: 13px;
+      padding-top: 0;
+      width: auto;
     }
 
     /* Styles for first nav item */
     &:first-of-type {
-      margin-right: 1em;
+      margin-right: 0;
 
-      /* Styles for small devices */
-      @include breakpoint($mq_small) {
-        margin-right: 0;
+      /* Styles for medium and up devices */
+      @include breakpoint($mq_medium) {
+        margin-right: 0.8em;
       }
     }
 
@@ -84,20 +83,10 @@
 
     /* Styles for navigation icons */
     .fa {
-      font-size: 1.75rem;
-      margin-right: 0.25em;
+      font-size: 1.5rem;
+      margin-right: 0.33333em;
       transition: 0.3s;
       vertical-align: -5%;
-
-      /* Styles for medium devices */
-      @include breakpoint($mq_medium) {
-        font-size: 1.94444rem;
-      }
-
-      /* Styles for small devices */
-      @include breakpoint($mq_small) {
-        font-size: 2.33333rem;
-      }
     }
 
     /* Styles navigation item text/tooltip */
