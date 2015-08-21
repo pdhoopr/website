@@ -10,7 +10,7 @@
     /* Styles for titles (page title) and subtitle (section titles) */
     .title,
     .subtitle {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       padding-bottom: 0.75em;
       text-align: center;
 
@@ -23,7 +23,7 @@
     ========================================================================== */
     &.university-of-michigan-athletics {
       .subtitle {
-        font-size: 1.25rem;
+        font-size: 1.3rem;
 
         /* Styles for medium and up devices */
         @include breakpoint($mq_medium) {
