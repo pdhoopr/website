@@ -15,7 +15,7 @@
       text-align: center;
 
       @include breakpoint($mq_medium) {
-        font-size: 2rem;
+        font-size: 1.75rem;
       }
     }
 
@@ -27,7 +27,7 @@
 
         /* Styles for medium and up devices */
         @include breakpoint($mq_medium) {
-          font-size: 2rem;
+          font-size: 1.75rem;
         }
       }
 
