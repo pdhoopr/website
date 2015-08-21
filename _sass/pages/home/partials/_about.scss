@@ -10,25 +10,27 @@
 
   /* Styles for motto */
   .motto {
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding-bottom: 1.5em;
-    text-align: center;
+    text-align: left;
 
-    /* Styles for small devices */
-    @include breakpoint($mq_small) {
-      text-align: left;
+    /* Styles for medium and up devices */
+    @include breakpoint($mq_medium) {
+      font-size: 2rem;
+      text-align: center;
     }
   }
 
   /* Styles for resume line */
   .resume {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     padding: 2em 0;
-    text-align: center;
+    text-align: left;
 
-    /* Styles for small devices */
-    @include breakpoint($mq_small) {
-      text-align: left;
+    /* Styles for medium and up devices */
+    @include breakpoint($mq_medium) {
+      font-size: 1.5rem;
+      text-align: center;
     }
   }
 }

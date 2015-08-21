@@ -8,11 +8,12 @@
   #masthead {
     background-color: rgba(16, 30, 67, 1);
     position: fixed;
+    z-index: 999;
 
     /* Styles for small devices */
     @include breakpoint($mq_small) {
       background: rgba(16, 30, 67, 1);
-      padding: 0.8em 1em 0;
+      padding: 14px 16px 0;
     }
 
     /* Styles applied to the header when the page is scrolling */
@@ -34,7 +35,7 @@
     /* Styles for small devices */
     @include breakpoint($mq_small) {
       float: left;
-      font-size: 2.66667rem;
+      font-size: 2.5rem;
       padding: 0;
     }
   }
@@ -55,21 +56,12 @@
     /* Styles for a specific navigation item */
     .nav-item {
       border-bottom: 4px solid transparent;
-      padding-bottom: 0.5em;
 
       /* Styles for small devices */
       @include breakpoint($mq_small) {
+        padding-bottom: 8px;
         padding-top: 0;
         width: auto;
-      }
-
-      /* Styles for first nav item */
-      &:first-of-type {
-
-        /* Styles for small devices */
-        @include breakpoint($mq_small) {
-          margin-right: 0.625em;
-        }
       }
 
       /* Styles applied when hovering over a navigation item */

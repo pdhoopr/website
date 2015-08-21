@@ -4,16 +4,22 @@
 
 /* Styles for icons in Contact */
 .contact-icons {
-  padding-bottom: 2.4em;
+  font-size: 0.875rem;
+  padding-bottom: 1.2em;
   text-align: center;
+
+  /* Increase font size on medium and up devices */
+  @include breakpoint($mq_medium) {
+    font-size: 1.25rem;
+  }
 
   /* Styles for all but first icon */
   :not(:first-child) {
-    margin-left: 5%;
+    margin-left: 8%;
 
-    /* Styles for small devices */
-    @include breakpoint($mq_not_large) {
-      margin-left: 8%;
+    /* Decrease margin on large and up devices */
+    @include breakpoint($mq_large) {
+      margin-left: 5%;
     }
   }
 

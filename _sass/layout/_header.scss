@@ -4,24 +4,28 @@
 
 /* Styles for the masthead */
 #masthead {
+  background: $blue url(/img/hero/hero_texture.png) fixed;
   color: $yellow;
   font-family: $ubuntu;
-  padding: 0.6em 1.2em 0;
-  position: fixed;
+  max-width: 100%;
+  padding: 0;
+  position: static;
+  text-align: center;
   width: 100%;
-  z-index: 100;
 
-  /* Alter padding on medium devices */
+  /* Styles for medium and up devices */
   @include breakpoint($mq_medium) {
-    padding: 0.66667em 1.33333em 0;
+    background: none;
+    padding: 17px 16px 0;
+    position: fixed;
+    text-align: left;
+    z-index: 100;
   }
 
-  /* Styles for small devices */
-  @include breakpoint($mq_small) {
-    background: $blue url(/img/hero/hero_texture.png) fixed;
-    padding: 0;
-    position: static;
-    text-align: center;
+  /* Styles for big devices */
+  @include breakpoint($mq_big) {
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
   /* Styles for masthead when page is scrolling */
@@ -29,37 +33,35 @@
     background-color: rgba(16, 30, 67, 0.75);
     box-shadow: 0px 0px 8px #222;
 
-    /* Styles for small devices */
-    @include breakpoint($mq_small) {
-      padding: 0.125em 1em 85px;
-    }
-
     /* Styles for the navigation when the page is scrolling */
     .main-nav {
+      background-color: rgba(16, 30, 67, 0.75);
+      box-shadow: 0px 0px 8px #222;
+      left: 0;
+      position: fixed;
+      top: 0;
+      z-index: 100;
 
-      /* Styles for small devices */
-      @include breakpoint($mq_small) {
-        background-color: rgba(16, 30, 67, 0.75);
-        box-shadow: 0px 0px 8px #222;
-        left: 0;
-        position: fixed;
-        top: 0;
-        z-index: 100;
+      /* Styles for medium and up devices */
+      @include breakpoint($mq_medium) {
+        background-color: transparent;
+        box-shadow: none;
+        position: static;
       }
     }
   }
 
   /* Styles for masthead images (circular photo) */
   img {
-    display: none;
+    border-radius: 50%;
+    display: inline-block;
+    float: none;
+    margin: 0.4em 0 0;
+    width: 50%;
 
-    /* Styles for small devices */
-    @include breakpoint($mq_small) {
-      border-radius: 50%;
-      display: inline-block;
-      float: none;
-      margin: 0.4em 0 0;
-      width: 50%;
+    /* Styles for medium and up devices */
+    @include breakpoint($mq_medium) {
+      display: none;
     }
   }
 }

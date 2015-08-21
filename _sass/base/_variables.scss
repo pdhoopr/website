@@ -4,27 +4,30 @@
 
 /* Media Queries
    ========================================================================== */
-$small_max: 46rem;
-$medium_min: 46.0625rem;
-$medium_max: 62rem;
-$large_min: 62.0625rem;
-$large_max : 75rem;
+$small_max: 46rem; // 736px
+$medium_min: 46.0625rem; // 737px
+$medium_max: 62rem; // 992px
+$large_min: 62.0625rem; // 993px
+$large_max : 75rem; // 1200px
+$big_min: 75.0625rem; // 1201px
 
-$mq_small: max-width $small_max;
-$mq_medium: $medium_min $medium_max;
-$mq_not_large: max-width $medium_max;
+$mq_small: max-width $small_max; // @media (max-width: 46rem)
+$mq_medium: min-width $medium_min; // @media (min-width: 46.0625rem)
+$mq_large: min-width $large_min; // @media (min-width: 62.0625rem)
+$mq_big: min-width $big_min; // @media (min-width: 75.0625rem)
 
 /* ==========================================================================
    Colors
    ========================================================================== */
+$blue: #101E43;
 $body_gray: #666;
 $middle_gray: #ccc;
-$yellow: #FFDB00;
-$blue: #101E43;
 $white: #fff;
+$yellow: #FFDB00;
+
 
 /* ==========================================================================
    Typography
    ========================================================================== */
-$ubuntu: "Ubuntu", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 $pt_sans: "PT Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$ubuntu: "Ubuntu", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;

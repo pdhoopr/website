@@ -8,16 +8,6 @@
 /* Root element 100% font size */
 html {
   font-size: 100%;
-
-  /* Root element 90% of font size on medium devices */
-  @include breakpoint($mq_medium) {
-    font-size: 90%;
-  }
-
-  /* Root element 75% of font size on small devices */
-  @include breakpoint($mq_small) {
-    font-size: 75%;
-  }
 }
 
 /* Assign body PT Sans font and slightly larger font size/line height for readability */
@@ -38,10 +28,11 @@ h6 {
   font-weight: 500;
 }
 
-/* On small devices, make paragraphs a little larger for easier reading */
 p {
-  @include breakpoint($mq_small) {
-    font-size: 1.3333rem;
+  font-size: 1rem;
+
+  @include breakpoint($mq_medium) {
+    font-size: 1.25rem;
   }
 }
 

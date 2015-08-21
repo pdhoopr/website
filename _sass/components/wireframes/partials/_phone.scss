@@ -9,13 +9,13 @@
   border-radius: 16px;
   padding: 0 0.3em;
   position: absolute;
-  right: -5%;
+  right: 0%;
   top: 25%;
   z-index: 10;
 
-  /* Styles for small devices */
-  @include breakpoint($mq_small) {
-    right: 0%;
+  /* Styles for medium and up devices */
+  @include breakpoint($mq_medium) {
+    right: -5%;
   }
 
   /* Styles for top part of phone (camera, sensor, speaker) */
@@ -85,8 +85,14 @@
       border: 2px solid $middle_gray;
       border-radius: 50%;
       display: inline-block;
-      height: 32px;
-      width: 32px;
+      height: 24px;
+      width: 24px;
+
+      /* Increase button size on medium and up devices */
+      @include breakpoint($mq_medium) {
+        height: 32px;
+        width: 32px;
+      }
     }
   }
 }
