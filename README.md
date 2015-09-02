@@ -1,7 +1,7 @@
 # patrick.hoopr.io
 The portfolio site for Patrick Hooper (http://patrick.hoopr.io).
 
-### Current Version : v1.0.0
+### Current Version : v2.0.0
 
 ## Compile Requirements
 - Ruby
@@ -18,6 +18,7 @@ The portfolio site for Patrick Hooper (http://patrick.hoopr.io).
 ## JavaScript Requirements
 - GSAP ([http://greensock.com/gsap](http://greensock.com/gsap))
 - jQuery ([https://jquery.com](https://jquery.com))
+- Kwicks ([http://devsmash.com/projects/kwicks](http://devsmash.com/projects/kwicks))
 - Modernizr ([http://modernizr.com/](http://modernizr.com/))
 - ScrollMagic ([http://scrollmagic.io/](http://scrollmagic.io/))
 - SVG for Everybody ([https://github.com/jonathantneal/svg4everybody)](https://github.com/jonathantneal/svg4everybody)
