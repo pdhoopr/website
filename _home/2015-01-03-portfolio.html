@@ -4,30 +4,44 @@ title: portfolio
 
 <div class="grid-container">
   <h2 class="title">{ PORTFOLIO }</h2>
-  {% for project in site.data.portfolio %}
-  <div class="project {{ project.title }} grid-{{ project.grid }} tablet-grid-{{ project.grid }} mobile-grid-100">
-    <a href="{{ site.url }}/portfolio/{{ project.title }}">
-      <div class="project_logo" style="padding-bottom: {{ project.padding }}%;">
-        <svg viewBox="{{ project.viewbox }}">
-          <use xlink:href="/img/portfolio/logos/logos.svg#portfolio_{{ project.title }}"></use>
-        </svg>
-      </div>
-      <div class="project_overlay">
-        <h4>
-          <span class="project_name">{{ project.name }}</span>
-           <span class="project_platforms">
-            {% if project.desktop %}
-            <span class="fa fa-desktop"></span>
-            {% endif %}
-            {% if project.mobile %}
-            <span class="fa fa-lg fa-mobile"></span>
-            {% endif %}
-          </span>
-        </h4>
-        <p class="project_roles">{{ project.roles }}</p>
-        <p class="project_tech">{{ project.technologies }}</p>
-      </div>
-    </a>
-  </div>
-  {% endfor %}
+  <div class="kwicks-wrapper grid-33 tablet-grid-33 mobile-grid-100">
+    <ul class="projects kwicks kwicks-vertical">
+    {% for project in site.data.portfolio %}
+    {% assign loopindex = forloop.index | modulo: 2 %}
+    {% if loopindex == 1 and forloop.index > 1 %}
+    </ul><!-- .projects.kwicks.kwicks-vertical -->
+  </div><!-- .kwicks-wrapper -->
+  <div class="kwicks-wrapper grid-33 tablet-grid-33 mobile-grid-100">
+    <ul class="projects kwicks kwicks-vertical">
+    {% endif %}
+    <li class="project {{ project.title }}">
+      <div class="project_center">
+        <div class="project_name">{{ project.name }}</div>
+        <i class="project_icon fa fa-3x fa-{{ project.icon}}"></i>
+        <div class="project_body">
+          <div class="project_roles">
+            <p class="project_label">Roles</p>
+            <p>{{ project.roles }}</p>
+          </div><!-- .project_roles -->
+          <div class="project_tech">
+            <p class="project_label">Tech</p>
+            <p>{{ project.tech }}</p>
+          </div><!-- .project_tech -->
+          <div class="project_devices">
+            <p class="project_label">Platforms</p>
+            <div class="project_devices_icons">
+              {% if project.desktop %}<span class="fa fa-desktop"></span>{% endif %}
+              {% if project.tablet %}<span class="fa fa-tablet"></span>{% endif %}
+              {% if project.mobile %}<span class="fa fa-mobile"></span>{% endif %}
+            </div><!-- .project_devices_icons -->
+          </div><!-- .project_devices -->
+        </div><!-- .project_body -->
+        <div class="project_view">
+          <a class="btn" href="{{ site.url }}/portfolio/{{ project.title }}">View Project<span class="fa fa-angle-right"></span></a>
+        </div><!-- .project_view -->
+      </div><!-- .project_center -->
+    </li><!-- .project -->
+    {% endfor %}
+    </ul><!-- .projects.kwicks.kwicks-vertical -->
+  </div><!-- .kwicks-wrapper -->
 </div>

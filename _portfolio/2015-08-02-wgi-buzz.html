@@ -9,6 +9,8 @@ name: WGI.buzz
 roles: UI, UX, Full-Stack, Data Visualization
 technologies: <a class="underline" href="http://d3js.org/" target="_blank">D3.js</a>, <a class="underline" href="http://underscorejs.org/" target="_blank">Underscore.js</a>, <a class="underline" href="http://refreshless.com/nouislider/" target="_blank">noUiSlider</a>, Google Apps, Google App Engine (Python)
 description: What started as an experiment in using Google Apps to take a form and the accompanying workflow paperless at Wantman Group, Inc. (WGI) became a full-fledged internal think tank tasked with solving real business problems. What kind of think tank would it be without a name, logo and website, right?
+live: false
+github: https://github.com/patrickhooper/wgi-buzz
 ---
 
 <article class="portfolio-page {{ page.title }}">
@@ -23,6 +25,14 @@ description: What started as an experiment in using Google Apps to take a form a
       <p class="project_roles"><strong>Roles:</strong> {{ page.roles }}</p>
       <p class="project_tech"><strong>Technologies:</strong> {{ page.technologies }}</p>
       <p class="project_description">{{ page.description }}</p>
+      <div class="view-project">
+        {% if page.live %}
+        <a class="btn btn-raised btn-live" href="{{ page.live }}" target="_blank"><span class="fa fa-lg fa-external-link"></span>Live Site</a>
+        {% endif %}
+        {% if page.github %}
+        <a class="btn btn-raised btn-github" href="{{ page.github }}" target="_blank"><span class="fa fa-lg fa-github"></span>GitHub</a>
+        {% endif %}
+      </div>
     </div>
     <div class="project_section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
       <div class="section_description grid-33 push-66 tablet-grid-100 mobile-grid-100">

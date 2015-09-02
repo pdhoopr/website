@@ -4,11 +4,11 @@
 
 /* Styles for home sections (About, Portfolio, Contact) */
 .home_section {
-  padding: 2em 0;
+  padding: 3em 0;
 
   /* Increase padding on medium and up devices */
   @include breakpoint($mq_medium) {
-    padding: 3em 0;
+    padding: 6em 0;
   }
 
   /* Styles for section titles */

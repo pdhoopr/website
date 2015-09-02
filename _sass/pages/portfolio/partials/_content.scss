@@ -82,13 +82,34 @@
 
         /* Styles for the button */
         .btn {
+          background-color: $blue;
           margin: 0.85714em 0;
-          text-transform: uppercase;
+          width: 100%;
 
-          @include button-hover($blue, $white);
+          /* Auto width on medium and up devices */
+          @include breakpoint($mq_medium) {
+            width: auto;
+          }
 
+          /* No top margin for any buttons after the first one */
+          &:not(:first-child) {
+            margin-top: 0;
+          }
+
+          /* Give right margin to button icon and pull it down a little */
           .fa {
-            margin-left: 0.375em;
+            margin-right: 0.5em;
+            vertical-align: -20%;
+
+            /* Move GitHub up a little more than other icons */
+            &-github {
+              vertical-align: -15%;
+            }
+          }
+
+          /* Give GitHub button a gray background color */
+          &-github {
+            background-color: $github_color;
           }
         }
       }
