@@ -1,5 +1,8 @@
 /* ==========================================================================
-   Navigation | Main
+   Navigation
+   ========================================================================== */
+
+/* Main
    ========================================================================== */
 
 /* Styles for navigation */
@@ -23,8 +26,6 @@
     float: left;
     font-size: 1.25rem;
     padding-bottom: 9px;
-    padding-left: 8px;
-    padding-right: 8px;
     padding-top: 13px;
     text-align: center;
     transition: 0.3s;
@@ -32,26 +33,12 @@
 
     /* Styles for medium and up devices */
     @include breakpoint($mq_medium) {
-      float: none;
-      padding-bottom: 13px;
-      padding-top: 0;
+      padding: 0 24px 13px;
       width: auto;
     }
 
-    /* Styles for first nav item */
-    &:first-of-type {
-      margin-right: 0;
-
-      /* Styles for medium and up devices */
-      @include breakpoint($mq_medium) {
-        margin-right: 0.8em;
-      }
-    }
-
-
     /* Styles for hovering over a nav item (yellow underline) */
     &:hover {
-      border-bottom-color: $yellow;
 
       /* Negate hover styles on touch devices */
       .touch & {
@@ -87,6 +74,11 @@
       margin-right: 0.33333em;
       transition: 0.3s;
       vertical-align: -5%;
+
+      /* Move grid icon down */
+      &-th {
+        vertical-align: -10%;
+      }
     }
 
     /* Styles navigation item text/tooltip */

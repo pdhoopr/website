@@ -14,6 +14,7 @@
 @import "vendors/sassy-maps/memo";
 @import "vendors/breakpoint/breakpoint";
 @import "vendors/font-awesome/font-awesome";
+@import "vendors/kwicks/kwicks";
 
 /* =========================================================================
    Global
@@ -33,9 +34,9 @@
    Components
    ========================================================================= */
 @import "components/logo";
-@import "components/navigation/navigation";
+@import "components/navigation";
 @import "components/buttons";
-@import "components/icons/icons";
+@import "components/icons";
 @import "components/wireframes/wireframes";
 
 /* =========================================================================

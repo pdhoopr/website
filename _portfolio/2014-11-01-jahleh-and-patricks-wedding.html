@@ -9,6 +9,8 @@ name: Jahleh + Patrick's Wedding
 roles: UI, Full-Stack
 technologies: Google App Engine (Python)
 description: My wife, <a class="underline" href="http://marie.hoopr.io" target="_blank">Marie</a>, and I wanted an awesome way to be able to see information about our wedding, check our registry, RSVP, and sign our guestbook. So, we did what we love and built a website for it!
+live: false
+github: false
 ---
 
 <article class="portfolio-page {{ page.title }}">
@@ -23,6 +25,14 @@ description: My wife, <a class="underline" href="http://marie.hoopr.io" target="
       <p class="project_roles"><strong>Roles:</strong> {{ page.roles }}</p>
       <p class="project_tech"><strong>Technologies:</strong> {{ page.technologies }}</p>
       <p class="project_description">{{ page.description }}</p>
+      <div class="view-project">
+        {% if page.live %}
+        <a class="btn btn-raised btn-live" href="{{ page.live }}" target="_blank"><span class="fa fa-lg fa-external-link"></span>Live Site</a>
+        {% endif %}
+        {% if page.github %}
+        <a class="btn btn-raised btn-github" href="{{ page.github }}" target="_blank"><span class="fa fa-lg fa-github"></span>GitHub</a>
+        {% endif %}
+      </div>
     </div>
     <div class="project_section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
       <div class="section_description grid-33 push-66 tablet-grid-100 mobile-grid-100">

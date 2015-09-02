@@ -5,67 +5,192 @@
 /* Styles for Portfolio section */
 #portfolio {
 
-  /* Styles for a project in the Portfolio */
+  /* Styles for kwicks sliding panels */
+  .kwicks {
+
+    /* Give the wrapper a height */
+    &-wrapper {
+      height: 500px;
+      padding: 0;
+    }
+
+    /* Make vertical and horizontal panels take up 100% width and height */
+    &-vertical {
+      height: 100%;
+      width: 100%;
+
+      /* 100% width for items in the kwicks vertical */
+      & > li {
+        width: 100%;
+      }
+    }
+  }
+
+  /* Styles for a project */
   .project {
-    padding: 0;
-    position: relative;
+    border: 1px solid $white;
+    padding: 0 16px;
 
-    /* Styles for a project logo */
-    .project_logo {
-      height: 0;
+    /* Loop through map of project colors and set colors */
+    @each $project, $color in $project-colors {
+
+      /* Background color with slightly darkened overlay */
+      &.#{$project} {
+        background: $color url('/img/portfolio/portfolio_overlay.png');
+
+        /* On hover, make background just solid color without darkened overlay */
+        &:hover {
+          background: $color;
+        }
+
+        /* Set hover text color for a button of this project */
+        .btn:hover {
+          color: $color;
+        }
+      }
+    }
+
+    /* Styles for the center positioning div of a project */
+    &_center {
+      height: 0; // Start with no height - this gets animated
       position: relative;
-      width: 100%;
+      top: 25%;
+      transition: height 0.3s, top 0.3s;
 
-      /* Styles for SVG and images in a logo */
-      svg,
-      img {
-        left: 0;
-        position: absolute;
-        top: 0;
+      /* Reset font size to 1rem for all paragraphs in a project */
+      p {
+        font-size: 1rem;
       }
     }
 
-    /* Styles for project overlays (informational hover overlays) */
-    .project_overlay {
-      background-color: rgba(60, 60, 60, 0.75);
-      bottom: 0;
+    /* Styles for the icon for each project */
+    &_icon {
       color: $white;
-      display: none;
-      left: 0;
-      overflow-y: auto;
-      padding: 0.5em 1em;
       position: absolute;
+      top: 64px;
+      text-align: center;
+      transition: opacity 0.3s ease-in-out;
+      width: 100%;
+      z-index: 1;
+    }
+
+    /* Styles for a project's name */
+    &_name {
+      color: $white;
+      font-family: $ubuntu;
+      line-height: 1;
+      position: absolute;
+      text-align: center;
+      text-transform: uppercase;
+      top: 8px;
+      transition: top 0.3s ease-in-out;
+      width: 100%;
+    }
+
+    /* Style for the body that holds roles, tech, and platforms */
+    &_body {
+      color: $white;
+      top: 47.5%;
+      opacity: 0;
+      position: absolute;
+      text-align: center;
+      transform: translateY(-50%);
+      width: 100%;
+    }
+
+    /* Text/font styles for the roles, tech, and platforms */
+    &_roles,
+    &_tech,
+    &_devices {
+      color: $white;
+      line-height: 1.25;
+      text-align: center;
+    }
+
+    /* Give bottom margin to roles and tech */
+    &_roles,
+    &_tech {
+      margin-bottom: 2em;
+    }
+
+    /* Change font styles for platforms */
+    &_devices {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    /* Styles for the label ("Roles", "Tech", "Platforms", etc.) */
+    &_label {
+      border-bottom: 2px solid;
+      display: inline-block;
+      font-family: $ubuntu;
+      font-size: 0.875rem;
+      margin-bottom: 0.5em;
+      padding-bottom: 0.25em;
+      text-transform: uppercase;
+    }
+
+    /* Styles for the View button at the bottom of a project */
+    &_view {
+      bottom: 12px;
+      color: $white;
+      opacity: 0;
+      position: absolute;
+      text-align: center;
       width: 100%;
 
-      /* Styles for headings in overlays */
-      h4 {
+      /* Styles for the button itself, generally making it smaller */
+      .btn {
+        display: none;
         font-size: 1.25rem;
+        padding: 0.25em 1.5em;
+        transition: background 0.25s ease-in-out;
+
+        /* Hover background color to white */
+        &:hover {
+          background: $white;
+          border-color: $white;
+        }
+
+        /* Give left margin to icon in button that points to going to page */
+        .fa {
+          margin-left: 0.5em;
+        }
       }
     }
-  }
 
-  /* Styles for platforms of a project */
-  .project_platforms {
+    /* Styles for hovering over a project */
+    &:hover {
 
-    /* Styles for the desktop icon (computer) */
-    .fa-desktop {
-      margin-left: 0.25em;
+      .project {
+
+        /* Make the centering div full height */
+        &_center {
+          height: 100%;
+          top: 0;
+        }
+
+        /* Make the icon fade out to 0 opacity */
+        &_icon {
+          opacity: 0;
+        }
+
+        /* Move the name to 16px from the top of the project */
+        &_name {
+          top: 16px;
+        }
+
+        /* Fade in the body and view button to full opacity (1) */
+        &_body,
+        &_view {
+          opacity: 1;
+          transition: opacity 0.3s ease-in-out 0.25s;
+        }
+
+        &_view .btn {
+          display: inline-block;
+        }
+      }
     }
-
-    /* Styles for the mobile icon (phone) */
-    .fa-mobile {
-      vertical-align: -10%;
-    }
-  }
-
-  /* Styles for roles of a project */
-  .project_roles {
-    font-size: 1rem;
-    font-style: italic;
-  }
-
-  /* Styles for technologies used in a project */
-  .project_tech {
-    font-size: 1rem;
   }
 }

@@ -17,12 +17,23 @@
  * Mixin that will vertically align an element in the middle of
  * its container.
  */
-@mixin vertical-align {
-  position: relative;
-  top: 45%;
+@mixin vertical-align($top) {
+  top: $top;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+/**
+ * Mixin that will align an element in the absolute middle of
+ * its container.
+ */
+@mixin absolute-center($direction, $amount, $y) {
+  left: 50%;
+  #{$direction}: $amount;
+  -webkit-transform: translate(-50%, $y);
+  -ms-transform: translate(-50%, $y);
+  transform: translate(-50%, $y);
 }
 
 /**

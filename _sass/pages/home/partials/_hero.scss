@@ -6,7 +6,6 @@
 #hero {
   display: none;
 
-
   /* Styles for medium and up devices */
   @include breakpoint($mq_medium) {
     background: $blue url(/img/hero/hero_background.jpg) fixed;
@@ -44,8 +43,11 @@
 
   /* Styles for the animated hero section */
   .hero-animate {
+    position: relative;
     text-align: center;
-    @include vertical-align; // Vertical align mixin
+
+    /* Vertical align 45% from top */
+    @include vertical-align(45%);
 
     /* Styles for hero taglines (5 of them) */
     .tagline {

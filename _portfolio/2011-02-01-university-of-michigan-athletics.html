@@ -9,6 +9,8 @@ name: University of Michigan Athletics
 roles: Process Optimization
 technologies: Google Apps
 description: In 2012, the University of Michigan moved from Exchange to Google Apps. I was fortunate to be part of the team that orchestrated an explosion of online, automated processes within Athletics.
+live: false
+github: false
 ---
 
 <article class="portfolio-page {{ page.title }}">
@@ -22,6 +24,14 @@ description: In 2012, the University of Michigan moved from Exchange to Google A
       <p class="project_roles"><strong>Roles:</strong> {{ page.roles }}</p>
       <p class="project_tech"><strong>Technologies:</strong> {{ page.technologies }}</p>
       <p class="project_description">{{ page.description }}</p>
+      <div class="view-project">
+        {% if page.live %}
+        <a class="btn btn-raised btn-live" href="{{ page.live }}" target="_blank"><span class="fa fa-lg fa-external-link"></span>Live Site</a>
+        {% endif %}
+        {% if page.github %}
+        <a class="btn btn-raised btn-github" href="{{ page.github }}" target="_blank"><span class="fa fa-lg fa-github"></span>GitHub</a>
+        {% endif %}
+      </div>
     </div>
     <div class="project_section grid-50 tablet-grid-100 mobile-grid-100">
       <h3 class="subtitle">{ GIFT PROCESSING FORM }</h3>

@@ -1,59 +1,53 @@
 - title: wgi-buzz
-  grid: 33
-  viewbox: 0 0 400 600
-  padding: 150
+  icon: lightbulb-o
   name: WGI.buzz
   desktop: true
+  tablet: true
   mobile: true
   roles: UI, UX, Full-Stack, Data Visualization
-  technologies: D3.js, Underscore.js, noUiSlider, Google Apps, Google App Engine
-
-- title: wgi-informer
-  grid: 42
-  viewbox: 0 0 500 150
-  padding: 30
-  name: WGI Informer
-  desktop: true
-  mobile: true
-  roles: Logo, UI, UX, Full-Stack
-  technologies: WordPress + Underscores, Materialize, Font Awesome, Masonry, Mapbox, Typeform, Sass, Breakpoint
+  tech: D3.js, Underscore.js, noUiSlider, Google Apps, Google App Engine
 
 - title: wgiki
-  grid: 25
-  viewbox: 0 0 300 150
-  padding: 50
+  icon: university
   name: WGIki
   desktop: true
+  tablet: true
   mobile: true
   roles: Logo, UI, UX, Full-Stack
-  technologies: WordPress + Underscores, Materialize, Font Awesome, Typeform, Sass, Breakpoint
+  tech: WordPress + Underscores, Materialize, Font Awesome, Typeform, Sass, Breakpoint
+
+- title: wgi-informer
+  icon: share-alt
+  name: WGI Informer
+  desktop: true
+  tablet: true
+  mobile: true
+  roles: Logo, UI, UX, Full-Stack
+  tech: WordPress + Underscores, Materialize, Font Awesome, Masonry, Mapbox, Typeform, Sass, Breakpoint
 
 - title: jahleh-and-patricks-wedding
-  grid: 66
-  viewbox: 0 0 800 150
-  padding: 18.75
+  icon: anchor
   name: Jahleh and Patrick's Wedding
   desktop: true
+  tablet: true
   mobile: true
   roles: UI, Full-Stack
-  technologies: Google App Engine
+  tech: Google App Engine
 
 - title: ms-omearas-multiage
-  grid: 33
-  viewbox: 0 0 400 300
-  padding: 75
+  icon: apple
   name: Ms. O'Meara's Multiage
   desktop: true
+  tablet: true
   mobile: true
   roles: Logo, UI, UX, Full-Stack
-  technologies: WordPress + Underscores, Sass
+  tech: WordPress + Underscores, Sass
 
 - title: university-of-michigan-athletics
-  grid: 33
-  viewbox: 0 0 400 300
-  padding: 75
+  icon: graduation-cap
   name: University of Michigan Athletics
   desktop: true
+  tablet: false
   mobile: false
   roles: Process Optimization
-  technologies: Google Apps
+  tech: Google Apps

@@ -10,6 +10,7 @@ var wrapper = $('#wrapper'),
     letters = $('.letter-animate'),
     navAbout = $('.nav-about'),
     navPortfolio = $('.nav-portfolio'),
+    lastActive = null,
     hero = $('#hero'),
     heroAnimate = $('#hero .hero-animate'),
     heroArrow = $('#hero .hero_arrow'),
@@ -20,6 +21,7 @@ var wrapper = $('#wrapper'),
     learnMore = $('.learn-more'),
     about = $('#about'),
     portfolio = $('#portfolio'),
+    contact = $('#contact'),
     project = $('.portfolio-page');
 
 /* Functions
@@ -115,24 +117,25 @@ if (wrapper.hasClass('layout-home')) {
    * Toggles active class for About and also flags the header as scrolling
    */
   var aboutWaypoint = about.waypoint(function(direction) {
+
+    /* When going down and you hit about section, do stuff */
     if (direction === 'down') {
-      masthead.addClass('scroll-header');
-      navAbout.addClass('active');
-      navPortfolio.removeClass('active');
-    }
-    else {
-      masthead.removeClass('scroll-header');
-      navAbout.removeClass('active');
-      navPortfolio.removeClass('active');
+      masthead.addClass('scroll-header'); // Add class to header for scrolling
+      navAbout.addClass('active'); // Add active class to about
+      navPortfolio.removeClass('active'); // Remove active class from portfolio nav
+      lastActive = navAbout; // Make about nav the last active
+
+      /* When going up and you hit About section, do stuff */
+    } else {
+      masthead.removeClass('scroll-header'); // Remove scrolling header class
+      navAbout.removeClass('active'); // Remove active class from about
+      navPortfolio.removeClass('active'); // Remove active class from portfolio
+      lastActive = null; // Remove last active element
     }
   },{
+    /* Make offset the header height or the nav height (small devices) */
     offset: function() {
-      if (masthead.hasClass('scroll-header')) {
-        return Modernizr.mq('(min-width: 46.0625rem)') ? masthead.height() + 8 : mainNav.height() + 9;
-      }
-      else {
-        return Modernizr.mq('(min-width: 46.0625rem)') ? masthead.height() - 8 : mainNav.height() - 9;
-      }
+      return Modernizr.mq('(min-width: 46.0625rem)') ? masthead.height() + 17 : mainNav.height();
     }
   });
 
@@ -140,40 +143,63 @@ if (wrapper.hasClass('layout-home')) {
    * Toggles active class for Portfolio and removes for About
    */
   var portfolioWaypoint = portfolio.waypoint(function(direction) {
+
+    /* When going down and you hit Portfolio section, do stuff */
     if (direction === 'down') {
-      navAbout.removeClass('active');
-      navPortfolio.addClass('active');
-    }
-    else {
-      navAbout.addClass('active');
-      navPortfolio.removeClass('active');
+      navAbout.removeClass('active'); // Remove active class from about
+      navPortfolio.addClass('active'); // Add active class to portfolio
+      lastActive = navPortfolio; // Make portfolio nav the last active
+
+      /* When going up and you hit Portfolio section, do stuff */
+    } else {
+      navAbout.addClass('active'); // Add active class to about
+      navPortfolio.removeClass('active'); // Remove active class from portfolio
+      lastActive = navAbout; // Make about the last active
     }
   },{
+    /* Make offset the header height or the nav height + some (small devices) */
     offset: function() {
-      if (masthead.hasClass('scroll-header')) {
-        return Modernizr.mq('(min-width: 46.0625rem)') ? masthead.height() + 8 : mainNav.height() + 9;
-      }
-      else {
-        return Modernizr.mq('(min-width: 46.0625rem)') ? masthead.height() - 8 : mainNav.height() - 9;
-      }
+      return Modernizr.mq('(min-width: 46.0625rem)') ? masthead.height() + 17 : mainNav.height() + 48;
     }
   });
-}
 
-/* Waypoints for Portfolio pages*/
-else {
+  /**
+   * Toggles active class Portfolio at bottom, restores previous active on up
+   */
+  var contactWaypoint = contact.waypoint(function(direction) {
+
+    /* When going down and you hit Contact section, do stuff */
+    if (direction === 'down') {
+      navAbout.removeClass('active'); // Remove active class from about
+      navPortfolio.addClass('active'); // Add active class to portfolio
+
+      /* When going up and you hit Contact section, do stuff */
+    } else {
+      navAbout.removeClass('active'); // Remove active class from about
+      navPortfolio.removeClass('active'); // Remove active class from portfolio
+      lastActive.addClass('active'); // Add active class to last active
+    }
+  }, {
+    /* Offset is 100%, so when it enters into view */
+    offset: '100%'
+  });
+
+  /* Waypoints for Portfolio pages */
+} else {
 
   /**
    * Flags Portfolio page header as scrolling
    */
   var projectWaypoint = project.waypoint(function(direction) {
+
+    /* When going down, add scrolling header class. When up, remove */
     if (direction === 'down') {
       masthead.addClass('scroll-header');
-    }
-    else {
+    } else {
       masthead.removeClass('scroll-header');
     }
-  },{
+  }, {
+    /* Offset is the top margin of the portfolio page title */
     offset: parseFloat(project.find('.project_summary h2.title').css('margin-top')) * -1
   });
 }
@@ -221,6 +247,16 @@ if (wrapper.hasClass('layout-home')) {
     /* Add hero scenes to controller */
     scrollMagicController.addScene([heroScene, heroArrow]);
   }
+
+  /* Initialize kwicks */
+  $('.kwicks-vertical').kwicks({
+    behavior: 'menu',
+    duration: 300,
+    maxSize: '85%',
+    isVertical: true,
+    selectOnClick: false,
+    spacing: 0
+  });
 
   /* Do the following only if this is not a touch device */
   if (!Modernizr.touch) {
