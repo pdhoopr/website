@@ -159,7 +159,7 @@ if (wrapper.hasClass('layout-home')) {
   },{
     /* Make offset the header height or the nav height + some (small devices) */
     offset: function() {
-      return Modernizr.mq('(min-width: 46.0625rem)') ? masthead.height() + 17 : mainNav.height() + 16;
+      return Modernizr.mq('(min-width: 46.0625rem)') ? masthead.height() + 17 : mainNav.height() + 48;
     }
   });
 
