@@ -83,12 +83,17 @@
         /* Styles for the button */
         .btn {
           background-color: $blue;
-          margin: 0.85714em 0;
+          margin: 1em 0 0.75em;
           width: 100%;
 
           /* Auto width on medium and up devices */
           @include breakpoint($mq_medium) {
             width: auto;
+          }
+
+          /* Decrease bottom margin for button on large and up devices */
+          @include breakpoint($mq_large) {
+            margin-bottom: 0.25em;
           }
 
           /* No top margin for any buttons after the first one */
@@ -119,6 +124,16 @@
     ========================================================================== */
     .project_section {
       padding: 1.2em 0;
+
+      /* Increase space between sections on medium devices */
+      @include breakpoint($mq_medium) {
+        padding: 1.8em 0;
+      }
+
+      /* Increase space between sections on large devices */
+      @include breakpoint($mq_large) {
+        padding: 2.4em 0;
+      }
 
       /* Styles for the description of a project */
       .section_description {
