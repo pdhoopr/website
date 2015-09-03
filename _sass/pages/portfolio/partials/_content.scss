@@ -120,6 +120,11 @@
     .project_section {
       padding: 1.2em 0;
 
+      /* Increase space between sections on large devices */
+      @include breakpoint($mq_large) {
+        padding: 2.4em 0;
+      }
+
       /* Styles for the description of a project */
       .section_description {
         margin-bottom: 1.33333em;
