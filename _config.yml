@@ -4,8 +4,6 @@ url: "http://patrick.hoopr.io"
 markdown: rdiscount
 permalink: pretty
 exclude: [bin, .gems, Gemfile, Gemfile.lock, Icon]
-gems:
-  - jekyll-sitemap
 collections:
   home:
     output: false
