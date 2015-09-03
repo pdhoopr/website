@@ -56,7 +56,7 @@ if (Modernizr.mq('(min-width: 46.0625rem)')) {
    * opacity of 0. Start 1 seconds after page is ready.
    */
   var tweenLetters = TweenMax.to(letters, 0.5, {
-    delay: 2,
+    delay: 1,
     width: 0,
     opacity: 0,
     onComplete: tweenLettersComplete
@@ -237,7 +237,7 @@ if (wrapper.hasClass('layout-home')) {
     taglines.hide();
 
     /* Start cycling through taglines 1 seconds after page ready */
-    setTimeout(cycle, 1000);
+    setTimeout(cycle, 500);
 
     /* Bring Learn More button to full opacity 8 seconds after page ready */
     setTimeout(function() {
