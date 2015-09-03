@@ -237,12 +237,12 @@ if (wrapper.hasClass('layout-home')) {
     taglines.hide();
 
     /* Start cycling through taglines 1 seconds after page ready */
-    setTimeout(cycle, 1000);
+    setTimeout(cycle, 1200);
 
     /* Bring Learn More button to full opacity 8 seconds after page ready */
     setTimeout(function() {
       learnMore.animate({opacity: 1}, 3000);
-    }, 7200);
+    }, 7400);
 
     /* Add hero scenes to controller */
     scrollMagicController.addScene([heroScene, heroArrow]);
