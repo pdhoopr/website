@@ -207,9 +207,9 @@ if (wrapper.hasClass('layout-home')) {
 /* Scripts
    ======================================================================== */
 
-/* Tell ScrollMagic to animate scroll over 0.6 sec rather than jump */
+/* Tell ScrollMagic to animate scroll over 0.5 sec rather than jump */
 scrollMagicController.scrollTo(function (newpos) {
-  TweenMax.to(window, 0.6, {scrollTo: {y: newpos}});
+  TweenMax.to(window, 0.5, {scrollTo: {y: newpos}});
 });
 
 /* Tell ScrollMagic to listen for anchor link clicks and scroll to them */
