@@ -88,7 +88,6 @@
 
           /* Auto width on medium and up devices */
           @include breakpoint($mq_medium) {
-            margin-bottom: 1em;
             width: auto;
           }
 
@@ -125,6 +124,11 @@
     ========================================================================== */
     .project_section {
       padding: 1.2em 0;
+
+      /* Increase space between sections on medium devices */
+      @include breakpoint($mq_medium) {
+        padding: 1.8em 0;
+      }
 
       /* Increase space between sections on large devices */
       @include breakpoint($mq_large) {
