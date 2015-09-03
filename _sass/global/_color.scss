@@ -19,13 +19,10 @@ a:active {
   text-decoration: none;
 }
 
-/* On touch devices, no effects for external links */
-.touch a[target="_blank"] {
-  &,
-  &:hover {
-    text-decoration: none;
-    opacity: 1;
-  }
+/* On touch devices, no hover effects for external links */
+.touch a[target="_blank"]:hover {
+  text-decoration: none;
+  opacity: 1;
 }
 
 /* Class to underline an element */
