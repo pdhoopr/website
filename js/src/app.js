@@ -56,7 +56,7 @@ if (Modernizr.mq('(min-width: 46.0625rem)')) {
    * opacity of 0. Start 1 seconds after page is ready.
    */
   var tweenLetters = TweenMax.to(letters, 0.6, {
-    delay: 0.6,
+    delay: 0.5,
     width: 0,
     opacity: 0,
     onComplete: tweenLettersComplete
@@ -207,9 +207,9 @@ if (wrapper.hasClass('layout-home')) {
 /* Scripts
    ======================================================================== */
 
-/* Tell ScrollMagic to animate scroll over 0.6 sec rather than jump */
+/* Tell ScrollMagic to animate scroll over 0.5 sec rather than jump */
 scrollMagicController.scrollTo(function (newpos) {
-  TweenMax.to(window, 0.6, {scrollTo: {y: newpos}});
+  TweenMax.to(window, 0.5, {scrollTo: {y: newpos}});
 });
 
 /* Tell ScrollMagic to listen for anchor link clicks and scroll to them */
@@ -237,12 +237,12 @@ if (wrapper.hasClass('layout-home')) {
     taglines.hide();
 
     /* Start cycling through taglines 1 seconds after page ready */
-    setTimeout(cycle, 1100);
+    setTimeout(cycle, 1000);
 
     /* Bring Learn More button to full opacity 8 seconds after page ready */
     setTimeout(function() {
       learnMore.animate({opacity: 1}, 3000);
-    }, 7000);
+    }, 3000);
 
     /* Add hero scenes to controller */
     scrollMagicController.addScene([heroScene, heroArrow]);
