@@ -40,9 +40,9 @@ function tweenLettersComplete() {
  * taglines. Goes back to beginning once it reaches the end.
  */
 function cycle() {
-  taglines.eq(i).fadeIn(900)
+  taglines.eq(i).fadeIn(1000)
             .delay(1000)
-            .fadeOut(900, cycle);
+            .fadeOut(1000, cycle);
   i = ++i % taglines.length;
 };
 
@@ -56,7 +56,7 @@ if (Modernizr.mq('(min-width: 46.0625rem)')) {
    * opacity of 0. Start 1 seconds after page is ready.
    */
   var tweenLetters = TweenMax.to(letters, 0.6, {
-    delay: 1,
+    delay: 0.6,
     width: 0,
     opacity: 0,
     onComplete: tweenLettersComplete
@@ -209,7 +209,7 @@ if (wrapper.hasClass('layout-home')) {
 
 /* Tell ScrollMagic to animate scroll over 0.5 sec rather than jump */
 scrollMagicController.scrollTo(function (newpos) {
-  TweenMax.to(window, 0.6, {scrollTo: {y: newpos}});
+  TweenMax.to(window, 0.5, {scrollTo: {y: newpos}});
 });
 
 /* Tell ScrollMagic to listen for anchor link clicks and scroll to them */
@@ -236,13 +236,13 @@ if (wrapper.hasClass('layout-home')) {
     /* Hide all taglines to start */
     taglines.hide();
 
-    /* Start cycling through taglines 1.8 seconds after page ready */
-    setTimeout(cycle, 1800);
+    /* Start cycling through taglines 1 seconds after page ready */
+    setTimeout(cycle, 500);
 
     /* Bring Learn More button to full opacity 8 seconds after page ready */
     setTimeout(function() {
       learnMore.animate({opacity: 1}, 3000);
-    }, 8000);
+    }, 5000);
 
     /* Add hero scenes to controller */
     scrollMagicController.addScene([heroScene, heroArrow]);
