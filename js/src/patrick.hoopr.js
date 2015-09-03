@@ -55,7 +55,7 @@ if (Modernizr.mq('(min-width: 46.0625rem)')) {
    * Tween logo letters from opacity of 1 and full width to no width and
    * opacity of 0. Start 1 seconds after page is ready.
    */
-  var tweenLetters = TweenMax.to(letters, 0.5, {
+  var tweenLetters = TweenMax.to(letters, 0.6, {
     delay: 1.8,
     width: 0,
     opacity: 0,
