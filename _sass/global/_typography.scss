@@ -28,9 +28,11 @@ h6 {
   font-weight: 500;
 }
 
+/* Paragraph font size */
 p {
   font-size: 1rem;
 
+  /* Increase font size on medium and up devices */
   @include breakpoint($mq_medium) {
     font-size: 1.25rem;
   }
