@@ -46,15 +46,3 @@ strong {
 em {
   font-style: italic;
 }
-
-/* Class to underline an element */
-.underline {
-  &, &:hover {
-    text-decoration: underline;
-    transition: opacity 0.15s ease-in-out;
-  }
-
-  &:hover {
-    opacity: 0.75;
-  }
-}
