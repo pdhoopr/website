@@ -53,6 +53,7 @@
     /* Styles for the center positioning div of a project */
     &_center {
       height: 0; // Start with no height - this gets animated
+      padding-bottom: 50%;
       position: relative;
       top: 25%;
       transition: height 0.3s, top 0.3s;
@@ -141,9 +142,8 @@
 
       /* Styles for the button itself, generally making it smaller */
       .btn {
-        display: none;
-        font-size: 1.25rem;
-        padding: 0.25em 1.5em;
+        font-size: 1.125rem;
+        padding: 0.375em 0.75em;
         transition: background 0.25s ease-in-out;
 
         /* Hover background color to white */
@@ -185,10 +185,6 @@
         &_view {
           opacity: 1;
           transition: opacity 0.3s ease-in-out 0.25s;
-        }
-
-        &_view .btn {
-          display: inline-block;
         }
       }
     }
