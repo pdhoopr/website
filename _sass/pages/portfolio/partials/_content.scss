@@ -83,12 +83,17 @@
         /* Styles for the button */
         .btn {
           background-color: $blue;
-          margin: 1em 0 0.25em;
+          margin: 1em 0 0.75em;
           width: 100%;
 
           /* Auto width on medium and up devices */
           @include breakpoint($mq_medium) {
             width: auto;
+          }
+
+          /* Decrease bottom margin for button on large and up devices */
+          @include breakpoint($mq_large) {
+            margin-bottom: 0.25em;
           }
 
           /* No top margin for any buttons after the first one */
