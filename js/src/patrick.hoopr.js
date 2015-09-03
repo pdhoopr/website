@@ -40,9 +40,9 @@ function tweenLettersComplete() {
  * taglines. Goes back to beginning once it reaches the end.
  */
 function cycle() {
-  taglines.eq(i).fadeIn(900)
+  taglines.eq(i).fadeIn(1000)
             .delay(1000)
-            .fadeOut(900, cycle);
+            .fadeOut(1000, cycle);
   i = ++i % taglines.length;
 };
 
