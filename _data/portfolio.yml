@@ -5,7 +5,7 @@
   tablet: true
   mobile: true
   roles: UI, UX, Full-Stack, Data Visualization
-  tech: D3.js, Underscore.js, noUiSlider, Google Apps, Google App Engine
+  tech: D3.js, Underscore.js, Material Design Lite, noUiSlider, Google Apps, Google App Engine
 
 - title: wgiki
   icon: university
