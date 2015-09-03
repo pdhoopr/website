@@ -56,7 +56,7 @@ if (Modernizr.mq('(min-width: 46.0625rem)')) {
    * opacity of 0. Start 1 seconds after page is ready.
    */
   var tweenLetters = TweenMax.to(letters, 0.5, {
-    delay: 1.5,
+    delay: 1.8,
     width: 0,
     opacity: 0,
     onComplete: tweenLettersComplete
