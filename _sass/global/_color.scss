@@ -21,7 +21,6 @@ a:active {
 
 /* On touch devices, no hover effects for external links */
 .touch a[target="_blank"]:hover {
-  text-decoration: none;
   opacity: 1;
 }
 
