@@ -242,7 +242,7 @@ if (wrapper.hasClass('layout-home')) {
     /* Bring Learn More button to full opacity 8 seconds after page ready */
     setTimeout(function() {
       learnMore.animate({opacity: 1}, 3000);
-    }, 3000);
+    }, 5000);
 
     /* Add hero scenes to controller */
     scrollMagicController.addScene([heroScene, heroArrow]);
