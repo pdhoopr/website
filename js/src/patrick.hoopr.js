@@ -237,7 +237,7 @@ if (wrapper.hasClass('layout-home')) {
     taglines.hide();
 
     /* Start cycling through taglines 1 seconds after page ready */
-    setTimeout(cycle, 900);
+    setTimeout(cycle, 500);
 
     /* Bring Learn More button to full opacity 8 seconds after page ready */
     setTimeout(function() {
