@@ -3,7 +3,7 @@ description: "Portfolio Site"
 url: "http://patrick.hoopr.io"
 markdown: rdiscount
 permalink: pretty
-exclude: [bin, .gems, Gemfile, Gemfile.lock, Icon]
+exclude: [bin, node_modules, .gems, Gemfile, Gemfile.lock, Icon]
 gems:
   - jekyll-sitemap
 collections:
