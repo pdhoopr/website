@@ -1,4 +1,7 @@
 .DS_Store
+.VolumeIcon.icns
+.fseventsd
+Icon
 node_modules
 .sass-cache
 _assets
