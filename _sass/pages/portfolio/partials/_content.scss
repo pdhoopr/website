@@ -25,15 +25,6 @@
     &.wgiki,
     &.wgi-informer,
     &.university-of-michigan-athletics {
-      .subtitle {
-        font-size: 1.3rem;
-
-        /* Styles for medium and up devices */
-        @include breakpoint($mq_medium) {
-          font-size: 1.7rem;
-        }
-      }
-
       .project_section {
         padding: 1.2em 0;
 
@@ -68,9 +59,15 @@
         position: relative;
       }
 
-      /* Styles for project subtitles (the titles of smaller sections) */
+      /* Styles for project overview subtitle */
       .subtitle {
+        font-size: 1.5rem;
         margin-top: 0.75em;
+
+        /* Increase overview font size on medium and up devices */
+        @include breakpoint($mq_medium) {
+          font-size: 2rem;
+        }
       }
 
       /* Styles for project description and platforms used */
