@@ -19,8 +19,11 @@
       }
     }
 
-    /* Portfolio | Content (University of Michigan Athletics)
+    /* Portfolio | Content (WGI.buzz, WGIki, WGI Informer, UMich Athletics)
     ========================================================================== */
+    &.wgi-buzz,
+    &.wgiki,
+    &.wgi-informer,
     &.university-of-michigan-athletics {
       .subtitle {
         font-size: 1.3rem;
@@ -70,10 +73,15 @@
         margin-top: 0.75em;
       }
 
-      /* Styles for project roles and technologies used */
-      .project_tech,
+      /* Styles for project description and platforms used */
+      .project_platforms,
       .project_description {
         padding-bottom: 1.2em;
+      }
+
+      /* Give some right spacing to project platform icons */
+      .project_platforms .fa {
+        margin-right: 0.25em;
       }
 
       /* Styles for the the button to go to the live site */
@@ -89,11 +97,6 @@
           /* Auto width on medium and up devices */
           @include breakpoint($mq_medium) {
             width: auto;
-          }
-
-          /* Decrease bottom margin for button on large and up devices */
-          @include breakpoint($mq_large) {
-            margin-bottom: 0.25em;
           }
 
           /* No top margin for any buttons after the first one */
