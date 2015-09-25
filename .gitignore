@@ -1,9 +1,9 @@
 .DS_Store
 .VolumeIcon.icns
 .fseventsd
-Icon
+Icon
 node_modules
 .sass-cache
-_assets
+_resources
 _site
 Gemfile.lock
