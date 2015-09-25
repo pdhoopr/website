@@ -20,11 +20,11 @@ var paths = {
       scripts: {
         src: [
               'js/vendors/**/*.js',
-              'js/src/*.js'
+              'js/lib/*.js'
              ],
         files: [
                 'js/vendors/**/*.js',
-                'js/src/**/*.js'
+                'js/lib/**/*.js'
                ],
         dest: 'js'
       },
