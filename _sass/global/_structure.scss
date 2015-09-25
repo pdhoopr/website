@@ -26,10 +26,10 @@ body,
 
 /* Make images float left and fill their container */
 img {
+  float: left;
+  height: auto;
   max-width: 100%;
   width: 100%;
-  height: auto;
-  float: left;
 }
 
 /* Class to make element clear both */
