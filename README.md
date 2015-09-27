@@ -1,7 +1,7 @@
 # patrick.hoopr.io
 The portfolio site for Patrick Hooper (http://patrick.hoopr.io).
 
-### Current Version : v2.0.9
+### Current Version : v2.0.11
 
 ## Compile Requirements
 - Ruby
@@ -21,6 +21,5 @@ The portfolio site for Patrick Hooper (http://patrick.hoopr.io).
 - Kwicks ([http://devsmash.com/projects/kwicks](http://devsmash.com/projects/kwicks))
 - Modernizr ([http://modernizr.com/](http://modernizr.com/))
 - ScrollMagic ([http://scrollmagic.io/](http://scrollmagic.io/))
-- SVG for Everybody ([https://github.com/jonathantneal/svg4everybody)](https://github.com/jonathantneal/svg4everybody)
 - Unveil ([http://luis-almeida.github.io/unveil/](http://luis-almeida.github.io/unveil/))
 - Waypoints ([http://imakewebthings.com/waypoints/](http://imakewebthings.com/waypoints/))

@@ -6,12 +6,13 @@
 @import "base/reset";
 
 /* =========================================================================
-   Vendors
+   Vendors (3rd-party)
    ========================================================================= */
-@import "vendors/sassy-maps/memo";
-@import "vendors/breakpoint/breakpoint";
-@import "vendors/font-awesome/font-awesome";
-@import "vendors/kwicks/kwicks";
+@import "../vendors/sass/sassy-maps/memo";
+@import "../vendors/sass/breakpoint/breakpoint";
+@import "../vendors/sass/unsemantic/unsemantic";
+@import "../vendors/sass/font-awesome/font-awesome";
+@import "../vendors/sass/kwicks/kwicks";
 
 /* =========================================================================
    Global
@@ -23,7 +24,6 @@
 /* =========================================================================
    Layout
    ========================================================================= */
-@import "layout/grid/grid";
 @import "layout/header";
 @import "layout/footer";
 

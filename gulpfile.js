@@ -10,6 +10,7 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     concat = require('gulp-concat'),
     gulpif = require('gulp-if'),
+    rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
@@ -17,23 +18,26 @@ var gulp = require('gulp'),
 
 /* Set path objects used in locating and compiling assets */
 var paths = {
-      scripts: {
-        src: [
-              'js/vendors/**/*.js',
-              'js/lib/*.js'
-             ],
-        files: [
-                'js/vendors/**/*.js',
-                'js/lib/**/*.js'
-               ],
-        dest: 'js'
-      },
-      styles: {
-        src: '_sass/style.scss',
-        files: '_sass/**/*.scss',
-        dest: 'css'
-      }
-    };
+ js: {
+    src: [
+          'vendors/js/**/*.js',
+          'js/app.js'
+         ],
+    files: [
+            'vendors/js/**/*.js',
+            'js/app.js'
+           ],
+    dest: 'js'
+  },
+  sass: {
+    src: 'sass/style.scss',
+    files: [
+            'vendors/sass/**/*.scss',
+            'sass/**/*.scss'
+           ],
+    dest: 'css'
+  }
+};
 
 /* If the NODE_ENV is not set (like to prd for production), default to dev for development */
 var env = process.env.NODE_ENV || 'dev';
@@ -51,13 +55,13 @@ var env = process.env.NODE_ENV || 'dev';
  * 5. Writes the file to the scripts destination specified in the paths object w/ sourcemap
  */
 gulp.task('js', function () {
-  gulp.src(paths.scripts.src)
+  return gulp.src(paths.js.src)
     .pipe(sourcemaps.init())
-    .pipe(concat('app.js'))
+    .pipe(concat('app.min.js'))
     .pipe(gulpif(env === 'prd', uglify()))
     .on('error', util.log)
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(paths.scripts.dest))
+    .pipe(gulp.dest(paths.js.dest))
 });
 
 /**
@@ -70,13 +74,14 @@ gulp.task('js', function () {
  * 5. Writes the file to the stylesheets desintation specified in the paths object w/ sourcemap
  */
 gulp.task('sass', function () {
-  gulp.src(paths.styles.src)
+  return gulp.src(paths.sass.src)
   .pipe(sourcemaps.init())
   .pipe(gulpif(env === 'prd', sass({outputStyle: 'compressed'}), sass({outputStyle: 'expanded'})))
   .on('error', util.log)
   .pipe(autoprefixer())
+  .pipe(rename({suffix: '.min'}))
   .pipe(sourcemaps.write('.'))
-  .pipe(gulp.dest(paths.styles.dest))
+  .pipe(gulp.dest(paths.sass.dest))
 });
 
 /**
@@ -86,8 +91,8 @@ gulp.task('sass', function () {
  * 2. Watches stylesheets specified in paths object for changes
  */
 gulp.task('watch', function () {
-  gulp.watch(paths.scripts.files, ['js']);
-  gulp.watch(paths.styles.files, ['sass']);
+  gulp.watch(paths.js.files, ['js']);
+  gulp.watch(paths.sass.files, ['sass']);
 });
 
 /**
