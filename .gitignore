@@ -2,8 +2,9 @@
 .VolumeIcon.icns
 .fseventsd
 Icon
+Gemfile.lock
 node_modules
 .sass-cache
-_resources
+*.psd
+*.ai
 _site
-Gemfile.lock

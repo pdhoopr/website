@@ -10,6 +10,7 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     concat = require('gulp-concat'),
     gulpif = require('gulp-if'),
+    rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
@@ -17,48 +18,32 @@ var gulp = require('gulp'),
 
 /* Set path objects used in locating and compiling assets */
 var paths = {
-      scripts: {
-        src: [
-              'js/vendors/**/*.js',
-              'js/lib/*.js'
-             ],
-        files: [
-                'js/vendors/**/*.js',
-                'js/lib/**/*.js'
-               ],
-        dest: 'js'
-      },
-      styles: {
-        src: '_sass/style.scss',
-        files: '_sass/**/*.scss',
-        dest: 'css'
-      }
-    };
+  sass: {
+    src: 'sass/style.scss',
+    files: [
+            'vendor/sass/**/*.scss',
+            'sass/**/*.scss'
+           ],
+    dest: 'css'
+  },
+ js: {
+    src: [
+          'vendor/js/**/*.js',
+          'js/app.js'
+         ],
+    files: [
+            'vendor/js/**/*.js',
+            'js/app.js'
+           ],
+    dest: 'js'
+  },
+};
 
 /* If the NODE_ENV is not set (like to prd for production), default to dev for development */
 var env = process.env.NODE_ENV || 'dev';
 
 /* Tasks
    ========================================================================== */
-
-/**
- * Javascript task
- *
- * 1. Locates the src of scripts specified in paths object
- * 2. Initializes sourcemaps
- * 3. Concatenates all scripts into one file called app.js
- * 4. Minifies the file (app.js) if this is a production run
- * 5. Writes the file to the scripts destination specified in the paths object w/ sourcemap
- */
-gulp.task('js', function () {
-  gulp.src(paths.scripts.src)
-    .pipe(sourcemaps.init())
-    .pipe(concat('app.js'))
-    .pipe(gulpif(env === 'prd', uglify()))
-    .on('error', util.log)
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(paths.scripts.dest))
-});
 
 /**
  * Sass task
@@ -70,13 +55,33 @@ gulp.task('js', function () {
  * 5. Writes the file to the stylesheets desintation specified in the paths object w/ sourcemap
  */
 gulp.task('sass', function () {
-  gulp.src(paths.styles.src)
+  return gulp.src(paths.sass.src)
   .pipe(sourcemaps.init())
   .pipe(gulpif(env === 'prd', sass({outputStyle: 'compressed'}), sass({outputStyle: 'expanded'})))
   .on('error', util.log)
   .pipe(autoprefixer())
+  .pipe(rename({suffix: '.min'}))
   .pipe(sourcemaps.write('.'))
-  .pipe(gulp.dest(paths.styles.dest))
+  .pipe(gulp.dest(paths.sass.dest))
+});
+
+/**
+ * Javascript task
+ *
+ * 1. Locates the src of scripts specified in paths object
+ * 2. Initializes sourcemaps
+ * 3. Concatenates all scripts into one file called app.js
+ * 4. Minifies the file (app.js) if this is a production run
+ * 5. Writes the file to the scripts destination specified in the paths object w/ sourcemap
+ */
+gulp.task('js', function () {
+  return gulp.src(paths.js.src)
+    .pipe(sourcemaps.init())
+    .pipe(concat('app.min.js'))
+    .pipe(gulpif(env === 'prd', uglify()))
+    .on('error', util.log)
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(paths.js.dest))
 });
 
 /**
@@ -86,8 +91,8 @@ gulp.task('sass', function () {
  * 2. Watches stylesheets specified in paths object for changes
  */
 gulp.task('watch', function () {
-  gulp.watch(paths.scripts.files, ['js']);
-  gulp.watch(paths.styles.files, ['sass']);
+  gulp.watch(paths.sass.files, ['sass']);
+  gulp.watch(paths.js.files, ['js']);
 });
 
 /**
@@ -95,4 +100,4 @@ gulp.task('watch', function () {
  *
  * 1. Runs Javascript, Sass, and Watch task by default
  */
-gulp.task('default', ['js', 'sass', 'watch']);
+gulp.task('default', ['sass', 'js', 'watch']);
