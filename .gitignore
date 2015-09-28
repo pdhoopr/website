@@ -5,6 +5,6 @@ Icon
 Gemfile.lock
 node_modules
 .sass-cache
-*.psd
-*.ai
+docs/ai
+docs/psd
 _site
