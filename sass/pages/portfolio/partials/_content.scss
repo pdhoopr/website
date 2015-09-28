@@ -91,8 +91,9 @@
           margin: 1em 0 0.75em;
           width: 100%;
 
-          /* Auto width on medium and up devices */
+          /* Auto width on medium and up devices, increase bottom margin */
           @include breakpoint($mq_medium) {
+            margin: 1em 0;
             width: auto;
           }
 
