@@ -50,8 +50,8 @@ var env = process.env.NODE_ENV || 'dev';
  *
  * 1. Locates the src of scripts specified in paths object
  * 2. Initializes sourcemaps
- * 3. Concatenates all scripts into one file called app.js
- * 4. Minifies the file (app.js) if this is a production run
+ * 3. Concatenates all scripts into one file called app.min.js
+ * 4. Minifies the file if this is a production run
  * 5. Writes the file to the scripts destination specified in the paths object w/ sourcemap
  */
 gulp.task('js', function () {
