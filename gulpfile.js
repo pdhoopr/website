@@ -20,20 +20,20 @@ var gulp = require('gulp'),
 var paths = {
  js: {
     src: [
-          'vendors/**/*.js',
-          'js/app.js'
+          '_vendor/assets/js/**/*.js',
+          '_assets/js/**/*.js'
          ],
     files: [
-            'vendors/**/*.js',
-            'js/app.js'
+            '_vendor/assets/js/**/*.js',
+            '_assets/js/**/*.js'
            ],
     dest: 'js'
   },
   sass: {
-    src: 'sass/style.scss',
+    src: '_assets/sass/style.scss',
     files: [
-            'vendors/**/*.scss',
-            'sass/**/*.scss'
+            '_vendor/assets/sass/**/*.scss',
+            '_assets/sass/**/*.scss'
            ],
     dest: 'css'
   }
