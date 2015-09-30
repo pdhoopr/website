@@ -2,10 +2,7 @@
    Grid
    ========================================================================== */
 
-/* Unsemantic Grid System (http://unsemantic.com/)
-   ========================================================================== */
-@import "partials/unsemantic-grid-responsive-tablet";
-
+/* Styles for 42% grid */
 .grid-42,
 .tablet-grid-42 {
   @extend .grid-40;
