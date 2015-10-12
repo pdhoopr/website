@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Portfolio | Footer
+   ========================================================================== */
+.portfolio-page {
+
+  /* Give top margin to the footer of specific portfolio pages */
+  &.wgi-buzz,
+  &.wgiki,
+  &.wgi-informer,
+  &.university-of-michigan-athletics {
+    & + #contact {
+      margin-top: 1.8em;
+
+      /* Increase top margin on large devices */
+      @include breakpoint($mq_large) {
+        margin-top: 2.4em;
+      }
+    }
+  }
+}
