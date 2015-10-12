@@ -1,11 +1,12 @@
 {
   "name": "patrick-hoopr",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "The portfolio site for Patrick Hooper (http://patrick.hoopr.io).",
+  "author": "Patrick Hooper <patrick.d.hooper@gmail.com>",
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "https://github.com/impatrickhooper/impatrickhooper.github.io"
   },
-  "author": "Patrick Hooper (http://patrick.hoopr.io)",
   "devDependencies": {
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.2.0",

@@ -9,7 +9,12 @@
   &.wgi-informer,
   &.university-of-michigan-athletics {
     & + #contact {
-      margin-top: 1.8em;
+      margin-top: 1.2em;
+
+      /* Increase top margin on medium devices */
+      @include breakpoint($mq_medium) {
+        margin-top: 1.8em;
+      }
 
       /* Increase top margin on large devices */
       @include breakpoint($mq_large) {

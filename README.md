@@ -1,7 +1,7 @@
 # patrick.hoopr.io
 The portfolio site for Patrick Hooper (http://patrick.hoopr.io).
 
-### Current Version : v2.1.0
+### Current Version : v2.1.1
 
 ## Compile Requirements
 - Ruby
