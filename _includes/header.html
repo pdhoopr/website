@@ -22,40 +22,9 @@
 
     <div id="wrapper" class="layout-{{ page.layout }}">
       <header id="masthead">
-        <div class="logo">
-          <a href="{{ site.url }}">
-            <h1>
-              <span class="letter">&lt;</span><span class="letter">P</span><span class="letter letter-animate">a</span><span class="letter letter-animate">t</span><span class="letter letter-animate">r</span><span class="letter letter-animate">i</span><span class="letter letter-animate">c</span><span class="letter letter-animate">k</span><span class="letter letter-animate">&gt;</span><span class="letter letter-animate">&lt;</span><span class="letter letter-animate">/</span><span class="letter">H</span><span class="letter letter-animate">o</span><span class="letter letter-animate">o</span><span class="letter letter-animate">p</span><span class="letter letter-animate">e</span><span class="letter letter-animate">r</span><span class="letter">&gt;</span>
-            </h1>
-          </a>
-        </div>
+        {% include logo.html %}
         {% if page.layout == "home" %}
         <img src="/img/hero/hero_picture.jpg">
         {% endif %}
-        <nav class="main-nav">
-          {% if page.layout == "home" %}
-          {% for item in site.data.nav %}
-          <div class="nav-item nav-{{ item.id }}">
-            <a href="#{{ item.id }}" title="{{ item.title }}">
-              <span class="fa fa-{{ item.icon }}"></span>
-              <div class="tooltip">{{ item.title }}</div>
-            </a>
-          </div>
-          {% endfor %}
-          {% endif %}
-          {% if page.layout == "portfolio" %}
-          <div class="nav-item">
-            <a href="{{ site.url }}/portfolio/{{ page.previous }}" title="{{ page.previous_title }}">
-              <span class="fa fa-angle-left"></span>
-              <div class="tooltip">Prev</div>
-            </a>
-          </div>
-          <div class="nav-item">
-            <a href="{{ site.url }}/portfolio/{{ page.next }}" title="{{ page.next_title }}">
-              <div class="tooltip">Next</div>
-              <span class="fa fa-angle-right"></span>
-            </a>
-          </div>
-          {% endif %}
-        </nav>
+        {% include navigation.html %}
       </header>
