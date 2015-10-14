@@ -4,11 +4,11 @@ url: "http://patrick.hoopr.io"
 markdown: rdiscount
 permalink: pretty
 exclude: ["CNAME", "README.md", "Gemfile", "Gemfile.lock", "package.json", "node_modules", "gulpfile.js"]
-gems:
-  - jekyll-sitemap
 collections:
   home:
     output: false
   portfolio:
     output: true
     permalink: /portfolio/:title/
+gems:
+  - jekyll-sitemap
