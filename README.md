@@ -1,12 +1,7 @@
 # patrick.hoopr.io
 The portfolio site for Patrick Hooper (http://patrick.hoopr.io).
 
-### Current Version : v2.1.4
-
-## Compile Requirements
-- Ruby
-- Jekyll
-- Sass
+### Current Version : v2.1.5
 
 ## Sass Requirements
 - Breakpoint ([http://breakpoint-sass.com/](http://breakpoint-sass.com/))
