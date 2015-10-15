@@ -1,14 +1,14 @@
 name: "Patrick Hooper"
-description: "Portfolio Site"
+description: "The portfolio site for Patrick Hooper."
 url: "http://patrick.hoopr.io"
-markdown: rdiscount
-permalink: pretty
-exclude: ["CNAME", "README.md", "Gemfile", "Gemfile.lock", "package.json", "node_modules", "gulpfile.js"]
 collections:
   home:
     output: false
   portfolio:
     output: true
     permalink: /portfolio/:title/
+exclude: ["CNAME", "README.md", "Gemfile", "Gemfile.lock", "package.json", "node_modules", "gulpfile.js"]
 gems:
   - jekyll-sitemap
+markdown: rdiscount
+permalink: pretty
