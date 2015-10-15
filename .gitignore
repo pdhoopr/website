@@ -5,5 +5,4 @@ Icon
 Gemfile.lock
 node_modules
 .sass-cache
-.ruby-version
 _site
