@@ -9,8 +9,8 @@ title: portfolio
     {% for project in site.data.portfolio %}
     {% assign loopindex = forloop.index | modulo: 2 %}
     {% if loopindex == 1 and forloop.index > 1 %}
-    </ul><!-- .projects.kwicks.kwicks-vertical -->
-  </div><!-- .kwicks-wrapper -->
+    </ul>
+  </div>
   <div class="kwicks-wrapper grid-33 tablet-grid-33 mobile-grid-100">
     <ul class="projects kwicks kwicks-vertical">
     {% endif %}
@@ -22,26 +22,26 @@ title: portfolio
           <div class="project_roles">
             <p class="project_label">Roles</p>
             <p>{{ project.roles }}</p>
-          </div><!-- .project_roles -->
+          </div>
           <div class="project_tech">
             <p class="project_label">Tech</p>
             <p>{{ project.tech }}</p>
-          </div><!-- .project_tech -->
+          </div>
           <div class="project_devices">
             <p class="project_label">Platforms</p>
             <div class="project_devices_icons">
               {% if project.desktop %}<span class="fa fa-desktop"></span>{% endif %}
               {% if project.tablet %}<span class="fa fa-tablet"></span>{% endif %}
               {% if project.mobile %}<span class="fa fa-mobile"></span>{% endif %}
-            </div><!-- .project_devices_icons -->
-          </div><!-- .project_devices -->
-        </div><!-- .project_body -->
+            </div>
+          </div>
+        </div>
         <div class="project_view">
           <a class="btn" href="{{ site.url }}/portfolio/{{ project.title }}">View Project<span class="fa fa-angle-right"></span></a>
-        </div><!-- .project_view -->
-      </div><!-- .project_center -->
-    </li><!-- .project -->
+        </div>
+      </div>
+    </li>
     {% endfor %}
-    </ul><!-- .projects.kwicks.kwicks-vertical -->
-  </div><!-- .kwicks-wrapper -->
+    </ul>
+  </div>
 </div>
