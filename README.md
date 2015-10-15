@@ -1,7 +1,7 @@
 # patrick.hoopr.io
 The portfolio site for Patrick Hooper (http://patrick.hoopr.io).
 
-### Current Version : v2.2.0
+### Current Version : v2.2.1
 
 ## Sass Requirements
 - Breakpoint ([http://breakpoint-sass.com/](http://breakpoint-sass.com/))
