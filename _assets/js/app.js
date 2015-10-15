@@ -44,7 +44,7 @@ function cycle() {
             .delay(1000)
             .fadeOut(1000, cycle);
   i = ++i % taglines.length;
-};
+}
 
 /* GSAP Tweens
    ======================================================================== */
@@ -111,7 +111,7 @@ var heroArrow = new ScrollMagic.Scene({
    ======================================================================== */
 
 /* Waypoints only for the home page */
-if (wrapper.hasClass('layout-home')) {
+if (wrapper.hasClass('layout-default')) {
 
   /**
    * Toggles active class for About and also flags the header as scrolling
@@ -228,7 +228,7 @@ $(document).on("click", "a[href^='#']", function (e) {
 $("img.lazy").unveil(568);
 
 /* Do the following only if this is the home page */
-if (wrapper.hasClass('layout-home')) {
+if (wrapper.hasClass('layout-default')) {
 
   /* Do the following only if this is a large screen */
   if (Modernizr.mq('(min-width: 46.0625rem)')) {

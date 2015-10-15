@@ -1,31 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic|Ubuntu:400,500' rel='stylesheet' type='text/css'>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <title>{{ site.name }}</title>
-    <link rel="stylesheet" href="/css/style.min.css">
-  </head>
-  <body>
+<header id="masthead">
 
-    <!-- Google Tag Manager -->
-    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MM3CBC"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MM3CBC');</script>
-    <!-- End Google Tag Manager -->
+  {% include logo.html %}
 
-    <div id="wrapper" class="layout-{{ page.layout }}">
-      <header id="masthead">
-        {% include logo.html %}
-        {% if page.layout == "home" %}
-        <img src="/img/hero/hero_picture.jpg">
-        {% endif %}
-        {% include main-nav.html %}
-        </nav>
-      </header>
+  {% if page.layout == "home" %}
+  <img src="/img/hero/hero_picture.jpg">
+  {% endif %}
+
+  {% include main-nav.html %}
+  
+  </nav>
+</header>
