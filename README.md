@@ -1,7 +1,7 @@
 # patrick.hoopr.io
-The portfolio site for Patrick Hooper (http://patrick.hoopr.io).
+The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Technology Fanboy, Happily Married, Cheesecake Evangelist, World Traveler.
 
-### Current Version : v2.2.3
+### Current Version : v2.2.4
 
 ## Sass Requirements
 - Breakpoint ([http://breakpoint-sass.com/](http://breakpoint-sass.com/))
