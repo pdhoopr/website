@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  {% include head.html %}
+{% include head.html %}
 
-  <body>
+<body>
+  {% include google-tag-manager.html %}
 
-    {% include google-tag-manager.html %}
+  <div id="wrapper" class="layout-{{ page.layout }}">
+    {% include header.html %}
 
-    <div id="wrapper" class="layout-{{ page.layout }}">
+    {{ content }}
 
-      {% include header.html %}
+    {% include footer.html %}
+  </div>
 
-      {{ content }}
+  {% include scripts.html %}
+</body>
 
-      {% include footer.html %}
-
-    </div>
-
-    {% include scripts.html %}
-
-  </body>
 </html>

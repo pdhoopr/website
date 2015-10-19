@@ -17,50 +17,71 @@ github: https://github.com/patrickhooper/wgi-informer
   <div class="grid-container">
     <div class="project_summary">
       <h2 class="title">{{ page.name }}</h2>
+
       <h3 class="subtitle">{ OVERVIEW }</h3>
+
       <p class="project_roles"><strong>Roles:</strong> {{ page.roles }}</p>
       <p class="project_tech"><strong>Technologies:</strong> {{ page.technologies }}</p>
       <p class="project_platforms"><strong>Platforms:</strong> <span class="fa fa-desktop"></span><span class="fa fa-tablet"></span><span class="fa fa-mobile"></span></p>
+
       <p class="project_description">{{ page.description }}</p>
+
       <div class="view-project">
         {% if page.live %}
-        <a class="btn btn-raised btn-live" href="{{ page.live }}" target="_blank"><span class="fa fa-lg fa-external-link"></span>Live Site</a>
+          <a class="btn btn-raised btn-live" href="{{ page.live }}" target="_blank"><span class="fa fa-lg fa-external-link"></span>Live Site</a>
         {% endif %}
+
         {% if page.github %}
-        <a class="btn btn-raised btn-github" href="{{ page.github }}" target="_blank"><span class="fa fa-lg fa-github"></span>GitHub</a>
+          <a class="btn btn-raised btn-github" href="{{ page.github }}" target="_blank"><span class="fa fa-lg fa-github"></span>GitHub</a>
         {% endif %}
       </div>
     </div>
+
     <div class="project_section grid-50 tablet-grid-100 mobile-grid-100">
       <h3 class="subtitle">{ HOME }</h3>
+
       <p>The home page provides highlights of the most important information from around the intranet and within the company. This means a hero slider for big announcements, event cards (when there are some upcoming), introductions to new employees, employee birthdays and work anniversaries, news cards, and some photos albums from recent events.</p>
     </div>
+
     <div class="project_section grid-50 tablet-grid-100 mobile-grid-100">
       <h3 class="subtitle">{ NAVIGATION }</h3>
+
       <p>There are a few flavors of navigation that can be found on the intranet. The first is the left side slide-in navigation accessed via a hamburger/menu icon. Next are the Favorites, accessed via a star icon that opens a dropdown drawer. The Spotlight section contains some fun, random snippets of info and is opened as a slide-in bottom modal using a lightbulb icon. Finally, there are floating action buttons fixed in the bottom right corner that open various Typeforms.</p>
     </div>
+
     <div class="project_section grid-50 tablet-grid-100 mobile-grid-100">
       <h3 class="subtitle">{ EVENTS }</h3>
+
       <p>Past, present, and future events are displayed in a 2 column card form and grouped by the year in which they took place. Enough details are given to wet your whistle (and an event teaser photo), at which point you can click through and see the full event page if you'd like to know more.</p>
     </div>
+
     <div class="project_section grid-50 tablet-grid-100 mobile-grid-100">
       <h3 class="subtitle">{ NEWS }</h3>
+
       <p>Pieces of company news are displayed all fancy using Masonry and grouped by the year in which they were posted. If there's a teaser, you can click on the card photo to reveal it, or you can click the card link to go to the full new article. From there, you can cycle through all News posts using the post navigation.</p>
     </div>
+
     <div class="project_section grid-50 tablet-grid-100 mobile-grid-100">
       <h3 class="subtitle">{ OFFICES }</h3>
+
       <p>Mapbox was used to create an awesome, interactive map for all of the WGI offices. Naturally, you can click a marker to get more information about each office. You can also use the filter to see what services are offered at each location! Locations too near to each other are clustered to avoid frustration that stems from markers overlapping; simply click a cluster to zoom in a little more and make your life easier.</p>
     </div>
+
     <div class="project_section grid-50 tablet-grid-100 mobile-grid-100">
       <h3 class="subtitle">{ PEOPLE }</h3>
+
       <p>The company directory is a big, colorful experience that allows you to creep on your peers at your own pace. Interested in an extremely immersive experience? Great, go page-by-page and soak it all in. Really just here to look for a specific person? We've got you covered - use the search to find what you need quickly and expand a person's card or click through to their profile for more info.</p>
     </div>
+
     <div class="project_section grid-50 tablet-grid-100 mobile-grid-100">
       <h3 class="subtitle">{ PHOTOS }</h3>
+
       <p>Photos from company events are stored in Google Photos and linked to from this page. Each album gets a thumbnail photo and name that links out to the respective Google Photos album. These are presented to users in a simple, clean thumbnail grid. For an added bonus, the active/hovered over album appears brighter and with a slight zoom!</p>
     </div>
+
     <div class="project_section grid-50 tablet-grid-100 mobile-grid-100">
       <h3 class="subtitle">{ PROFILES }</h3>
+      
       <p>Every user has a unique profile and account that they can customize as they see fit. It's accessed using the link next to their photo in the main side navigation, and presented in a clean, appealing format.</p>
     </div>
   </div>

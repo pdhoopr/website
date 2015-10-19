@@ -3,14 +3,17 @@
     <div class="phone_camera">
       <span></span>
     </div>
+
     <div class="phone_top-parts">
       <span class="phone_sensor"></span><span class="phone_speaker"></span>
     </div>
   </div>
+
   <div class="clearfix phone_photo {{ include.scroll }}">
     <img class="lazy" data-src="/img/portfolio/{{ page.title }}/{{ include.image }}.{{ include.extension }}" data-src-retina="/img/portfolio/{{ page.title }}/{{ include.image }}@2x.{{ include.extension }}" alt="{{ page.name }} {{ include.alt }}">
     <noscript><img src="/img/portfolio/{{ page.title }}/{{ include.image }}.{{ include.extension }}" alt="{{ page.name }} {{ include.alt }}"></noscript>
   </div>
+
   <div class="phone_bottom">
     <div class="phone_button">
       <span></span>

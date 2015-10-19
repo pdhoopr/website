@@ -17,72 +17,78 @@ github: false
   <div class="grid-container">
     <div class="project_summary">
       <h2 class="title">{{ page.name }}</h2>
+
       <div class="project_photos grid-100 tablet-grid-100 mobile-grid-100">
-
         {% include browser.html url="msomearasmultiage.com" image="portfolio_ms-omearas-multiage_preview" extension="jpg" %}
-
         {% include phone.html image="portfolio_ms-omearas-multiage_preview_mobile" extension="jpg" alt="| Mobile" class="grid-30 tablet-grid-30 mobile-grid-30" %}
-
       </div>
+
       <h3 class="subtitle">{ OVERVIEW }</h3>
+
       <p class="project_roles"><strong>Roles:</strong> {{ page.roles }}</p>
       <p class="project_tech"><strong>Technologies:</strong> {{ page.technologies }}</p>
       <p class="project_platforms"><strong>Platforms:</strong> <span class="fa fa-desktop"></span><span class="fa fa-tablet"></span><span class="fa fa-mobile"></span></p>
+
       <p class="project_description">{{ page.description }}</p>
+
       <div class="view-project">
         {% if page.live %}
-        <a class="btn btn-raised btn-live" href="{{ page.live }}" target="_blank"><span class="fa fa-lg fa-external-link"></span>Live Site</a>
+          <a class="btn btn-raised btn-live" href="{{ page.live }}" target="_blank"><span class="fa fa-lg fa-external-link"></span>Live Site</a>
         {% endif %}
+
         {% if page.github %}
-        <a class="btn btn-raised btn-github" href="{{ page.github }}" target="_blank"><span class="fa fa-lg fa-github"></span>GitHub</a>
+          <a class="btn btn-raised btn-github" href="{{ page.github }}" target="_blank"><span class="fa fa-lg fa-github"></span>GitHub</a>
         {% endif %}
       </div>
     </div>
+
     <div class="project_section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
       <div class="section_description grid-33 push-66 tablet-grid-100 mobile-grid-100">
         <h3 class="subtitle">{ HOME }</h3>
+
         <p>The home page provides information about the class, multiage, and the teacher using the theme of journeys and the sea. The page starts with a hero image to set the tone for that theme and then breaks into colored sections to provide more detailed information.</p>
       </div>
+
       <div class="section_photos grid-66 pull-33 tablet-grid-100 mobile-grid-100">
-
          {% include browser.html url="msomearasmultiage.com" image="portfolio_ms-omearas-multiage" extension="jpg" alt="| Home" scroll="scroll" %}
-
       </div>
     </div>
+
     <div class="project_section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
       <div class="section_description grid-33 tablet-grid-100 mobile-grid-100">
         <h3 class="subtitle">{ KIDS }</h3>
+
         <p>The kids section was designed to be fun and easy to use for 1st, 2nd, and 3rd graders. The default kids page presents them with big, colorful buttons for each subject. Once on a subject page, students will still see that navigation to jump between subjects, and then can use the accordion menus to browse links of resources.</p>
       </div>
+
       <div class="section_photos grid-66 tablet-grid-100 mobile-grid-100">
-
         {% include browser.html url="msomearasmultiage.com/kids" image="portfolio_ms-omearas-multiage_kids" extension="gif" alt="| Kids" %}
-
       </div>
     </div>
+
     <div class="project_section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
       <div class="section_description grid-33 push-66 tablet-grid-100 mobile-grid-100">
         <h3 class="subtitle">{ PARENTS }</h3>
+
         <p>Parents are greeted with a corkboard explaining what they can expect to find here. Below the image, there is a secondary navigation to allow for easy navigation between different categories of information. Within each category, sections are organzied into accordion menus to present a less overwhelming amount of information at once.</p>
       </div>
+
       <div class="section_photos grid-66 pull-33 tablet-grid-100 mobile-grid-100">
-
         {% include browser.html url="msomearasmultiage.com/parents" image="portfolio_ms-omearas-multiage_parents" extension="jpg" alt="| Parents" scroll="scroll" %}
-
       </div>
     </div>
+
     <div class="project_section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
       <div class="section_description grid-100 tablet-grid-100 mobile-grid-100">
         <h3 class="subtitle">{ MOBILE }</h3>
       </div>
-      <div class="section_photos photos-mobile grid-100 tablet-grid-100 mobile-grid-100">
 
+      <div class="section_photos photos-mobile grid-100 tablet-grid-100 mobile-grid-100">
         {% include phone.html image="portfolio_ms-omearas-multiage_parents_mobile" extension="jpg" alt="| Parents | Mobile" class="mobile" scroll="scroll" %}
 
         {% include phone.html image="portfolio_ms-omearas-multiage_mobile" extension="jpg" alt="| Home | Mobile" class="mobile" scroll="scroll" %}
 
         {% include phone.html image="portfolio_ms-omearas-multiage_kids_mobile" extension="jpg" alt="| Kids | Mobile" class="mobile" scroll="scroll" %}
-
       </div>
     </div>
   </div>
