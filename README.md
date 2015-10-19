@@ -1,7 +1,7 @@
 # patrick.hoopr.io
-The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Technology Fanboy, Happily Married, Cheesecake Evangelist, World Traveler, and more. Currently located in Ann Arbor, Michigan.
+The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Technology Fanboy, Happily Married, Cheesecake Evangelist, World Traveler, and more! Currently located in Ann Arbor, Michigan.
 
-### Current Version : v2.2.4
+### Current Version : v2.2.5
 
 ## Sass Requirements
 - Breakpoint ([http://breakpoint-sass.com/](http://breakpoint-sass.com/))
