@@ -13,7 +13,7 @@
     /* Styles for small devices */
     @include breakpoint($mq_small) {
       background: rgba(16, 30, 67, 1);
-      padding: 14px 16px 0;
+      padding: 14px 0px 0 16px;
     }
 
     /* Styles applied to the header when the page is scrolling */
@@ -60,7 +60,7 @@
 
       /* Styles for small devices */
       @include breakpoint($mq_small) {
-        padding: 0 12px 8px;
+        padding: 0 16px 8px;
         width: auto;
       }
 
