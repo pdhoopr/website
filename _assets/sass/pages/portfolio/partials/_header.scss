@@ -13,7 +13,7 @@
     /* Styles for small devices */
     @include breakpoint($mq_small) {
       background: rgba(16, 30, 67, 1);
-      padding: 14px 16px 0;
+      padding: 14px 8px 0 16px;
     }
 
     /* Styles applied to the header when the page is scrolling */
@@ -56,25 +56,17 @@
 
     /* Styles for a specific navigation item */
     .nav-item {
-      border-bottom: 4px solid transparent;
+      border-bottom: 3px solid transparent;
 
       /* Styles for small devices */
       @include breakpoint($mq_small) {
-        padding-bottom: 8px;
-        padding-top: 0;
+        padding: 0 8px 8px;
         width: auto;
-      }
-
-      /* On small devices, give right margin to first link in page navigation */
-      &:first-of-type {
-        @include breakpoint($mq_small) {
-          margin-right: 24px;
-        }
       }
 
       /* Styles applied when hovering over a navigation item */
       &:hover {
-        border-bottom: 4px solid;
+        border-bottom: 3px solid;
 
         /* Negate hover styles on touch devices */
         .touch & {
