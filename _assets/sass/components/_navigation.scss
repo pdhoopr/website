@@ -20,7 +20,7 @@
 
   /* Styles for an individual navigation item */
   .nav-item {
-    border-bottom: 4px solid transparent;
+    border-bottom: 3px solid transparent;
     cursor: pointer;
     display: inline-block;
     float: left;
@@ -33,7 +33,7 @@
 
     /* Styles for medium and up devices */
     @include breakpoint($mq_medium) {
-      padding: 0 24px 13px;
+      padding: 0 16px 13px;
       width: auto;
     }
 
@@ -63,7 +63,7 @@
 
       /* Styles for hovering over an active navigation item */
       &:hover {
-        border-bottom: 4px solid $yellow !important;
+        border-bottom: 3px solid $yellow !important;
         transition: 0.3s;
       }
     }
@@ -71,7 +71,7 @@
     /* Styles for navigation icons */
     .fa {
       font-size: 1.5rem;
-      margin-right: 0.33333em;
+      margin-right: 0.16667em;
       transition: 0.3s;
       vertical-align: -5%;
 
