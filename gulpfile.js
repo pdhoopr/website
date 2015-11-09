@@ -28,7 +28,8 @@ var env = 'dev';
 var paths = {
   jekyll: {
     watchFiles: [
-      'app/**/*'
+      'app/**/*',
+      '!app/_assets{,/**/*}'
     ],
     src: 'app',
     dest: 'public'
@@ -44,34 +45,34 @@ var paths = {
   },
   img: {
     watchFiles: [
-      'assets/img/**/*',
-      '!assets/img/portfolio/university-of-michigan-athletics{,/**/*}',
-      '!assets/img/portfolio/wgi*{,/**/*}'
+      'app/_assets/img/**/*',
+      '!app/_assets/img/portfolio/university-of-michigan-athletics{,/**/*}',
+      '!app/_assets/img/portfolio/wgi*{,/**/*}'
     ],
     src: [
-      'assets/img/**/*',
-      '!assets/img/portfolio/university-of-michigan-athletics{,/**/*}',
-      '!assets/img/portfolio/wgi*{,/**/*}'
+      'app/_assets/img/**/*',
+      '!app/_assets/img/portfolio/university-of-michigan-athletics{,/**/*}',
+      '!app/_assets/img/portfolio/wgi*{,/**/*}'
     ],
     dest: 'public/img'
   },
   js: {
     watchFiles: [
       'vendor/assets/js/**/*.js',
-      'assets/js/**/*.js'
+      'app/_assets/js/**/*.js'
     ],
     src: [
       'vendor/assets/js/**/*.js',
-      'assets/js/**/*.js'
+      'app/_assets/js/**/*.js'
     ],
     dest: 'public/js'
   },
   sass: {
     watchFiles: [
       'vendor/assets/sass/**/*.scss',
-      'assets/sass/**/*.scss'
+      'app/_assets/sass/**/*.scss'
     ],
-    src: 'assets/sass/style.scss',
+    src: 'app/_assets/sass/style.scss',
     dest: 'public/css'
   }
 };
