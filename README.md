@@ -9,10 +9,11 @@ The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Tec
 3. Run the command `gem install bundler` (you'll need Ruby installed)
 4. Run the command `npm install` (you'll need Node.js & npm)
 5. Use Gulp to handle your workflow!
-  * Run the command `gulp` to compile development code and start a Browersync server
-  * Run the command `gulp build` to only compile development code
+  * Run the command `gulp` or `gulp serve` to compile development code and start a Browersync server
   * Run the command `gulp deploy` to compile production code and deploy to Surge
-  * Run the command `gulp surge` to only deploy "public" folder to Surge
+  * Run the command `gulp dev` to only compile development code
+  * Run the command `gulp prd` to only compile production code
+  * Run the command `gulp surge` to only deploy the "public" folder to Surge
 
 ## Sass Requirements
 - Breakpoint ([http://breakpoint-sass.com/](http://breakpoint-sass.com/))

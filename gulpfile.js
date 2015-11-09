@@ -225,6 +225,29 @@ gulp.task('build', ['jekyll'], function (callback) {
 });
 
 /**
+ * Dev task
+ *
+ * 1. Set the environment to "dev" for development
+ * 2. Run the build task
+ */
+gulp.task('dev', function (callback) {
+  env = 'dev';
+  runSequence(['build'], callback);
+});
+
+/**
+ * Prd task
+ *
+ * 1. Set the environment to "prd" for production
+ * 2. Run the build task
+ */
+gulp.task('prd', function (callback) {
+  env = 'prd';
+  runSequence(['build'], callback);
+});
+
+
+/**
  * Serve task
  *
  * 1. Run the build of the site first
@@ -235,14 +258,14 @@ gulp.task('build', ['jekyll'], function (callback) {
  * 6. Watches scripts for changes
  * 7. Watches styles for changes
  */
-gulp.task('serve', ['build'], function () {
+gulp.task('serve', ['dev'], function () {
   browserSync.init({
     server: {
       baseDir: './public'
     }
   });
 
-  gulp.watch(paths.jekyll.watchFiles, ['build']);
+  gulp.watch(paths.jekyll.watchFiles, ['dev']);
   gulp.watch(paths.docs.watchFiles, ['docs']);
   gulp.watch(paths.img.watchFiles, ['img']);
   gulp.watch(paths.js.watchFiles, ['js']);
@@ -262,7 +285,7 @@ gulp.task('default', ['serve']);
  * 1. Deploys contents of public folder to Surge for hosting
  */
 gulp.task('surge', function (done) {
-return childProcess.spawn('surge', {cwd: paths.jekyll.dest, stdio: 'inherit'})
+  return childProcess.spawn('surge', {cwd: paths.jekyll.dest, stdio: 'inherit'})
     .on('close', done);
 });
 
@@ -272,6 +295,5 @@ return childProcess.spawn('surge', {cwd: paths.jekyll.dest, stdio: 'inherit'})
  * 1. Serves the site by default
  */
 gulp.task('deploy', function (callback) {
-  env = 'prd';
-  runSequence('build', 'surge', callback);
+  runSequence('prd', 'surge', callback);
 });
