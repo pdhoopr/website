@@ -9,7 +9,7 @@ The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Tec
 3. Run the command `gem install bundler` (you'll need Ruby installed)
 4. Run the command `npm install` (you'll need Node.js & npm)
 5. Use Gulp to handle your workflow!
-  * Run the command `gulp` for development and a Browersync server
+  * Run the command `gulp` for to compile development code and start a Browersync server
   * Run the command `gulp build` to only compile development code
   * Run the command `gulp deploy` to compile production code and deploy to Surge
   * Run the command `gulp surge` to only deploy "public" folder to Surge
@@ -29,3 +29,6 @@ The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Tec
 - ScrollMagic ([http://scrollmagic.io/](http://scrollmagic.io/))
 - Unveil ([http://luis-almeida.github.io/unveil/](http://luis-almeida.github.io/unveil/))
 - Waypoints ([http://imakewebthings.com/waypoints/](http://imakewebthings.com/waypoints/))
+
+## Contributors
+- Patrick Hooper ([http://patrick.hoopr.io](http://patrick.hoopr.io))
