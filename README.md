@@ -1,7 +1,19 @@
-# patrick.hoopr.io
-The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Technology Fanboy, Happily Married, Cheesecake Evangelist, World Traveler, and more. Currently living in Ann Arbor, Michigan as a proud University of Michigan alum - Go Blue!
+# Patrick Hooper
+The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Technology Fanboy, Happily Married, Cheesecake Evangelist, World Traveler, and more. Currently living in Ann Arbor, Michigan as a proud University of Michigan grad - Go Blue!
 
-### Current Version : v2.2.13
+### Current Version : v3.0.0
+
+## Usage
+1. Clone the repository.
+2. Navigate into the repository.
+3. Run `gem install bundler` (you'll need Ruby installed)
+4. Run `npm install` (you'll need Node.js & npm)
+5. Use Gulp to handle your workflow!
+  * Run `gulp` or `gulp serve` to build development code and start a Browersync server
+  * Run `gulp deploy` to build production code and deploy the *public* folder to Surge
+  * Run `gulp dev` to only build development code
+  * Run `gulp prd` to only build production code
+  * Run `gulp surge` to only deploy the *public* folder to Surge
 
 ## Sass Requirements
 - Breakpoint ([http://breakpoint-sass.com/](http://breakpoint-sass.com/))
@@ -18,3 +30,6 @@ The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Tec
 - ScrollMagic ([http://scrollmagic.io/](http://scrollmagic.io/))
 - Unveil ([http://luis-almeida.github.io/unveil/](http://luis-almeida.github.io/unveil/))
 - Waypoints ([http://imakewebthings.com/waypoints/](http://imakewebthings.com/waypoints/))
+
+## Contributors
+- Patrick Hooper ([http://patrick.hoopr.io](http://patrick.hoopr.io))

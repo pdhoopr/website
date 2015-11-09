@@ -1,103 +1,299 @@
-/* ==========================================================================
+/* =========================================================================
    patrick.hoopr.io Gulpfile
-   ========================================================================== */
+   ========================================================================= */
 
 /* Variables
-   ========================================================================== */
+   ========================================================================= */
 
 /* Initialize variables required to run gulp */
-var gulp = require('gulp'),
-    autoprefixer = require('gulp-autoprefixer'),
-    concat = require('gulp-concat'),
-    gulpif = require('gulp-if'),
-    rename = require('gulp-rename'),
-    sass = require('gulp-sass'),
-    sourcemaps = require('gulp-sourcemaps'),
-    uglify = require('gulp-uglify'),
-    util = require('gulp-util');
+var gulp = require('gulp');
+var autoprefixer = require('gulp-autoprefixer');
+var browserSync = require('browser-sync').create();
+var childProcess = require('child_process');
+var concat = require('gulp-concat');
+var del = require('del');
+var gulpif = require('gulp-if');
+var plumber = require('gulp-plumber');
+var rename = require('gulp-rename');
+var runSequence = require('run-sequence');
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
+var uglify = require('gulp-uglify');
+var util = require('gulp-util');
+
+/* Default to dev for environment */
+var env = 'dev';
 
 /* Set path objects used in locating and compiling assets */
 var paths = {
- js: {
+  jekyll: {
+    watchFiles: [
+      'src/**/*',
+      '!src/_assets{,/**/*}',
+      '!src/_vendor{,/**/*}'
+    ],
+    src: 'src',
+    dest: 'public'
+  },
+  docs: {
+    watchFiles: [
+      'src/_assets/docs/pdf/patrick-hooper_resume.pdf'
+    ],
     src: [
-          '_vendor/assets/js/**/*.js',
-          '_assets/js/**/*.js'
-         ],
-    files: [
-            '_vendor/assets/js/**/*.js',
-            '_assets/js/**/*.js'
-           ],
-    dest: 'js'
+      'src/_assets/docs/pdf/patrick-hooper_resume.pdf'
+    ],
+    dest: 'public/docs'
+  },
+  img: {
+    watchFiles: [
+      'src/_assets/img/**/*',
+      '!src/_assets/img/portfolio/university-of-michigan-athletics{,/**/*}',
+      '!src/_assets/img/portfolio/wgi*{,/**/*}'
+    ],
+    src: [
+      'src/_assets/img/**/*',
+      '!src/_assets/img/portfolio/university-of-michigan-athletics{,/**/*}',
+      '!src/_assets/img/portfolio/wgi*{,/**/*}'
+    ],
+    dest: 'public/img'
+  },
+  js: {
+    watchFiles: [
+      'src/_vendor/assets/js/**/*.js',
+      'src/_assets/js/**/*.js'
+    ],
+    src: [
+      'src/_vendor/assets/js/**/*.js',
+      'src/_assets/js/**/*.js'
+    ],
+    dest: 'public/js'
   },
   sass: {
-    src: '_assets/sass/style.scss',
-    files: [
-            '_vendor/assets/sass/**/*.scss',
-            '_assets/sass/**/*.scss'
-           ],
-    dest: 'css'
+    watchFiles: [
+      'src/_vendor/assets/sass/**/*.scss',
+      'src/_assets/sass/**/*.scss'
+    ],
+    src: 'src/_assets/sass/style.scss',
+    dest: 'public/css'
   }
 };
 
-/* If the NODE_ENV is not set (like to prd for production), default to dev for development */
-var env = process.env.NODE_ENV || 'dev';
+/* Returns a customized error message based on the task throwing the error */
+function buildErrorMessage(task) {
+  return '<span style="color: red; font-weight: bold;">' + task + ' task error!</span><span style="color: red;"> Please check the console and resolve the error ASAP because the build may be failing!</span>';
+}
 
 /* Tasks
-   ========================================================================== */
+   ========================================================================= */
+
+/**
+ * Jekyll task
+ *
+ * 1. Spawns child process
+ * 2. Runs "jekyll build" in src directory
+ * 3. Closes process
+ */
+gulp.task('jekyll', function (done) {
+  return childProcess.spawn('jekyll', ['build'], {cwd: paths.jekyll.src, stdio: 'inherit'})
+    .on('close', function (code) {
+      if (code !== 0) {
+        browserSync.notify('<span style="color: red; font-weight: bold;">jekyll task error!</span><span style="color: red;"> Please check the console and resolve the error ASAP because the build may be failing!</span>');
+      }
+      done();
+    });
+});
+
+/**
+ * Docs task
+ *
+ * 1. Deletes any previous files in the built docs folder
+ * 2. Locates the src of docs specified in paths object
+ * 3. Copies selected docs to the destination specified in the paths object
+ */
+gulp.task('clean:docs', function () {
+  return del(paths.docs.dest);
+});
+
+gulp.task('docs', ['clean:docs'], function () {
+  return gulp.src(paths.docs.src)
+    .pipe(plumber({
+      errorHandler: function (err) {
+        util.log(err);
+        browserSync.notify(buildErrorMessage('docs'));
+        this.emit('end');
+      }
+    }))
+    .pipe(gulp.dest(paths.docs.dest))
+    .pipe(browserSync.stream());
+});
+
+/**
+ * Images task
+ *
+ * 1. Deletes any previous files in the built img folder
+ * 2. Locates the src of images specified in paths object
+ * 3. Copies selected images to the destination specified in the paths object
+ */
+gulp.task('clean:img', function () {
+  return del(paths.img.dest);
+});
+
+gulp.task('img', ['clean:img'], function () {
+  return gulp.src(paths.img.src, {base: 'src/_assets/img'})
+    .pipe(plumber({
+      errorHandler: function (err) {
+        util.log(err);
+        browserSync.notify(buildErrorMessage('img'));
+        this.emit('end');
+      }
+    }))
+    .pipe(gulp.dest(paths.img.dest))
+    .pipe(browserSync.stream());
+});
 
 /**
  * Javascript task
  *
- * 1. Locates the src of scripts specified in paths object
- * 2. Initializes sourcemaps
- * 3. Concatenates all scripts into one file called app.min.js
- * 4. Minifies the file if this is a production run
- * 5. Writes the file to the scripts destination specified in the paths object w/ sourcemap
+ * 1. Deletes any previous files in the built js folder
+ * 2. Locates the src of scripts specified in paths object
+ * 3. Initializes sourcemaps
+ * 4. Concatenates all scripts into one file called app.min.js
+ * 5. Minifies the file if this is a production run
+ * 6. Writes the file to the scripts destination specified in the paths object w/ sourcemap
  */
-gulp.task('js', function () {
+gulp.task('clean:js', function () {
+  return del(paths.js.dest);
+});
+
+gulp.task('js', ['clean:js'], function () {
   return gulp.src(paths.js.src)
+    .pipe(plumber({
+      errorHandler: function (err) {
+        util.log(err);
+        browserSync.notify(buildErrorMessage('js'));
+        this.emit('end');
+      }
+    }))
     .pipe(sourcemaps.init())
     .pipe(concat('app.min.js'))
     .pipe(gulpif(env === 'prd', uglify()))
-    .on('error', util.log)
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.js.dest))
+    .pipe(browserSync.stream({match: '**/*.js'}));
 });
 
 /**
  * Sass task
  *
- * 1. Locates the src of stylesheets specified in paths object
- * 2. Initializes sourcemaps
- * 3. Minifies the file if this is a production run, otherwise leaves expanded
- * 4. Uses Autoprefixer to add vendor prefixes
- * 5. Writes the file to the stylesheets desintation specified in the paths object w/ sourcemap
+ * 1. Deletes any previous files in the built css folder
+ * 2. Locates the src of stylesheets specified in paths object
+ * 3. Initializes sourcemaps
+ * 4. Minifies the file if this is a production run, otherwise leaves expanded
+ * 5. Uses Autoprefixer to add vendor prefixes
+ * 6. Writes the file to the stylesheets desintation specified in the paths object w/ sourcemap
  */
-gulp.task('sass', function () {
+gulp.task('clean:css', function () {
+  return del(paths.sass.dest);
+});
+
+gulp.task('sass', ['clean:css'], function () {
   return gulp.src(paths.sass.src)
-  .pipe(sourcemaps.init())
-  .pipe(gulpif(env === 'prd', sass({outputStyle: 'compressed'}), sass({outputStyle: 'expanded'})))
-  .on('error', util.log)
-  .pipe(autoprefixer())
-  .pipe(rename({suffix: '.min'}))
-  .pipe(sourcemaps.write('.'))
-  .pipe(gulp.dest(paths.sass.dest))
+    .pipe(plumber({
+      errorHandler: function (err) {
+        util.log(err);
+        browserSync.notify(buildErrorMessage('sass'));
+        this.emit('end');
+      }
+    }))
+    .pipe(sourcemaps.init())
+    .pipe(gulpif(env === 'prd', sass({outputStyle: 'compressed'}), sass({outputStyle: 'expanded'})))
+    .pipe(autoprefixer())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(paths.sass.dest))
+    .pipe(browserSync.stream({match: '**/*.css'}));
 });
 
 /**
- * Watch task
+ * Build task
  *
- * 1. Watches scripts specified in paths object for changes
- * 2. Watches stylesheets specified in paths object for changes
+ * 1. Run the jekyll task first
+ * 2. When jekyll task is complete, run docs, img, js, and sass tasks
  */
-gulp.task('watch', function () {
-  gulp.watch(paths.js.files, ['js']);
-  gulp.watch(paths.sass.files, ['sass']);
+gulp.task('build', ['jekyll'], function (callback) {
+  runSequence(['docs', 'img', 'js', 'sass'], callback);
+});
+
+/**
+ * Dev task
+ *
+ * 1. Set the environment to "dev" for development
+ * 2. Run the build task
+ */
+gulp.task('dev', function (callback) {
+  env = 'dev';
+  runSequence(['build'], callback);
+});
+
+/**
+ * Prd task
+ *
+ * 1. Set the environment to "prd" for production
+ * 2. Run the build task
+ */
+gulp.task('prd', function (callback) {
+  env = 'prd';
+  runSequence(['build'], callback);
+});
+
+
+/**
+ * Serve task
+ *
+ * 1. Run the build of the site first
+ * 2. When the build finishes, initialize browser-sync to serve files
+ * 3. Watches jekyll files that need to regenerate on change
+ * 4. Watches docs for changes
+ * 5. Watches images for changes
+ * 6. Watches scripts for changes
+ * 7. Watches styles for changes
+ */
+gulp.task('serve', ['dev'], function () {
+  browserSync.init({
+    server: {
+      baseDir: './public'
+    }
+  });
+
+  gulp.watch(paths.jekyll.watchFiles, ['dev']);
+  gulp.watch(paths.docs.watchFiles, ['docs']);
+  gulp.watch(paths.img.watchFiles, ['img']);
+  gulp.watch(paths.js.watchFiles, ['js']);
+  gulp.watch(paths.sass.watchFiles, ['sass']);
 });
 
 /**
  * Default task
  *
- * 1. Runs Javascript, Sass, and Watch task by default
+ * 1. Serves the site using serve task by default
  */
-gulp.task('default', ['js', 'sass', 'watch']);
+gulp.task('default', ['serve']);
+
+/**
+ * Surge task
+ *
+ * 1. Deploys contents of public folder to Surge for hosting
+ */
+gulp.task('surge', function (done) {
+  return childProcess.spawn('surge', {cwd: paths.jekyll.dest, stdio: 'inherit'})
+    .on('close', done);
+});
+
+/**
+ * Deploy task
+ *
+ * 1. Serves the site by default
+ */
+gulp.task('deploy', function (callback) {
+  runSequence('prd', 'surge', callback);
+});
