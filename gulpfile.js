@@ -28,52 +28,50 @@ var env = 'dev';
 var paths = {
   jekyll: {
     watchFiles: [
-      'src/**/*',
-      '!src/_assets{,/**/*}',
-      '!src/_vendor{,/**/*}'
+      'app/**/*'
     ],
-    src: 'src',
+    src: 'app',
     dest: 'public'
   },
   docs: {
     watchFiles: [
-      'src/_assets/docs/pdf/patrick-hooper_resume.pdf'
+      'docs/**/*'
     ],
     src: [
-      'src/_assets/docs/pdf/patrick-hooper_resume.pdf'
+      'docs/**/*'
     ],
     dest: 'public/docs'
   },
   img: {
     watchFiles: [
-      'src/_assets/img/**/*',
-      '!src/_assets/img/portfolio/university-of-michigan-athletics{,/**/*}',
-      '!src/_assets/img/portfolio/wgi*{,/**/*}'
+      'assets/img/**/*',
+      '!assets/img/portfolio/university-of-michigan-athletics{,/**/*}',
+      '!assets/img/portfolio/wgi*{,/**/*}'
     ],
     src: [
-      'src/_assets/img/**/*',
-      '!src/_assets/img/portfolio/university-of-michigan-athletics{,/**/*}',
-      '!src/_assets/img/portfolio/wgi*{,/**/*}'
+      'assets/img/**/*',
+      '!assets/img/portfolio/university-of-michigan-athletics{,/**/*}',
+      '!assets/img/portfolio/wgi*{,/**/*}'
     ],
     dest: 'public/img'
   },
   js: {
     watchFiles: [
-      'src/_vendor/assets/js/**/*.js',
-      'src/_assets/js/**/*.js'
+      'vendor/assets/js/**/*.js',
+      'assets/js/**/*.js'
     ],
     src: [
-      'src/_vendor/assets/js/**/*.js',
-      'src/_assets/js/**/*.js'
+      'vendor/assets/js/**/*.js',
+      'assets/js/**/*.js'
     ],
     dest: 'public/js'
   },
   sass: {
     watchFiles: [
-      'src/_vendor/assets/sass/**/*.scss',
-      'src/_assets/sass/**/*.scss'
+      'vendor/assets/sass/**/*.scss',
+      'assets/sass/**/*.scss'
     ],
-    src: 'src/_assets/sass/style.scss',
+    src: 'assets/sass/style.scss',
     dest: 'public/css'
   }
 };
@@ -139,7 +137,7 @@ gulp.task('clean:img', function () {
 });
 
 gulp.task('img', ['clean:img'], function () {
-  return gulp.src(paths.img.src, {base: 'src/_assets/img'})
+  return gulp.src(paths.img.src)
     .pipe(plumber({
       errorHandler: function (err) {
         util.log(err);
