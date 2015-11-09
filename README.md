@@ -1,7 +1,18 @@
 # patrick.hoopr.io
-The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Technology Fanboy, Happily Married, Cheesecake Evangelist, World Traveler, and more. Currently living in Ann Arbor, Michigan as a proud University of Michigan alum - Go Blue!
+The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Technology Fanboy, Happily Married, Cheesecake Evangelist, World Traveler, and more. Currently living in Ann Arbor, Michigan as a proud University of Michigan grad - Go Blue!
 
-### Current Version : v2.2.13
+### Current Version : v3.0.0
+
+## Usage
+1. Clone the repository.
+2. Navigate into the repository.
+3. Run the command `gem install bundler` (you'll need Ruby installed)
+4. Run the command `npm install` (you'll need Node.js & npm)
+5. Use Gulp to handle your workflow!
+  * Run the command `gulp` for development and a Browersync server
+  * Run the command `gulp build` just to compile development code
+  * Run the command `gulp deploy` to compile production code and deploy
+  * Run the command `gulp surge` to send contents of "public" folder to Surge
 
 ## Sass Requirements
 - Breakpoint ([http://breakpoint-sass.com/](http://breakpoint-sass.com/))
