@@ -10,9 +10,9 @@ The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Tec
 4. Run the command `npm install` (you'll need Node.js & npm)
 5. Use Gulp to handle your workflow!
   * Run the command `gulp` for development and a Browersync server
-  * Run the command `gulp build` just to compile development code
-  * Run the command `gulp deploy` to compile production code and deploy
-  * Run the command `gulp surge` to send contents of "public" folder to Surge
+  * Run the command `gulp build` to only compile development code
+  * Run the command `gulp deploy` to compile production code and deploy to Surge
+  * Run the command `gulp surge` to only deploy "public" folder to Surge
 
 ## Sass Requirements
 - Breakpoint ([http://breakpoint-sass.com/](http://breakpoint-sass.com/))
