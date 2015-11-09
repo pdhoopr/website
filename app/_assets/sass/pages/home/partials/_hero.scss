@@ -8,7 +8,7 @@
 
   /* Styles for medium and up devices */
   @include breakpoint($mq_medium) {
-    background: $blue url(/img/hero/hero_background.jpg) fixed;
+    background: $blue url('/img/home/hero_background.jpg') fixed;
     background-size: cover;
     color: $yellow;
     display: block;
@@ -17,7 +17,7 @@
 
   /* Styles for the hero (textured) overlay */
   .hero_overlay {
-    background: url(/img/hero/hero_texture.png) fixed;
+    background: url('/img/home/hero_texture.png') fixed;
     height: 95%;
     height: 95vh;
     left: 0;
