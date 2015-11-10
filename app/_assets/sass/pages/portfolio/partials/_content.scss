@@ -70,8 +70,35 @@
         }
       }
 
+      /* Styles for container of roles, tech, and platforms */
+      .project_thirds {
+        padding: 0.3em 0 1.2em;
+        text-align: center;
+
+        /* On medium devices, remove top padding */
+        @include breakpoint($mq_medium) {
+          padding-top: 0;
+        }
+
+        /* On large screens, increase padding */
+        @include breakpoint($mq_large) {
+          padding-bottom: 1.8em;
+          padding-top: 0.6em;
+        }
+      }
+
+      /* Give bottom padding to roles and tech */
+      .project_roles,
+      .project_tech {
+        padding-bottom: 1.2em;
+
+        /* Remove bottom padding on large devices */
+        @include breakpoint($mq_large) {
+          padding-bottom: 0;
+        }
+      }
+
       /* Styles for project description and platforms used */
-      .project_platforms,
       .project_description {
         padding-bottom: 1.2em;
       }
@@ -89,12 +116,11 @@
         .btn {
           background-color: $blue;
           margin: 1em 0 0.75em;
-          width: 100%;
+          width: auto;
 
           /* Auto width on medium and up devices, increase bottom margin */
           @include breakpoint($mq_medium) {
             margin: 1em 0;
-            width: auto;
           }
 
           /* No top margin for any buttons after the first one */

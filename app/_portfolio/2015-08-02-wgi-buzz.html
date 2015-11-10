@@ -20,9 +20,11 @@ github: https://github.com/impatrickhooper/wgi.buzz
 
       <h3 class="subtitle">{ OVERVIEW }</h3>
 
-      <p class="project_roles"><strong>Roles:</strong> {{ page.roles }}</p>
-      <p class="project_tech"><strong>Technologies:</strong> {{ page.technologies }}</p>
-      <p class="project_platforms"><strong>Platforms:</strong> <span class="fa fa-desktop"></span><span class="fa fa-tablet"></span><span class="fa fa-mobile"></span></p>
+      <div class="project_thirds grid-100 tablet-grid-100 mobile-grid-100">
+        <p class="project_roles grid-33 tablet-grid-100 mobile-grid-100"><strong>Roles:</strong><br> {{ page.roles }}</p>
+        <p class="project_tech grid-33 tablet-grid-100 mobile-grid-100"><strong>Technologies:</strong><br> {{ page.technologies }}</p>
+        <p class="project_platforms grid-33 tablet-grid-100 mobile-grid-100"><strong>Platforms:</strong><br> <span class="fa fa-desktop"></span><span class="fa fa-tablet"></span><span class="fa fa-mobile"></span></p>
+      </div>
 
       <p class="project_description">{{ page.description }}</p>
 
