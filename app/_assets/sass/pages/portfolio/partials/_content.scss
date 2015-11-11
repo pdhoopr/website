@@ -57,7 +57,7 @@
 
       /* Styles for the project photos (overview/preview photos) */
       .project_photos {
-        margin: 0 auto 3.6em;
+        margin: 0 auto 2.4em;
         max-width: 640px;
         position: relative;
 
@@ -79,7 +79,12 @@
 
       /* Styles for project overview section */
       .project_overview {
-        padding-bottom: 2.4em;
+        padding-bottom: 1.8em;
+
+        /* Increase bottom padding on large devices */
+        @include breakpoint($mq_large) {
+          padding-bottom: 2.4em;
+        }
       }
 
       /* Styles for project description */
