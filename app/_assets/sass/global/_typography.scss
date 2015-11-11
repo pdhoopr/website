@@ -30,7 +30,7 @@ h6 {
 
 /* Paragraph font size */
 p {
-  font-size: 1rem;
+  font-size: 1.125rem;
 
   /* Increase font size on medium and up devices */
   @include breakpoint($mq_medium) {

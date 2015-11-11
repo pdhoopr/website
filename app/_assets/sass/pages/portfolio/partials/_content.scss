@@ -29,7 +29,7 @@
 
       /* Alter padding for these portfolio pages' project sections */
       .project_section {
-        padding: 0 0 1.2em;
+        padding: 0 0 1.8em;
 
         /* Increase padding on large devices */
         @include breakpoint($mq_large) {
