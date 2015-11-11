@@ -57,7 +57,7 @@
 
       /* Styles for the project photos (overview/preview photos) */
       .project_photos {
-        margin: 0 auto 3.6em;
+        margin: 0 auto 2.4em;
         max-width: 640px;
         position: relative;
 
@@ -79,7 +79,12 @@
 
       /* Styles for project overview section */
       .project_overview {
-        padding-bottom: 2.4em;
+        padding-bottom: 1.8em;
+
+        /* Increase bottom padding on large devices */
+        @include breakpoint($mq_large) {
+          padding-bottom: 2.4em;
+        }
       }
 
       /* Styles for project description */
@@ -120,12 +125,12 @@
         /* Styles for the button */
         .btn {
           background-color: $blue;
-          margin-top: 1.2em;
+          margin-top: 1em;
           width: auto;
 
           /* Increase top margin on large devices */
           @include breakpoint($mq_large) {
-            margin-top: 2.4em;
+            margin-top: 2em;
           }
 
           /* No top margin for any buttons after the first one */
