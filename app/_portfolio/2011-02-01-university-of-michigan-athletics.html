@@ -18,24 +18,26 @@ github: false
     <div class="project_summary">
       <h2 class="title">{{ page.name }}</h2>
 
-      <h3 class="subtitle">{ OVERVIEW }</h3>
+      <div class="project_overview">
+        <h3 class="subtitle">{ OVERVIEW }</h3>
 
-      <div class="project_thirds grid-100 tablet-grid-100 mobile-grid-100">
-        <p class="project_roles grid-33 tablet-grid-100 mobile-grid-100"><strong>Roles:</strong><br> {{ page.roles }}</p>
-        <p class="project_tech grid-33 tablet-grid-100 mobile-grid-100"><strong>Technologies:</strong><br> {{ page.technologies }}</p>
-        <p class="project_platforms grid-33 tablet-grid-100 mobile-grid-100"><strong>Platforms:</strong><br> <span class="fa fa-desktop"></span></p>
-      </div>
+        <p class="project_description">{{ page.description }}</p>
 
-      <p class="project_description">{{ page.description }}</p>
+        <div class="project_thirds grid-100 tablet-grid-100 mobile-grid-100">
+          <p class="project_roles grid-33 tablet-grid-100 mobile-grid-100"><strong>Roles:</strong><br> {{ page.roles }}</p>
+          <p class="project_tech grid-33 tablet-grid-100 mobile-grid-100"><strong>Technologies:</strong><br> {{ page.technologies }}</p>
+          <p class="project_platforms grid-33 tablet-grid-100 mobile-grid-100"><strong>Platforms:</strong><br> <span class="fa fa-desktop"></span></p>
+        </div>
 
-      <div class="view-project">
-        {% if page.live %}
-          <a class="btn btn-raised btn-live" href="{{ page.live }}" target="_blank"><span class="fa fa-lg fa-external-link"></span>Live Site</a>
-        {% endif %}
+        <div class="view-project">
+          {% if page.live %}
+            <a class="btn btn-raised btn-live" href="{{ page.live }}" target="_blank"><span class="fa fa-lg fa-external-link"></span>Live Site</a>
+          {% endif %}
 
-        {% if page.github %}
-          <a class="btn btn-raised btn-github" href="{{ page.github }}" target="_blank"><span class="fa fa-lg fa-github"></span>GitHub</a>
-        {% endif %}
+          {% if page.github %}
+            <a class="btn btn-raised btn-github" href="{{ page.github }}" target="_blank"><span class="fa fa-lg fa-github"></span>GitHub</a>
+          {% endif %}
+        </div>
       </div>
     </div>
 
