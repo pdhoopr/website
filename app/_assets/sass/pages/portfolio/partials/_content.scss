@@ -1,6 +1,6 @@
-/* ==========================================================================
+/* =========================================================================
    Portfolio | Content
-   ========================================================================== */
+   ========================================================================= */
 .layout-portfolio {
 
   /* Styles for the main content on a portfolio page */
@@ -14,37 +14,40 @@
       padding-bottom: 0.75em;
       text-align: center;
 
+      /* Increase font size on medium and up devices */
       @include breakpoint($mq_medium) {
         font-size: 1.7rem;
       }
     }
 
     /* Portfolio | Content (WGI.buzz, WGIki, WGI Informer, UMich Athletics)
-    ========================================================================== */
+    ======================================================================== */
     &.wgi-buzz,
     &.wgiki,
     &.wgi-informer,
     &.university-of-michigan-athletics {
-      .project_section {
-        padding: 1.2em 0;
 
-        /* Styles for medium and up devices */
-        @include breakpoint($mq_medium) {
-          padding: 1.2em;
+      /* Alter padding for these portfolio pages' project sections */
+      .project_section {
+        padding: 0 0 1.2em;
+
+        /* Increase padding on large devices */
+        @include breakpoint($mq_large) {
+          padding: 0 1.2em 2.4em;
         }
       }
     }
 
     /* Portfolio | Content | Project Summary
-    ========================================================================== */
+    ======================================================================== */
     .project_summary {
 
       /* Styles for the project title */
       .title {
         font-size: 2rem;
         line-height: 1;
-        margin-top: 0.75em;
-        padding-bottom: 0.75em;
+        margin-top: 1em;
+        padding-bottom: 1em;
 
         /* Styles for medium and up devices */
         @include breakpoint($mq_medium) {
@@ -54,15 +57,19 @@
 
       /* Styles for the project photos (overview/preview photos) */
       .project_photos {
-        margin: 0 auto 2.4em;
+        margin: 0 auto 3.6em;
         max-width: 640px;
         position: relative;
+
+        /* Increase bottom margin on large devices */
+        @include breakpoint($mq_large) {
+          margin-bottom: 4.8em;
+        }
       }
 
       /* Styles for project overview subtitle */
       .subtitle {
         font-size: 1.5rem;
-        margin-top: 0.75em;
 
         /* Increase overview font size on medium and up devices */
         @include breakpoint($mq_medium) {
@@ -70,21 +77,24 @@
         }
       }
 
+      /* Styles for project overview section */
+      .project_overview {
+        padding-bottom: 2.4em;
+      }
+
+      /* Styles for project description */
+      .project_description {
+        padding-bottom: 1.2em;
+
+        /* Increase bottom padding on large devices */
+        @include breakpoint($mq_large) {
+          padding-bottom: 2.4em;
+        }
+      }
+
       /* Styles for container of roles, tech, and platforms */
       .project_thirds {
-        padding: 0.3em 0 1.2em;
         text-align: center;
-
-        /* On medium devices, remove top padding */
-        @include breakpoint($mq_medium) {
-          padding-top: 0;
-        }
-
-        /* On large screens, increase padding */
-        @include breakpoint($mq_large) {
-          padding-bottom: 1.8em;
-          padding-top: 0.6em;
-        }
       }
 
       /* Give bottom padding to roles and tech */
@@ -96,11 +106,6 @@
         @include breakpoint($mq_large) {
           padding-bottom: 0;
         }
-      }
-
-      /* Styles for project description and platforms used */
-      .project_description {
-        padding-bottom: 1.2em;
       }
 
       /* Give some right spacing to project platform icons */
@@ -115,12 +120,12 @@
         /* Styles for the button */
         .btn {
           background-color: $blue;
-          margin: 1em 0 0.75em;
+          margin-top: 1.2em;
           width: auto;
 
-          /* Auto width on medium and up devices, increase bottom margin */
-          @include breakpoint($mq_medium) {
-            margin: 1em 0;
+          /* Increase top margin on large devices */
+          @include breakpoint($mq_large) {
+            margin-top: 2.4em;
           }
 
           /* No top margin for any buttons after the first one */
@@ -148,23 +153,23 @@
     }
 
     /* Portfolio | Content | Project Section
-    ========================================================================== */
+    ======================================================================== */
     .project_section {
-      padding: 1.2em 0;
+      padding: 0 0 2.4em;
 
-      /* Increase space between sections on medium devices */
-      @include breakpoint($mq_medium) {
-        padding: 1.8em 0;
+      /* Increase bottom padding on large devices */
+      @include breakpoint($mq_large) {
+        padding-bottom: 4.8em;
       }
 
-      /* Increase space between sections on large devices */
-      @include breakpoint($mq_large) {
-        padding: 2.4em 0;
+      /* Alter bottom padding for last project section */
+      &:last-of-type {
+        padding-bottom: 2.4em;
       }
 
       /* Styles for the description of a project */
       .section_description {
-        margin-bottom: 1.33333em;
+        margin-bottom: 1.2em;
 
         /* No margin on large and up devices */
         @include breakpoint($mq_large) {
@@ -197,7 +202,6 @@
         /* Styles specifically for a mobile phone */
         &.mobile {
           display: block;
-          margin-bottom: 1.33333em;
           position: static;
           width: 100%;
 
@@ -210,12 +214,20 @@
 
           /* Styles specifically for all but the first mobile phone */
           &:not(:first-of-type) {
-            margin: 0 auto;
-            margin-bottom: 1.3333em;
 
             /* Styles for large and up devices */
             @include breakpoint($mq_large) {
               margin-left: 0.8em;
+            }
+          }
+
+          /* Styles specifically for all but the last mobile phone */
+          &:not(:last-of-type) {
+            margin-bottom: 1.2em;
+
+            /* Remove bottom margin on large devices */
+            @include breakpoint($mq_large) {
+              margin-bottom: 0;
             }
           }
         }
