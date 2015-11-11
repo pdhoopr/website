@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://localhost:3000/</loc>
+    <loc>http://patrick.hoopr.io/</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/portfolio/university-of-michigan-athletics/</loc>
+    <loc>http://patrick.hoopr.io/portfolio/university-of-michigan-athletics/</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/portfolio/ms-omearas-multiage/</loc>
+    <loc>http://patrick.hoopr.io/portfolio/ms-omearas-multiage/</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/portfolio/jahleh-and-patricks-wedding/</loc>
+    <loc>http://patrick.hoopr.io/portfolio/jahleh-and-patricks-wedding/</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/portfolio/wgi-informer/</loc>
+    <loc>http://patrick.hoopr.io/portfolio/wgi-informer/</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/portfolio/wgiki/</loc>
+    <loc>http://patrick.hoopr.io/portfolio/wgiki/</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/portfolio/wgi-buzz/</loc>
+    <loc>http://patrick.hoopr.io/portfolio/wgi-buzz/</loc>
   </url>
 </urlset>
