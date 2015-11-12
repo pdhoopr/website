@@ -4,7 +4,7 @@
 
 /* Styles for the masthead */
 #masthead {
-  background: $blue url(/img/hero/hero_texture.png) fixed;
+  background: $blue url('/img/home/hero_texture.png') fixed;
   color: $yellow;
   font-family: $ubuntu;
   max-width: 100%;
@@ -16,7 +16,7 @@
   /* Styles for medium and up devices */
   @include breakpoint($mq_medium) {
     background: none;
-    padding: 17px 16px 0;
+    padding: 0 16px;
     position: fixed;
     text-align: left;
     z-index: 100;

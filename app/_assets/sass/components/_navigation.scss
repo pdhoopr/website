@@ -25,7 +25,7 @@
     display: inline-block;
     float: left;
     font-size: 1.25rem;
-    padding-bottom: 9px;
+    padding-bottom: 10px;
     padding-top: 13px;
     text-align: center;
     transition: 0.3s;
@@ -33,7 +33,7 @@
 
     /* Styles for medium and up devices */
     @include breakpoint($mq_medium) {
-      padding: 0 16px 13px;
+      padding: 18px 16px 13px;
       width: auto;
     }
 

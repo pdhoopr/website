@@ -13,13 +13,14 @@
     /* Styles for small devices */
     @include breakpoint($mq_small) {
       background: rgba(16, 30, 67, 1);
-      padding: 14px 8px 0 16px;
+      padding: 0 8px 0 16px;
     }
 
     /* Styles applied to the header when the page is scrolling */
     &.scroll-header {
       background-color: rgba(16, 30, 67, 0.75);
 
+      /* Styles for the main nav */
       .main-nav {
         background-color: transparent;
         box-shadow: none;
@@ -38,6 +39,13 @@
       font-size: 2.5rem;
       margin-top: -6px;
       padding: 0;
+    }
+
+    /* Add some padding to the logo text on small devices */
+    h1 {
+      @include breakpoint($mq_small) {
+        padding: 14px 0 8px;
+      }
     }
   }
 
@@ -60,7 +68,7 @@
 
       /* Styles for small devices */
       @include breakpoint($mq_small) {
-        padding: 0 8px 8px;
+        padding: 14px 8px 9px;
         width: auto;
       }
 

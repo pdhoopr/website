@@ -17,6 +17,13 @@
     padding: 0;
   }
 
+  /* Add padding on the logo text on medium and up devices */
+  h1 {
+    @include breakpoint($mq_medium) {
+      padding: 17px 0 12px;
+    }
+  }
+
   /* Styles for a letter in the logo */
   .letter {
     display: inline-block;
