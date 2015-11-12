@@ -1,11 +1,13 @@
 {
   "name": "patrick-hooper",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Technology Fanboy, Happily Married, Cheesecake Evangelist, World Traveler, and more. Currently living in Ann Arbor, Michigan as a proud University of Michigan grad - Go Blue!",
   "author": "Patrick Hooper <patrick.d.hooper@gmail.com>",
   "scripts": {
-    "deploy": "gulp deploy",
-    "dev": "gulp serve"
+    "start": "gulp serve",
+    "test": "gulp build",
+    "predeploy": "NODE_ENV=prd gulp build",
+    "deploy": "surge ./public"
   },
   "repository": {
     "type": "git",

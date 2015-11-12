@@ -21,7 +21,7 @@ var uglify = require('gulp-uglify');
 var util = require('gulp-util');
 
 /* Default to dev for environment */
-var env = 'dev';
+var env = process.env.NODE_ENV || 'dev';
 
 /* Set path objects used in locating and compiling assets */
 var paths = {
@@ -222,29 +222,6 @@ gulp.task('build', ['jekyll'], function (callback) {
 });
 
 /**
- * Dev task
- *
- * 1. Set the environment to "dev" for development
- * 2. Run the build task
- */
-gulp.task('dev', function (callback) {
-  env = 'dev';
-  runSequence(['build'], callback);
-});
-
-/**
- * Prd task
- *
- * 1. Set the environment to "prd" for production
- * 2. Run the build task
- */
-gulp.task('prd', function (callback) {
-  env = 'prd';
-  runSequence(['build'], callback);
-});
-
-
-/**
  * Serve task
  *
  * 1. Run the build of the site first
@@ -255,14 +232,14 @@ gulp.task('prd', function (callback) {
  * 6. Watches scripts for changes
  * 7. Watches styles for changes
  */
-gulp.task('serve', ['dev'], function () {
+gulp.task('serve', ['build'], function () {
   browserSync.init({
     server: {
       baseDir: './public'
     }
   });
 
-  gulp.watch(paths.jekyll.watchFiles, ['dev']);
+  gulp.watch(paths.jekyll.watchFiles, ['build']);
   gulp.watch(paths.docs.watchFiles, ['docs']);
   gulp.watch(paths.img.watchFiles, ['img']);
   gulp.watch(paths.js.watchFiles, ['js']);
@@ -275,22 +252,3 @@ gulp.task('serve', ['dev'], function () {
  * 1. Serves the site using serve task by default
  */
 gulp.task('default', ['serve']);
-
-/**
- * Surge task
- *
- * 1. Deploys contents of public folder to Surge for hosting
- */
-gulp.task('surge', function (done) {
-  return childProcess.spawn('../node_modules/.bin/surge', {cwd: paths.jekyll.dest, stdio: 'inherit'})
-    .on('close', done);
-});
-
-/**
- * Deploy task
- *
- * 1. Serves the site by default
- */
-gulp.task('deploy', function (callback) {
-  runSequence('prd', 'surge', callback);
-});
