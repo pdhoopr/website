@@ -1,14 +1,14 @@
 # Patrick Hooper
 The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Technology Fanboy, Happily Married, Cheesecake Evangelist, World Traveler, and more. Currently living in Ann Arbor, Michigan as a proud University of Michigan grad - Go Blue!
 
-### Current Version : v4.1.0
+### Current Version : v4.2.0
 
 ## Usage
 1. Clone the repository.
 2. Navigate into the repository.
-3. Run `gem install bundler` (you'll need Ruby installed)
+3. Run `bundle install` (you'll need Ruby & Bundler)
 4. Run `npm install` (you'll need Node.js & npm)
-5. Use npm + Gulp to handle your workflow!
+5. Let npm scripts handle your workflow!
   * Use `npm start` to build development code and start a Browersync server
   * Use `npm test` to check for build errors
   * Use `npm run deploy` to build production code and upload the *public* folder to Surge

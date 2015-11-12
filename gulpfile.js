@@ -92,7 +92,7 @@ function buildErrorMessage(task) {
  * 3. Closes process
  */
 gulp.task('jekyll', function (done) {
-  return childProcess.spawn('jekyll', ['build'], {cwd: paths.jekyll.src, stdio: 'inherit'})
+  return childProcess.spawn('bundle', ['exec', 'jekyll', 'build'], {cwd: paths.jekyll.src, stdio: 'inherit'})
     .on('close', function (code) {
       if (code !== 0) {
         browserSync.notify('<span style="color: red; font-weight: bold;">jekyll task error!</span><span style="color: red;"> Please check the console and resolve the error ASAP because the build may be failing!</span>');
