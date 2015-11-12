@@ -14,7 +14,6 @@ var concat = require('gulp-concat');
 var del = require('del');
 var gulpif = require('gulp-if');
 var plumber = require('gulp-plumber');
-var rename = require('gulp-rename');
 var runSequence = require('run-sequence');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
@@ -174,7 +173,7 @@ gulp.task('js', ['clean:js'], function () {
       }
     }))
     .pipe(sourcemaps.init())
-    .pipe(concat('app.min.js'))
+    .pipe(concat('bundle.js'))
     .pipe(gulpif(env === 'prd', uglify()))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.js.dest))
@@ -207,7 +206,6 @@ gulp.task('sass', ['clean:css'], function () {
     .pipe(sourcemaps.init())
     .pipe(gulpif(env === 'prd', sass({outputStyle: 'compressed'}), sass({outputStyle: 'expanded'})))
     .pipe(autoprefixer())
-    .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.sass.dest))
     .pipe(browserSync.stream({match: '**/*.css'}));
@@ -284,7 +282,7 @@ gulp.task('default', ['serve']);
  * 1. Deploys contents of public folder to Surge for hosting
  */
 gulp.task('surge', function (done) {
-  return childProcess.spawn('surge', {cwd: paths.jekyll.dest, stdio: 'inherit'})
+  return childProcess.spawn('../node_modules/.bin/surge', {cwd: paths.jekyll.dest, stdio: 'inherit'})
     .on('close', done);
 });
 

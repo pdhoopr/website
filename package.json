@@ -1,8 +1,12 @@
 {
   "name": "patrick-hooper",
-  "version": "3.2.5",
+  "version": "4.0.0",
   "description": "The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Technology Fanboy, Happily Married, Cheesecake Evangelist, World Traveler, and more. Currently living in Ann Arbor, Michigan as a proud University of Michigan grad - Go Blue!",
   "author": "Patrick Hooper <patrick.d.hooper@gmail.com>",
+  "scripts": {
+    "deploy": "gulp deploy",
+    "dev": "gulp serve"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/impatrickhooper/patrick-hooper"
@@ -15,11 +19,11 @@
     "gulp-concat": "^2.6.0",
     "gulp-if": "^2.0.0",
     "gulp-plumber": "^1.0.1",
-    "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.4.2",
     "gulp-util": "^3.0.7",
-    "run-sequence": "^1.1.4"
+    "run-sequence": "^1.1.4",
+    "surge": "^0.17.2"
   }
 }
