@@ -2,6 +2,8 @@
 .VolumeIcon.icns
 .fseventsd
 Icon
-Gemfile.lock
-node_modules
+.bundle
+.env
 .sass-cache
+node_modules
+vendor/bundle
