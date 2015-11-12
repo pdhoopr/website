@@ -8,7 +8,7 @@ The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Tec
 2. Navigate into the repository.
 3. Run `gem install bundler` (you'll need Ruby installed)
 4. Run `npm install` (you'll need Node.js & npm)
-5. Use Gulp to handle your workflow!
+5. Use npm + Gulp to handle your workflow!
   * Use `npm run dev` to build development code and start a Browersync server
   * Use `npm run deploy` to build production code and upload the *public* folder to Surge
 
