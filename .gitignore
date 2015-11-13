@@ -3,8 +3,7 @@
 .fseventsd
 Icon
 .bundle
+.env
 .sass-cache
-Gemfile.lock
-bin
 node_modules
 vendor/bundle
