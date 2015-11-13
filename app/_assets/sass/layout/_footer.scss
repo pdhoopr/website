@@ -1,16 +1,16 @@
-/* ==========================================================================
+/* =========================================================================
    Footer
-   ========================================================================== */
+   ========================================================================= */
 
 /* Styles for Contact section */
 #contact {
-  background-color: #222;
+  background-color: $gray-2;
   font-family: $ubuntu;
-  padding: 1.2em 0 0.6em;
+  padding: 1.2em 0 .6em;
 
   /* Styles for credit to Jekyll */
   .credit p {
-    font-size: 0.75rem;
+    font-size: .75rem;
     text-align: center;
   }
 }

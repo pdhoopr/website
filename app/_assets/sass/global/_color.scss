@@ -1,13 +1,13 @@
-/* ==========================================================================
+/* =========================================================================
    Colors
-   ========================================================================== */
+   ========================================================================= */
 
 /* General
-   ========================================================================== */
+   ========================================================================= */
 
 /* Body text to lighter gray */
 body {
-  color: $body_gray;
+  color: $gray-6;
 }
 
 /* Remove text decor and colors from links */
@@ -20,7 +20,7 @@ a:active {
 }
 
 /* On touch devices, no hover effects for external links */
-.touch a[target="_blank"]:hover {
+.touch a[target='_blank']:hover {
   opacity: 1;
 }
 
@@ -29,11 +29,11 @@ a:active {
   &,
   &:hover {
     text-decoration: underline;
-    transition: opacity 0.15s ease-in-out;
+    transition: opacity .15s ease-in-out;
   }
 
   /* On hover, make less opaque */
   &:hover {
-    opacity: 0.75;
+    opacity: .75;
   }
 }

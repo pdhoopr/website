@@ -1,9 +1,9 @@
-/* ==========================================================================
+/* =========================================================================
    Typography
-   ========================================================================== */
+   ========================================================================= */
 
 /* General
-   ========================================================================== */
+   ========================================================================= */
 
 /* Root element 100% font size */
 html {
@@ -12,7 +12,7 @@ html {
 
 /* Assign body PT Sans font and slightly larger font size/line height for readability */
 body {
-  font-family: $pt_sans;
+  font-family: $pt-sans;
   font-size: 125%;
   line-height: 1.5;
 }
@@ -33,7 +33,7 @@ p {
   font-size: 1.125rem;
 
   /* Increase font size on medium and up devices */
-  @include breakpoint($mq_medium) {
+  @include breakpoint($mq-medium) {
     font-size: 1.25rem;
   }
 }
@@ -41,7 +41,7 @@ p {
 /* Make strong elements bold and slightly spaced out for readability */
 strong {
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
 }
 
 /* Make em elements italicized */

@@ -1,4 +1,4 @@
-<nav class="main-nav">
+<nav class="main-nav clearfix">
   {% if page.layout == "default" %}
     {% for item in site.data.nav %}
       <div class="nav-item nav-{{ item.id }}">
@@ -11,13 +11,13 @@
 
   {% elsif page.layout == "portfolio" %}
     <div class="nav-item">
-      <a href="{{ site.url }}/portfolio/{{ page.previous }}" title="{{ page.previous_title }}">
+      <a href="{{ site.url }}/portfolio/{{ page.previous }}" title="{{ page.previous-title }}">
         <span class="fa fa-angle-left"></span>
         <div class="tooltip">Prev</div>
       </a>
     </div>
     <div class="nav-item">
-      <a href="{{ site.url }}/portfolio/{{ page.next }}" title="{{ page.next_title }}">
+      <a href="{{ site.url }}/portfolio/{{ page.next }}" title="{{ page.next-title }}">
         <div class="tooltip">Next</div>
         <span class="fa fa-angle-right"></span>
       </a>

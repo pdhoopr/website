@@ -4,25 +4,25 @@
 
 /* Variables
    ======================================================================== */
-var wrapper = $('#wrapper'),
-    masthead = $('#masthead'),
-    mainNav = $('.main-nav'),
-    letters = $('.letter-animate'),
-    navAbout = $('.nav-about'),
-    navPortfolio = $('.nav-portfolio'),
-    lastActive = null,
-    hero = $('#hero'),
-    heroAnimate = $('#hero .hero-animate'),
-    heroArrow = $('#hero .hero_arrow'),
-    fadeHeroDiv,
-    fadeHeroArrow,
-    taglines = $('.tagline'), // Hide all taglines initially
-    i = 0, // Counter for taglines
-    learnMore = $('.learn-more'),
-    about = $('#about'),
-    portfolio = $('#portfolio'),
-    contact = $('#contact'),
-    project = $('.portfolio-page');
+var wrapper = $('#wrapper');
+var masthead = $('#masthead');
+var mainNav = $('.main-nav');
+var letters = $('.letter-animate');
+var navAbout = $('.nav-about');
+var navPortfolio = $('.nav-portfolio');
+var lastActive = null;
+var hero = $('#hero');
+var heroAnimate = $('#hero .hero-animate');
+var heroArrow = $('#hero .hero-arrow');
+var fadeHeroDiv;
+var fadeHeroArrow;
+var taglines = $('.tagline'); // Hide all taglines initially
+var i = 0; // Counter for taglines
+var learnMore = $('.learn-more');
+var about = $('#about');
+var portfolio = $('#portfolio');
+var contact = $('#contact');
+var project = $('.portfolio-page');
 
 /* Functions
    ======================================================================== */
@@ -116,7 +116,7 @@ if (wrapper.hasClass('layout-default')) {
   /**
    * Toggles active class for About and also flags the header as scrolling
    */
-  var aboutWaypoint = about.waypoint(function(direction) {
+  var aboutWaypoint = about.waypoint(function (direction) {
 
     /* When going down and you hit about section, do stuff */
     if (direction === 'down') {
@@ -132,9 +132,9 @@ if (wrapper.hasClass('layout-default')) {
       navPortfolio.removeClass('active'); // Remove active class from portfolio
       lastActive = null; // Remove last active element
     }
-  },{
+  }, {
     /* Make offset the header height or the nav height (small devices) */
-    offset: function() {
+    offset: function () {
       return Modernizr.mq('(min-width: 46.0625rem)') ? masthead.height() : mainNav.height() + 1;
     }
   });
@@ -142,7 +142,7 @@ if (wrapper.hasClass('layout-default')) {
   /**
    * Toggles active class for Portfolio and removes for About
    */
-  var portfolioWaypoint = portfolio.waypoint(function(direction) {
+  var portfolioWaypoint = portfolio.waypoint(function (direction) {
 
     /* When going down and you hit Portfolio section, do stuff */
     if (direction === 'down') {
@@ -156,9 +156,9 @@ if (wrapper.hasClass('layout-default')) {
       navPortfolio.removeClass('active'); // Remove active class from portfolio
       lastActive = navAbout; // Make about the last active
     }
-  },{
+  }, {
     /* Make offset the header height or the nav height (small devices) */
-    offset: function() {
+    offset: function () {
       return Modernizr.mq('(min-width: 46.0625rem)') ? masthead.height() : mainNav.height() + 1;
     }
   });
@@ -166,7 +166,7 @@ if (wrapper.hasClass('layout-default')) {
   /**
    * Toggles active class Portfolio at bottom, restores previous active on up
    */
-  var contactWaypoint = contact.waypoint(function(direction) {
+  var contactWaypoint = contact.waypoint(function (direction) {
 
     /* When going down and you hit Contact section, do stuff */
     if (direction === 'down') {
@@ -190,7 +190,7 @@ if (wrapper.hasClass('layout-default')) {
   /**
    * Flags Portfolio page header as scrolling
    */
-  var projectWaypoint = project.waypoint(function(direction) {
+  var projectWaypoint = project.waypoint(function (direction) {
 
     /* When going down, add scrolling header class. When up, remove */
     if (direction === 'down') {
@@ -200,7 +200,7 @@ if (wrapper.hasClass('layout-default')) {
     }
   }, {
     /* Offset is the top margin of the portfolio page title */
-    offset: parseFloat(project.find('.project_summary h2.title').css('margin-top')) * -1
+    offset: parseFloat(project.find('.project-summary h2.title').css('margin-top')) * -1
   });
 }
 
@@ -213,19 +213,19 @@ scrollMagicController.scrollTo(function (newpos) {
 });
 
 /* Tell ScrollMagic to listen for anchor link clicks and scroll to them */
-$(document).on("click", "a[href^='#']", function (e) {
-  var id = $(this).attr("href");
+$(document).on('click', 'a[href^="#"]', function (e) {
+  var id = $(this).attr('href');
   if ($(id).length > 0) {
     e.preventDefault();
     scrollMagicController.scrollTo(id);
     if (window.history && window.history.pushState) {
-      history.pushState("", document.title, id);
+      history.pushState('', document.title, id);
     }
   }
 });
 
 /* Lazy loads images as they're 568px outside the view */
-$("img.lazy").unveil(568);
+$('img.lazy').unveil(568);
 
 /* Do the following only if this is the home page */
 if (wrapper.hasClass('layout-default')) {
@@ -240,7 +240,7 @@ if (wrapper.hasClass('layout-default')) {
     setTimeout(cycle, 500);
 
     /* Bring Learn More button to full opacity 8 seconds after page ready */
-    setTimeout(function() {
+    setTimeout(function () {
       learnMore.animate({opacity: 1}, 3000);
     }, 5000);
 
@@ -262,8 +262,8 @@ if (wrapper.hasClass('layout-default')) {
   if (!Modernizr.touch) {
 
     /* Slides up/down project logo overlay when it's hovered over on non-touch devices */
-    $('.project').hover(function() {
-      $(this).find('.project_overlay').css('max-height', $(this).height()).slideToggle(300);
+    $('.project').hover(function () {
+      $(this).find('.project-overlay').css('max-height', $(this).height()).slideToggle(300);
     });
   }
 }

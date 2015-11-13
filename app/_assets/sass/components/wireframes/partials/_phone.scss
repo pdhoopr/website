@@ -1,36 +1,36 @@
-/* ==========================================================================
+/* =========================================================================
    Wireframes | Phone
-   ========================================================================== */
+   ========================================================================= */
 
 /* Styles for phone wireframe */
 .phone {
   background-color: $white;
-  border: 2px solid $middle_gray;
+  border: 2px solid $gray-c;
   border-radius: 16px;
-  padding: 0 0.3em;
+  padding: 0 .3em;
   position: absolute;
   right: 0%;
   top: 25%;
   z-index: 10;
 
   /* Styles for medium and up devices */
-  @include breakpoint($mq_medium) {
+  @include breakpoint($mq-medium) {
     right: -5%;
   }
 
   /* Styles for top part of phone (camera, sensor, speaker) */
-  .phone_top {
-    margin: 0.2em 0 0.6em;
+  .phone-top {
+    margin: .2em 0 .6em;
     text-align: center;
   }
 
   /* Styles for camera */
-  .phone_camera {
-    line-height: 0.75;
+  .phone-camera {
+    line-height: .75;
 
     /* Styles for camera span */
     span {
-      background-color: $middle_gray;
+      background-color: $gray-c;
       border-radius: 50%;
       display: inline-block;
       height: 8px;
@@ -39,13 +39,13 @@
   }
 
   /* Styles for top parts of phone (sensor, speaker) */
-  .phone_top-parts {
-    line-height: 0.75;
+  .phone-top-parts {
+    line-height: .75;
     margin-left: -12px;
 
     /* Styles for sensor */
-    .phone_sensor {
-      background-color: $middle_gray;
+    .phone-sensor {
+      background-color: $gray-c;
       border-radius: 50%;
       display: inline-block;
       height: 4px;
@@ -54,8 +54,8 @@
     }
 
     /* Styles for speaker */
-    .phone_speaker {
-      background-color: $middle_gray;
+    .phone-speaker {
+      background-color: $gray-c;
       border-radius: 4px;
       display: inline-block;
       height: 4px;
@@ -64,8 +64,8 @@
   }
 
   /* Styles for phone image */
-  .phone_photo {
-    border: 2px solid $middle_gray;
+  .phone-photo {
+    border: 2px solid $gray-c;
 
     /* Styles for phone image */
     img {
@@ -75,21 +75,21 @@
   }
 
   /* Styles for phone button (big one at bottom) */
-  .phone_button {
-    line-height: 0.75;
-    margin: 0.2em 0;
+  .phone-button {
+    line-height: .75;
+    margin: .2em 0;
     text-align: center;
 
     /* Styles for phone button span */
     span {
-      border: 2px solid $middle_gray;
+      border: 2px solid $gray-c;
       border-radius: 50%;
       display: inline-block;
       height: 24px;
       width: 24px;
 
       /* Increase button size on medium and up devices */
-      @include breakpoint($mq_medium) {
+      @include breakpoint($mq-medium) {
         height: 32px;
         width: 32px;
       }

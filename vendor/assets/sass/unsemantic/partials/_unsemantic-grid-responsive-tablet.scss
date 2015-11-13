@@ -2,10 +2,10 @@
 /* This file has a mobile-to-tablet, and tablet-to-desktop breakpoint */
 /* ================================================================== */
 
-$media-mobile-max: $small_max !default;
-$media-tablet-min: $medium_min !default;
-$media-tablet-max: $medium_max !default;
-$media-desktop-min: $large_min !default;
+$media-mobile-max: 46rem !default;
+$media-tablet-min: 46.0625rem !default;
+$media-tablet-max: 62rem !default;
+$media-desktop-min: 62.0625rem !default;
 
 @import "unsemantic-vars";
 @import "unsemantic-ie-snap";

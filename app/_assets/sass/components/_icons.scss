@@ -1,9 +1,9 @@
-/* ==========================================================================
+/* =========================================================================
    Icons
-   ========================================================================== */
+   ========================================================================= */
 
 /* Contact
-   ========================================================================== */
+   ========================================================================= */
 
 /* Styles for icons in Contact */
 .contact-icons {
@@ -12,7 +12,7 @@
   text-align: center;
 
   /* Increase font size on medium and up devices */
-  @include breakpoint($mq_medium) {
+  @include breakpoint($mq-medium) {
     font-size: 1.25rem;
   }
 
@@ -21,17 +21,17 @@
     margin-left: 10%;
 
     /* Decrease margin on large and up devices */
-    @include breakpoint($mq_large) {
+    @include breakpoint($mq-large) {
       margin-left: 5%;
     }
   }
 
   /* Styles for hover over an icon (change color) */
   span:hover {
-    color: $middle_gray;
+    color: $gray-c;
 
     .touch & {
-      color: $body_gray;
+      color: $gray-6;
     }
   }
 }

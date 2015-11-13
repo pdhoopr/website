@@ -16,25 +16,25 @@ title: portfolio
             <ul class="projects kwicks kwicks-vertical">
         {% endif %}
         <li class="project {{ project.title }}">
-          <div class="project_center">
-            <div class="project_name">{{ project.name }}</div>
+          <div class="project-center">
+            <div class="project-name">{{ project.name }}</div>
 
-            <i class="project_icon fa fa-3x fa-{{ project.icon}}"></i>
+            <i class="project-icon fa fa-3x fa-{{ project.icon}}"></i>
 
-            <div class="project_body">
-              <div class="project_roles">
-                <p class="project_label">Roles</p>
+            <div class="project-body">
+              <div class="project-roles">
+                <p class="project-label">Roles</p>
                 <p>{{ project.roles }}</p>
               </div>
 
-              <div class="project_tech">
-                <p class="project_label">Tech</p>
+              <div class="project-tech">
+                <p class="project-label">Tech</p>
                 <p>{{ project.tech }}</p>
               </div>
 
-              <div class="project_devices">
-                <p class="project_label">Platforms</p>
-                <div class="project_devices_icons">
+              <div class="project-devices">
+                <p class="project-label">Platforms</p>
+                <div class="project-devices-icons">
                   {% if project.desktop %}<span class="fa fa-desktop"></span>{% endif %}
                   {% if project.tablet %}<span class="fa fa-tablet"></span>{% endif %}
                   {% if project.mobile %}<span class="fa fa-mobile"></span>{% endif %}
@@ -42,7 +42,7 @@ title: portfolio
               </div>
             </div>
 
-            <div class="project_view">
+            <div class="project-view">
               <a class="btn" href="{{ site.url }}/portfolio/{{ project.title }}">View Project<span class="fa fa-angle-right"></span></a>
             </div>
           </div>

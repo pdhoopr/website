@@ -1,36 +1,36 @@
-/* ==========================================================================
+/* =========================================================================
    Wireframes | Browser
-   ========================================================================== */
+   ========================================================================= */
 
 /* Styles for browser wireframe */
 .browser {
-  border: 2px solid $middle_gray;
+  border: 2px solid $gray-c;
   border-radius: 4px;
   padding: 0;
 
   /* Styles for browser controls (URL, buttons) */
-  .browser_controls {
-    border-bottom: 2px solid $middle_gray;
+  .browser-controls {
+    border-bottom: 2px solid $gray-c;
     height: 36px;
-    padding: 0.15em 0;
+    padding: .15em 0;
     position: relative;
 
     /* Shrink height on medium and up devices */
-    @include breakpoint($mq_medium) {
-      padding: 0.4em 0;
+    @include breakpoint($mq-medium) {
+      padding: .4em 0;
       height: 48px;
     }
 
     /* Styles for browser buttons */
-    .browser_buttons {
+    .browser-buttons {
       display: inline-block;
       list-style-type: none;
       height: 28px;
-      padding-left: 0.2em;
+      padding-left: .2em;
       text-align: center;
 
       /* Styles for individual buttons (green, yellow, red) */
-      .browser_button {
+      .browser-button {
         border-radius: 50%;
         display: inline-block;
         height: 8px;
@@ -39,24 +39,24 @@
 
         /* Red button */
         &.first {
-          background-color: red;
+          background-color: $red;
         }
 
         /* Yellow Button */
         &.second {
-          background-color: orange;
+          background-color: $orange;
         }
 
         /* Green button */
         &.third {
-          background-color: green;
+          background-color: $green;
         }
       }
     }
 
     /* Styles for browser URL */
-    .browser_url {
-      border: 2px solid $middle_gray;
+    .browser-url {
+      border: 2px solid $gray-c;
       border-radius: 4px;
       display: inline-block;
       font-size: 1rem;
@@ -68,7 +68,7 @@
   }
 
   /* Styles for browser image */
-  .browser_photo img {
+  .browser-photo img {
     float: left;
     max-width: 100%;
   }

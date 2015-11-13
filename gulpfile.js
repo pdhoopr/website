@@ -57,22 +57,41 @@ var paths = {
   },
   js: {
     watchFiles: [
-      'vendor/assets/js/**/*.js',
       'app/_assets/js/**/*.js'
     ],
     src: [
-      'vendor/assets/js/**/*.js',
       'app/_assets/js/**/*.js'
     ],
     dest: 'public/js'
   },
   sass: {
     watchFiles: [
-      'vendor/assets/sass/**/*.scss',
+      'vendor/assets/sass/sassy-maps/**/*.scss',
+      'vendor/assets/sass/breakpoint/**/*.scss',
       'app/_assets/sass/**/*.scss'
     ],
     src: 'app/_assets/sass/style.scss',
     dest: 'public/css'
+  },
+  vendor: {
+    js: {
+      watchFiles: [
+        'vendor/assets/js/**/*.js'
+      ],
+      src: [
+        'vendor/assets/js/**/*.js'
+      ],
+      dest: 'public/js'
+    },
+    sass: {
+      watchFiles: [
+        'vendor/assets/sass/**/*.scss',
+        '!vendor/assets/sass/sassy-maps/**/*.scss',
+        '!vendor/assets/sass/breakpoint/**/*.scss'
+      ],
+      src: 'vendor/assets/sass/vendor.scss',
+      dest: 'public/css'
+    }
   }
 };
 
@@ -150,20 +169,39 @@ gulp.task('img', ['clean:img'], function () {
 });
 
 /**
+ * Vendor Javascript task
+ *
+ * 1. Locates the src of vendor scripts specified in paths object
+ * 2. Concatenates all scripts into one file called vendor.js
+ * 3. Minifies the file if this is a production run
+ * 4. Writes the file to the scripts destination specified in the paths object
+ */
+gulp.task('vendorJS', function () {
+  return gulp.src(paths.vendor.js.src)
+    .pipe(plumber({
+      errorHandler: function (err) {
+        util.log(err);
+        browserSync.notify(buildErrorMessage('vendorJS'));
+        this.emit('end');
+      }
+    }))
+    .pipe(concat('vendor.js'))
+    .pipe(gulpif(env === 'prd', uglify()))
+    .pipe(gulp.dest(paths.vendor.js.dest))
+    .pipe(browserSync.stream());
+});
+
+/**
  * Javascript task
  *
  * 1. Deletes any previous files in the built js folder
  * 2. Locates the src of scripts specified in paths object
  * 3. Initializes sourcemaps
- * 4. Concatenates all scripts into one file called app.min.js
+ * 4. Concatenates all scripts into one file called bundle.js
  * 5. Minifies the file if this is a production run
  * 6. Writes the file to the scripts destination specified in the paths object w/ sourcemap
  */
-gulp.task('clean:js', function () {
-  return del(paths.js.dest);
-});
-
-gulp.task('js', ['clean:js'], function () {
+gulp.task('js', function () {
   return gulp.src(paths.js.src)
     .pipe(plumber({
       errorHandler: function (err) {
@@ -181,20 +219,38 @@ gulp.task('js', ['clean:js'], function () {
 });
 
 /**
- * Sass task
+ * Vendor Sass task
  *
- * 1. Deletes any previous files in the built css folder
- * 2. Locates the src of stylesheets specified in paths object
- * 3. Initializes sourcemaps
- * 4. Minifies the file if this is a production run, otherwise leaves expanded
- * 5. Uses Autoprefixer to add vendor prefixes
- * 6. Writes the file to the stylesheets desintation specified in the paths object w/ sourcemap
+ * 1. Locates the src of vendor stylesheets specified in paths object
+ * 2. Minifies the file if this is a production run, otherwise leaves expanded
+ * 3. Uses Autoprefixer to add vendor prefixes
+ * 4. Writes the file to the stylesheets destination specified in the paths object
  */
-gulp.task('clean:css', function () {
-  return del(paths.sass.dest);
+gulp.task('vendorSass', function () {
+  return gulp.src(paths.vendor.sass.src)
+    .pipe(plumber({
+      errorHandler: function (err) {
+        util.log(err);
+        browserSync.notify(buildErrorMessage('vendorSass'));
+        this.emit('end');
+      }
+    }))
+    .pipe(gulpif(env === 'prd', sass({outputStyle: 'compressed'}), sass({outputStyle: 'expanded'})))
+    .pipe(autoprefixer())
+    .pipe(gulp.dest(paths.vendor.sass.dest))
+    .pipe(browserSync.stream());
 });
 
-gulp.task('sass', ['clean:css'], function () {
+/**
+ * Sass task
+ *
+ * 1. Locates the src of stylesheets specified in paths object
+ * 2. Initializes sourcemaps
+ * 3. Minifies the file if this is a production run, otherwise leaves expanded
+ * 4. Uses Autoprefixer to add vendor prefixes
+ * 5. Writes the file to the stylesheets destination specified in the paths object w/ sourcemap
+ */
+gulp.task('sass', function () {
   return gulp.src(paths.sass.src)
     .pipe(plumber({
       errorHandler: function (err) {
@@ -218,7 +274,7 @@ gulp.task('sass', ['clean:css'], function () {
  * 2. When jekyll task is complete, run docs, img, js, and sass tasks
  */
 gulp.task('build', ['jekyll'], function (callback) {
-  runSequence(['docs', 'img', 'js', 'sass'], callback);
+  runSequence(['docs', 'img', 'vendorJS', 'js', 'vendorSass', 'sass'], callback);
 });
 
 /**
@@ -242,7 +298,9 @@ gulp.task('serve', ['build'], function () {
   gulp.watch(paths.jekyll.watchFiles, ['build']);
   gulp.watch(paths.docs.watchFiles, ['docs']);
   gulp.watch(paths.img.watchFiles, ['img']);
+  gulp.watch(paths.vendor.js.watchFiles, ['vendorJS']);
   gulp.watch(paths.js.watchFiles, ['js']);
+  gulp.watch(paths.vendor.sass.watchFiles, ['vendorSass']);
   gulp.watch(paths.sass.watchFiles, ['sass']);
 });
 

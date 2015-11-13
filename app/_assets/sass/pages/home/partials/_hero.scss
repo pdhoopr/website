@@ -1,37 +1,38 @@
-/* ==========================================================================
+/* =========================================================================
    Home | Hero
-   ========================================================================== */
+   ========================================================================= */
 
 /* Styles the Hero section */
 #hero {
   display: none;
 
   /* Styles for medium and up devices */
-  @include breakpoint($mq_medium) {
-    background: $blue url('/img/home/hero_background.jpg') fixed;
+  @include breakpoint($mq-medium) {
+    background: $ph-blue url('/img/home/hero_background.jpg') fixed;
     background-size: cover;
-    color: $yellow;
+    color: $ph-yellow;
     display: block;
     height: 95%;
   }
 
   /* Styles for the hero (textured) overlay */
-  .hero_overlay {
+  .hero-overlay {
     background: url('/img/home/hero_texture.png') fixed;
-    height: 95%;
-    height: 95vh;
     left: 0;
     position: absolute;
     text-align: center;
     top: 0;
     width: 100%;
+
+    /* Set height in vh with % fallback */
+    @include height-fallback(95);
   }
 
   /* Styles for the hero arrow (down pointing) */
-  .hero_arrow {
+  .hero-arrow {
     border-left: 32px solid transparent;
     border-right: 32px solid transparent;
-    border-top: 32px solid rgb(16, 30, 67);
+    border-top: 32px solid $ph-blue;
     bottom: -32px;
     content: '';
     height: 0;
@@ -65,7 +66,7 @@
 
       /* Styles for button */
       .btn {
-        @include button-hover($yellow, $blue);
+        @include button-hover($ph-yellow, $ph-blue);
       }
     }
   }

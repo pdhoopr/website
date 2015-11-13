@@ -1,14 +1,14 @@
 <div class="browser">
-  <div class="browser_controls">
-    <ul class="browser_buttons">
-      <li class="browser_button first"></li>
-      <li class="browser_button second"></li>
-      <li class="browser_button third"></li>
+  <div class="browser-controls">
+    <ul class="browser-buttons">
+      <li class="browser-button first"></li>
+      <li class="browser-button second"></li>
+      <li class="browser-button third"></li>
     </ul>
-    <span class="browser_url">{{ include.url }}</span>
+    <span class="browser-url">{{ include.url }}</span>
   </div>
 
-  <div class="clearfix browser_photo {{ include.scroll }}">
+  <div class="clearfix browser-photo {{ include.scroll }}">
     <img class="lazy" data-src="/img/portfolio/{{ page.title }}/{{ include.image }}.{{ include.extension }}" data-src-retina="/img/portfolio/{{ page.title }}/{{ include.image }}@2x.{{ include.extension }}" alt="{{ page.name }} {{ include.alt }}">
     <noscript><img src="/img/portfolio/{{ page.title }}/{{ include.image }}.{{ include.extension }}" alt="{{ page.name }} {{ include.alt }}"></noscript>
   </div>

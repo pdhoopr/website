@@ -1,24 +1,24 @@
-/* ==========================================================================
+/* =========================================================================
    Portfolio | Header
-   ========================================================================== */
+   ========================================================================= */
 .layout-portfolio {
 
   /* Portfolio | Header | Masthead
   ========================================================================== */
   #masthead {
-    background-color: rgba(16, 30, 67, 1);
+    background-color: $ph-blue;
     position: fixed;
     z-index: 999;
 
     /* Styles for small devices */
-    @include breakpoint($mq_small) {
-      background: rgba(16, 30, 67, 1);
+    @include breakpoint($mq-small) {
+      background: $ph-blue;
       padding: 0 8px 0 16px;
     }
 
     /* Styles applied to the header when the page is scrolling */
     &.scroll-header {
-      background-color: rgba(16, 30, 67, 0.75);
+      background-color: rgba($ph-blue, .75);
 
       /* Styles for the main nav */
       .main-nav {
@@ -34,7 +34,7 @@
   .logo {
 
     /* Styles for small devices */
-    @include breakpoint($mq_small) {
+    @include breakpoint($mq-small) {
       float: left;
       font-size: 2.5rem;
       margin-top: -6px;
@@ -43,7 +43,7 @@
 
     /* Add some padding to the logo text on small devices */
     h1 {
-      @include breakpoint($mq_small) {
+      @include breakpoint($mq-small) {
         padding: 14px 0 8px;
       }
     }
@@ -56,7 +56,7 @@
     box-shadow: none;
 
     /* Styles for small devices */
-    @include breakpoint($mq_small) {
+    @include breakpoint($mq-small) {
       float: right;
       position: static;
       width: auto;
@@ -67,7 +67,7 @@
       border-bottom: 3px solid transparent;
 
       /* Styles for small devices */
-      @include breakpoint($mq_small) {
+      @include breakpoint($mq-small) {
         padding: 14px 8px 9px;
         width: auto;
       }
@@ -84,7 +84,7 @@
 
       /* Give right "Next" arrow a margin on the left, not right */
       .fa.fa-angle-right {
-        margin-left: 0.25em;
+        margin-left: .25em;
         margin-right: 0;
       }
     }

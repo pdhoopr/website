@@ -1,13 +1,13 @@
-/* ==========================================================================
+/* =========================================================================
    Home
-   ========================================================================== */
+   ========================================================================= */
 
 /* Styles for home sections (About, Portfolio, Contact) */
-.home_section {
+.home-section {
   padding: 3em 0;
 
   /* Increase padding on medium and up devices */
-  @include breakpoint($mq_medium) {
+  @include breakpoint($mq-medium) {
     padding: 6em 0;
   }
 
@@ -18,13 +18,13 @@
     text-align: center;
 
     /* Increase font size on medium and up devices */
-    @include breakpoint($mq_medium) {
+    @include breakpoint($mq-medium) {
       font-size: 3rem;
     }
   }
 }
 
 /* Imports for other sections of Home */
-@import "partials/hero";
-@import "partials/about";
-@import "partials/portfolio";
+@import 'partials/hero';
+@import 'partials/about';
+@import 'partials/portfolio';

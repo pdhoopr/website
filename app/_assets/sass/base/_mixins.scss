@@ -1,26 +1,6 @@
-/* ==========================================================================
+/* =========================================================================
    Mixins
-   ========================================================================== */
-
-/**
- * Clearfix mixin to help not collapse elements with floated children.
- */
-@mixin clearfix {
-  &:after {
-    clear: both;
-    content: "";
-    display: table;
-  }
-}
-
-/**
- * Mixin that will vertically align an element in the middle of
- * its container.
- */
-@mixin vertical-align($top) {
-  top: $top;
-  transform: translateY(-50%);
-}
+   ========================================================================= */
 
 /**
  * Mixin that will align an element in the absolute middle of
@@ -37,14 +17,14 @@
  */
 @mixin button-hover($background-color, $color) {
   color: $background-color;
-  transition: all 0.3s;
+  transition: all .3s;
 
   /* Hover styles */
   &:hover {
     background-color: $background-color;
     border-color: $background-color;
     color: $color;
-    transition: all 0.3s;
+    transition: all .3s;
   }
 
   /* Negate hover styles on touch devices */
@@ -52,4 +32,21 @@
     background-color: transparent;
     color: $background-color;
   }
+}
+
+/**
+ * Mixin that will set a height in vh and percentage units
+ */
+@mixin height-fallback($height) {
+  height: #{$height}%;
+  height: #{$height}vh;
+}
+
+/**
+ * Mixin that will vertically align an element in the middle of
+ * its container.
+ */
+@mixin vertical-align($top) {
+  top: $top;
+  transform: translateY(-50%);
 }
