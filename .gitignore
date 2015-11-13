@@ -3,7 +3,6 @@
 .fseventsd
 Icon
 .bundle
-.env
 .sass-cache
 node_modules
 vendor/bundle
