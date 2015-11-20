@@ -2,22 +2,9 @@
    Grid
    ========================================================================= */
 
-/* Styles for 42% grid */
-.grid-42,
-.tablet-grid-42 {
-  @extend .grid-40;
-  @extend .tablet-grid-40;
-
-  width: 41.5%;
-
-  @include breakpoint($mq_small) {
-    width: 100%;
-  }
-}
-
 /* On big devices, increase left and right padding of container */
 .grid-container {
-  @include breakpoint($mq_big) {
+  @include breakpoint($mq-big) {
     padding-left: 24px;
     padding-right: 24px;
   }
@@ -25,7 +12,7 @@
 
 /* Remove padding for mobile-grid-100 on small devices */
 .mobile-grid-100 {
-  @include breakpoint($mq_small) {
+  @include breakpoint($mq-small) {
     padding-left: 0;
     padding-right: 0;
   }

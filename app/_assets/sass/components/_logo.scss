@@ -7,10 +7,10 @@
   float: none;
   font-size: 3rem;
   line-height: 1;
-  padding: 0.2em 0;
+  padding: .2em 0;
 
   /* Styles for medium and up devices */
-  @include breakpoint($mq_medium) {
+  @include breakpoint($mq-medium) {
     float: left;
     font-size: 2.5rem;
     margin-top: -5px;
@@ -19,7 +19,7 @@
 
   /* Add padding on the logo text on medium and up devices */
   h1 {
-    @include breakpoint($mq_medium) {
+    @include breakpoint($mq-medium) {
       padding: 17px 0 12px;
     }
   }
@@ -32,7 +32,7 @@
     &.letter-animate {
       display: none;
 
-      @include breakpoint($mq_medium) {
+      @include breakpoint($mq-medium) {
         display: inline-block;
       }
     }
@@ -41,7 +41,7 @@
     &.letter-collapsed {
       max-width: 0;
       opacity: 0;
-      transition: all 0.3s ease-out;
+      transition: all .3s ease-out;
     }
   }
 
@@ -49,7 +49,7 @@
   &:hover .letter-collapsed {
     max-width: 37px;
     opacity: 1;
-    transition: all 0.3s ease-out;
+    transition: all .3s ease-out;
 
     /* Negate hover styles for touch devices */
     .touch & {

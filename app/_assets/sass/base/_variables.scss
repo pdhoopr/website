@@ -4,44 +4,60 @@
 
 /* Media Queries
    ========================================================================= */
-$small_max: 46rem; // 736px
-$medium_min: 46.0625rem; // 737px
-$medium_max: 62rem; // 992px
-$large_min: 62.0625rem; // 993px
-$large_max : 75rem; // 1200px
-$big_min: 75.0625rem; // 1201px
 
-$mq_small: max-width $small_max; // @media (max-width: 46rem)
-$mq_medium: min-width $medium_min; // @media (min-width: 46.0625rem)
-$mq_large: min-width $large_min; // @media (min-width: 62.0625rem)
-$mq_big: min-width $big_min; // @media (min-width: 75.0625rem)
+/* Device sizes */
+$small-max-width: 46rem; // 736px
+$medium-min-width: 46.0625rem; // 737px
+$medium-max-width: 62rem; // 992px
+$large-min-width: 62.0625rem; // 993px
+$large-max-width: 75rem; // 1200px
+$big-min-width: 75.0625rem; // 1201px
+
+/* Breakpoint variables */
+$mq-small: max-width $small-max-width; // @media (max-width: 46rem)
+$mq-medium: min-width $medium-min-width; // @media (min-width: 46.0625rem)
+$mq-large: min-width $large-min-width; // @media (min-width: 62.0625rem)
+$mq-big: min-width $big-min-width; // @media (min-width: 75.0625rem)
 
 /* =========================================================================
    Colors
    ========================================================================= */
 
-/* Theme colors */
-$blue: #101E43;
-$body_gray: #666;
-$middle_gray: #ccc;
+/* Base colors */
+$black: #000;
+$gray-2: #222;
+$gray-6: #666;
+$gray-c: #ccc;
+$green: #008000;
+$orange: #ffa500;
+$red: #f00;
 $white: #fff;
-$yellow: #FFDB00;
+
+/* Brand colors */
+$github-gray: #333;
+$ph-blue: #101e43;
+$ph-yellow: #ffdb00;
+
+/* Project colors */
+$jahleh-and-patricks-wedding: #3feaf9;
+$ms-omearas-multiage: #ff5c58;
+$university-of-michigan-athletics: #ffd856;
+$wgi-buzz: #607d8b;
+$wgi-informer: #19d163;
+$wgiki: $gray-c;
 
 /* Map of colors for portfolio projects */
 $project-colors: (
-  wgi-buzz: rgb(96, 125, 139),
-  wgiki: rgb(204, 204, 204),
-  wgi-informer: rgb(25, 209, 99),
-  jahleh-and-patricks-wedding: rgb(63, 234, 249),
-  ms-omearas-multiage: rgb(255, 92, 88),
-  university-of-michigan-athletics: rgb(255, 216, 86)
+  jahleh-and-patricks-wedding: $jahleh-and-patricks-wedding,
+  ms-omearas-multiage: $ms-omearas-multiage,
+  university-of-michigan-athletics: $university-of-michigan-athletics,
+  wgi-buzz: $wgi-buzz,
+  wgi-informer: $wgi-informer,
+  wgiki: $wgiki
 );
-
-/* Brand colors */
-$github_color: rgb(51, 51, 51);
 
 /* =========================================================================
    Typography
    ========================================================================= */
-$pt_sans: "PT Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-$ubuntu: "Ubuntu", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$pt-sans: 'PT Sans', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+$ubuntu: 'Ubuntu', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;

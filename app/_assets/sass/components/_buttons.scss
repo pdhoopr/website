@@ -11,21 +11,21 @@ a.btn,
   display: inline-block;
   font-family: $ubuntu;
   font-size: 1.5rem;
-  padding: 0.66667em 1.5em;
+  padding: .66667em 1.5em;
 }
 
 /* Styles for a raised button */
 a.btn-raised,
 .btn-raised {
   border: 0;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba($black, .16), 0 2px 10px 0 rgba($black, .12);
   color: $white;
-  transition: box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition: box-shadow .3s ease-in-out, opacity .3s ease-in-out;
 
   /* Increase box shadow and lighten on hover */
   &:hover {
-    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 11px 0 rgba($black, .18), 0 4px 15px 0 rgba($black, .15);
     color: $white;
-    opacity: 0.75;
+    opacity: .75;
   }
 }

@@ -51,12 +51,12 @@
     }
 
     /* Styles for the center positioning div of a project */
-    &_center {
+    &-center {
       height: 0; // Start with no height - this gets animated
       padding-bottom: 50%;
       position: relative;
       top: 25%;
-      transition: height 0.3s, top 0.3s;
+      transition: height .3s, top .3s;
 
       /* Reset font size to 1rem for all paragraphs in a project */
       p {
@@ -65,18 +65,18 @@
     }
 
     /* Styles for the icon for each project */
-    &_icon {
+    &-icon {
       color: $white;
       position: absolute;
       top: 64px;
       text-align: center;
-      transition: opacity 0.3s ease-in-out;
+      transition: opacity .3s ease-in-out;
       width: 100%;
       z-index: 1;
     }
 
     /* Styles for a project's name */
-    &_name {
+    &-name {
       color: $white;
       font-family: $ubuntu;
       line-height: 1;
@@ -84,55 +84,55 @@
       text-align: center;
       text-transform: uppercase;
       top: 8px;
-      transition: top 0.3s ease-in-out;
+      transition: top .3s ease-in-out;
       width: 100%;
     }
 
     /* Style for the body that holds roles, tech, and platforms */
-    &_body {
+    &-body {
       color: $white;
-      top: 47.5%;
       opacity: 0;
       position: absolute;
       text-align: center;
+      top: 47.5%;
       transform: translateY(-50%);
       width: 100%;
     }
 
     /* Text/font styles for the roles, tech, and platforms */
-    &_roles,
-    &_tech,
-    &_devices {
+    &-roles,
+    &-tech,
+    &-devices {
       color: $white;
       line-height: 1.25;
       text-align: center;
     }
 
     /* Give bottom margin to roles and tech */
-    &_roles,
-    &_tech {
+    &-roles,
+    &-tech {
       margin-bottom: 1.5em;
     }
 
     /* Change font styles for platforms */
-    &_devices {
+    &-devices {
       font-size: 1.5rem;
       line-height: 1;
     }
 
     /* Styles for the label ("Roles", "Tech", "Platforms", etc.) */
-    &_label {
+    &-label {
       border-bottom: 2px solid;
       display: inline-block;
       font-family: $ubuntu;
-      font-size: 0.875rem;
-      margin-bottom: 0.5em;
-      padding-bottom: 0.25em;
+      font-size: .875rem;
+      margin-bottom: .5em;
+      padding-bottom: .25em;
       text-transform: uppercase;
     }
 
     /* Styles for the View button at the bottom of a project */
-    &_view {
+    &-view {
       bottom: 12px;
       color: $white;
       opacity: 0;
@@ -143,8 +143,8 @@
       /* Styles for the button itself, generally making it smaller */
       .btn {
         font-size: 1.125rem;
-        padding: 0.375em 0.75em;
-        transition: background 0.15s ease-in-out;
+        padding: .375em .75em;
+        transition: background .15s ease-in-out;
 
         /* Hover background color to white */
         &:hover {
@@ -154,7 +154,7 @@
 
         /* Give left margin to icon in button that points to going to page */
         .fa {
-          margin-left: 0.5em;
+          margin-left: .5em;
         }
       }
     }
@@ -165,26 +165,26 @@
       .project {
 
         /* Make the centering div full height */
-        &_center {
+        &-center {
           height: 100%;
           top: 0;
         }
 
         /* Make the icon fade out to 0 opacity */
-        &_icon {
+        &-icon {
           opacity: 0;
         }
 
         /* Move the name to 16px from the top of the project */
-        &_name {
+        &-name {
           top: 16px;
         }
 
         /* Fade in the body and view button to full opacity (1) */
-        &_body,
-        &_view {
+        &-body,
+        &-view {
           opacity: 1;
-          transition: opacity 0.3s ease-in-out 0.25s;
+          transition: opacity .3s ease-in-out .25s;
         }
       }
     }

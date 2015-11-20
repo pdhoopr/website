@@ -4,8 +4,8 @@
 
 /* Styles for the masthead */
 #masthead {
-  background: $blue url('/img/home/hero_texture.png') fixed;
-  color: $yellow;
+  background: $ph-blue url('/img/home/hero_texture.png') fixed;
+  color: $ph-yellow;
   font-family: $ubuntu;
   max-width: 100%;
   padding: 0;
@@ -14,7 +14,7 @@
   width: 100%;
 
   /* Styles for medium and up devices */
-  @include breakpoint($mq_medium) {
+  @include breakpoint($mq-medium) {
     background: none;
     padding: 0 16px;
     position: fixed;
@@ -23,27 +23,27 @@
   }
 
   /* Styles for big devices */
-  @include breakpoint($mq_big) {
+  @include breakpoint($mq-big) {
     padding-left: 24px;
     padding-right: 24px;
   }
 
   /* Styles for masthead when page is scrolling */
   &.scroll-header {
-    background-color: rgba(16, 30, 67, 0.75);
-    box-shadow: 0px 0px 8px #222;
+    background-color: rgba($ph-blue, .75);
+    box-shadow: 0 0 8px $gray-2;
 
     /* Styles for the navigation when the page is scrolling */
     .main-nav {
-      background-color: rgba(16, 30, 67, 0.75);
-      box-shadow: 0px 0px 8px #222;
+      background-color: rgba($ph-blue, .75);
+      box-shadow: 0 0 8px $gray-2;
       left: 0;
       position: fixed;
       top: 0;
       z-index: 100;
 
       /* Styles for medium and up devices */
-      @include breakpoint($mq_medium) {
+      @include breakpoint($mq-medium) {
         background-color: transparent;
         box-shadow: none;
         position: static;
@@ -56,11 +56,11 @@
     border-radius: 50%;
     display: inline-block;
     float: none;
-    margin: 0.4em 0 0;
+    margin: .4em 0 0;
     width: 50%;
 
     /* Styles for medium and up devices */
-    @include breakpoint($mq_medium) {
+    @include breakpoint($mq-medium) {
       display: none;
     }
   }

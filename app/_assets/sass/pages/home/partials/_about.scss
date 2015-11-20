@@ -4,7 +4,7 @@
 
 /* Styles About section */
 #about {
-  background: $yellow url('/img/home/about_background.jpg') fixed;
+  background: $ph-yellow url('/img/home/about_background.jpg') fixed;
   background-size: cover;
   color: $white;
 
@@ -15,7 +15,7 @@
     text-align: left;
 
     /* Styles for medium and up devices */
-    @include breakpoint($mq_medium) {
+    @include breakpoint($mq-medium) {
       font-size: 2rem;
       text-align: center;
     }
@@ -28,7 +28,7 @@
     text-align: left;
 
     /* Styles for medium and up devices */
-    @include breakpoint($mq_medium) {
+    @include breakpoint($mq-medium) {
       font-size: 1.5rem;
       text-align: center;
     }

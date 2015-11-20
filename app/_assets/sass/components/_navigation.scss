@@ -7,13 +7,11 @@
 
 /* Styles for navigation */
 .main-nav {
-  @extend .clearfix;
-
   float: none;
   width: 100%;
 
   /* Styles for medium and up devices */
-  @include breakpoint($mq_medium) {
+  @include breakpoint($mq-medium) {
     float: right;
     width: auto;
   }
@@ -28,11 +26,11 @@
     padding-bottom: 10px;
     padding-top: 13px;
     text-align: center;
-    transition: 0.3s;
+    transition: .3s;
     width: 50%;
 
     /* Styles for medium and up devices */
-    @include breakpoint($mq_medium) {
+    @include breakpoint($mq-medium) {
       padding: 18px 16px 13px;
       width: auto;
     }
@@ -48,7 +46,7 @@
       /* Styles for hovering over navigation icons */
       .fa {
         transform: scale(1.25);
-        transition: 0.3s;
+        transition: .3s;
 
         /* Negate hover styles on touch devices */
         .touch & {
@@ -59,20 +57,20 @@
 
     /* Styles for an active navigation item */
     &.active {
-      border-bottom-color: $yellow !important;
+      border-bottom-color: $ph-yellow !important;
 
       /* Styles for hovering over an active navigation item */
       &:hover {
-        border-bottom: 3px solid $yellow !important;
-        transition: 0.3s;
+        border-bottom: 3px solid $ph-yellow !important;
+        transition: .3s;
       }
     }
 
     /* Styles for navigation icons */
     .fa {
       font-size: 1.5rem;
-      margin-right: 0.16667em;
-      transition: 0.3s;
+      margin-right: .16667em;
+      transition: .3s;
       vertical-align: -5%;
 
       /* Move grid icon down */

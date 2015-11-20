@@ -1,7 +1,5 @@
 /* =========================================================================
-   Portfolio
+   Vendor (3rd-party) Libraries
    ========================================================================= */
-
-/* Import partials for other sections of a portfolio page */
-@import 'partials/header';
-@import 'partials/content';
+@import '../../../vendor/assets/sass/unsemantic/unsemantic';
+@import '../../../vendor/assets/sass/kwicks/kwicks';

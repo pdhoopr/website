@@ -8,20 +8,24 @@
 /* Apply border-box sizing and make root element 100% height of viewport */
 html {
   box-sizing: border-box;
-  height: 100%;
-  height: 100vh;
+
+  /* Set height in vh with % fallback */
+  @include height-fallback(100);
 }
 
 /* Apply border-box sizing so element take up actual allotted space */
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 /* Make body and wrapper 100% height of viewport */
 body,
 #wrapper {
-  height: 100%;
-  height: 100vh;
+
+  /* Set height in vh with % fallback */
+  @include height-fallback(100);
 }
 
 /* Make images float left and fill their container */

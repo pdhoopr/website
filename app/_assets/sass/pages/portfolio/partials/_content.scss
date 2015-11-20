@@ -11,11 +11,11 @@
     .title,
     .subtitle {
       font-size: 1.3rem;
-      padding-bottom: 0.75em;
+      padding-bottom: .75em;
       text-align: center;
 
       /* Increase font size on medium and up devices */
-      @include breakpoint($mq_medium) {
+      @include breakpoint($mq-medium) {
         font-size: 1.7rem;
       }
     }
@@ -28,11 +28,11 @@
     &.university-of-michigan-athletics {
 
       /* Alter padding for these portfolio pages' project sections */
-      .project_section {
+      .project-section {
         padding: 0 0 1.8em;
 
         /* Increase padding on large devices */
-        @include breakpoint($mq_large) {
+        @include breakpoint($mq-large) {
           padding: 0 1.2em 2.4em;
         }
       }
@@ -40,7 +40,7 @@
 
     /* Portfolio | Content | Project Summary
     ======================================================================== */
-    .project_summary {
+    .project-summary {
 
       /* Styles for the project title */
       .title {
@@ -50,19 +50,19 @@
         padding-bottom: 1em;
 
         /* Styles for medium and up devices */
-        @include breakpoint($mq_medium) {
+        @include breakpoint($mq-medium) {
           font-size: 3rem;
         }
       }
 
       /* Styles for the project photos (overview/preview photos) */
-      .project_photos {
+      .project-photos {
         margin: 0 auto 2.4em;
         max-width: 640px;
         position: relative;
 
         /* Increase bottom margin on large devices */
-        @include breakpoint($mq_large) {
+        @include breakpoint($mq-large) {
           margin-bottom: 4.8em;
         }
       }
@@ -72,50 +72,50 @@
         font-size: 1.5rem;
 
         /* Increase overview font size on medium and up devices */
-        @include breakpoint($mq_medium) {
+        @include breakpoint($mq-medium) {
           font-size: 2rem;
         }
       }
 
       /* Styles for project overview section */
-      .project_overview {
+      .project-overview {
         padding-bottom: 1.8em;
 
         /* Increase bottom padding on large devices */
-        @include breakpoint($mq_large) {
+        @include breakpoint($mq-large) {
           padding-bottom: 2.4em;
         }
       }
 
       /* Styles for project description */
-      .project_description {
+      .project-description {
         padding-bottom: 1.2em;
 
         /* Increase bottom padding on large devices */
-        @include breakpoint($mq_large) {
+        @include breakpoint($mq-large) {
           padding-bottom: 2.4em;
         }
       }
 
       /* Styles for container of roles, tech, and platforms */
-      .project_thirds {
+      .project-thirds {
         text-align: center;
       }
 
       /* Give bottom padding to roles and tech */
-      .project_roles,
-      .project_tech {
+      .project-roles,
+      .project-tech {
         padding-bottom: 1.2em;
 
         /* Remove bottom padding on large devices */
-        @include breakpoint($mq_large) {
+        @include breakpoint($mq-large) {
           padding-bottom: 0;
         }
       }
 
       /* Give some right spacing to project platform icons */
-      .project_platforms .fa {
-        margin-right: 0.25em;
+      .project-platforms .fa {
+        margin-right: .25em;
       }
 
       /* Styles for the the button to go to the live site */
@@ -124,12 +124,12 @@
 
         /* Styles for the button */
         .btn {
-          background-color: $blue;
+          background-color: $ph-blue;
           margin-top: 1em;
           width: auto;
 
           /* Increase top margin on large devices */
-          @include breakpoint($mq_large) {
+          @include breakpoint($mq-large) {
             margin-top: 2em;
           }
 
@@ -140,18 +140,18 @@
 
           /* Give right margin to button icon and pull it down a little */
           .fa {
-            margin-right: 0.5em;
+            margin-right: .5em;
             vertical-align: -20%;
 
             /* Move GitHub up a little more than other icons */
             &-github {
-              vertical-align: -15%;
+              vertical-align: -12%;
             }
           }
 
           /* Give GitHub button a gray background color */
           &-github {
-            background-color: $github_color;
+            background-color: $github-gray;
           }
         }
       }
@@ -159,11 +159,11 @@
 
     /* Portfolio | Content | Project Section
     ======================================================================== */
-    .project_section {
+    .project-section {
       padding: 0 0 2.4em;
 
       /* Increase bottom padding on large devices */
-      @include breakpoint($mq_large) {
+      @include breakpoint($mq-large) {
         padding-bottom: 4.8em;
       }
 
@@ -173,11 +173,11 @@
       }
 
       /* Styles for the description of a project */
-      .section_description {
+      .section-description {
         margin-bottom: 1.2em;
 
         /* No margin on large and up devices */
-        @include breakpoint($mq_large) {
+        @include breakpoint($mq-large) {
           margin-bottom: 0;
         }
       }
@@ -188,7 +188,7 @@
         max-width: 725px;
 
         /* Styles specifically for a browser photo in a project section */
-        .browser_photo {
+        .browser-photo {
           max-height: 388px;
           overflow: hidden;
         }
@@ -211,7 +211,7 @@
           width: 100%;
 
           /* Styles for large and up devices */
-          @include breakpoint($mq_large) {
+          @include breakpoint($mq-large) {
             display: inline-block;
             margin: 0 auto;
             width: 30%;
@@ -221,8 +221,8 @@
           &:not(:first-of-type) {
 
             /* Styles for large and up devices */
-            @include breakpoint($mq_large) {
-              margin-left: 0.8em;
+            @include breakpoint($mq-large) {
+              margin-left: .8em;
             }
           }
 
@@ -231,14 +231,14 @@
             margin-bottom: 1.2em;
 
             /* Remove bottom margin on large devices */
-            @include breakpoint($mq_large) {
+            @include breakpoint($mq-large) {
               margin-bottom: 0;
             }
           }
         }
 
         /* Styles specifically for a phone photo in a project section */
-        .phone_photo {
+        .phone-photo {
           max-height: 568px;
           overflow: hidden;
         }
