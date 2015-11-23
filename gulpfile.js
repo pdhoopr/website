@@ -1,30 +1,32 @@
 /* =========================================================================
    patrick.hoopr.io Gulpfile
    ========================================================================= */
+'use strict'; // Strict mode
 
 /* Variables
    ========================================================================= */
 
 /* Initialize variables required to run gulp */
-var gulp = require('gulp');
-var autoprefixer = require('gulp-autoprefixer');
-var browserSync = require('browser-sync').create();
-var childProcess = require('child_process');
-var concat = require('gulp-concat');
-var del = require('del');
-var gulpif = require('gulp-if');
-var plumber = require('gulp-plumber');
-var runSequence = require('run-sequence');
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
-var uglify = require('gulp-uglify');
-var util = require('gulp-util');
+const gulp = require('gulp');
+const autoprefixer = require('gulp-autoprefixer');
+const babel = require('gulp-babel');
+const browserSync = require('browser-sync').create();
+const childProcess = require('child_process');
+const concat = require('gulp-concat');
+const del = require('del');
+const gulpif = require('gulp-if');
+const plumber = require('gulp-plumber');
+const runSequence = require('run-sequence');
+const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
+const uglify = require('gulp-uglify');
+const util = require('gulp-util');
 
 /* Default to dev for environment */
-var env = process.env.NODE_ENV || 'dev';
+const env = process.env.NODE_ENV || 'dev';
 
 /* Set path objects used in locating and compiling assets */
-var paths = {
+const paths = {
   jekyll: {
     watchFiles: [
       'app/**/*',
@@ -212,6 +214,9 @@ gulp.task('js', function () {
     }))
     .pipe(sourcemaps.init())
     .pipe(concat('bundle.js'))
+    .pipe(babel({
+      presets: ['es2015', 'stage-0']
+    }))
     .pipe(gulpif(env === 'prd', uglify()))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.js.dest))
