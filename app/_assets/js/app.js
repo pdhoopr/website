@@ -4,25 +4,22 @@
 
 /* Variables
    ======================================================================== */
-var wrapper = $('#wrapper');
-var masthead = $('#masthead');
-var mainNav = $('.main-nav');
-var letters = $('.letter-animate');
-var navAbout = $('.nav-about');
-var navPortfolio = $('.nav-portfolio');
-var lastActive = null;
-var hero = $('#hero');
-var heroAnimate = $('#hero .hero-animate');
-var heroArrow = $('#hero .hero-arrow');
-var fadeHeroDiv;
-var fadeHeroArrow;
-var taglines = $('.tagline'); // Hide all taglines initially
-var i = 0; // Counter for taglines
-var learnMore = $('.learn-more');
-var about = $('#about');
-var portfolio = $('#portfolio');
-var contact = $('#contact');
-var project = $('.portfolio-page');
+const $wrapper = $('#wrapper');
+const $masthead = $('#masthead');
+const $mainNav = $('.main-nav');
+const $letters = $('.letter-animate');
+const $navAbout = $('.nav-about');
+const $navPortfolio = $('.nav-portfolio');
+let lastActive = null; // Holds last active section while scrolling
+const $heroAnimate = $('#hero .hero-animate');
+const $heroArrow = $('#hero .hero-arrow');
+const $taglines = $('.tagline'); // Hide all taglines initially
+let i = 0; // Counter for taglines
+const $learnMore = $('.learn-more');
+const $about = $('#about');
+const $portfolio = $('#portfolio');
+const $contact = $('#contact');
+const $project = $('.portfolio-page');
 
 /* Functions
    ======================================================================== */
@@ -30,69 +27,68 @@ var project = $('.portfolio-page');
 /**
  * Function that adds letter-collpased class and removes GSAP styles
  * from logo letters once tween is complete.
+ *
+ * @returns { Void } Returns no value
  */
 function tweenLettersComplete() {
-  letters.addClass('letter-collapsed').removeAttr('style');
+  $letters.addClass('letter-collapsed').removeAttr('style');
 }
 
 /**
  * Function cycles through taglines in Hero section by fading in and out
  * taglines. Goes back to beginning once it reaches the end.
+ *
+ * @returns { Void } Returns no value
  */
 function cycle() {
-  taglines.eq(i).fadeIn(1000)
-            .delay(1000)
-            .fadeOut(1000, cycle);
-  i = ++i % taglines.length;
+  $taglines.eq(i).fadeIn(1000).delay(1000).fadeOut(1000, cycle);
+  i = ++i % $taglines.length;
 }
 
 /* GSAP Tweens
    ======================================================================== */
 
-if (Modernizr.mq('(min-width: 46.0625rem)')) {
+/**
+ * Tween logo letters from opacity of 1 and full width to no width and
+ * opacity of 0. Start 1 seconds after page is ready.
+ */
+const tweenLetters = TweenMax.to($letters, 0.6, {
+  delay: 0.6,
+  width: 0,
+  opacity: 0,
+  onComplete: tweenLettersComplete
+});
 
-  /**
-   * Tween logo letters from opacity of 1 and full width to no width and
-   * opacity of 0. Start 1 seconds after page is ready.
-   */
-  var tweenLetters = TweenMax.to(letters, 0.6, {
-    delay: 0.6,
-    width: 0,
-    opacity: 0,
-    onComplete: tweenLettersComplete
-  });
+/**
+ * Tween Hero section from opacity of 1 to opacity of 0. Move top of section
+ * from start location to 75% from the top of its parent over the duration
+ * of the tween.
+ */
+const fadeHeroDiv = TweenMax.to($heroAnimate, 1, {
+  opacity: 0,
+  top: '75%'
+});
 
-  /**
-   * Tween Hero section from opacity of 1 to opacity of 0. Move top of section
-   * from start location to 75% from the top of its parent over the duration
-   * of the tween.
-   */
-  fadeHeroDiv = TweenMax.to(heroAnimate, 1, {
-    opacity: 0,
-    top: '75%'
-  });
-
-  /**
-   * Tween Hero arrow from border properties over the duration
-   * of the tween.
-   */
-  fadeHeroArrow = TweenMax.to(heroArrow, 0.3, {
-    borderLeftWidth: 320,
-    borderRightWidth: 320,
-    borderTopWidth: 0,
-    bottom: 0,
-    marginLeft: -320
-  });
-}
+/**
+ * Tween Hero arrow from border properties over the duration
+ * of the tween.
+ */
+const fadeHeroArrow = TweenMax.to($heroArrow, 0.3, {
+  borderLeftWidth: 320,
+  borderRightWidth: 320,
+  borderTopWidth: 0,
+  bottom: 0,
+  marginLeft: -320
+});
 
 /* ScrollMagic Scenes
    ======================================================================== */
 
 /* ScrollMagic Controller to handle scenes */
-var scrollMagicController = new ScrollMagic.Controller();
+const scrollMagicController = new ScrollMagic.Controller();
 
 /* Scene to fade Hero section and produce parallax effect */
-var heroScene = new ScrollMagic.Scene({
+const heroScene = new ScrollMagic.Scene({
   triggerElement: '#hero',
   triggerHook: 'onLeave', // Start when trigger starts leaving viewport
   duration: '100%' // End when viewport has moved 100%
@@ -100,7 +96,7 @@ var heroScene = new ScrollMagic.Scene({
 .setTween(fadeHeroDiv); // Use the fadeHeroDiv tween defined
 
 /* Scene to smush hero arrow up into itself when scrolling */
-var heroArrow = new ScrollMagic.Scene({
+const heroArrowScene = new ScrollMagic.Scene({
   triggerElement: '#hero',
   triggerHook: 'onLeave', // Start when trigger starts leaving viewport
   duration: '75%' // End when viewport has moved 75%
@@ -111,72 +107,72 @@ var heroArrow = new ScrollMagic.Scene({
    ======================================================================== */
 
 /* Waypoints only for the home page */
-if (wrapper.hasClass('layout-default')) {
+if ($wrapper.hasClass('layout-default')) {
 
   /**
    * Toggles active class for About and also flags the header as scrolling
    */
-  var aboutWaypoint = about.waypoint(function (direction) {
+  const aboutWaypoint = $about.waypoint(function (direction) {
 
     /* When going down and you hit about section, do stuff */
     if (direction === 'down') {
-      masthead.addClass('scroll-header'); // Add class to header for scrolling
-      navAbout.addClass('active'); // Add active class to about
-      navPortfolio.removeClass('active'); // Remove active class from portfolio nav
-      lastActive = navAbout; // Make about nav the last active
+      $masthead.addClass('scroll-header'); // Add class to header for scrolling
+      $navAbout.addClass('active'); // Add active class to about
+      $navPortfolio.removeClass('active'); // Remove active class from portfolio nav
+      lastActive = $navAbout; // Make about nav the last active
 
       /* When going up and you hit About section, do stuff */
     } else {
-      masthead.removeClass('scroll-header'); // Remove scrolling header class
-      navAbout.removeClass('active'); // Remove active class from about
-      navPortfolio.removeClass('active'); // Remove active class from portfolio
+      $masthead.removeClass('scroll-header'); // Remove scrolling header class
+      $navAbout.removeClass('active'); // Remove active class from about
+      $navPortfolio.removeClass('active'); // Remove active class from portfolio
       lastActive = null; // Remove last active element
     }
   }, {
     /* Make offset the header height or the nav height (small devices) */
     offset: function () {
-      return Modernizr.mq('(min-width: 46.0625rem)') ? masthead.height() : mainNav.height() + 1;
+      return Modernizr.mq('(min-width: 46.0625rem)') ? $masthead.height() : $mainNav.height() + 1;
     }
   });
 
   /**
    * Toggles active class for Portfolio and removes for About
    */
-  var portfolioWaypoint = portfolio.waypoint(function (direction) {
+  const portfolioWaypoint = $portfolio.waypoint(function (direction) {
 
     /* When going down and you hit Portfolio section, do stuff */
     if (direction === 'down') {
-      navAbout.removeClass('active'); // Remove active class from about
-      navPortfolio.addClass('active'); // Add active class to portfolio
-      lastActive = navPortfolio; // Make portfolio nav the last active
+      $navAbout.removeClass('active'); // Remove active class from about
+      $navPortfolio.addClass('active'); // Add active class to portfolio
+      lastActive = $navPortfolio; // Make portfolio nav the last active
 
       /* When going up and you hit Portfolio section, do stuff */
     } else {
-      navAbout.addClass('active'); // Add active class to about
-      navPortfolio.removeClass('active'); // Remove active class from portfolio
-      lastActive = navAbout; // Make about the last active
+      $navAbout.addClass('active'); // Add active class to about
+      $navPortfolio.removeClass('active'); // Remove active class from portfolio
+      lastActive = $navAbout; // Make about the last active
     }
   }, {
     /* Make offset the header height or the nav height (small devices) */
     offset: function () {
-      return Modernizr.mq('(min-width: 46.0625rem)') ? masthead.height() : mainNav.height() + 1;
+      return Modernizr.mq('(min-width: 46.0625rem)') ? $masthead.height() : $mainNav.height() + 1;
     }
   });
 
   /**
    * Toggles active class Portfolio at bottom, restores previous active on up
    */
-  var contactWaypoint = contact.waypoint(function (direction) {
+  const contactWaypoint = $contact.waypoint(function (direction) {
 
     /* When going down and you hit Contact section, do stuff */
     if (direction === 'down') {
-      navAbout.removeClass('active'); // Remove active class from about
-      navPortfolio.addClass('active'); // Add active class to portfolio
+      $navAbout.removeClass('active'); // Remove active class from about
+      $navPortfolio.addClass('active'); // Add active class to portfolio
 
       /* When going up and you hit Contact section, do stuff */
     } else {
-      navAbout.removeClass('active'); // Remove active class from about
-      navPortfolio.removeClass('active'); // Remove active class from portfolio
+      $navAbout.removeClass('active'); // Remove active class from about
+      $navPortfolio.removeClass('active'); // Remove active class from portfolio
       lastActive.addClass('active'); // Add active class to last active
     }
   }, {
@@ -190,17 +186,17 @@ if (wrapper.hasClass('layout-default')) {
   /**
    * Flags Portfolio page header as scrolling
    */
-  var projectWaypoint = project.waypoint(function (direction) {
+  const projectWaypoint = $project.waypoint(function (direction) {
 
     /* When going down, add scrolling header class. When up, remove */
     if (direction === 'down') {
-      masthead.addClass('scroll-header');
+      $masthead.addClass('scroll-header');
     } else {
-      masthead.removeClass('scroll-header');
+      $masthead.removeClass('scroll-header');
     }
   }, {
     /* Offset is the top margin of the portfolio page title */
-    offset: parseFloat(project.find('.project-summary h2.title').css('margin-top')) * -1
+    offset: parseFloat($project.find('.project-summary h2.title').css('margin-top')) * -1
   });
 }
 
@@ -214,7 +210,7 @@ scrollMagicController.scrollTo(function (newpos) {
 
 /* Tell ScrollMagic to listen for anchor link clicks and scroll to them */
 $(document).on('click', 'a[href^="#"]', function (e) {
-  var id = $(this).attr('href');
+  const id = $(this).attr('href');
   if ($(id).length > 0) {
     e.preventDefault();
     scrollMagicController.scrollTo(id);
@@ -228,24 +224,24 @@ $(document).on('click', 'a[href^="#"]', function (e) {
 $('img.lazy').unveil(568);
 
 /* Do the following only if this is the home page */
-if (wrapper.hasClass('layout-default')) {
+if ($wrapper.hasClass('layout-default')) {
 
   /* Do the following only if this is a large screen */
   if (Modernizr.mq('(min-width: 46.0625rem)')) {
 
     /* Hide all taglines to start */
-    taglines.hide();
+    $taglines.hide();
 
     /* Start cycling through taglines 1 seconds after page ready */
     setTimeout(cycle, 500);
 
     /* Bring Learn More button to full opacity 8 seconds after page ready */
     setTimeout(function () {
-      learnMore.animate({opacity: 1}, 3000);
+      $learnMore.animate({opacity: 1}, 3000);
     }, 5000);
 
     /* Add hero scenes to controller */
-    scrollMagicController.addScene([heroScene, heroArrow]);
+    scrollMagicController.addScene([heroScene, heroArrowScene]);
   }
 
   /* Initialize kwicks */
@@ -257,13 +253,4 @@ if (wrapper.hasClass('layout-default')) {
     selectOnClick: false,
     spacing: 0
   });
-
-  /* Do the following only if this is not a touch device */
-  if (!Modernizr.touch) {
-
-    /* Slides up/down project logo overlay when it's hovered over on non-touch devices */
-    $('.project').hover(function () {
-      $(this).find('.project-overlay').css('max-height', $(this).height()).slideToggle(300);
-    });
-  }
 }
