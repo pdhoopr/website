@@ -25,7 +25,6 @@
   /* Styles for big devices */
   @include breakpoint($mq-big) {
     padding-left: 24px;
-    padding-right: 8px;
   }
 
   /* Styles for masthead when page is scrolling */

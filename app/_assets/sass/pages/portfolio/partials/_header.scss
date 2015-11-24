@@ -13,7 +13,7 @@
     /* Styles for small devices */
     @include breakpoint($mq-small) {
       background: $ph-blue;
-      padding: 0 8px 0 16px;
+      padding-left: 8px;
     }
 
     /* Styles applied to the header when the page is scrolling */

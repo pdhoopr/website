@@ -35,6 +35,12 @@
       width: auto;
     }
 
+    /* Styles for big devices */
+    @include breakpoint($mq-big) {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
     /* Styles for hovering over a nav item (yellow underline) */
     &:hover {
 
