@@ -34,11 +34,11 @@
     /* Loop through map of project colors and set colors */
     @each $project, $color in $project-colors {
 
-      /* Background color with slightly darkened overlay */
+      /* Background color is a shade of gray */
       &.#{$project} {
-        background: $color url('/img/home/portfolio_overlay.png');
+        background: $gray-d;
 
-        /* On hover, make background just solid color without darkened overlay */
+        /* On hover, make background just solid color */
         &:hover {
           background: $color;
         }
