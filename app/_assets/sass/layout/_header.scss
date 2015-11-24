@@ -16,7 +16,7 @@
   /* Styles for medium and up devices */
   @include breakpoint($mq-medium) {
     background: none;
-    padding: 0 16px;
+    padding-left: 16px;
     position: fixed;
     text-align: left;
     z-index: 100;
@@ -25,7 +25,7 @@
   /* Styles for big devices */
   @include breakpoint($mq-big) {
     padding-left: 24px;
-    padding-right: 24px;
+    padding-right: 8px;
   }
 
   /* Styles for masthead when page is scrolling */
