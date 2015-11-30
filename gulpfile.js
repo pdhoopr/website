@@ -31,7 +31,8 @@ const paths = {
   jekyll: {
     watchFiles: [
       'config/**/*',
-      'app/**/*'
+      'app/**/*',
+      '!app/_assets{,/**/*}'
     ],
     src: 'config',
     dest: 'public'
@@ -47,23 +48,23 @@ const paths = {
   },
   img: {
     watchFiles: [
-      'assets/img/**/*',
-      '!assets/img/portfolio/university-of-michigan-athletics{,/**/*}',
-      '!assets/img/portfolio/wgi*{,/**/*}'
+      'app/_assets/img/**/*',
+      '!app/_assets/img/portfolio/university-of-michigan-athletics{,/**/*}',
+      '!app/_assets/img/portfolio/wgi*{,/**/*}'
     ],
     src: [
-      'assets/img/**/*',
-      '!assets/img/portfolio/university-of-michigan-athletics{,/**/*}',
-      '!assets/img/portfolio/wgi*{,/**/*}'
+      'app/_assets/img/**/*',
+      '!app/_assets/img/portfolio/university-of-michigan-athletics{,/**/*}',
+      '!app/_assets/img/portfolio/wgi*{,/**/*}'
     ],
     dest: 'public/img'
   },
   js: {
     watchFiles: [
-      'assets/js/**/*'
+      'app/_assets/js/**/*'
     ],
     src: [
-      'assets/js/**/*'
+      'app/_assets/js/**/*'
     ],
     dest: 'public/js'
   },
@@ -71,9 +72,9 @@ const paths = {
     watchFiles: [
       'vendor/assets/sass/sassy-maps/**/*',
       'vendor/assets/sass/breakpoint/**/*',
-      'assets/sass/**/*'
+      'app/_assets/sass/**/*'
     ],
-    src: 'assets/sass/main.scss',
+    src: 'app/_assets/sass/main.scss',
     dest: 'public/css'
   },
   vendor: {
