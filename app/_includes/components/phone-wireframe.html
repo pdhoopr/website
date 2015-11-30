@@ -1,0 +1,22 @@
+<div class="phone {{ include.class }}">
+  <div class="phone-top">
+    <div class="phone-camera">
+      <span></span>
+    </div>
+
+    <div class="phone-top-parts">
+      <span class="phone-sensor"></span><span class="phone-speaker"></span>
+    </div>
+  </div>
+
+  <div class="clearfix phone-photo {{ include.scroll }}">
+    <img class="lazy" data-src="/assets/images/portfolio/{{ page.title }}/{{ include.image }}.{{ include.extension }}" data-src-retina="/assets/images/portfolio/{{ page.title }}/{{ include.image }}@2x.{{ include.extension }}" alt="{{ page.name }} {{ include.alt }}">
+    <noscript><img src="/assets/images/portfolio/{{ page.title }}/{{ include.image }}.{{ include.extension }}" alt="{{ page.name }} {{ include.alt }}"></noscript>
+  </div>
+
+  <div class="phone-bottom">
+    <div class="phone-button">
+      <span></span>
+    </div>
+  </div>
+</div>
