@@ -172,59 +172,6 @@ gulp.task('img', ['clean:img'], function () {
 });
 
 /**
- * Vendor Javascript task
- *
- * 1. Locates the src of vendor scripts specified in paths object
- * 2. Concatenates all scripts into one file called vendor.js
- * 3. Minifies the file if this is a production run
- * 4. Writes the file to the scripts destination specified in the paths object
- */
-gulp.task('vendorJS', function () {
-  return gulp.src(paths.vendor.js.src)
-    .pipe(plumber({
-      errorHandler: function (err) {
-        util.log(err);
-        browserSync.notify(buildErrorMessage('vendorJS'));
-        this.emit('end');
-      }
-    }))
-    .pipe(concat('vendor.js'))
-    .pipe(gulpif(env === 'prd', uglify()))
-    .pipe(gulp.dest(paths.vendor.js.dest))
-    .pipe(browserSync.stream());
-});
-
-/**
- * Javascript task
- *
- * 1. Deletes any previous files in the built js folder
- * 2. Locates the src of scripts specified in paths object
- * 3. Initializes sourcemaps
- * 4. Concatenates all scripts into one file called bundle.js
- * 5. Minifies the file if this is a production run
- * 6. Writes the file to the scripts destination specified in the paths object w/ sourcemap
- */
-gulp.task('js', function () {
-  return gulp.src(paths.js.src)
-    .pipe(plumber({
-      errorHandler: function (err) {
-        util.log(err);
-        browserSync.notify(buildErrorMessage('js'));
-        this.emit('end');
-      }
-    }))
-    .pipe(sourcemaps.init())
-    .pipe(concat('bundle.js'))
-    .pipe(babel({
-      presets: ['es2015', 'stage-0']
-    }))
-    .pipe(gulpif(env === 'prd', uglify()))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(paths.js.dest))
-    .pipe(browserSync.stream({match: '**/*.js'}));
-});
-
-/**
  * Vendor Sass task
  *
  * 1. Locates the src of vendor stylesheets specified in paths object
@@ -232,12 +179,12 @@ gulp.task('js', function () {
  * 3. Uses Autoprefixer to add vendor prefixes
  * 4. Writes the file to the stylesheets destination specified in the paths object
  */
-gulp.task('vendorSass', function () {
+gulp.task('vendor:sass', function () {
   return gulp.src(paths.vendor.sass.src)
     .pipe(plumber({
       errorHandler: function (err) {
         util.log(err);
-        browserSync.notify(buildErrorMessage('vendorSass'));
+        browserSync.notify(buildErrorMessage('vendor:sass'));
         this.emit('end');
       }
     }))
@@ -278,13 +225,66 @@ gulp.task('sass', function () {
 });
 
 /**
+ * Vendor Javascript task
+ *
+ * 1. Locates the src of vendor scripts specified in paths object
+ * 2. Concatenates all scripts into one file called vendor.js
+ * 3. Minifies the file if this is a production run
+ * 4. Writes the file to the scripts destination specified in the paths object
+ */
+gulp.task('vendor:js', function () {
+  return gulp.src(paths.vendor.js.src)
+    .pipe(plumber({
+      errorHandler: function (err) {
+        util.log(err);
+        browserSync.notify(buildErrorMessage('vendor:js'));
+        this.emit('end');
+      }
+    }))
+    .pipe(concat('vendor.js'))
+    .pipe(gulpif(env === 'prd', uglify()))
+    .pipe(gulp.dest(paths.vendor.js.dest))
+    .pipe(browserSync.stream());
+});
+
+/**
+ * Javascript task
+ *
+ * 1. Deletes any previous files in the built js folder
+ * 2. Locates the src of scripts specified in paths object
+ * 3. Initializes sourcemaps
+ * 4. Concatenates all scripts into one file called bundle.js
+ * 5. Minifies the file if this is a production run
+ * 6. Writes the file to the scripts destination specified in the paths object w/ sourcemap
+ */
+gulp.task('js', function () {
+  return gulp.src(paths.js.src)
+    .pipe(plumber({
+      errorHandler: function (err) {
+        util.log(err);
+        browserSync.notify(buildErrorMessage('js'));
+        this.emit('end');
+      }
+    }))
+    .pipe(sourcemaps.init())
+    .pipe(concat('bundle.js'))
+    .pipe(babel({
+      presets: ['es2015', 'stage-0']
+    }))
+    .pipe(gulpif(env === 'prd', uglify()))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(paths.js.dest))
+    .pipe(browserSync.stream({match: '**/*.js'}));
+});
+
+/**
  * Build task
  *
  * 1. Run the jekyll task first
  * 2. When jekyll task is complete, run docs, img, js, and sass tasks
  */
 gulp.task('build', ['jekyll'], function (callback) {
-  runSequence(['docs', 'img', 'vendorJS', 'js', 'vendorSass', 'sass'], callback);
+  runSequence(['docs', 'img', 'vendor:sass', 'sass', 'vendor:js', 'js'], callback);
 });
 
 /**
@@ -308,10 +308,10 @@ gulp.task('serve', ['build'], function () {
   gulp.watch(paths.jekyll.watchFiles, ['build']);
   gulp.watch(paths.docs.watchFiles, ['docs']);
   gulp.watch(paths.img.watchFiles, ['img']);
-  gulp.watch(paths.vendor.js.watchFiles, ['vendorJS']);
-  gulp.watch(paths.js.watchFiles, ['js']);
-  gulp.watch(paths.vendor.sass.watchFiles, ['vendorSass']);
+  gulp.watch(paths.vendor.sass.watchFiles, ['vendor:sass']);
   gulp.watch(paths.sass.watchFiles, ['sass']);
+  gulp.watch(paths.vendor.js.watchFiles, ['vendor:js']);
+  gulp.watch(paths.js.watchFiles, ['js']);
 });
 
 /**
