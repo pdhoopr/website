@@ -16,6 +16,7 @@ const concat = require('gulp-concat');
 const del = require('del');
 const gulpif = require('gulp-if');
 const plumber = require('gulp-plumber');
+const rename = require('gulp-rename');
 const runSequence = require('run-sequence');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
@@ -29,8 +30,7 @@ const env = process.env.NODE_ENV || 'dev';
 const paths = {
   jekyll: {
     watchFiles: [
-      'app/**/*',
-      '!app/_assets{,/**/*}'
+      'app/**/*'
     ],
     src: 'app',
     dest: 'public'
@@ -46,50 +46,50 @@ const paths = {
   },
   img: {
     watchFiles: [
-      'app/_assets/img/**/*',
-      '!app/_assets/img/portfolio/university-of-michigan-athletics{,/**/*}',
-      '!app/_assets/img/portfolio/wgi*{,/**/*}'
+      'assets/img/**/*',
+      '!assets/img/portfolio/university-of-michigan-athletics{,/**/*}',
+      '!assets/img/portfolio/wgi*{,/**/*}'
     ],
     src: [
-      'app/_assets/img/**/*',
-      '!app/_assets/img/portfolio/university-of-michigan-athletics{,/**/*}',
-      '!app/_assets/img/portfolio/wgi*{,/**/*}'
+      'assets/img/**/*',
+      '!assets/img/portfolio/university-of-michigan-athletics{,/**/*}',
+      '!assets/img/portfolio/wgi*{,/**/*}'
     ],
     dest: 'public/img'
   },
   js: {
     watchFiles: [
-      'app/_assets/js/**/*.js'
+      'assets/js/**/*'
     ],
     src: [
-      'app/_assets/js/**/*.js'
+      'assets/js/**/*'
     ],
     dest: 'public/js'
   },
   sass: {
     watchFiles: [
-      'vendor/assets/sass/sassy-maps/**/*.scss',
-      'vendor/assets/sass/breakpoint/**/*.scss',
-      'app/_assets/sass/**/*.scss'
+      'vendor/assets/sass/sassy-maps/**/*',
+      'vendor/assets/sass/breakpoint/**/*',
+      'assets/sass/**/*'
     ],
-    src: 'app/_assets/sass/style.scss',
+    src: 'assets/sass/main.scss',
     dest: 'public/css'
   },
   vendor: {
     js: {
       watchFiles: [
-        'vendor/assets/js/**/*.js'
+        'vendor/assets/js/**/*'
       ],
       src: [
-        'vendor/assets/js/**/*.js'
+        'vendor/assets/js/**/*'
       ],
       dest: 'public/js'
     },
     sass: {
       watchFiles: [
-        'vendor/assets/sass/**/*.scss',
-        '!vendor/assets/sass/sassy-maps/**/*.scss',
-        '!vendor/assets/sass/breakpoint/**/*.scss'
+        'vendor/assets/sass/**/*',
+        '!vendor/assets/sass/sassy-maps/**/*',
+        '!vendor/assets/sass/breakpoint/**/*'
       ],
       src: 'vendor/assets/sass/vendor.scss',
       dest: 'public/css'
@@ -253,7 +253,8 @@ gulp.task('vendorSass', function () {
  * 2. Initializes sourcemaps
  * 3. Minifies the file if this is a production run, otherwise leaves expanded
  * 4. Uses Autoprefixer to add vendor prefixes
- * 5. Writes the file to the stylesheets destination specified in the paths object w/ sourcemap
+ * 5. Renames file to style.css
+ * 6. Writes the file to the stylesheets destination specified in the paths object w/ sourcemap
  */
 gulp.task('sass', function () {
   return gulp.src(paths.sass.src)
@@ -267,6 +268,9 @@ gulp.task('sass', function () {
     .pipe(sourcemaps.init())
     .pipe(gulpif(env === 'prd', sass({outputStyle: 'compressed'}), sass({outputStyle: 'expanded'})))
     .pipe(autoprefixer())
+    .pipe(rename({
+      basename: 'style'
+    }))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.sass.dest))
     .pipe(browserSync.stream({match: '**/*.css'}));

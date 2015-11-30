@@ -1,22 +1,22 @@
 /* =========================================================================
-   Base
-   ======================================================================== */
-@import 'base/variables';
-@import 'base/mixins';
-@import 'base/reset';
+   Utils
+   ========================================================================= */
+@import 'utils/variables';
+@import 'utils/mixins';
 
 /* =========================================================================
    Vendor (3rd-party) Libraries
    ========================================================================= */
-@import '../../../vendor/assets/sass/sassy-maps/memo';
-@import '../../../vendor/assets/sass/breakpoint/breakpoint';
+@import '../../vendor/assets/sass/sassy-maps/memo';
+@import '../../vendor/assets/sass/breakpoint/breakpoint';
 
 /* =========================================================================
-   Global
-   ========================================================================= */
-@import 'global/structure';
-@import 'global/typography';
-@import 'global/color';
+   Base
+   ======================================================================== */
+@import 'base/reset';
+@import 'base/structure';
+@import 'base/typography';
+@import 'base/color';
 
 /* =========================================================================
    Layout
