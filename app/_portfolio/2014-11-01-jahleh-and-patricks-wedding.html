@@ -13,14 +13,14 @@ live: false
 github: false
 ---
 
-<article class="portfolio-page {{ page.title }}">
+<article class="project {{ page.title }}">
   <div class="grid-container">
     <div class="project-summary">
       <h2 class="title">{{ page.name }}</h2>
 
       <div class="project-photos grid-100 tablet-grid-100 mobile-grid-100">
-        {% include browser.html url="wedding.hoopr.io" image="portfolio_jahleh-and-patricks-wedding_preview" extension="jpg" %}
-        {% include phone.html image="portfolio_jahleh-and-patricks-wedding_preview_mobile" extension="jpg" alt="| Mobile" class="grid-30 tablet-grid-30 mobile-grid-30" %}
+        {% include components/browser-wireframe.html url="wedding.hoopr.io" image="portfolio_jahleh-and-patricks-wedding_preview" extension="jpg" %}
+        {% include components/phone-wireframe.html image="portfolio_jahleh-and-patricks-wedding_preview_mobile" extension="jpg" alt="| Mobile" class="grid-30 tablet-grid-30 mobile-grid-30" %}
       </div>
 
       <div class="project-overview">
@@ -54,7 +54,7 @@ github: false
       </div>
 
       <div class="section-photos grid-66 pull-33 tablet-grid-100 mobile-grid-100">
-        {% include browser.html url="wedding.hoopr.io" image="portfolio_jahleh-and-patricks-wedding" extension="jpg" alt="| Our Story" scroll="scroll" %}
+        {% include components/browser-wireframe.html url="wedding.hoopr.io" image="portfolio_jahleh-and-patricks-wedding" extension="jpg" alt="| Our Story" scroll="scroll" %}
       </div>
     </div>
 
@@ -66,7 +66,7 @@ github: false
       </div>
 
       <div class="section-photos grid-66 tablet-grid-100 mobile-grid-100">
-        {% include browser.html url="wedding.hoopr.io/details" image="portfolio_jahleh-and-patricks-wedding_wedding" extension="jpg" alt="| Details" scroll="scroll" %}
+        {% include components/browser-wireframe.html url="wedding.hoopr.io/details" image="portfolio_jahleh-and-patricks-wedding_wedding" extension="jpg" alt="| Details" scroll="scroll" %}
       </div>
     </div>
 
@@ -78,7 +78,7 @@ github: false
       </div>
 
       <div class="section-photos grid-66 pull-33 tablet-grid-100 mobile-grid-100">
-        {% include browser.html url="wedding.hoopr.io/rsvp" image="portfolio_jahleh-and-patricks-wedding_rsvp" extension="jpg" alt="| RSVP" scroll="scroll" %}
+        {% include components/browser-wireframe.html url="wedding.hoopr.io/rsvp" image="portfolio_jahleh-and-patricks-wedding_rsvp" extension="jpg" alt="| RSVP" scroll="scroll" %}
       </div>
     </div>
 
@@ -90,7 +90,7 @@ github: false
       </div>
 
       <div class="section-photos grid-66 tablet-grid-100 mobile-grid-100">
-        {% include browser.html url="wedding.hoopr.io/guestbook" image="portfolio_jahleh-and-patricks-wedding_guestbook" extension="jpg" alt="| Guestbook" scroll="scroll" %}
+        {% include components/browser-wireframe.html url="wedding.hoopr.io/guestbook" image="portfolio_jahleh-and-patricks-wedding_guestbook" extension="jpg" alt="| Guestbook" scroll="scroll" %}
       </div>
     </div>
 
@@ -100,11 +100,11 @@ github: false
       </div>
 
       <div class="section-photos photos-mobile grid-100">
-        {% include phone.html image="portfolio_jahleh-and-patricks-wedding_mobile" extension="jpg" class="mobile" alt="| Our Story | Mobile" scroll="scroll" %}
+        {% include components/phone-wireframe.html image="portfolio_jahleh-and-patricks-wedding_mobile" extension="jpg" class="mobile" alt="| Our Story | Mobile" scroll="scroll" %}
 
-        {% include phone.html image="portfolio_jahleh-and-patricks-wedding_wedding_mobile" extension="jpg" class="mobile" alt="| Details | Mobile" scroll="scroll" %}
+        {% include components/phone-wireframe.html image="portfolio_jahleh-and-patricks-wedding_wedding_mobile" extension="jpg" class="mobile" alt="| Details | Mobile" scroll="scroll" %}
 
-        {% include phone.html image="portfolio_jahleh-and-patricks-wedding_guestbook_mobile" extension="jpg" class="mobile" alt="| Guestbook | Mobile" scroll="scroll" %}
+        {% include components/phone-wireframe.html image="portfolio_jahleh-and-patricks-wedding_guestbook_mobile" extension="jpg" class="mobile" alt="| Guestbook | Mobile" scroll="scroll" %}
       </div>
     </div>
   </div>

@@ -13,14 +13,14 @@ live: http://msomearasmultiage.com
 github: false
 ---
 
-<article class="portfolio-page {{ page.title }}">
+<article class="project {{ page.title }}">
   <div class="grid-container">
     <div class="project-summary">
       <h2 class="title">{{ page.name }}</h2>
 
       <div class="project-photos grid-100 tablet-grid-100 mobile-grid-100">
-        {% include browser.html url="msomearasmultiage.com" image="portfolio_ms-omearas-multiage_preview" extension="jpg" %}
-        {% include phone.html image="portfolio_ms-omearas-multiage_preview_mobile" extension="jpg" alt="| Mobile" class="grid-30 tablet-grid-30 mobile-grid-30" %}
+        {% include components/browser-wireframe.html url="msomearasmultiage.com" image="portfolio_ms-omearas-multiage_preview" extension="jpg" %}
+        {% include components/phone-wireframe.html image="portfolio_ms-omearas-multiage_preview_mobile" extension="jpg" alt="| Mobile" class="grid-30 tablet-grid-30 mobile-grid-30" %}
       </div>
 
       <div class="project-overview">
@@ -54,7 +54,7 @@ github: false
       </div>
 
       <div class="section-photos grid-66 pull-33 tablet-grid-100 mobile-grid-100">
-         {% include browser.html url="msomearasmultiage.com" image="portfolio_ms-omearas-multiage" extension="jpg" alt="| Home" scroll="scroll" %}
+         {% include components/browser-wireframe.html url="msomearasmultiage.com" image="portfolio_ms-omearas-multiage" extension="jpg" alt="| Home" scroll="scroll" %}
       </div>
     </div>
 
@@ -66,7 +66,7 @@ github: false
       </div>
 
       <div class="section-photos grid-66 tablet-grid-100 mobile-grid-100">
-        {% include browser.html url="msomearasmultiage.com/kids" image="portfolio_ms-omearas-multiage_kids" extension="gif" alt="| Kids" %}
+        {% include components/browser-wireframe.html url="msomearasmultiage.com/kids" image="portfolio_ms-omearas-multiage_kids" extension="gif" alt="| Kids" %}
       </div>
     </div>
 
@@ -78,7 +78,7 @@ github: false
       </div>
 
       <div class="section-photos grid-66 pull-33 tablet-grid-100 mobile-grid-100">
-        {% include browser.html url="msomearasmultiage.com/parents" image="portfolio_ms-omearas-multiage_parents" extension="jpg" alt="| Parents" scroll="scroll" %}
+        {% include components/browser-wireframe.html url="msomearasmultiage.com/parents" image="portfolio_ms-omearas-multiage_parents" extension="jpg" alt="| Parents" scroll="scroll" %}
       </div>
     </div>
 
@@ -88,11 +88,11 @@ github: false
       </div>
 
       <div class="section-photos photos-mobile grid-100 tablet-grid-100 mobile-grid-100">
-        {% include phone.html image="portfolio_ms-omearas-multiage_parents_mobile" extension="jpg" alt="| Parents | Mobile" class="mobile" scroll="scroll" %}
+        {% include components/phone-wireframe.html image="portfolio_ms-omearas-multiage_parents_mobile" extension="jpg" alt="| Parents | Mobile" class="mobile" scroll="scroll" %}
 
-        {% include phone.html image="portfolio_ms-omearas-multiage_mobile" extension="jpg" alt="| Home | Mobile" class="mobile" scroll="scroll" %}
+        {% include components/phone-wireframe.html image="portfolio_ms-omearas-multiage_mobile" extension="jpg" alt="| Home | Mobile" class="mobile" scroll="scroll" %}
 
-        {% include phone.html image="portfolio_ms-omearas-multiage_kids_mobile" extension="jpg" alt="| Kids | Mobile" class="mobile" scroll="scroll" %}
+        {% include components/phone-wireframe.html image="portfolio_ms-omearas-multiage_kids_mobile" extension="jpg" alt="| Kids | Mobile" class="mobile" scroll="scroll" %}
       </div>
     </div>
   </div>

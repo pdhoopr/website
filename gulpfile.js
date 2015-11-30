@@ -46,55 +46,55 @@ const paths = {
     ],
     dest: 'public/docs'
   },
-  img: {
+  images: {
     watchFiles: [
-      'app/_assets/img/**/*',
-      '!app/_assets/img/portfolio/university-of-michigan-athletics{,/**/*}',
-      '!app/_assets/img/portfolio/wgi*{,/**/*}'
+      'app/_assets/images/**/*',
+      '!app/_assets/images/portfolio/university-of-michigan-athletics{,/**/*}',
+      '!app/_assets/images/portfolio/wgi*{,/**/*}'
     ],
     src: [
-      'app/_assets/img/**/*',
-      '!app/_assets/img/portfolio/university-of-michigan-athletics{,/**/*}',
-      '!app/_assets/img/portfolio/wgi*{,/**/*}'
+      'app/_assets/images/**/*',
+      '!app/_assets/images/portfolio/university-of-michigan-athletics{,/**/*}',
+      '!app/_assets/images/portfolio/wgi*{,/**/*}'
     ],
-    dest: 'public/img'
+    dest: 'public/assets/images'
   },
-  js: {
+  javascripts: {
     watchFiles: [
-      'app/_assets/js/**/*'
+      'app/_assets/javascripts/**/*'
     ],
     src: [
-      'app/_assets/js/**/*'
+      'app/_assets/javascripts/**/*'
     ],
-    dest: 'public/js'
+    dest: 'public/assets/javascripts'
   },
-  sass: {
+  stylesheets: {
     watchFiles: [
-      'vendor/assets/sass/sassy-maps/**/*',
-      'vendor/assets/sass/breakpoint/**/*',
-      'app/_assets/sass/**/*'
+      'vendor/assets/stylesheets/sassy-maps/**/*',
+      'vendor/assets/stylesheets/breakpoint/**/*',
+      'app/_assets/stylesheets/**/*'
     ],
-    src: 'app/_assets/sass/main.scss',
-    dest: 'public/css'
+    src: 'app/_assets/stylesheets/main.scss',
+    dest: 'public/assets/stylesheets'
   },
   vendor: {
-    js: {
+    javascripts: {
       watchFiles: [
-        'vendor/assets/js/**/*'
+        'vendor/assets/javascripts/**/*'
       ],
       src: [
-        'vendor/assets/js/**/*'
+        'vendor/assets/javascripts/**/*'
       ],
-      dest: 'public/js'
+      dest: 'public/assets/javascripts'
     },
-    sass: {
+    stylesheets: {
       watchFiles: [
-        'vendor/assets/sass/**/*',
-        '!vendor/assets/sass/sassy-maps/**/*',
-        '!vendor/assets/sass/breakpoint/**/*'
+        'vendor/assets/stylesheets/**/*',
+        '!vendor/assets/stylesheets/sassy-maps/**/*',
+        '!vendor/assets/stylesheets/breakpoint/**/*'
       ],
-      src: 'vendor/assets/sass/vendor.scss',
-      dest: 'public/css'
+      src: 'vendor/assets/stylesheets/vendor.scss',
+      dest: 'public/assets/stylesheets'
     }
   }
 };
@@ -151,52 +151,52 @@ gulp.task('docs', ['clean:docs'], function () {
 /**
  * Images task
  *
- * 1. Deletes any previous files in the built img folder
+ * 1. Deletes any previous files in the built images folder
  * 2. Locates the src of images specified in paths object
  * 3. Copies selected images to the destination specified in the paths object
  */
-gulp.task('clean:img', function () {
-  return del(paths.img.dest);
+gulp.task('clean:images', function () {
+  return del(paths.images.dest);
 });
 
-gulp.task('img', ['clean:img'], function () {
-  return gulp.src(paths.img.src)
+gulp.task('images', ['clean:images'], function () {
+  return gulp.src(paths.images.src)
     .pipe(plumber({
       errorHandler: function (err) {
         util.log(err);
-        browserSync.notify(buildErrorMessage('img'));
+        browserSync.notify(buildErrorMessage('images'));
         this.emit('end');
       }
     }))
-    .pipe(gulp.dest(paths.img.dest))
+    .pipe(gulp.dest(paths.images.dest))
     .pipe(browserSync.stream());
 });
 
 /**
- * Vendor Sass task
+ * Vendor Stylesheetsstylesheets task
  *
  * 1. Locates the src of vendor stylesheets specified in paths object
  * 2. Minifies the file if this is a production run, otherwise leaves expanded
  * 3. Uses Autoprefixer to add vendor prefixes
  * 4. Writes the file to the stylesheets destination specified in the paths object
  */
-gulp.task('vendor:sass', function () {
-  return gulp.src(paths.vendor.sass.src)
+gulp.task('vendor:stylesheets', function () {
+  return gulp.src(paths.vendor.stylesheets.src)
     .pipe(plumber({
       errorHandler: function (err) {
         util.log(err);
-        browserSync.notify(buildErrorMessage('vendor:sass'));
+        browserSync.notify(buildErrorMessage('vendor:stylesheets'));
         this.emit('end');
       }
     }))
     .pipe(gulpif(env === 'prd', sass({outputStyle: 'compressed'}), sass({outputStyle: 'expanded'})))
     .pipe(autoprefixer())
-    .pipe(gulp.dest(paths.vendor.sass.dest))
+    .pipe(gulp.dest(paths.vendor.stylesheets.dest))
     .pipe(browserSync.stream());
 });
 
 /**
- * Sass task
+ * Stylesheets task
  *
  * 1. Locates the src of stylesheets specified in paths object
  * 2. Initializes sourcemaps
@@ -205,12 +205,12 @@ gulp.task('vendor:sass', function () {
  * 5. Renames file to style.css
  * 6. Writes the file to the stylesheets destination specified in the paths object w/ sourcemap
  */
-gulp.task('sass', function () {
-  return gulp.src(paths.sass.src)
+gulp.task('stylesheets', function () {
+  return gulp.src(paths.stylesheets.src)
     .pipe(plumber({
       errorHandler: function (err) {
         util.log(err);
-        browserSync.notify(buildErrorMessage('sass'));
+        browserSync.notify(buildErrorMessage('stylesheets'));
         this.emit('end');
       }
     }))
@@ -221,49 +221,49 @@ gulp.task('sass', function () {
       basename: 'style'
     }))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(paths.sass.dest))
+    .pipe(gulp.dest(paths.stylesheets.dest))
     .pipe(browserSync.stream({match: '**/*.css'}));
 });
 
 /**
- * Vendor Javascript task
+ * Vendor Javascripts task
  *
- * 1. Locates the src of vendor scripts specified in paths object
- * 2. Concatenates all scripts into one file called vendor.js
+ * 1. Locates the src of vendor javascripts specified in paths object
+ * 2. Concatenates all javascripts into one file called vendor.js
  * 3. Minifies the file if this is a production run
- * 4. Writes the file to the scripts destination specified in the paths object
+ * 4. Writes the file to the javascripts destination specified in the paths object
  */
-gulp.task('vendor:js', function () {
-  return gulp.src(paths.vendor.js.src)
+gulp.task('vendor:javascripts', function () {
+  return gulp.src(paths.vendor.javascripts.src)
     .pipe(plumber({
       errorHandler: function (err) {
         util.log(err);
-        browserSync.notify(buildErrorMessage('vendor:js'));
+        browserSync.notify(buildErrorMessage('vendor:javascripts'));
         this.emit('end');
       }
     }))
     .pipe(concat('vendor.js'))
     .pipe(gulpif(env === 'prd', uglify()))
-    .pipe(gulp.dest(paths.vendor.js.dest))
+    .pipe(gulp.dest(paths.vendor.javascripts.dest))
     .pipe(browserSync.stream());
 });
 
 /**
  * Javascript task
  *
- * 1. Deletes any previous files in the built js folder
- * 2. Locates the src of scripts specified in paths object
+ * 1. Deletes any previous files in the built javascripts folder
+ * 2. Locates the src of javascripts specified in paths object
  * 3. Initializes sourcemaps
- * 4. Concatenates all scripts into one file called bundle.js
+ * 4. Concatenates all javascripts into one file called bundle.js
  * 5. Minifies the file if this is a production run
- * 6. Writes the file to the scripts destination specified in the paths object w/ sourcemap
+ * 6. Writes the file to the javascripts destination specified in the paths object w/ sourcemap
  */
-gulp.task('js', function () {
-  return gulp.src(paths.js.src)
+gulp.task('javascripts', function () {
+  return gulp.src(paths.javascripts.src)
     .pipe(plumber({
       errorHandler: function (err) {
         util.log(err);
-        browserSync.notify(buildErrorMessage('js'));
+        browserSync.notify(buildErrorMessage('javascripts'));
         this.emit('end');
       }
     }))
@@ -274,7 +274,7 @@ gulp.task('js', function () {
     }))
     .pipe(gulpif(env === 'prd', uglify()))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(paths.js.dest))
+    .pipe(gulp.dest(paths.javascripts.dest))
     .pipe(browserSync.stream({match: '**/*.js'}));
 });
 
@@ -282,10 +282,10 @@ gulp.task('js', function () {
  * Build task
  *
  * 1. Run the jekyll task first
- * 2. When jekyll task is complete, run docs, img, js, and sass tasks
+ * 2. When jekyll task is complete, run docs, images, javascripts, and stylesheets tasks
  */
 gulp.task('build', ['jekyll'], function (callback) {
-  runSequence(['docs', 'img', 'vendor:sass', 'sass', 'vendor:js', 'js'], callback);
+  runSequence(['docs', 'images', 'vendor:stylesheets', 'stylesheets', 'vendor:javascripts', 'javascripts'], callback);
 });
 
 /**
@@ -307,12 +307,12 @@ gulp.task('serve', ['build'], function () {
   });
 
   gulp.watch(paths.jekyll.watchFiles, ['build']);
-  gulp.watch(paths.docs.watchFiles, ['docs']);
-  gulp.watch(paths.img.watchFiles, ['img']);
-  gulp.watch(paths.vendor.sass.watchFiles, ['vendor:sass']);
-  gulp.watch(paths.sass.watchFiles, ['sass']);
-  gulp.watch(paths.vendor.js.watchFiles, ['vendor:js']);
-  gulp.watch(paths.js.watchFiles, ['js']);
+  gulp.watch(paths.docs.watchFilesstylesheets, ['docs']);
+  gulp.watch(paths.images.watchFiles, ['images']);
+  gulp.watch(paths.vendor.stylesheets.watchFiles, ['vendor:stylesheets']);
+  gulp.watch(paths.stylesheets.watchFiles, ['stylesheets']);
+  gulp.watch(paths.vendor.javascripts.watchFiles, ['vendor:javascripts']);
+  gulp.watch(paths.javascripts.watchFiles, ['javascripts']);
 });
 
 /**
