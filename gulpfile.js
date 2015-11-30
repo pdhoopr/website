@@ -30,9 +30,10 @@ const env = process.env.NODE_ENV || 'dev';
 const paths = {
   jekyll: {
     watchFiles: [
+      'config/**/*',
       'app/**/*'
     ],
-    src: 'app',
+    src: 'config',
     dest: 'public'
   },
   docs: {
