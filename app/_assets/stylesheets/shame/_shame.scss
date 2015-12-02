@@ -1,0 +1,173 @@
+/* =========================================================================
+   Shame
+   ========================================================================= */
+
+/**
+ * This file is the sad home of those CSS rules that were used as hacks
+ * or quicks fixes in place of a clean, robust solution for whatever
+ * reason (laziness, lack of time, etc.).
+ */
+
+/* Shame | Structure
+   ========================================================================= */
+
+/* Class to scroll vertically when content is too long for area */
+.scroll {
+  overflow-y: auto !important;
+
+  /* No scrolling vertically on small devices */
+  .touch & {
+    overflow-y: hidden !important;
+  }
+}
+
+/* Shame | Header
+   ========================================================================= */
+
+/* Overrides the fixed header background color when page is scrolling */
+.scrolling #masthead {
+  background-color: rgba($ph-blue, .75) !important;
+}
+
+/* Shame | Home
+   ========================================================================= */
+
+/* Styles that override/alter components specifically on the home page */
+.default-page {
+
+  /* Main nav styles when home page is scrolling on small devices */
+  &.scrolling .main-nav {
+    @include breakpoint($mq-small) {
+      background-color: rgba($ph-blue, .75);
+      box-shadow: 0 0 8px $gray-2;
+      left: 0;
+      position: fixed;
+      top: 0;
+      z-index: 100;
+    }
+  }
+
+  /* Header styles for home page */
+  #masthead {
+    background: none;
+
+    /* Header styles on small devices on home page */
+    @include breakpoint($mq-small) {
+      background: $ph-blue url('/assets/img/textures/dots-texture.png') fixed;
+      padding: 0;
+      position: static;
+    }
+  }
+
+  /* Logo styles for home page on small devices */
+  .logo {
+    @include breakpoint($mq-small) {
+      float: none;
+      font-size: 3rem;
+      line-height: 1;
+      padding: .4em 0 .2em;
+    }
+
+    /* Logo h1 styles for home page on small devices */
+    h1 {
+      @include breakpoint($mq-small) {
+        padding: 0;
+      }
+    }
+  }
+
+  /* Main nav styles on small devices on home page */
+  .main-nav {
+    @include breakpoint($mq-small) {
+      float: none;
+      width: 100%;
+    }
+
+    /* Nav item styles on small devices on home page */
+    .nav-item {
+      @include breakpoint($mq-small) {
+        padding: 13px 0 10px;
+        width: 50%;
+      }
+    }
+  }
+}
+
+/* Shame | Portfolio
+   ========================================================================= */
+
+/* Styles that override/alter components specifically on portfolio pages */
+.portfolio-page {
+
+  /* On portfolio page, give border bottom to nav item on hover */
+  .main-nav .nav-item:hover {
+    border-bottom-color: $ph-yellow;
+
+    /* Remove border bottom color on touch devices */
+    .touch & {
+      border-bottom-color: transparent;
+    }
+  }
+
+  /* Styles specifically for a browser in a project section */
+  .browser {
+    margin: 0 auto;
+    max-width: 725px;
+  }
+
+  /* Styles specifically for a browser photo in a project section */
+  .browser-photo {
+    max-height: 388px;
+    overflow: hidden;
+  }
+
+  /* Styles specifically for a phone in a project section */
+  .phone {
+    margin: 0 auto;
+    max-width: 355px;
+
+    /* Reduce top position on medium and up devices */
+    @include breakpoint($mq-medium) {
+      top: 15%;
+    }
+
+    /* Styles specifically for a mobile phone */
+    &.mobile {
+      display: block;
+      position: static;
+      width: 100%;
+
+      /* Styles for large and up devices */
+      @include breakpoint($mq-large) {
+        display: inline-block;
+        margin: 0 auto;
+        width: 30%;
+      }
+
+      /* Styles specifically for all but the first mobile phone */
+      &:not(:first-of-type) {
+
+        /* Styles for large and up devices */
+        @include breakpoint($mq-large) {
+          margin-left: .8em;
+        }
+      }
+
+      /* Styles specifically for all but the last mobile phone */
+      &:not(:last-of-type) {
+        margin-bottom: 1.2em;
+
+        /* Remove bottom margin on large devices */
+        @include breakpoint($mq-large) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  /* Styles specifically for a phone photo in a project section */
+  .phone-photo {
+    max-height: 568px;
+    overflow: hidden;
+  }
+}

@@ -1,4 +1,4 @@
-/*!
+/**
  *  Kwicks: Sexy Sliding Panels for jQuery - v2.2.1
  *  http://devsmash.com/projects/kwicks
  *

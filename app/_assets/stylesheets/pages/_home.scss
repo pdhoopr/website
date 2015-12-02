@@ -2,7 +2,7 @@
    Home
    ========================================================================= */
 
-/* Home | Section
+/* Home | Home Section
    ========================================================================= */
 
 /* Styles for home sections (About, Portfolio, Contact) */
@@ -16,14 +16,7 @@
 
   /* Styles for section titles */
   .title {
-    font-size: 2.5rem;
-    padding-bottom: 1em;
-    text-align: center;
-
-    /* Increase font size on medium and up devices */
-    @include breakpoint($mq-medium) {
-      font-size: 3rem;
-    }
+    margin-top: 0;
   }
 }
 
@@ -36,130 +29,125 @@
 
   /* Styles for medium and up devices */
   @include breakpoint($mq-medium) {
-    background: $ph-blue url('/assets/images/home/hero_background.jpg') fixed;
+    background: $ph-blue url('/assets/img/home/hero_background.jpg') fixed;
     background-size: cover;
     color: $ph-yellow;
     display: block;
     height: 95%;
   }
 
-  /* Styles for the hero (textured) overlay */
-  .hero-overlay {
-    background: url('/assets/images/home/hero_texture.png') fixed;
-    left: 0;
-    position: absolute;
-    text-align: center;
-    top: 0;
-    width: 100%;
+  /* Styles for the hero overlay */
+  .overlay {
 
     /* Set height in vh with % fallback */
     @include height-fallback(95);
+
+    /* Other styles for the overlay */
+    background: url('/assets/img/textures/dots-texture.png') fixed;
+    text-align: center;
   }
 
-  /* Styles for the hero arrow (down pointing) */
-  .hero-arrow {
-    border-left: 32px solid transparent;
-    border-right: 32px solid transparent;
-    border-top: 32px solid $ph-blue;
+  /* Styles for the hero arrow */
+  .arrow {
+
+    /* Make the arrow point down and be 32px border */
+    @include arrow-down(32px);
+
+    /* Other styles for the arrow */
+    border-top-color: $ph-blue;
     bottom: -32px;
-    content: '';
-    height: 0;
     left: 50%;
     margin-left: -32px;
-    position: absolute;
-    width: 0;
   }
+}
 
-  /* Styles for the animated hero section */
-  .hero-animate {
+/* Styles for the animated hero section */
+.hero-animation {
+
+  /* Vertical align 45% from top */
+  @include vertical-align(45%);
+
+  /* Style animate */
+  position: relative;
+  text-align: center;
+
+  /* Styles for Learn More button */
+  .cta {
+
+    /* Hover styles */
+    @include button-hover($ph-yellow, $ph-blue);
+
+    /* Styles for learn more button */
+    opacity: 0;
     position: relative;
     text-align: center;
+    top: 5em;
+  }
 
-    /* Vertical align 45% from top */
-    @include vertical-align(45%);
-
-    /* Styles for hero taglines (5 of them) */
-    .tagline {
-      display: none;
-      font-size: 5rem;
-      line-height: 1;
-    }
-
-    /* Styles for Learn More button */
-    .learn-more {
-      opacity: 0;
-      position: relative;
-      text-align: center;
-      top: 5em;
-
-      /* Styles for button */
-      .btn {
-        @include button-hover($ph-yellow, $ph-blue);
-      }
-    }
+  /* Styles for hero taglines */
+  .tagline {
+    display: none;
+    font-size: 5rem;
+    line-height: 1;
   }
 }
 
 /* Home | About
    ========================================================================= */
 
-/* Styles About section */
+/* Styles for the About section */
 #about {
-  background: $ph-yellow url('/assets/images/home/about_background.jpg') fixed;
+  background: $ph-yellow url('/assets/img/home/about_background.jpg') fixed;
   background-size: cover;
   color: $white;
+}
 
-  /* Styles for motto */
-  .motto {
-    font-size: 1.5rem;
-    padding-bottom: 1.5em;
-    text-align: left;
+/* Styles for about motto */
+.motto {
+  font-size: 1.5rem;
+  padding-bottom: 1.5em;
+  text-align: left;
 
-    /* Styles for medium and up devices */
-    @include breakpoint($mq-medium) {
-      font-size: 2rem;
-      text-align: center;
-    }
+  /* Styles for medium and up devices */
+  @include breakpoint($mq-medium) {
+    font-size: 2rem;
+    text-align: center;
   }
+}
 
-  /* Styles for resume line */
-  .resume {
-    font-size: 1.25rem;
-    padding: 2em 0;
-    text-align: left;
+/* Styles for resume line */
+.resume {
+  font-size: 1.25rem;
+  padding: 2em 0;
+  text-align: left;
 
-    /* Styles for medium and up devices */
-    @include breakpoint($mq-medium) {
-      font-size: 1.5rem;
-      text-align: center;
-    }
+  /* Styles for medium and up devices */
+  @include breakpoint($mq-medium) {
+    font-size: 1.5rem;
+    text-align: center;
   }
 }
 
 /* Home | Portfolio
    ========================================================================= */
 
-/* Styles for Portfolio section */
+/* Styles for the Portfolio section */
 #portfolio {
 
-  /* Styles for kwicks sliding panels */
-  .kwicks {
+  /* Give the kwicks wrapper a height */
+  .kwicks-wrapper {
+    height: 500px;
+    padding: 0;
+  }
 
-    /* Give the wrapper a height */
-    &-wrapper {
-      height: 500px;
-      padding: 0;
-    }
+  /* Make vertical & horizontal kwicks panels take up 100% width and height */
+  .kwicks-vertical {
+    height: 100%;
+    width: 100%;
 
-    /* Make vertical and horizontal panels take up 100% width and height */
-    &-vertical {
-      height: 100%;
+    /* 100% width for items in the kwicks vertical */
+    > li {
       width: 100%;
-
-      /* 100% width for items in the kwicks vertical */
-      & > li {
-        width: 100%;
-      }
     }
   }
 
@@ -167,6 +155,33 @@
   .project {
     border: 1px solid $white;
     padding: 0 16px;
+
+    /* Styles for hovering over a project */
+    &:hover {
+
+      /* Make the centering div full height */
+      .project-center {
+        height: 100%;
+        top: 0;
+      }
+
+      /* Make the icon fade out to 0 opacity */
+      .project-icon {
+        opacity: 0;
+      }
+
+      /* Move the name to 16px from the top of the project */
+      .project-name {
+        top: 16px;
+      }
+
+      /* Fade in the body and view button to full opacity (1) */
+      .project-body,
+      .project-view {
+        opacity: 1;
+        transition: opacity .3s ease-in-out .25s;
+      }
+    }
 
     /* Loop through map of project colors and set colors */
     @each $project, $color in $project-colors {
@@ -186,145 +201,118 @@
         }
       }
     }
+  }
 
-    /* Styles for the center positioning div of a project */
-    &-center {
-      height: 0; // Start with no height - this gets animated
-      padding-bottom: 50%;
-      position: relative;
-      top: 25%;
-      transition: height .3s, top .3s;
+  /* Styles for the center positioning div of a project */
+  .project-center {
+    height: 0; // Start with no height - this gets animated
+    padding-bottom: 50%;
+    position: relative;
+    top: 25%;
+    transition: height .3s, top .3s;
 
-      /* Reset font size to 1rem for all paragraphs in a project */
-      p {
-        font-size: 1rem;
-      }
+    /* Reset font size to 1rem for all paragraphs in a project */
+    p {
+      font-size: 1rem;
     }
+  }
 
-    /* Styles for the icon for each project */
-    &-icon {
-      color: $white;
-      position: absolute;
-      top: 64px;
-      text-align: center;
-      transition: opacity .3s ease-in-out;
-      width: 100%;
-      z-index: 1;
-    }
+  /* Styles for the icon for each project */
+  .project-icon {
+    color: $white;
+    position: absolute;
+    top: 64px;
+    text-align: center;
+    transition: opacity .3s ease-in-out;
+    width: 100%;
+    z-index: 1;
+  }
 
-    /* Styles for a project's name */
-    &-name {
-      color: $white;
-      font-family: $ubuntu;
-      line-height: 1;
-      position: absolute;
-      text-align: center;
-      text-transform: uppercase;
-      top: 8px;
-      transition: top .3s ease-in-out;
-      width: 100%;
-    }
+  /* Styles for a project's name */
+  .project-name {
+    color: $white;
+    font-family: $ubuntu;
+    line-height: 1;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 8px;
+    transition: top .3s ease-in-out;
+    width: 100%;
+  }
 
-    /* Style for the body that holds roles, tech, and platforms */
-    &-body {
-      color: $white;
-      opacity: 0;
-      position: absolute;
-      text-align: center;
-      top: 47.5%;
-      transform: translateY(-50%);
-      width: 100%;
-    }
+  /* Style for the body that holds roles, tech, and platforms */
+  .project-body {
+    color: $white;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    top: 47.5%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
 
-    /* Text/font styles for the roles, tech, and platforms */
-    &-roles,
-    &-tech,
-    &-devices {
-      color: $white;
-      line-height: 1.25;
-      text-align: center;
-    }
+  /* Text/font styles for the roles, tech, and platforms */
+  .project-roles,
+  .project-tech,
+  .project-devices {
+    color: $white;
+    line-height: 1.25;
+    text-align: center;
+  }
 
-    /* Give bottom margin to roles and tech */
-    &-roles,
-    &-tech {
-      margin-bottom: 1.5em;
-    }
+  /* Give bottom margin to roles and tech */
+  .project-roles,
+  .project-tech {
+    margin-bottom: 1.5em;
+    padding-bottom: 0;
+  }
 
-    /* Change font styles for platforms */
-    &-devices {
-      font-size: 1.5rem;
-      line-height: 1;
-    }
+  /* Change font styles for platforms */
+  .project-devices {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
 
-    /* Styles for the label ("Roles", "Tech", "Platforms", etc.) */
-    &-label {
-      border-bottom: 2px solid;
-      display: inline-block;
-      font-family: $ubuntu;
-      font-size: .875rem;
-      margin-bottom: .5em;
-      padding-bottom: .25em;
-      text-transform: uppercase;
-    }
+  /* Styles for the label ("Roles", "Tech", "Platforms", etc.) */
+  .project-label {
+    border-bottom: 2px solid;
+    display: inline-block;
+    font-family: $ubuntu;
+    font-size: .875rem;
+    margin-bottom: .5em;
+    padding-bottom: .25em;
+    text-transform: uppercase;
+  }
 
-    /* Styles for the View button at the bottom of a project */
-    &-view {
-      bottom: 12px;
-      color: $white;
-      opacity: 0;
-      position: absolute;
-      text-align: center;
-      width: 100%;
+  /* Styles for the View button at the bottom of a project */
+  .project-view {
+    bottom: 12px;
+    color: $white;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
 
-      /* Styles for the button itself, generally making it smaller */
-      .btn {
-        font-size: 1.125rem;
-        padding: .375em .75em;
-        transition: background .15s ease-in-out;
+  /* Styles for the button itself, generally making it smaller */
+  .btn {
+    font-size: 1.125rem;
+    padding: .375em .75em;
+    transition: background .15s ease-in-out;
 
-        /* Hover background color to white */
-        &:hover {
-          background: $white;
-          border-color: $white;
-        }
-
-        /* Give left margin to icon in button that points to going to page */
-        .fa {
-          margin-left: .5em;
-        }
-      }
-    }
-
-    /* Styles for hovering over a project */
+    /* Hover background color to white */
     &:hover {
+      background: $white;
+      border-color: $white;
+    }
 
-      .project {
-
-        /* Make the centering div full height */
-        &-center {
-          height: 100%;
-          top: 0;
-        }
-
-        /* Make the icon fade out to 0 opacity */
-        &-icon {
-          opacity: 0;
-        }
-
-        /* Move the name to 16px from the top of the project */
-        &-name {
-          top: 16px;
-        }
-
-        /* Fade in the body and view button to full opacity (1) */
-        &-body,
-        &-view {
-          opacity: 1;
-          transition: opacity .3s ease-in-out .25s;
-        }
-      }
+    /* Give left margin to icon in button that points to going to page */
+    .fa {
+      margin-left: .5em;
     }
   }
 }
+
+
 

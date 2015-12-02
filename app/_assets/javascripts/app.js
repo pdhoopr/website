@@ -7,19 +7,19 @@
 const $wrapper = $('#wrapper');
 const $masthead = $('#masthead');
 const $mainNav = $('.main-nav');
-const $letters = $('.letter-animate');
-const $navAbout = $('.nav-about');
-const $navPortfolio = $('.nav-portfolio');
-let lastActive = null; // Holds last active section while scrolling
-const $heroAnimate = $('#hero .hero-animate');
-const $heroArrow = $('#hero .hero-arrow');
-const $taglines = $('.tagline'); // Hide all taglines initially
-let i = 0; // Counter for taglines
-const $learnMore = $('.learn-more');
-const $about = $('#about');
-const $portfolio = $('#portfolio');
-const $contact = $('#contact');
-const $project = $('.layout-portfolio .project');
+const $logoLetters = $('.logo-letter.animate');
+const $mainNavAbout = $('.main-nav .nav-about');
+const $mainNavPortfolio = $('.main-nav .nav-portfolio');
+let $lastActiveSection = null; // Holds last active section while scrolling
+const $heroAnimation = $('#hero .hero-animation');
+const $heroArrow = $('#hero .arrow');
+const $heroTaglines = $('#hero .tagline'); // Hide all taglines initially
+let heroTaglineNum = 0; // Counter for taglines
+const $heroCTA = $('#hero .cta');
+const $aboutSection = $('#about');
+const $portfolioSection = $('#portfolio');
+const $contactSection = $('#contact');
+const $portfolioPage = $('.portfolio-page');
 
 /* Functions
    ======================================================================== */
@@ -30,8 +30,8 @@ const $project = $('.layout-portfolio .project');
  *
  * @returns { Void } Returns no value
  */
-function tweenLettersComplete() {
-  $letters.addClass('letter-collapsed').removeAttr('style');
+function tweenLogoLettersComplete() {
+  $logoLetters.addClass('collapsed').removeAttr('style');
 }
 
 /**
@@ -41,8 +41,8 @@ function tweenLettersComplete() {
  * @returns { Void } Returns no value
  */
 function cycle() {
-  $taglines.eq(i).fadeIn(1000).delay(1000).fadeOut(1000, cycle);
-  i = ++i % $taglines.length;
+  $heroTaglines.eq(heroTaglineNum).fadeIn(1000).delay(1000).fadeOut(1000, cycle);
+  heroTaglineNum = ++heroTaglineNum % $heroTaglines.length;
 }
 
 /* GSAP Tweens
@@ -52,11 +52,11 @@ function cycle() {
  * Tween logo letters from opacity of 1 and full width to no width and
  * opacity of 0. Start 1 seconds after page is ready.
  */
-const tweenLetters = TweenMax.to($letters, 0.6, {
+const tweenLogoLetters = TweenMax.to($logoLetters, 0.6, {
   delay: 0.6,
   width: 0,
   opacity: 0,
-  onComplete: tweenLettersComplete
+  onComplete: tweenLogoLettersComplete
 });
 
 /**
@@ -64,7 +64,7 @@ const tweenLetters = TweenMax.to($letters, 0.6, {
  * from start location to 75% from the top of its parent over the duration
  * of the tween.
  */
-const fadeHeroDiv = TweenMax.to($heroAnimate, 1, {
+const fadeHeroDiv = TweenMax.to($heroAnimation, 1, {
   opacity: 0,
   top: '75%'
 });
@@ -107,26 +107,26 @@ const heroArrowScene = new ScrollMagic.Scene({
    ======================================================================== */
 
 /* Waypoints only for the home page */
-if ($wrapper.hasClass('layout-default')) {
+if ($wrapper.hasClass('default-page')) {
 
   /**
    * Toggles active class for About and also flags the header as scrolling
    */
-  const aboutWaypoint = $about.waypoint(function (direction) {
+  const aboutWaypoint = $aboutSection.waypoint(function (direction) {
 
     /* When going down and you hit about section, do stuff */
     if (direction === 'down') {
-      $masthead.addClass('scroll-header'); // Add class to header for scrolling
-      $navAbout.addClass('active'); // Add active class to about
-      $navPortfolio.removeClass('active'); // Remove active class from portfolio nav
-      lastActive = $navAbout; // Make about nav the last active
+      $wrapper.addClass('scrolling'); // Add class to header for scrolling
+      $mainNavAbout.addClass('active'); // Add active class to about
+      $mainNavPortfolio.removeClass('active'); // Remove active class from portfolio nav
+      $lastActiveSection = $mainNavAbout; // Make about nav the last active
 
       /* When going up and you hit About section, do stuff */
     } else {
-      $masthead.removeClass('scroll-header'); // Remove scrolling header class
-      $navAbout.removeClass('active'); // Remove active class from about
-      $navPortfolio.removeClass('active'); // Remove active class from portfolio
-      lastActive = null; // Remove last active element
+      $wrapper.removeClass('scrolling'); // Remove scrolling header class
+      $mainNavAbout.removeClass('active'); // Remove active class from about
+      $mainNavPortfolio.removeClass('active'); // Remove active class from portfolio
+      $lastActiveSection = null; // Remove last active element
     }
   }, {
     /* Make offset the header height or the nav height (small devices) */
@@ -138,19 +138,19 @@ if ($wrapper.hasClass('layout-default')) {
   /**
    * Toggles active class for Portfolio and removes for About
    */
-  const portfolioWaypoint = $portfolio.waypoint(function (direction) {
+  const portfolioWaypoint = $portfolioSection.waypoint(function (direction) {
 
     /* When going down and you hit Portfolio section, do stuff */
     if (direction === 'down') {
-      $navAbout.removeClass('active'); // Remove active class from about
-      $navPortfolio.addClass('active'); // Add active class to portfolio
-      lastActive = $navPortfolio; // Make portfolio nav the last active
+      $mainNavAbout.removeClass('active'); // Remove active class from about
+      $mainNavPortfolio.addClass('active'); // Add active class to portfolio
+      $lastActiveSection = $mainNavPortfolio; // Make portfolio nav the last active
 
       /* When going up and you hit Portfolio section, do stuff */
     } else {
-      $navAbout.addClass('active'); // Add active class to about
-      $navPortfolio.removeClass('active'); // Remove active class from portfolio
-      lastActive = $navAbout; // Make about the last active
+      $mainNavAbout.addClass('active'); // Add active class to about
+      $mainNavPortfolio.removeClass('active'); // Remove active class from portfolio
+      $lastActiveSection = $mainNavAbout; // Make about the last active
     }
   }, {
     /* Make offset the header height or the nav height (small devices) */
@@ -162,18 +162,18 @@ if ($wrapper.hasClass('layout-default')) {
   /**
    * Toggles active class Portfolio at bottom, restores previous active on up
    */
-  const contactWaypoint = $contact.waypoint(function (direction) {
+  const contactWaypoint = $contactSection.waypoint(function (direction) {
 
     /* When going down and you hit Contact section, do stuff */
     if (direction === 'down') {
-      $navAbout.removeClass('active'); // Remove active class from about
-      $navPortfolio.addClass('active'); // Add active class to portfolio
+      $mainNavAbout.removeClass('active'); // Remove active class from about
+      $mainNavPortfolio.addClass('active'); // Add active class to portfolio
 
       /* When going up and you hit Contact section, do stuff */
     } else {
-      $navAbout.removeClass('active'); // Remove active class from about
-      $navPortfolio.removeClass('active'); // Remove active class from portfolio
-      lastActive.addClass('active'); // Add active class to last active
+      $mainNavAbout.removeClass('active'); // Remove active class from about
+      $mainNavPortfolio.removeClass('active'); // Remove active class from portfolio
+      $lastActiveSection.addClass('active'); // Add active class to last active
     }
   }, {
     /* Offset is 100%, so when it enters into view */
@@ -186,17 +186,17 @@ if ($wrapper.hasClass('layout-default')) {
   /**
    * Flags Portfolio page header as scrolling
    */
-  const projectWaypoint = $project.waypoint(function (direction) {
+  const projectWaypoint = $portfolioPage.waypoint(function (direction) {
 
     /* When going down, add scrolling header class. When up, remove */
     if (direction === 'down') {
-      $masthead.addClass('scroll-header');
+      $wrapper.addClass('scrolling');
     } else {
-      $masthead.removeClass('scroll-header');
+      $wrapper.removeClass('scrolling');
     }
   }, {
     /* Offset is the top margin of the portfolio page title */
-    offset: parseFloat($project.find('.project-summary h2.title').css('margin-top')) * -1
+    offset: parseFloat($portfolioPage.find('.title').css('margin-top')) * -1
   });
 }
 
@@ -224,20 +224,20 @@ $(document).on('click', 'a[href^="#"]', function (e) {
 $('img.lazy').unveil(568);
 
 /* Do the following only if this is the home page */
-if ($wrapper.hasClass('layout-default')) {
+if ($wrapper.hasClass('default-page')) {
 
   /* Do the following only if this is a large screen */
   if (Modernizr.mq('(min-width: 46.0625rem)')) {
 
     /* Hide all taglines to start */
-    $taglines.hide();
+    $heroTaglines.hide();
 
     /* Start cycling through taglines 1 seconds after page ready */
     setTimeout(cycle, 500);
 
     /* Bring Learn More button to full opacity 8 seconds after page ready */
     setTimeout(function () {
-      $learnMore.animate({opacity: 1}, 3000);
+      $heroCTA.animate({opacity: 1}, 3000);
     }, 5000);
 
     /* Add hero scenes to controller */

@@ -11,101 +11,76 @@ technologies: Google App Engine (Python)
 description: My wife, <a class="underline" href="http://marie.hoopr.io" target="_blank">Marie</a>, and I wanted an awesome way to be able to see information about our wedding, check our registry, RSVP, and sign our guestbook. So, we did what we love and built a website for it!
 live: false
 github: false
+desktop: true
+tablet: true
+mobile: true
 ---
 
-<article class="project {{ page.title }}">
-  <div class="grid-container">
-    <div class="project-summary">
-      <h2 class="title">{{ page.name }}</h2>
+<div class="project-photos grid-100 tablet-grid-100 mobile-grid-100">
+  {% include components/browser-wireframe.html url="wedding.hoopr.io" image="portfolio_jahleh-and-patricks-wedding_preview" extension="jpg" %}
+  {% include components/phone-wireframe.html image="portfolio_jahleh-and-patricks-wedding_preview_mobile" extension="jpg" alt="| Mobile" class="grid-30 tablet-grid-30 mobile-grid-30" %}
+</div>
 
-      <div class="project-photos grid-100 tablet-grid-100 mobile-grid-100">
-        {% include components/browser-wireframe.html url="wedding.hoopr.io" image="portfolio_jahleh-and-patricks-wedding_preview" extension="jpg" %}
-        {% include components/phone-wireframe.html image="portfolio_jahleh-and-patricks-wedding_preview_mobile" extension="jpg" alt="| Mobile" class="grid-30 tablet-grid-30 mobile-grid-30" %}
-      </div>
+{% include pages/portfolio/project-overview.html %}
 
-      <div class="project-overview">
-        <h3 class="subtitle">{ OVERVIEW }</h3>
+<div class="project-section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+  <div class="section-description grid-33 push-66 tablet-grid-100 mobile-grid-100">
+    <h3 class="subtitle">{ OUR STORY }</h3>
 
-        <p class="project-description">{{ page.description }}</p>
-
-        <div class="project-thirds grid-100 tablet-grid-100 mobile-grid-100">
-          <p class="project-roles grid-33 tablet-grid-100 mobile-grid-100"><strong>Roles:</strong><br> {{ page.roles }}</p>
-          <p class="project-tech grid-33 tablet-grid-100 mobile-grid-100"><strong>Technologies:</strong><br> {{ page.technologies }}</p>
-          <p class="project-platforms grid-33 tablet-grid-100 mobile-grid-100"><strong>Platforms:</strong><br> <span class="fa fa-desktop"></span><span class="fa fa-tablet"></span><span class="fa fa-mobile"></span></p>
-        </div>
-
-        <div class="view-project">
-          {% if page.live %}
-            <a class="btn btn-raised btn-live" href="{{ page.live }}" target="_blank"><span class="fa fa-lg fa-external-link"></span>Live Site</a>
-          {% endif %}
-
-          {% if page.github %}
-            <a class="btn btn-raised btn-github" href="{{ page.github }}" target="_blank"><span class="fa fa-lg fa-github"></span>GitHub</a>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-
-    <div class="project-section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
-      <div class="section-description grid-33 push-66 tablet-grid-100 mobile-grid-100">
-        <h3 class="subtitle">{ OUR STORY }</h3>
-
-        <p>We really wanted to emphasize how we got here and how much fun we've had along the way in a creative, visual way. So we pulled together a bunch of our favorite pictures to help us out, wrote some (clever?) taglines, and played connect the dots.</p>
-      </div>
-
-      <div class="section-photos grid-66 pull-33 tablet-grid-100 mobile-grid-100">
-        {% include components/browser-wireframe.html url="wedding.hoopr.io" image="portfolio_jahleh-and-patricks-wedding" extension="jpg" alt="| Our Story" scroll="scroll" %}
-      </div>
-    </div>
-
-    <div class="project-section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
-      <div class="section-description grid-33 tablet-grid-100 mobile-grid-100">
-        <h3 class="subtitle">{ WEDDING }</h3>
-
-        <p>We needed a spot to provide actual details about the wedding to guests (kind of important, I guess). So we put that all here, including when, where, some pretty photos, and interesting travel information about the location.</p>
-      </div>
-
-      <div class="section-photos grid-66 tablet-grid-100 mobile-grid-100">
-        {% include components/browser-wireframe.html url="wedding.hoopr.io/details" image="portfolio_jahleh-and-patricks-wedding_wedding" extension="jpg" alt="| Details" scroll="scroll" %}
-      </div>
-    </div>
-
-    <div class="project-section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
-      <div class="section-description grid-33 push-66 tablet-grid-100 mobile-grid-100">
-        <h3 class="subtitle">{ RSVP }</h3>
-
-        <p>Each invitation sent out had a personalized code attached. The invitee could then enter this code in the RSVP form to bring up their name and the name of their +1, where applicable. To finalize their RSVP, it was as simple as checking the box if they were attending and then clicking submit. Easy breezy.</p>
-      </div>
-
-      <div class="section-photos grid-66 pull-33 tablet-grid-100 mobile-grid-100">
-        {% include components/browser-wireframe.html url="wedding.hoopr.io/rsvp" image="portfolio_jahleh-and-patricks-wedding_rsvp" extension="jpg" alt="| RSVP" scroll="scroll" %}
-      </div>
-    </div>
-
-    <div class="project-section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
-      <div class="section-description grid-33 tablet-grid-100 mobile-grid-100">
-        <h3 class="subtitle">{ GUESTBOOK }</h3>
-
-        <p>For a little extra fun, we added an online guestbook to our site. Just fill out the form, click sign, and your name and message are forever embodied in our digital wedding archive. Sweet deal.</p>
-      </div>
-
-      <div class="section-photos grid-66 tablet-grid-100 mobile-grid-100">
-        {% include components/browser-wireframe.html url="wedding.hoopr.io/guestbook" image="portfolio_jahleh-and-patricks-wedding_guestbook" extension="jpg" alt="| Guestbook" scroll="scroll" %}
-      </div>
-    </div>
-
-    <div class="project-section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
-      <div class="section-description grid-100 tablet-grid-100 mobile-grid-100">
-        <h3 class="subtitle">{ MOBILE }</h3>
-      </div>
-
-      <div class="section-photos photos-mobile grid-100">
-        {% include components/phone-wireframe.html image="portfolio_jahleh-and-patricks-wedding_mobile" extension="jpg" class="mobile" alt="| Our Story | Mobile" scroll="scroll" %}
-
-        {% include components/phone-wireframe.html image="portfolio_jahleh-and-patricks-wedding_wedding_mobile" extension="jpg" class="mobile" alt="| Details | Mobile" scroll="scroll" %}
-
-        {% include components/phone-wireframe.html image="portfolio_jahleh-and-patricks-wedding_guestbook_mobile" extension="jpg" class="mobile" alt="| Guestbook | Mobile" scroll="scroll" %}
-      </div>
-    </div>
+    <p>We really wanted to emphasize how we got here and how much fun we've had along the way in a creative, visual way. So we pulled together a bunch of our favorite pictures to help us out, wrote some (clever?) taglines, and played connect the dots.</p>
   </div>
-</article>
+
+  <div class="section-photos grid-66 pull-33 tablet-grid-100 mobile-grid-100">
+    {% include components/browser-wireframe.html url="wedding.hoopr.io" image="portfolio_jahleh-and-patricks-wedding" extension="jpg" alt="| Our Story" scroll="scroll" %}
+  </div>
+</div>
+
+<div class="project-section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+  <div class="section-description grid-33 tablet-grid-100 mobile-grid-100">
+    <h3 class="subtitle">{ WEDDING }</h3>
+
+    <p>We needed a spot to provide actual details about the wedding to guests (kind of important, I guess). So we put that all here, including when, where, some pretty photos, and interesting travel information about the location.</p>
+  </div>
+
+  <div class="section-photos grid-66 tablet-grid-100 mobile-grid-100">
+    {% include components/browser-wireframe.html url="wedding.hoopr.io/details" image="portfolio_jahleh-and-patricks-wedding_wedding" extension="jpg" alt="| Details" scroll="scroll" %}
+  </div>
+</div>
+
+<div class="project-section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+  <div class="section-description grid-33 push-66 tablet-grid-100 mobile-grid-100">
+    <h3 class="subtitle">{ RSVP }</h3>
+
+    <p>Each invitation sent out had a personalized code attached. The invitee could then enter this code in the RSVP form to bring up their name and the name of their +1, where applicable. To finalize their RSVP, it was as simple as checking the box if they were attending and then clicking submit. Easy breezy.</p>
+  </div>
+
+  <div class="section-photos grid-66 pull-33 tablet-grid-100 mobile-grid-100">
+    {% include components/browser-wireframe.html url="wedding.hoopr.io/rsvp" image="portfolio_jahleh-and-patricks-wedding_rsvp" extension="jpg" alt="| RSVP" scroll="scroll" %}
+  </div>
+</div>
+
+<div class="project-section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+  <div class="section-description grid-33 tablet-grid-100 mobile-grid-100">
+    <h3 class="subtitle">{ GUESTBOOK }</h3>
+
+    <p>For a little extra fun, we added an online guestbook to our site. Just fill out the form, click sign, and your name and message are forever embodied in our digital wedding archive. Sweet deal.</p>
+  </div>
+
+  <div class="section-photos grid-66 tablet-grid-100 mobile-grid-100">
+    {% include components/browser-wireframe.html url="wedding.hoopr.io/guestbook" image="portfolio_jahleh-and-patricks-wedding_guestbook" extension="jpg" alt="| Guestbook" scroll="scroll" %}
+  </div>
+</div>
+
+<div class="project-section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+  <div class="section-description grid-100 tablet-grid-100 mobile-grid-100">
+    <h3 class="subtitle">{ MOBILE }</h3>
+  </div>
+
+  <div class="section-photos photos-mobile grid-100">
+    {% include components/phone-wireframe.html image="portfolio_jahleh-and-patricks-wedding_mobile" extension="jpg" class="mobile" alt="| Our Story | Mobile" scroll="scroll" %}
+
+    {% include components/phone-wireframe.html image="portfolio_jahleh-and-patricks-wedding_wedding_mobile" extension="jpg" class="mobile" alt="| Details | Mobile" scroll="scroll" %}
+
+    {% include components/phone-wireframe.html image="portfolio_jahleh-and-patricks-wedding_guestbook_mobile" extension="jpg" class="mobile" alt="| Guestbook | Mobile" scroll="scroll" %}
+  </div>
+</div>

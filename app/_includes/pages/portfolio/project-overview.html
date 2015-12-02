@@ -1,0 +1,32 @@
+<div class="project-overview">
+  <h3 class="subtitle">{ OVERVIEW }</h3>
+
+  <p class="project-description">{{ page.description }}</p>
+
+  <div class="project-thirds grid-100 tablet-grid-100 mobile-grid-100">
+    <p class="project-roles grid-33 tablet-grid-100 mobile-grid-100"><strong>Roles:</strong><br> {{ page.roles }}</p>
+    <p class="project-tech grid-33 tablet-grid-100 mobile-grid-100"><strong>Technologies:</strong><br> {{ page.technologies }}</p>
+    <p class="project-platforms grid-33 tablet-grid-100 mobile-grid-100">
+      <strong>Platforms:</strong>
+      <br>
+      {% if page.desktop %}
+        <span class="fa fa-desktop"></span>
+      {% endif %}
+      {% if page.tablet %}
+        <span class="fa fa-tablet"></span>
+      {% endif %}
+      {% if page.mobile %}
+        <span class="fa fa-mobile"></span>
+      {% endif %}
+    </p>
+  </div>
+
+  <div class="project-live">
+    {% if page.live %}
+      <a class="btn btn-raised btn-live" href="{{ page.live }}" target="_blank"><span class="btn-icon fa fa-lg fa-external-link"></span>Live Site</a>
+    {% endif %}
+    {% if page.github %}
+      <a class="btn btn-raised btn-github" href="{{ page.github }}" target="_blank"><span class="btn-icon fa fa-lg fa-github"></span>GitHub</a>
+    {% endif %}
+  </div>
+</div>

@@ -5,4 +5,5 @@ Icon
 .bundle
 .sass-cache
 node_modules
+npm-debug.log
 vendor/bundle

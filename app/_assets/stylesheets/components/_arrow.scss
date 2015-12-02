@@ -1,9 +1,11 @@
 /* =========================================================================
-   Credit
+   Arrow
    ========================================================================= */
 
-/* Styles for credit to Jekyll */
-.credit p {
-  font-size: .75rem;
-  text-align: center;
+/* Styles for an arrow */
+.arrow {
+  content: '';
+  height: 0;
+  position: absolute;
+  width: 0;
 }

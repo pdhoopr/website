@@ -2,18 +2,19 @@
    Typography
    ========================================================================= */
 
-/* General
-   ========================================================================= */
+/* Typography | Elements
+ =========================================================================== */
 
 /* Root element 100% font size */
 html {
   font-size: 100%;
 }
 
-/* Assign body PT Sans font and slightly larger font size/line height for readability */
+/* Assign body Roboto font and slightly larger font size/line height for readability */
 body {
-  font-family: $pt-sans;
+  font-family: $roboto;
   font-size: 125%;
+  font-weight: 300;
   line-height: 1.5;
 }
 
@@ -38,13 +39,41 @@ p {
   }
 }
 
-/* Make strong elements bold and slightly spaced out for readability */
+/* Make strong elements bolder */
 strong {
-  font-weight: 700;
-  letter-spacing: .5px;
+  font-weight: 500;
 }
 
 /* Make em elements italicized */
 em {
   font-style: italic;
+}
+
+/* Typography | Classes
+ =========================================================================== */
+
+/* Styles for titles */
+.title {
+  font-size: 2rem;
+  line-height: 1;
+  margin-top: 1em;
+  padding-bottom: 1em;
+  text-align: center;
+
+  /* Styles for medium and up devices */
+  @include breakpoint($mq-medium) {
+    font-size: 3rem;
+  }
+}
+
+/* Styles for subtitles */
+.subtitle {
+  font-size: 1.3rem;
+  padding-bottom: .75em;
+  text-align: center;
+
+  /* Increase font size on medium and up devices */
+  @include breakpoint($mq-medium) {
+    font-size: 1.7rem;
+  }
 }
