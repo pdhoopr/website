@@ -35,9 +35,15 @@ title: portfolio
               <div class="project-devices">
                 <p class="project-label">Platforms</p>
                 <div class="project-devices-icons">
-                  {% if project.desktop %}<span class="fa fa-desktop"></span>{% endif %}
-                  {% if project.tablet %}<span class="fa fa-tablet"></span>{% endif %}
-                  {% if project.mobile %}<span class="fa fa-mobile"></span>{% endif %}
+                  {% if project.desktop %}
+                    <span class="fa fa-desktop"></span>
+                  {% endif %}
+                  {% if project.tablet %}
+                    <span class="fa fa-tablet"></span>
+                  {% endif %}
+                  {% if project.mobile %}
+                    <span class="fa fa-mobile"></span>
+                  {% endif %}
                 </div>
               </div>
             </div>
