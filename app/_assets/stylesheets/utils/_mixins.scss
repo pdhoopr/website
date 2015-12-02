@@ -13,6 +13,15 @@
 }
 
 /**
+ * Mixin that will make a CSS down arrow using borders.
+ */
+@mixin arrow-down($border-width) {
+  border-left: $border-width solid transparent;
+  border-right: $border-width solid transparent;
+  border-top: $border-width solid transparent;
+}
+
+/**
  * Mixin that will set colors and animate for button hovers.
  */
 @mixin button-hover($background-color, $color) {

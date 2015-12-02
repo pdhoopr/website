@@ -4,49 +4,19 @@
 
 /* Styles for logo */
 .logo {
-  float: none;
-  font-size: 3rem;
+  float: left;
+  font-size: 2.5rem;
   line-height: 1;
-  padding: .2em 0;
+  margin-top: -6px;
+  padding: 0;
 
-  /* Styles for medium and up devices */
+  /* Increase top margin on medium and up devices */
   @include breakpoint($mq-medium) {
-    float: left;
-    font-size: 2.5rem;
     margin-top: -5px;
-    padding: 0;
-  }
-
-  /* Add padding on the logo text on medium and up devices */
-  h1 {
-    @include breakpoint($mq-medium) {
-      padding: 17px 0 12px;
-    }
-  }
-
-  /* Styles for a letter in the logo */
-  .letter {
-    display: inline-block;
-
-    /* Hide animated logo letter on medium and up devices */
-    &.letter-animate {
-      display: none;
-
-      @include breakpoint($mq-medium) {
-        display: inline-block;
-      }
-    }
-
-    /* Styles for a collapsed logo letter */
-    &.letter-collapsed {
-      max-width: 0;
-      opacity: 0;
-      transition: all .3s ease-out;
-    }
   }
 
   /* Styles for collapsed header when hovering over logo (expand) */
-  &:hover .letter-collapsed {
+  &:hover .logo-letter.collapsed {
     max-width: 37px;
     opacity: 1;
     transition: all .3s ease-out;
@@ -55,5 +25,37 @@
     .touch & {
       display: none;
     }
+  }
+
+  /* Add padding on the logo text */
+  h1 {
+    padding: 14px 0 8px;
+
+    /* Increase padding on medium and up devices */
+    @include breakpoint($mq-medium) {
+      padding: 17px 0 12px;
+    }
+  }
+}
+
+/* Styles for a letter in the logo */
+.logo-letter {
+  display: inline-block;
+
+  /* Animated logo styles */
+  &.animate {
+    display: none;
+
+    /* Hide animated logo letter on medium and up devices */
+    @include breakpoint($mq-medium) {
+      display: inline-block;
+    }
+  }
+
+  /* Styles for a collapsed logo letter */
+  &.collapsed {
+    max-width: 0;
+    opacity: 0;
+    transition: all .3s ease-out;
   }
 }

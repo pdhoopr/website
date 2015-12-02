@@ -1,5 +1,5 @@
 /* =========================================================================
-   Wireframes | Phone
+   Phone Wireframe
    ========================================================================= */
 
 /* Styles for phone wireframe */
@@ -17,82 +17,82 @@
   @include breakpoint($mq-medium) {
     right: -5%;
   }
+}
 
-  /* Styles for top part of phone (camera, sensor, speaker) */
-  .phone-top {
-    margin: .2em 0 .6em;
-    text-align: center;
+/* Styles for top part of phone (camera, sensor, speaker) */
+.phone-top {
+  margin: .2em 0 .6em;
+  text-align: center;
+}
+
+/* Styles for camera */
+.phone-camera {
+  line-height: .75;
+
+  /* Styles for camera span */
+  span {
+    background-color: $gray-c;
+    border-radius: 50%;
+    display: inline-block;
+    height: 8px;
+    width: 8px;
   }
+}
 
-  /* Styles for camera */
-  .phone-camera {
-    line-height: .75;
+/* Styles for top parts of phone (sensor, speaker) */
+.phone-top-parts {
+  line-height: .75;
+  margin-left: -12px;
+}
 
-    /* Styles for camera span */
-    span {
-      background-color: $gray-c;
-      border-radius: 50%;
-      display: inline-block;
-      height: 8px;
-      width: 8px;
-    }
-  }
+/* Styles for sensor */
+.phone-sensor {
+  background-color: $gray-c;
+  border-radius: 50%;
+  display: inline-block;
+  height: 4px;
+  margin-right: 8px;
+  width: 4px;
+}
 
-  /* Styles for top parts of phone (sensor, speaker) */
-  .phone-top-parts {
-    line-height: .75;
-    margin-left: -12px;
+/* Styles for speaker */
+.phone-speaker {
+  background-color: $gray-c;
+  border-radius: 4px;
+  display: inline-block;
+  height: 4px;
+  width: 32px;
+}
 
-    /* Styles for sensor */
-    .phone-sensor {
-      background-color: $gray-c;
-      border-radius: 50%;
-      display: inline-block;
-      height: 4px;
-      margin-right: 8px;
-      width: 4px;
-    }
-
-    /* Styles for speaker */
-    .phone-speaker {
-      background-color: $gray-c;
-      border-radius: 4px;
-      display: inline-block;
-      height: 4px;
-      width: 32px;
-    }
-  }
+/* Styles for phone image */
+.phone-photo {
+  border: 2px solid $gray-c;
 
   /* Styles for phone image */
-  .phone-photo {
-    border: 2px solid $gray-c;
-
-    /* Styles for phone image */
-    img {
-      float: left;
-      max-width: 100%;
-    }
+  img {
+    float: left;
+    max-width: 100%;
   }
+}
 
-  /* Styles for phone button (big one at bottom) */
-  .phone-button {
-    line-height: .75;
-    margin: .2em 0;
-    text-align: center;
+/* Styles for phone button (big one at bottom) */
+.phone-button {
+  line-height: .75;
+  margin: .2em 0;
+  text-align: center;
 
-    /* Styles for phone button span */
-    span {
-      border: 2px solid $gray-c;
-      border-radius: 50%;
-      display: inline-block;
-      height: 24px;
-      width: 24px;
+  /* Styles for phone button span */
+  span {
+    border: 2px solid $gray-c;
+    border-radius: 50%;
+    display: inline-block;
+    height: 24px;
+    width: 24px;
 
-      /* Increase button size on medium and up devices */
-      @include breakpoint($mq-medium) {
-        height: 32px;
-        width: 32px;
-      }
+    /* Increase button size on medium and up devices */
+    @include breakpoint($mq-medium) {
+      height: 32px;
+      width: 32px;
     }
   }
 }

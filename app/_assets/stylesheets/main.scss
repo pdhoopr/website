@@ -28,15 +28,22 @@
    Components
    ========================================================================= */
 @import 'components/logo';
+@import 'components/avatar';
 @import 'components/main-nav';
+@import 'components/overlay';
 @import 'components/button';
+@import 'components/arrow';
 @import 'components/browser-wireframe';
 @import 'components/phone-wireframe';
 @import 'components/contact-icons';
-@import 'components/credit';
 
 /* =========================================================================
    Pages
    ========================================================================= */
 @import 'pages/home';
 @import 'pages/portfolio';
+
+/* =========================================================================
+   Shame
+   ========================================================================= */
+@import 'shame/shame';

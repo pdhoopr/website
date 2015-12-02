@@ -1,5 +1,5 @@
 /* =========================================================================
-   Wireframes | Browser
+   Browser Wireframe
    ========================================================================= */
 
 /* Styles for browser wireframe */
@@ -7,69 +7,69 @@
   border: 2px solid $gray-c;
   border-radius: 4px;
   padding: 0;
+}
 
-  /* Styles for browser controls (URL, buttons) */
-  .browser-controls {
-    border-bottom: 2px solid $gray-c;
-    height: 36px;
-    padding: .15em 0;
-    position: relative;
+/* Styles for browser controls (URL, buttons) */
+.browser-controls {
+  border-bottom: 2px solid $gray-c;
+  height: 36px;
+  padding: .15em 0;
+  position: relative;
 
-    /* Shrink height on medium and up devices */
-    @include breakpoint($mq-medium) {
-      padding: .4em 0;
-      height: 48px;
-    }
+  /* Increase height on medium and up devices */
+  @include breakpoint($mq-medium) {
+    padding: .4em 0;
+    height: 48px;
+  }
+}
 
-    /* Styles for browser buttons */
-    .browser-buttons {
-      display: inline-block;
-      list-style-type: none;
-      height: 28px;
-      padding-left: .2em;
-      text-align: center;
+/* Styles for browser buttons */
+.browser-buttons {
+  display: inline-block;
+  list-style-type: none;
+  height: 28px;
+  padding-left: .2em;
+  text-align: center;
+}
 
-      /* Styles for individual buttons (green, yellow, red) */
-      .browser-button {
-        border-radius: 50%;
-        display: inline-block;
-        height: 8px;
-        vertical-align: middle;
-        width: 8px;
+/* Styles for individual buttons (green, yellow, red) */
+.browser-button {
+  border-radius: 50%;
+  display: inline-block;
+  height: 8px;
+  vertical-align: middle;
+  width: 8px;
 
-        /* Red button */
-        &.first {
-          background-color: $red;
-        }
-
-        /* Yellow Button */
-        &.second {
-          background-color: $orange;
-        }
-
-        /* Green button */
-        &.third {
-          background-color: $green;
-        }
-      }
-    }
-
-    /* Styles for browser URL */
-    .browser-url {
-      border: 2px solid $gray-c;
-      border-radius: 4px;
-      display: inline-block;
-      font-size: 1rem;
-      left: 44px;
-      padding-left: 8px;
-      position: absolute;
-      right: 4px;
-    }
+  /* Red button */
+  &.first {
+    background-color: $red;
   }
 
-  /* Styles for browser image */
-  .browser-photo img {
-    float: left;
-    max-width: 100%;
+  /* Yellow Button */
+  &.second {
+    background-color: $orange;
   }
+
+  /* Green button */
+  &.third {
+    background-color: $green;
+  }
+}
+
+/* Styles for browser URL */
+.browser-url {
+  border: 2px solid $gray-c;
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 1rem;
+  left: 44px;
+  padding-left: 8px;
+  position: absolute;
+  right: 4px;
+}
+
+/* Styles for browser image */
+.browser-photo img {
+  float: left;
+  max-width: 100%;
 }

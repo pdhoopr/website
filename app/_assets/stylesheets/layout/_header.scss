@@ -4,22 +4,20 @@
 
 /* Styles for the masthead */
 #masthead {
-  background: $ph-blue url('/assets/images/home/hero_texture.png') fixed;
+  background-color: $ph-blue;
   color: $ph-yellow;
   font-family: $ubuntu;
   max-width: 100%;
-  padding: 0;
-  position: static;
+  padding-left: 8px;
+  position: fixed;
   text-align: center;
   width: 100%;
+  z-index: 999;
 
   /* Styles for medium and up devices */
   @include breakpoint($mq-medium) {
-    background: none;
     padding-left: 16px;
-    position: fixed;
     text-align: left;
-    z-index: 100;
   }
 
   /* Styles for big devices */
@@ -28,18 +26,15 @@
   }
 
   /* Styles for masthead when page is scrolling */
-  &.scroll-header {
-    background-color: rgba($ph-blue, .75);
+  .scrolling & {
     box-shadow: 0 0 8px $gray-2;
   }
 
-  /* Styles for masthead images (circular photo) */
-  img {
-    border-radius: 50%;
+  /* Styles for the masthead avatar */
+  .avatar {
     display: inline-block;
     float: none;
     margin: .4em 0 0;
-    width: 50%;
 
     /* Styles for medium and up devices */
     @include breakpoint($mq-medium) {

@@ -1,12 +1,11 @@
 /* =========================================================================
-   Buttons
+   Button
    ========================================================================= */
 
 /* Styles for buttons */
-a.btn,
-.btn {
+.btn,
+a.btn {
   border: 2px solid;
-  border-radius: 2px;
   cursor: pointer;
   display: inline-block;
   font-family: $ubuntu;
@@ -15,9 +14,10 @@ a.btn,
 }
 
 /* Styles for a raised button */
-a.btn-raised,
-.btn-raised {
+.btn-raised,
+a.btn-raised {
   border: 0;
+  border-radius: 3px;
   box-shadow: 0 2px 5px 0 rgba($black, .16), 0 2px 10px 0 rgba($black, .12);
   color: $white;
   transition: box-shadow .3s ease-in-out, opacity .3s ease-in-out;
@@ -27,5 +27,26 @@ a.btn-raised,
     box-shadow: 0 5px 11px 0 rgba($black, .18), 0 4px 15px 0 rgba($black, .15);
     color: $white;
     opacity: .75;
+  }
+}
+
+/* Give GitHub button a gray background color */
+.btn-github {
+  background-color: $github-gray;
+}
+
+/* Give Live Site button a blue background color */
+.btn-live {
+  background-color: $ph-blue;
+}
+
+/* Give right margin to button icon and pull it down a little */
+.btn-icon {
+  margin-right: .5em;
+  vertical-align: -20%;
+
+  /* Move GitHub up a little more than other icons */
+  &.fa-github {
+    vertical-align: -12%;
   }
 }

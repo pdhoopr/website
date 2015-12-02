@@ -1,19 +1,17 @@
 /* =========================================================================
-   Navigation
-   ========================================================================= */
-
-/* Main
+   Main Navigation
    ========================================================================= */
 
 /* Styles for main (site) navigation */
 .main-nav {
-  float: none;
-  width: 100%;
+  float: right;
+  width: auto;
 
-  /* Styles for medium and up devices */
-  @include breakpoint($mq-medium) {
-    float: right;
-    width: auto;
+  /* Styles for the main navigation when the page is scrolling */
+  .scrolling & {
+    background-color: transparent;
+    box-shadow: none;
+    position: static;
   }
 
   /* Styles for an individual navigation item */
@@ -23,16 +21,13 @@
     display: inline-block;
     float: left;
     font-size: 1.25rem;
-    padding-bottom: 10px;
-    padding-top: 13px;
+    padding: 14px 8px 9px;
     text-align: center;
     transition: .3s;
-    width: 50%;
 
     /* Styles for medium and up devices */
     @include breakpoint($mq-medium) {
       padding: 18px 16px 13px;
-      width: auto;
     }
 
     /* Styles for big devices */
@@ -43,18 +38,14 @@
 
     /* Styles for hovering over a navigation item (yellow underline) */
     &:hover {
-
-      /* Negate hover styles on touch devices */
-      .touch & {
-        border-bottom: 0;
-      }
+      border-bottom-color: transparent;
 
       /* Styles for hovering over navigation icons */
-      .fa {
+      .nav-icon {
         transform: scale(1.25);
         transition: .3s;
 
-        /* Negate hover styles on touch devices */
+        /* Don't scale icons on touch devices */
         .touch & {
           transform: scale(1);
         }
@@ -63,48 +54,31 @@
 
     /* Styles for an active navigation item */
     &.active {
-      border-bottom-color: $ph-yellow !important;
-
-      /* Styles for hovering over an active navigation item */
-      &:hover {
-        border-bottom: 3px solid $ph-yellow !important;
-        transition: .3s;
-      }
-    }
-
-    /* Styles for navigation icons */
-    .fa {
-      font-size: 1.5rem;
-      margin-right: .16667em;
-      transition: .3s;
-      vertical-align: -5%;
-
-      /* Move grid icon down */
-      &-th {
-        vertical-align: -10%;
-      }
-    }
-
-    /* Styles navigation item text/tooltip */
-    .tooltip {
-      display: inline-block;
+      border-bottom-color: $ph-yellow;
     }
   }
 
-  /* Styles for the main navigation when the page is scrolling */
-  #masthead.scroll-header & {
-    background-color: rgba($ph-blue, .75);
-    box-shadow: 0 0 8px $gray-2;
-    left: 0;
-    position: fixed;
-    top: 0;
-    z-index: 100;
+  /* Styles for navigation icons */
+  .nav-icon {
+    font-size: 1.5rem;
+    margin-right: .16667em;
+    transition: .3s;
+    vertical-align: -5%;
 
-    /* Styles for medium and up devices */
-    @include breakpoint($mq-medium) {
-      background-color: transparent;
-      box-shadow: none;
-      position: static;
+    /* Move grid icon down */
+    &.fa-th {
+      vertical-align: -10%;
     }
+
+    /* Add left padding to right angle icon */
+    &.fa-angle-right {
+      margin-left: .25em;
+      margin-right: 0;
+    }
+  }
+
+  /* Styles navigation item text */
+  .nav-text {
+    display: inline-block;
   }
 }

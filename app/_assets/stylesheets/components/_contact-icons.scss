@@ -22,11 +22,17 @@
       margin-left: 5%;
     }
   }
+}
 
-  /* Styles for hover over an icon (change color) */
-  span:hover {
+/* Styles for an individual icon */
+.contact-icon {
+  transition: .3s;
+
+  /* Change color on hover */
+  &:hover {
     color: $gray-c;
 
+    /* Keep color the same on hover */
     .touch & {
       color: $gray-6;
     }

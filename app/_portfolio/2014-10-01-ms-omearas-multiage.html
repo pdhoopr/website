@@ -11,89 +11,64 @@ technologies: WordPress + <a class="underline" href="http://underscores.me/" tar
 description: My mom teaches a multiage (1st, 2nd, 3rd grade) classroom and was looking for a better way to share resources, photos, information, and more with parents and students. <a class="underline" href="http://marie.hoopr.io" target="_blank">Marie</a> and I helped her out by creating a website that caters to both kids and adults in a fun and natural way.
 live: http://msomearasmultiage.com
 github: false
+desktop: true
+tablet: true
+mobile: true
 ---
 
-<article class="project {{ page.title }}">
-  <div class="grid-container">
-    <div class="project-summary">
-      <h2 class="title">{{ page.name }}</h2>
+<div class="project-photos grid-100 tablet-grid-100 mobile-grid-100">
+  {% include components/browser-wireframe.html url="msomearasmultiage.com" image="portfolio_ms-omearas-multiage_preview" extension="jpg" %}
+  {% include components/phone-wireframe.html image="portfolio_ms-omearas-multiage_preview_mobile" extension="jpg" alt="| Mobile" class="grid-30 tablet-grid-30 mobile-grid-30" %}
+</div>
 
-      <div class="project-photos grid-100 tablet-grid-100 mobile-grid-100">
-        {% include components/browser-wireframe.html url="msomearasmultiage.com" image="portfolio_ms-omearas-multiage_preview" extension="jpg" %}
-        {% include components/phone-wireframe.html image="portfolio_ms-omearas-multiage_preview_mobile" extension="jpg" alt="| Mobile" class="grid-30 tablet-grid-30 mobile-grid-30" %}
-      </div>
+{% include pages/portfolio/project-overview.html %}
 
-      <div class="project-overview">
-        <h3 class="subtitle">{ OVERVIEW }</h3>
+<div class="project-section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+  <div class="section-description grid-33 push-66 tablet-grid-100 mobile-grid-100">
+    <h3 class="subtitle">{ HOME }</h3>
 
-        <p class="project-description">{{ page.description }}</p>
-
-        <div class="project-thirds grid-100 tablet-grid-100 mobile-grid-100">
-          <p class="project-roles grid-33 tablet-grid-100 mobile-grid-100"><strong>Roles:</strong><br> {{ page.roles }}</p>
-          <p class="project-tech grid-33 tablet-grid-100 mobile-grid-100"><strong>Technologies:</strong><br> {{ page.technologies }}</p>
-          <p class="project-platforms grid-33 tablet-grid-100 mobile-grid-100"><strong>Platforms:</strong><br> <span class="fa fa-desktop"></span><span class="fa fa-tablet"></span><span class="fa fa-mobile"></span></p>
-        </div>
-
-        <div class="view-project">
-          {% if page.live %}
-            <a class="btn btn-raised btn-live" href="{{ page.live }}" target="_blank"><span class="fa fa-lg fa-external-link"></span>Live Site</a>
-          {% endif %}
-
-          {% if page.github %}
-            <a class="btn btn-raised btn-github" href="{{ page.github }}" target="_blank"><span class="fa fa-lg fa-github"></span>GitHub</a>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-
-    <div class="project-section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
-      <div class="section-description grid-33 push-66 tablet-grid-100 mobile-grid-100">
-        <h3 class="subtitle">{ HOME }</h3>
-
-        <p>The home page provides information about the class, multiage, and the teacher using the theme of journeys and the sea. The page starts with a hero image to set the tone for that theme and then breaks into colored sections to provide more detailed information.</p>
-      </div>
-
-      <div class="section-photos grid-66 pull-33 tablet-grid-100 mobile-grid-100">
-         {% include components/browser-wireframe.html url="msomearasmultiage.com" image="portfolio_ms-omearas-multiage" extension="jpg" alt="| Home" scroll="scroll" %}
-      </div>
-    </div>
-
-    <div class="project-section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
-      <div class="section-description grid-33 tablet-grid-100 mobile-grid-100">
-        <h3 class="subtitle">{ KIDS }</h3>
-
-        <p>The kids section was designed to be fun and easy to use for 1st, 2nd, and 3rd graders. The default kids page presents them with big, colorful buttons for each subject. Once on a subject page, students will still see that navigation to jump between subjects, and then can use the accordion menus to browse links of resources.</p>
-      </div>
-
-      <div class="section-photos grid-66 tablet-grid-100 mobile-grid-100">
-        {% include components/browser-wireframe.html url="msomearasmultiage.com/kids" image="portfolio_ms-omearas-multiage_kids" extension="gif" alt="| Kids" %}
-      </div>
-    </div>
-
-    <div class="project-section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
-      <div class="section-description grid-33 push-66 tablet-grid-100 mobile-grid-100">
-        <h3 class="subtitle">{ PARENTS }</h3>
-
-        <p>Parents are greeted with a corkboard explaining what they can expect to find here. Below the image, there is a secondary navigation to allow for easy navigation between different categories of information. Within each category, sections are organzied into accordion menus to present a less overwhelming amount of information at once.</p>
-      </div>
-
-      <div class="section-photos grid-66 pull-33 tablet-grid-100 mobile-grid-100">
-        {% include components/browser-wireframe.html url="msomearasmultiage.com/parents" image="portfolio_ms-omearas-multiage_parents" extension="jpg" alt="| Parents" scroll="scroll" %}
-      </div>
-    </div>
-
-    <div class="project-section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
-      <div class="section-description grid-100 tablet-grid-100 mobile-grid-100">
-        <h3 class="subtitle">{ MOBILE }</h3>
-      </div>
-
-      <div class="section-photos photos-mobile grid-100 tablet-grid-100 mobile-grid-100">
-        {% include components/phone-wireframe.html image="portfolio_ms-omearas-multiage_parents_mobile" extension="jpg" alt="| Parents | Mobile" class="mobile" scroll="scroll" %}
-
-        {% include components/phone-wireframe.html image="portfolio_ms-omearas-multiage_mobile" extension="jpg" alt="| Home | Mobile" class="mobile" scroll="scroll" %}
-
-        {% include components/phone-wireframe.html image="portfolio_ms-omearas-multiage_kids_mobile" extension="jpg" alt="| Kids | Mobile" class="mobile" scroll="scroll" %}
-      </div>
-    </div>
+    <p>The home page provides information about the class, multiage, and the teacher using the theme of journeys and the sea. The page starts with a hero image to set the tone for that theme and then breaks into colored sections to provide more detailed information.</p>
   </div>
-</article>
+
+  <div class="section-photos grid-66 pull-33 tablet-grid-100 mobile-grid-100">
+     {% include components/browser-wireframe.html url="msomearasmultiage.com" image="portfolio_ms-omearas-multiage" extension="jpg" alt="| Home" scroll="scroll" %}
+  </div>
+</div>
+
+<div class="project-section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+  <div class="section-description grid-33 tablet-grid-100 mobile-grid-100">
+    <h3 class="subtitle">{ KIDS }</h3>
+
+    <p>The kids section was designed to be fun and easy to use for 1st, 2nd, and 3rd graders. The default kids page presents them with big, colorful buttons for each subject. Once on a subject page, students will still see that navigation to jump between subjects, and then can use the accordion menus to browse links of resources.</p>
+  </div>
+
+  <div class="section-photos grid-66 tablet-grid-100 mobile-grid-100">
+    {% include components/browser-wireframe.html url="msomearasmultiage.com/kids" image="portfolio_ms-omearas-multiage_kids" extension="gif" alt="| Kids" %}
+  </div>
+</div>
+
+<div class="project-section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+  <div class="section-description grid-33 push-66 tablet-grid-100 mobile-grid-100">
+    <h3 class="subtitle">{ PARENTS }</h3>
+
+    <p>Parents are greeted with a corkboard explaining what they can expect to find here. Below the image, there is a secondary navigation to allow for easy navigation between different categories of information. Within each category, sections are organzied into accordion menus to present a less overwhelming amount of information at once.</p>
+  </div>
+
+  <div class="section-photos grid-66 pull-33 tablet-grid-100 mobile-grid-100">
+    {% include components/browser-wireframe.html url="msomearasmultiage.com/parents" image="portfolio_ms-omearas-multiage_parents" extension="jpg" alt="| Parents" scroll="scroll" %}
+  </div>
+</div>
+
+<div class="project-section grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
+  <div class="section-description grid-100 tablet-grid-100 mobile-grid-100">
+    <h3 class="subtitle">{ MOBILE }</h3>
+  </div>
+
+  <div class="section-photos photos-mobile grid-100 tablet-grid-100 mobile-grid-100">
+    {% include components/phone-wireframe.html image="portfolio_ms-omearas-multiage_parents_mobile" extension="jpg" alt="| Parents | Mobile" class="mobile" scroll="scroll" %}
+
+    {% include components/phone-wireframe.html image="portfolio_ms-omearas-multiage_mobile" extension="jpg" alt="| Home | Mobile" class="mobile" scroll="scroll" %}
+
+    {% include components/phone-wireframe.html image="portfolio_ms-omearas-multiage_kids_mobile" extension="jpg" alt="| Kids | Mobile" class="mobile" scroll="scroll" %}
+  </div>
+</div>

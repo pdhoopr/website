@@ -57,7 +57,7 @@ const paths = {
       '!app/_assets/images/portfolio/university-of-michigan-athletics{,/**/*}',
       '!app/_assets/images/portfolio/wgi*{,/**/*}'
     ],
-    dest: 'public/assets/images'
+    dest: 'public/assets/img'
   },
   javascripts: {
     watchFiles: [
@@ -66,7 +66,7 @@ const paths = {
     src: [
       'app/_assets/javascripts/**/*'
     ],
-    dest: 'public/assets/javascripts'
+    dest: 'public/assets/js'
   },
   stylesheets: {
     watchFiles: [
@@ -75,7 +75,7 @@ const paths = {
       'app/_assets/stylesheets/**/*'
     ],
     src: 'app/_assets/stylesheets/main.scss',
-    dest: 'public/assets/stylesheets'
+    dest: 'public/assets/css'
   },
   vendor: {
     javascripts: {
@@ -85,7 +85,7 @@ const paths = {
       src: [
         'vendor/assets/javascripts/**/*'
       ],
-      dest: 'public/assets/javascripts'
+      dest: 'public/assets/js'
     },
     stylesheets: {
       watchFiles: [
@@ -94,7 +94,7 @@ const paths = {
         '!vendor/assets/stylesheets/breakpoint/**/*'
       ],
       src: 'vendor/assets/stylesheets/vendor.scss',
-      dest: 'public/assets/stylesheets'
+      dest: 'public/assets/css'
     }
   }
 };
