@@ -113,9 +113,14 @@
 
 /* Styles for the project photos (overview/preview photos) */
 .project-photos {
-  margin: 0 auto 3em;
+  margin: 0 auto 2.8em;
   max-width: 640px;
   position: relative;
+
+  /* Increase bottom margin on large and up devices */
+  @include breakpoint($mq-large) {
+    margin-bottom: 3.7em;
+  }
 }
 
 /* Portfolio | Project Overview
@@ -127,13 +132,14 @@
 
   /* Increase bottom padding on large devices */
   @include breakpoint($mq-large) {
-    padding-bottom: 2.4em;
+    padding-bottom: 4.8em;
   }
 
+  /* Alter font size of overview subtitle */
   .subtitle {
     font-size: 1.5rem;
 
-    /* Increase overview font size on medium and up devices */
+    /* Increase overview subtitle font size on medium and up devices */
     @include breakpoint($mq-medium) {
       font-size: 2rem;
     }
