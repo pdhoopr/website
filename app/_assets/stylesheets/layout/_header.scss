@@ -27,6 +27,7 @@
 
   /* Styles for masthead when page is scrolling */
   .scrolling & {
+    background-color: rgba($ph-blue, .75) !important;
     box-shadow: 0 0 8px $gray-2;
   }
 

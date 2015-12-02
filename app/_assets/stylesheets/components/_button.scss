@@ -42,11 +42,17 @@ a.btn-raised {
 
 /* Give right margin to button icon and pull it down a little */
 .btn-icon {
+  font-size: 1.125rem;
   margin-right: .5em;
-  vertical-align: -20%;
+  vertical-align: -10%;
+
+  /* Increase icon size on medium and up devices */
+  @include breakpoint($mq-medium) {
+    font-size: 1.5rem;
+  }
 
   /* Move GitHub up a little more than other icons */
   &.fa-github {
-    vertical-align: -12%;
+    vertical-align: 0%;
   }
 }
