@@ -103,8 +103,8 @@
 
     /* Increase padding on large devices */
     @include breakpoint($mq-large) {
-      padding-left: .6em;
-      padding-right: .6em;
+      padding-left: .75em;
+      padding-right: .75em;
     }
 
     /* Give last project section larger bottom padding */
