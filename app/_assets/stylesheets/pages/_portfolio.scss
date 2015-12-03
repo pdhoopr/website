@@ -43,7 +43,7 @@
       position: static;
       width: 100%;
 
-      /* Styles for large and up devices */
+      /* Styles for large devices */
       @include breakpoint($mq-large) {
         display: inline-block;
         margin: 0 auto;
@@ -53,7 +53,7 @@
       /* Styles specifically for all but the first mobile phone */
       &:not(:first-of-type) {
 
-        /* Styles for large and up devices */
+        /* Styles for large devices */
         @include breakpoint($mq-large) {
           margin-left: .8em;
         }
@@ -99,11 +99,12 @@
 
   /* Alter padding for these portfolio pages' project sections */
   .project-section {
-    padding: 0 0 1.8em;
+    padding: 0;
 
     /* Increase padding on large devices */
     @include breakpoint($mq-large) {
-      padding: 0 1.2em 2.4em;
+      padding-left: .75em;
+      padding-right: .75em;
     }
   }
 }
@@ -117,8 +118,8 @@
   max-width: 640px;
   position: relative;
 
-  /* Increase bottom margin on large and up devices */
-  @include breakpoint($mq-large) {
+  /* Increase bottom margin on medium and up devices */
+  @include breakpoint($mq-medium) {
     margin-bottom: 3.7em;
   }
 }
@@ -128,9 +129,14 @@
 
 /* Styles for project overview section */
 .project-overview {
-  padding-bottom: 1.8em;
+  padding-bottom: 2.4em;
 
-  /* Increase bottom padding on large devices */
+  /* Increase bottom padding on medium and up devices */
+  @include breakpoint($mq-medium) {
+    padding-bottom: 3.6em;
+  }
+
+  /* Increase bottom padding even more on large devices */
   @include breakpoint($mq-large) {
     padding-bottom: 4.8em;
   }
@@ -193,7 +199,7 @@
       width: auto;
     }
 
-    /* Increase top margin on large and up devices */
+    /* Increase top margin on large devices */
     @include breakpoint($mq-large) {
       margin-top: 2em;
     }
@@ -201,7 +207,7 @@
     /* For all but first button, add left margin on medium and up devices */
     &:not(:first-of-type) {
       @include breakpoint($mq-medium) {
-        margin-left: 0.5em;
+        margin-left: .5em;
       }
     }
   }
@@ -210,11 +216,26 @@
 /* Portfolio | Project Section
    ========================================================================= */
 
+/* Styles for a row of a project page (where used) */
+.project-row {
+  padding-bottom: 1.5em;
+
+  /* Increase bottom padding for last project row on a page */
+  &:last-of-type {
+    padding-bottom: 2.4em;
+  }
+}
+
 /* Styles for a section of a project page */
 .project-section {
   padding: 0 0 2.4em;
 
-  /* Increase bottom padding on large devices */
+  /* Increase bottom padding on medium and up devices */
+  @include breakpoint($mq-medium) {
+    padding-bottom: 3.6em;
+  }
+
+  /* Increase bottom padding even more on large devices */
   @include breakpoint($mq-large) {
     padding-bottom: 4.8em;
   }
@@ -229,7 +250,7 @@
 .section-description {
   margin-bottom: 1.2em;
 
-  /* No margin on large and up devices */
+  /* No margin on large devices */
   @include breakpoint($mq-large) {
     margin-bottom: 0;
   }

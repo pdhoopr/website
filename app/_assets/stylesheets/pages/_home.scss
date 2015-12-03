@@ -68,17 +68,27 @@
 
 /* Styles for home sections (About, Portfolio, Contact) */
 .home-section {
-  padding: 3em 0;
+  padding: 2.4em 0;
 
-  /* Increase padding on medium and up devices */
+  /* On medium and up devices, increase padding on top and bottom of section */
   @include breakpoint($mq-medium) {
-    padding: 6em 0;
+    padding: 3.6em 0;
+  }
+
+  /* On medium and up devices, increase padding on top and bottom of section */
+  @include breakpoint($mq-large) {
+    padding: 4.8em 0;
   }
 
   /* Styles for home section titles */
   .title {
-    font-size: 2.5rem;
     margin-top: 0;
+    padding-bottom: 1em;
+
+    /* On medium and up devices, increase font size */
+    @include breakpoint($mq-medium) {
+      font-size: 2.5rem;
+    }
   }
 }
 
@@ -166,27 +176,39 @@
 
 /* Styles for about motto */
 .motto {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   padding-bottom: 1.5em;
-  text-align: left;
+  text-align: center;
 
-  /* Styles for medium and up devices */
-  @include breakpoint($mq-medium) {
-    font-size: 2rem;
-    text-align: center;
+  /* Increase font size and padding on medium and up devices */
+  @include breakpoint ($mq-medium) {
+    font-size: 1.35rem;
+    padding-bottom: 1.75em;
+  }
+
+  /* Increase font size and change padding on large devices */
+  @include breakpoint ($mq-large) {
+    font-size: 1.75rem;
+    padding-bottom: 1.5em;
   }
 }
 
-/* Styles for resume line */
-.resume {
-  font-size: 1.25rem;
-  padding: 2em 0;
-  text-align: left;
+/* Styles for about section paragraph text */
+.about-text {
+  padding: 0;
 
-  /* Styles for medium and up devices */
-  @include breakpoint($mq-medium) {
-    font-size: 1.5rem;
-    text-align: center;
+  /* Add left and right padding on large devices */
+  @include breakpoint($mq-large) {
+    padding: 0 0.75em;
+  }
+
+  /* Styles for the resume paragraph on large devices */
+  &.resume {
+    @include breakpoint($mq-large) {
+      font-size: 1.5rem;
+      padding: 1.75em 0 0;
+      text-align: center;
+    }
   }
 }
 

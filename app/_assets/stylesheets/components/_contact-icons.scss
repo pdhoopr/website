@@ -17,7 +17,7 @@
   :not(:first-child) {
     margin-left: 10%;
 
-    /* Decrease margin on large and up devices */
+    /* Decrease margin on large devices */
     @include breakpoint($mq-large) {
       margin-left: 5%;
     }
