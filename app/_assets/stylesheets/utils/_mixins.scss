@@ -25,13 +25,13 @@
  * Mixin that will set colors and animate for button hovers.
  */
 @mixin button-hover($background-color, $color) {
+  border-color: $background-color;
   color: $background-color;
   transition: all .3s;
 
   /* Hover styles */
   &:hover {
     background-color: $background-color;
-    border-color: $background-color;
     color: $color;
     transition: all .3s;
   }

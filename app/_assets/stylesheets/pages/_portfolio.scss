@@ -43,7 +43,7 @@
       position: static;
       width: 100%;
 
-      /* Styles for large and up devices */
+      /* Styles for large devices */
       @include breakpoint($mq-large) {
         display: inline-block;
         margin: 0 auto;
@@ -53,7 +53,7 @@
       /* Styles specifically for all but the first mobile phone */
       &:not(:first-of-type) {
 
-        /* Styles for large and up devices */
+        /* Styles for large devices */
         @include breakpoint($mq-large) {
           margin-left: .8em;
         }
@@ -117,7 +117,7 @@
   max-width: 640px;
   position: relative;
 
-  /* Increase bottom margin on large and up devices */
+  /* Increase bottom margin on large devices */
   @include breakpoint($mq-large) {
     margin-bottom: 3.7em;
   }
@@ -193,7 +193,7 @@
       width: auto;
     }
 
-    /* Increase top margin on large and up devices */
+    /* Increase top margin on large devices */
     @include breakpoint($mq-large) {
       margin-top: 2em;
     }
@@ -229,7 +229,7 @@
 .section-description {
   margin-bottom: 1.2em;
 
-  /* No margin on large and up devices */
+  /* No margin on large devices */
   @include breakpoint($mq-large) {
     margin-bottom: 0;
   }
