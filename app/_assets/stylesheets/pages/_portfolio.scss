@@ -113,13 +113,13 @@
 
 /* Styles for the project photos (overview/preview photos) */
 .project-photos {
-  margin: 0 auto 2.4em;
+  margin: 0 auto 2.8em;
   max-width: 640px;
   position: relative;
 
   /* Increase bottom margin on large and up devices */
   @include breakpoint($mq-large) {
-    margin-bottom: 5.4em;
+    margin-bottom: 3.7em;
   }
 }
 

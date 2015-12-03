@@ -39,8 +39,9 @@ p {
   }
 }
 
-/* Make strong elements bolder */
+/* Make strong elements bolder and Ubuntu font */
 strong {
+  font-family: $ubuntu;
   font-weight: 500;
 }
 

@@ -306,7 +306,7 @@ gulp.task('serve', ['build'], function () {
     }
   });
 
-  gulp.watch(paths.jekyll.watchFiles, ['build']);
+  gulp.watch(paths.jekyll.watchFiles, ['build'], browserSync.reload);
   gulp.watch(paths.docs.watchFiles, ['docs']);
   gulp.watch(paths.images.watchFiles, ['images']);
   gulp.watch(paths.vendor.stylesheets.watchFiles, ['vendor:stylesheets']);
