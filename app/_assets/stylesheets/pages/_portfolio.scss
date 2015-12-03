@@ -99,11 +99,17 @@
 
   /* Alter padding for these portfolio pages' project sections */
   .project-section {
-    padding: 0 0 1.8em;
+    padding: 0 0 1.5em;
 
     /* Increase padding on large devices */
     @include breakpoint($mq-large) {
-      padding: 0 1.2em 2.4em;
+      padding-left: .6em;
+      padding-right: .6em;
+    }
+
+    /* Give last project section larger bottom padding */
+    &:last-of-type {
+      padding-bottom: 2.4em;
     }
   }
 }
@@ -117,8 +123,8 @@
   max-width: 640px;
   position: relative;
 
-  /* Increase bottom margin on large devices */
-  @include breakpoint($mq-large) {
+  /* Increase bottom margin on medium and up devices */
+  @include breakpoint($mq-medium) {
     margin-bottom: 3.7em;
   }
 }
@@ -128,9 +134,14 @@
 
 /* Styles for project overview section */
 .project-overview {
-  padding-bottom: 1.8em;
+  padding-bottom: 2.4em;
 
-  /* Increase bottom padding on large devices */
+  /* Increase bottom padding on medium and up devices */
+  @include breakpoint($mq-medium) {
+    padding-bottom: 3.6em;
+  }
+
+  /* Increase bottom padding even more on large devices */
   @include breakpoint($mq-large) {
     padding-bottom: 4.8em;
   }
@@ -201,7 +212,7 @@
     /* For all but first button, add left margin on medium and up devices */
     &:not(:first-of-type) {
       @include breakpoint($mq-medium) {
-        margin-left: 0.5em;
+        margin-left: .5em;
       }
     }
   }
@@ -214,7 +225,12 @@
 .project-section {
   padding: 0 0 2.4em;
 
-  /* Increase bottom padding on large devices */
+  /* Increase bottom padding on medium and up devices */
+  @include breakpoint($mq-medium) {
+    padding-bottom: 3.6em;
+  }
+
+  /* Increase bottom padding even more on large devices */
   @include breakpoint($mq-large) {
     padding-bottom: 4.8em;
   }
