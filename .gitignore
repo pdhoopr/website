@@ -1,9 +1,7 @@
-.DS_Store
-.VolumeIcon.icns
-.fseventsd
-Icon
-.bundle
-.sass-cache
+# Node stuff
 node_modules
 npm-debug.log
+
+# Ruby stuff
+.bundle
 vendor/bundle
