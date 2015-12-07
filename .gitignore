@@ -5,3 +5,7 @@ npm-debug.log
 # Ruby stuff
 .bundle
 vendor/bundle
+
+# Build stuff
+.sass-cache
+public
