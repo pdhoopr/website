@@ -120,7 +120,7 @@ gulp.task('jekyll', function (done) {
       if (code !== 0) {
         browserSync.notify('<span style="color: red; font-weight: bold;">jekyll task error!</span><span style="color: red;"> Please check the console and resolve the error ASAP because the build may be failing!</span>');
 
-        /* Throw error on production builds to stop npm test/deploy scripts */
+        /* Throw error in production builds to stop npm test/deploy scripts */
         if (env === 'prd') {
           throw code;
         }
@@ -148,7 +148,7 @@ gulp.task('docs', ['clean:docs'], function () {
         browserSync.notify(buildErrorMessage('docs'));
         this.emit('end');
 
-        /* Throw error on production builds to stop npm test/deploy scripts */
+        /* Throw error in production builds to stop npm test/deploy scripts */
         if (env === 'prd') {
           throw err;
         }
@@ -177,7 +177,7 @@ gulp.task('images', ['clean:images'], function () {
         browserSync.notify(buildErrorMessage('images'));
         this.emit('end');
 
-        /* Throw error on production builds to stop npm test/deploy scripts */
+        /* Throw error in production builds to stop npm test/deploy scripts */
         if (env === 'prd') {
           throw err;
         }
@@ -203,7 +203,7 @@ gulp.task('vendor:stylesheets', function () {
         browserSync.notify(buildErrorMessage('vendor:stylesheets'));
         this.emit('end');
 
-        /* Throw error on production builds to stop npm test/deploy scripts */
+        /* Throw error in production builds to stop npm test/deploy scripts */
         if (env === 'prd') {
           throw err;
         }
@@ -233,7 +233,7 @@ gulp.task('stylesheets', function () {
         browserSync.notify(buildErrorMessage('stylesheets'));
         this.emit('end');
 
-        /* Throw error on production builds to stop npm test/deploy scripts */
+        /* Throw error in production builds to stop npm test/deploy scripts */
         if (env === 'prd') {
           throw err;
         }
@@ -266,7 +266,7 @@ gulp.task('vendor:javascripts', function () {
         browserSync.notify(buildErrorMessage('vendor:javascripts'));
         this.emit('end');
 
-        /* Throw error on production builds to stop npm test/deploy scripts */
+        /* Throw error in production builds to stop npm test/deploy scripts */
         if (env === 'prd') {
           throw err;
         }
@@ -296,7 +296,7 @@ gulp.task('javascripts', function () {
         browserSync.notify(buildErrorMessage('javascripts'));
         this.emit('end');
 
-        /* Throw error on production builds to stop npm test/deploy scripts */
+        /* Throw error in production builds to stop npm test/deploy scripts */
         if (env === 'prd') {
           throw err;
         }
