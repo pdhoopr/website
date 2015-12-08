@@ -4,12 +4,12 @@ The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Tec
 ## Usage
 1. Clone the repository.
 2. Navigate into the repository.
-3. Run `bundle install --deployment` (you'll need Ruby & Bundler)
-4. Run `npm install` (you'll need Node.js & npm)
+3. Run `bundle install --deployment` (you'll need Ruby & Bundler).
+4. Run `npm install` (you'll need Node.js & npm).
 5. Let npm scripts handle your workflow!
-  * Use `npm start` to build development code and start a Browersync server
-  * Use `npm test` to check for build errors
-  * Use `npm run deploy` to build production code and upload the *public* folder to Surge
+  * Use `npm start` to build development code and start a Browersync server.
+  * Use `npm test` to check for build errors.
+  * Use `npm run deploy` to build production code and upload the *public* folder to Surge.
 
 ## Sass Libraries
 - Breakpoint ([http://breakpoint-sass.com/](http://breakpoint-sass.com/))
