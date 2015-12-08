@@ -304,9 +304,7 @@ gulp.task('javascripts', function () {
     }))
     .pipe(sourcemaps.init())
     .pipe(concat('bundle.js'))
-    .pipe(babel({
-      presets: ['es2015', 'stage-0']
-    }))
+    .pipe(babel())
     .pipe(gulpif(env === 'prd', uglify()))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.javascripts.dest))
