@@ -5,6 +5,3 @@ vendor/bundle
 # Node stuff
 node_modules
 npm-debug.log
-
-# Build stuff
-public
