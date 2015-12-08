@@ -5,8 +5,9 @@
   "author": "Patrick Hooper <patrick.d.hooper@gmail.com>",
   "scripts": {
     "start": "gulp serve",
-    "test": "gulp build",
-    "predeploy": "NODE_ENV=prd gulp build",
+    "pretest": "eslint ./app/_assets/javascripts/**",
+    "test": "NODE_ENV=prd gulp build",
+    "predeploy": "npm test",
     "deploy": "surge ./public"
   },
   "repository": {
