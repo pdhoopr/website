@@ -1,5 +1,6 @@
 # Ruby stuff
 .bundle
+.sass-cache
 vendor/bundle
 
 # Node stuff

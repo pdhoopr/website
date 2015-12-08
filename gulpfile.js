@@ -119,6 +119,11 @@ gulp.task('jekyll', function (done) {
     .on('close', function (code) {
       if (code !== 0) {
         browserSync.notify('<span style="color: red; font-weight: bold;">jekyll task error!</span><span style="color: red;"> Please check the console and resolve the error ASAP because the build may be failing!</span>');
+
+        /* Throw error on production builds to stop npm test/deploy scripts */
+        if (env === 'prd') {
+          throw code;
+        }
       }
       done();
     });
@@ -142,6 +147,11 @@ gulp.task('docs', ['clean:docs'], function () {
         util.log(err);
         browserSync.notify(buildErrorMessage('docs'));
         this.emit('end');
+
+        /* Throw error on production builds to stop npm test/deploy scripts */
+        if (env === 'prd') {
+          throw err;
+        }
       }
     }))
     .pipe(gulp.dest(paths.docs.dest))
@@ -166,6 +176,11 @@ gulp.task('images', ['clean:images'], function () {
         util.log(err);
         browserSync.notify(buildErrorMessage('images'));
         this.emit('end');
+
+        /* Throw error on production builds to stop npm test/deploy scripts */
+        if (env === 'prd') {
+          throw err;
+        }
       }
     }))
     .pipe(gulp.dest(paths.images.dest))
@@ -187,6 +202,11 @@ gulp.task('vendor:stylesheets', function () {
         util.log(err);
         browserSync.notify(buildErrorMessage('vendor:stylesheets'));
         this.emit('end');
+
+        /* Throw error on production builds to stop npm test/deploy scripts */
+        if (env === 'prd') {
+          throw err;
+        }
       }
     }))
     .pipe(gulpif(env === 'prd', sass({outputStyle: 'compressed'}), sass({outputStyle: 'expanded'})))
@@ -212,6 +232,11 @@ gulp.task('stylesheets', function () {
         util.log(err);
         browserSync.notify(buildErrorMessage('stylesheets'));
         this.emit('end');
+
+        /* Throw error on production builds to stop npm test/deploy scripts */
+        if (env === 'prd') {
+          throw err;
+        }
       }
     }))
     .pipe(sourcemaps.init())
@@ -240,6 +265,11 @@ gulp.task('vendor:javascripts', function () {
         util.log(err);
         browserSync.notify(buildErrorMessage('vendor:javascripts'));
         this.emit('end');
+
+        /* Throw error on production builds to stop npm test/deploy scripts */
+        if (env === 'prd') {
+          throw err;
+        }
       }
     }))
     .pipe(concat('vendor.js'))
@@ -265,6 +295,11 @@ gulp.task('javascripts', function () {
         util.log(err);
         browserSync.notify(buildErrorMessage('javascripts'));
         this.emit('end');
+
+        /* Throw error on production builds to stop npm test/deploy scripts */
+        if (env === 'prd') {
+          throw err;
+        }
       }
     }))
     .pipe(sourcemaps.init())
