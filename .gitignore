@@ -1,8 +1,8 @@
 # Ruby stuff
-.bundle
-.sass-cache
-vendor/bundle
+.bundle/
+.sass-cache/
+vendor/bundle/
 
 # Node stuff
-node_modules
+node_modules/
 npm-debug.log
