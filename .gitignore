@@ -1,8 +1,10 @@
-# Ruby stuff
+# Ruby stuff to keep out of this repo
 .bundle/
 .sass-cache/
 vendor/bundle/
 
-# Node stuff
+# Node stuff to keep out of this repo
 node_modules/
-npm-debug.log
+
+# Leave all logs out of this repo
+*.log

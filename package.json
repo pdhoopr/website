@@ -5,11 +5,12 @@
   "author": "Patrick Hooper <patrick.d.hooper@gmail.com>",
   "scripts": {
     "start": "gulp serve",
-    "lint": "eslint ./app/_assets/javascripts/**",
-    "pretest": "npm run lint",
-    "test": "NODE_ENV=prd gulp build",
-    "predeploy": "npm test",
-    "deploy": "surge ./public"
+    "lint:stylesheets": "bundle exec scss-lint ./app/_assets/stylesheets/** || exit_code=$?; if [[ $exit_code > 1 ]]; then exit $exit_code; fi",
+    "lint:javascripts": "eslint ./app/_assets/javascripts/**",
+    "lint": "npm run lint:stylesheets && npm run lint:javascripts",
+    "test": "npm run lint && gulp build",
+    "build": "NODE_ENV=prd gulp build",
+    "deploy": "npm test && npm run build && surge ./public"
   },
   "repository": {
     "type": "git",

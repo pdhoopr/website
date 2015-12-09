@@ -47,8 +47,8 @@
  * Mixin that will set a height in vh and percentage units
  */
 @mixin height-fallback($height) {
-  height: #{$height}%;
-  height: #{$height}vh;
+  height: $height * 1%;
+  height: $height * 1vh;
 }
 
 /**
