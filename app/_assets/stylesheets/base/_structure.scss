@@ -7,16 +7,18 @@
 
 /* Apply border-box sizing and make root element 100% height of viewport */
 html {
-  box-sizing: border-box;
 
   /* Set height in vh with % fallback */
   @include height-fallback(100);
+
+  /* Border box sizing */
+  box-sizing: border-box;
 }
 
 /* Apply border-box sizing so element take up actual allotted space */
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
