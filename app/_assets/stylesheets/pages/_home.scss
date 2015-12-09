@@ -23,7 +23,7 @@
 
     /* Header styles on small devices on home page */
     @include breakpoint($mq-small) {
-      background: $ph-blue url('/assets/img/textures/dots-texture.png') fixed;
+      background: $ph-blue url('/assets/img/graphics/dots-pattern.png') fixed;
       padding: 0;
       position: static;
     }
@@ -101,7 +101,7 @@
 
   /* Styles for medium and up devices */
   @include breakpoint($mq-medium) {
-    background: $ph-blue url('/assets/img/home/hero_background.jpg') fixed;
+    background: $ph-blue url('/assets/img/home/home_hero_background.jpg') fixed;
     background-size: cover;
     color: $ph-yellow;
     display: block;
@@ -115,7 +115,7 @@
     @include height-fallback(95);
 
     /* Other styles for the overlay */
-    background: url('/assets/img/textures/dots-texture.png') fixed;
+    background: url('/assets/img/graphics/dots-pattern.png') fixed;
     text-align: center;
   }
 
@@ -169,7 +169,7 @@
 
 /* Styles for the About section */
 #about {
-  background: $ph-yellow url('/assets/img/home/about_background.jpg') fixed;
+  background: $ph-yellow url('/assets/img/home/home_about_background.jpg') fixed;
   background-size: cover;
   color: $white;
 }
