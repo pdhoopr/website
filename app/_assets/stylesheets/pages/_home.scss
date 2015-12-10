@@ -6,7 +6,7 @@
 .default-page {
 
   /* Main nav styles when home page is scrolling on small devices */
-  &.scrolling .main-nav {
+  &.scrolling #main-nav {
     @include breakpoint($mq-small) {
       background-color: rgba($ph-blue, .75);
       box-shadow: 0 0 8px $gray-2;
@@ -47,7 +47,7 @@
   }
 
   /* Main nav styles on small devices on home page */
-  .main-nav {
+  #main-nav {
     @include breakpoint($mq-small) {
       float: none;
       width: 100%;
