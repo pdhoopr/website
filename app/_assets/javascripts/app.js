@@ -112,7 +112,7 @@ if ($wrapper.hasClass('default-page')) {
   /**
    * Toggles active class for About and also flags the header as scrolling
    */
-  const aboutWaypoint = $aboutSection.waypoint(function (direction) {
+  const aboutWaypoint = $aboutSection.waypoint(function aboutWaypointDirection(direction) {
 
     /* When going down and you hit about section, do stuff */
     if (direction === 'down') {
@@ -130,7 +130,7 @@ if ($wrapper.hasClass('default-page')) {
     }
   }, {
     /* Make offset the header height or the nav height (small devices) */
-    offset: function () {
+    offset: function aboutWaypointOffset() {
       return Modernizr.mq('(min-width: 46.0625rem)') ? $masthead.height() : $mainNav.height() + 1;
     }
   });
@@ -138,7 +138,7 @@ if ($wrapper.hasClass('default-page')) {
   /**
    * Toggles active class for Portfolio and removes for About
    */
-  const portfolioWaypoint = $portfolioSection.waypoint(function (direction) {
+  const portfolioWaypoint = $portfolioSection.waypoint(function portfolioWaypointDirection(direction) {
 
     /* When going down and you hit Portfolio section, do stuff */
     if (direction === 'down') {
@@ -154,7 +154,7 @@ if ($wrapper.hasClass('default-page')) {
     }
   }, {
     /* Make offset the header height or the nav height (small devices) */
-    offset: function () {
+    offset: function portfolioWaypointOffset() {
       return Modernizr.mq('(min-width: 46.0625rem)') ? $masthead.height() : $mainNav.height() + 1;
     }
   });
@@ -162,7 +162,7 @@ if ($wrapper.hasClass('default-page')) {
   /**
    * Toggles active class Portfolio at bottom, restores previous active on up
    */
-  const contactWaypoint = $contactSection.waypoint(function (direction) {
+  const contactWaypoint = $contactSection.waypoint(function contactWaypointDirection(direction) {
 
     /* When going down and you hit Contact section, do stuff */
     if (direction === 'down') {
@@ -186,7 +186,7 @@ if ($wrapper.hasClass('default-page')) {
   /**
    * Flags Portfolio page header as scrolling
    */
-  const projectWaypoint = $portfolioPage.waypoint(function (direction) {
+  const projectWaypoint = $portfolioPage.waypoint(function projectWaypointDirection(direction) {
 
     /* When going down, add scrolling header class. When up, remove */
     if (direction === 'down') {
@@ -204,12 +204,12 @@ if ($wrapper.hasClass('default-page')) {
    ======================================================================== */
 
 /* Tell ScrollMagic to animate scroll over 0.5 sec rather than jump */
-scrollMagicController.scrollTo(function (newpos) {
+scrollMagicController.scrollTo(function animateScrollToAnchor(newpos) {
   TweenMax.to(window, 0.5, {scrollTo: {y: newpos}});
 });
 
 /* Tell ScrollMagic to listen for anchor link clicks and scroll to them */
-$(document).on('click', 'a[href^="#"]', function (e) {
+$(document).on('click', 'a[href^="#"]', function scrollToAnchor(e) {
   const id = $(this).attr('href');
   if ($(id).length > 0) {
     e.preventDefault();
@@ -232,11 +232,11 @@ if ($wrapper.hasClass('default-page')) {
     /* Hide all taglines to start */
     $heroTaglines.hide();
 
-    /* Start cycling through taglines 1 seconds after page ready */
+    /* Start cycling through taglines after specified amount of time */
     setTimeout(cycle, 500);
 
-    /* Bring Learn More button to full opacity 8 seconds after page ready */
-    setTimeout(function () {
+    /* Bring Learn More button to full opacity specified amount of time */
+    setTimeout(function heroCTATimeout() {
       $heroCTA.animate({opacity: 1}, 3000);
     }, 5000);
 
