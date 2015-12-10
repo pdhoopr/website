@@ -1,6 +1,6 @@
 # Specific linter settings to override locally
 linters:
 
-  # Disable Comment linter because it doesn't like idomatic CSS comments
+  # Disable Comment linter
   Comment:
     enabled: false
