@@ -1,8 +1,8 @@
 /* =========================================================================
-   Layout
+   Variables
    ========================================================================= */
 
-/* Media Queries
+/* Variables | Media Queries
    ========================================================================= */
 
 /* Device sizes */
@@ -19,8 +19,12 @@ $mq-medium: min-width $medium-min-width; // @media (min-width: 46.0625rem)
 $mq-large: min-width $large-min-width; // @media (min-width: 62.0625rem)
 $mq-big: min-width $big-min-width; // @media (min-width: 75.0625rem)
 
-/* =========================================================================
-   Colors
+/* Variables | Typography
+   ========================================================================= */
+$roboto: 'Roboto', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+$ubuntu: 'Ubuntu', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+
+/* Variables | Colors
    ========================================================================= */
 
 /* Base colors */
@@ -57,9 +61,3 @@ $project-colors: (
   wgi-informer: $wgi-informer,
   wgiki: $wgiki
 );
-
-/* =========================================================================
-   Typography
-   ========================================================================= */
-$roboto: 'Roboto', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
-$ubuntu: 'Ubuntu', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
