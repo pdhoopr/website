@@ -1,5 +1,5 @@
 {
-  // Use the Airbnb ESLint config (without React) as a starting point
+  // Use the Airbnb ESLint base config (without React) as a starting point
   "extends": "airbnb/base",
 
   // Parse code with Babel
