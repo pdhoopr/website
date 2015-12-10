@@ -30,6 +30,3 @@ The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Tec
 - ScrollMagic ([http://scrollmagic.io/](http://scrollmagic.io/))
 - Unveil ([http://luis-almeida.github.io/unveil/](http://luis-almeida.github.io/unveil/))
 - Waypoints ([http://imakewebthings.com/waypoints/](http://imakewebthings.com/waypoints/))
-
-## Contributors
-- Patrick Hooper ([http://patrick.hoopr.io](http://patrick.hoopr.io))
