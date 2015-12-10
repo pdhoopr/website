@@ -22,9 +22,9 @@ html {
   box-sizing: inherit;
 }
 
-/* Make body and wrapper 100% height of viewport */
+/* Make body and page 100% height of viewport */
 body,
-#wrapper {
+.page {
 
   /* Set height in vh with % fallback */
   @include height-fallback(100);

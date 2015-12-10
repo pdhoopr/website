@@ -3,7 +3,7 @@ layout: default
 ---
 
 {% for section in site.home %}
-  <section id="{{ section.title }}" class="home-section">
+  <section id="{{ section.title }}" class="home-section home-{{ section.title }}-section">
     {{ section.content }}
   </section>
 {% endfor %}

@@ -4,21 +4,21 @@
 
 /* Variables
    ======================================================================== */
-const $wrapper = $('#wrapper');
-const $masthead = $('#masthead');
-const $mainNav = $('#main-nav');
+const $page = $('.page');
+const $header = $('header');
+const $mainNav = $('.main-nav');
 const $logoLetters = $('.logo-letter.animate');
-const $mainNavAbout = $('#main-nav .nav-about');
-const $mainNavPortfolio = $('#main-nav .nav-portfolio');
+const $mainNavAbout = $('.main-nav .nav-about');
+const $mainNavPortfolio = $('.main-nav .nav-portfolio');
 let $lastActiveSection = null; // Holds last active section while scrolling
-const $heroAnimation = $('#hero .hero-animation');
-const $heroArrow = $('#hero .arrow');
-const $heroTaglines = $('#hero .tagline'); // Hide all taglines initially
+const $heroAnimation = $('.home-hero-section .hero-animation');
+const $heroArrow = $('.home-hero-section .arrow');
+const $heroTaglines = $('.home-hero-section .tagline');
 let heroTaglineNum = 0; // Counter for taglines
-const $heroCTA = $('#hero .cta');
-const $aboutSection = $('#about');
-const $portfolioSection = $('#portfolio');
-const $contactSection = $('#contact');
+const $heroCTA = $('.home-hero-section .cta');
+const $aboutSection = $('.home-about-section');
+const $portfolioSection = $('.home-portfolio-section');
+const $footer = $('footer');
 const $portfolioPage = $('.portfolio-page');
 
 /* Functions
@@ -89,7 +89,7 @@ const scrollMagicController = new ScrollMagic.Controller();
 
 /* Scene to fade Hero section and produce parallax effect */
 const heroScene = new ScrollMagic.Scene({
-  triggerElement: '#hero',
+  triggerElement: '.home-hero-section',
   triggerHook: 'onLeave', // Start when trigger starts leaving viewport
   duration: '100%' // End when viewport has moved 100%
 })
@@ -97,7 +97,7 @@ const heroScene = new ScrollMagic.Scene({
 
 /* Scene to smush hero arrow up into itself when scrolling */
 const heroArrowScene = new ScrollMagic.Scene({
-  triggerElement: '#hero',
+  triggerElement: '.home-hero-section',
   triggerHook: 'onLeave', // Start when trigger starts leaving viewport
   duration: '75%' // End when viewport has moved 75%
 })
@@ -107,7 +107,7 @@ const heroArrowScene = new ScrollMagic.Scene({
    ======================================================================== */
 
 /* Waypoints only for the home page */
-if ($wrapper.hasClass('default-page')) {
+if ($page.hasClass('default-page')) {
 
   /**
    * Toggles active class for About and also flags the header as scrolling
@@ -116,14 +116,14 @@ if ($wrapper.hasClass('default-page')) {
 
     /* When going down and you hit about section, do stuff */
     if (direction === 'down') {
-      $wrapper.addClass('scrolling'); // Add class to header for scrolling
+      $page.addClass('scrolling'); // Add class to header for scrolling
       $mainNavAbout.addClass('active'); // Add active class to about
       $mainNavPortfolio.removeClass('active'); // Remove active class from portfolio nav
       $lastActiveSection = $mainNavAbout; // Make about nav the last active
 
       /* When going up and you hit About section, do stuff */
     } else {
-      $wrapper.removeClass('scrolling'); // Remove scrolling header class
+      $page.removeClass('scrolling'); // Remove scrolling header class
       $mainNavAbout.removeClass('active'); // Remove active class from about
       $mainNavPortfolio.removeClass('active'); // Remove active class from portfolio
       $lastActiveSection = null; // Remove last active element
@@ -131,7 +131,7 @@ if ($wrapper.hasClass('default-page')) {
   }, {
     /* Make offset the header height or the nav height (small devices) */
     offset: function aboutWaypointOffset() {
-      return Modernizr.mq('(min-width: 46.0625rem)') ? $masthead.height() : $mainNav.height() + 1;
+      return Modernizr.mq('(min-width: 46.0625rem)') ? $header.height() : $mainNav.height() + 1;
     }
   });
 
@@ -155,21 +155,21 @@ if ($wrapper.hasClass('default-page')) {
   }, {
     /* Make offset the header height or the nav height (small devices) */
     offset: function portfolioWaypointOffset() {
-      return Modernizr.mq('(min-width: 46.0625rem)') ? $masthead.height() : $mainNav.height() + 1;
+      return Modernizr.mq('(min-width: 46.0625rem)') ? $header.height() : $mainNav.height() + 1;
     }
   });
 
   /**
    * Toggles active class Portfolio at bottom, restores previous active on up
    */
-  const contactWaypoint = $contactSection.waypoint(function contactWaypointDirection(direction) {
+  const footerWaypoint = $footer.waypoint(function footerWaypointDirection(direction) {
 
-    /* When going down and you hit Contact section, do stuff */
+    /* When going down and you hit the footer, do stuff */
     if (direction === 'down') {
       $mainNavAbout.removeClass('active'); // Remove active class from about
       $mainNavPortfolio.addClass('active'); // Add active class to portfolio
 
-      /* When going up and you hit Contact section, do stuff */
+      /* When going up and you hit the footer, do stuff */
     } else {
       $mainNavAbout.removeClass('active'); // Remove active class from about
       $mainNavPortfolio.removeClass('active'); // Remove active class from portfolio
@@ -190,9 +190,9 @@ if ($wrapper.hasClass('default-page')) {
 
     /* When going down, add scrolling header class. When up, remove */
     if (direction === 'down') {
-      $wrapper.addClass('scrolling');
+      $page.addClass('scrolling');
     } else {
-      $wrapper.removeClass('scrolling');
+      $page.removeClass('scrolling');
     }
   }, {
     /* Offset is the top margin of the portfolio page title */
@@ -224,7 +224,7 @@ $(document).on('click', 'a[href^="#"]', function scrollToAnchor(e) {
 $('img.lazy').unveil(568);
 
 /* Do the following only if this is the home page */
-if ($wrapper.hasClass('default-page')) {
+if ($page.hasClass('default-page')) {
 
   /* Do the following only if this is a large screen */
   if (Modernizr.mq('(min-width: 46.0625rem)')) {

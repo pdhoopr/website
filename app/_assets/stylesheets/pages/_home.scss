@@ -6,7 +6,7 @@
 .default-page {
 
   /* Main nav styles when home page is scrolling on small devices */
-  &.scrolling #main-nav {
+  &.scrolling .main-nav {
     @include breakpoint($mq-small) {
       background-color: rgba($ph-blue, .75);
       box-shadow: 0 0 8px $gray-2;
@@ -18,7 +18,7 @@
   }
 
   /* Header styles for home page */
-  #masthead {
+  header {
     background: none;
 
     /* Header styles on small devices on home page */
@@ -47,7 +47,7 @@
   }
 
   /* Main nav styles on small devices on home page */
-  #main-nav {
+  .main-nav {
     @include breakpoint($mq-small) {
       float: none;
       width: 100%;
@@ -96,7 +96,7 @@
    ========================================================================= */
 
 /* Styles the Hero section */
-#hero {
+.home-hero-section {
   display: none;
 
   /* Styles for medium and up devices */
@@ -168,7 +168,7 @@
    ========================================================================= */
 
 /* Styles for the About section */
-#about {
+.home-about-section {
   background: $ph-yellow url('/assets/img/home/home_about_background.jpg') fixed;
   background-size: cover;
   color: $white;
@@ -216,7 +216,7 @@
    ========================================================================= */
 
 /* Styles for the Portfolio section */
-#portfolio {
+.home-portfolio-section {
 
   /* Give the kwicks wrapper a height */
   .kwicks-wrapper {
