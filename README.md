@@ -13,7 +13,7 @@ The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Tec
   * Use `npm run lint` to run lint both Sass and JavaScript source code in one task.
   * Use `npm test` to check for lint and development build errors.
   * Use `npm run build` to compile production code.
-  * Use `npm run deploy` to test and compile code for production, then upload the *public* folder to Surge.
+  * Use `npm run deploy` to test code, compile it for production, and upload the *public* folder to Surge.
 
 ## Sass Libraries
 - Breakpoint ([http://breakpoint-sass.com/](http://breakpoint-sass.com/))
