@@ -1,6 +1,8 @@
 /* =========================================================================
    patrick.hoopr.io Gulpfile
    ========================================================================= */
+
+/* eslint strict: 0 */
 'use strict'; // Strict mode
 
 /* Variables
@@ -114,9 +116,9 @@ function buildErrorMessage(task) {
  * 2. Runs "jekyll build" in src directory
  * 3. Closes process
  */
-gulp.task('jekyll', function (done) {
+gulp.task('jekyll', function jekyllTask(done) {
   return childProcess.spawn('bundle', ['exec', 'jekyll', 'build'], {cwd: paths.jekyll.src, stdio: 'inherit'})
-    .on('close', function (code) {
+    .on('close', function jekyllTaskClose(code) {
       if (code !== 0) {
         browserSync.notify('<span style="color: red; font-weight: bold;">jekyll task error!</span><span style="color: red;"> Please check the console and resolve the error ASAP because the build may be failing!</span>');
 
@@ -136,14 +138,14 @@ gulp.task('jekyll', function (done) {
  * 2. Locates the src of docs specified in paths object
  * 3. Copies selected docs to the destination specified in the paths object
  */
-gulp.task('clean:docs', function () {
+gulp.task('clean:docs', function cleanDocsTask() {
   return del(paths.docs.dest);
 });
 
-gulp.task('docs', ['clean:docs'], function () {
+gulp.task('docs', ['clean:docs'], function docsTask() {
   return gulp.src(paths.docs.src)
     .pipe(plumber({
-      errorHandler: function (err) {
+      errorHandler: function docsTaskError(err) {
         util.log(err);
         browserSync.notify(buildErrorMessage('docs'));
         this.emit('end');
@@ -165,14 +167,14 @@ gulp.task('docs', ['clean:docs'], function () {
  * 2. Locates the src of images specified in paths object
  * 3. Copies selected images to the destination specified in the paths object
  */
-gulp.task('clean:images', function () {
+gulp.task('clean:images', function cleanImagesTask() {
   return del(paths.images.dest);
 });
 
-gulp.task('images', ['clean:images'], function () {
+gulp.task('images', ['clean:images'], function imagesTask() {
   return gulp.src(paths.images.src)
     .pipe(plumber({
-      errorHandler: function (err) {
+      errorHandler: function imagesTaskError(err) {
         util.log(err);
         browserSync.notify(buildErrorMessage('images'));
         this.emit('end');
@@ -195,10 +197,10 @@ gulp.task('images', ['clean:images'], function () {
  * 3. Uses Autoprefixer to add vendor prefixes
  * 4. Writes the file to the stylesheets destination specified in the paths object
  */
-gulp.task('vendor:stylesheets', function () {
+gulp.task('vendor:stylesheets', function vendorStylesheetsTask() {
   return gulp.src(paths.vendor.stylesheets.src)
     .pipe(plumber({
-      errorHandler: function (err) {
+      errorHandler: function vendorStylesheetsTaskError(err) {
         util.log(err);
         browserSync.notify(buildErrorMessage('vendor:stylesheets'));
         this.emit('end');
@@ -225,10 +227,10 @@ gulp.task('vendor:stylesheets', function () {
  * 5. Renames file to style.css
  * 6. Writes the file to the stylesheets destination specified in the paths object w/ sourcemap
  */
-gulp.task('stylesheets', function () {
+gulp.task('stylesheets', function stylesheetsTask() {
   return gulp.src(paths.stylesheets.src)
     .pipe(plumber({
-      errorHandler: function (err) {
+      errorHandler: function stylesheetsTaskError(err) {
         util.log(err);
         browserSync.notify(buildErrorMessage('stylesheets'));
         this.emit('end');
@@ -258,10 +260,10 @@ gulp.task('stylesheets', function () {
  * 3. Minifies the file if this is a production run
  * 4. Writes the file to the javascripts destination specified in the paths object
  */
-gulp.task('vendor:javascripts', function () {
+gulp.task('vendor:javascripts', function vendorJavascriptsTask() {
   return gulp.src(paths.vendor.javascripts.src)
     .pipe(plumber({
-      errorHandler: function (err) {
+      errorHandler: function vendorJavascriptsTaskError(err) {
         util.log(err);
         browserSync.notify(buildErrorMessage('vendor:javascripts'));
         this.emit('end');
@@ -288,10 +290,10 @@ gulp.task('vendor:javascripts', function () {
  * 5. Minifies the file if this is a production run
  * 6. Writes the file to the javascripts destination specified in the paths object w/ sourcemap
  */
-gulp.task('javascripts', function () {
+gulp.task('javascripts', function javascriptsTask() {
   return gulp.src(paths.javascripts.src)
     .pipe(plumber({
-      errorHandler: function (err) {
+      errorHandler: function javascriptsTaskError(err) {
         util.log(err);
         browserSync.notify(buildErrorMessage('javascripts'));
         this.emit('end');
@@ -317,7 +319,7 @@ gulp.task('javascripts', function () {
  * 1. Run the jekyll task first
  * 2. When jekyll task is complete, run docs, images, javascripts, and stylesheets tasks
  */
-gulp.task('build', ['jekyll'], function (callback) {
+gulp.task('build', ['jekyll'], function buildTask(callback) {
   runSequence(['docs', 'images', 'vendor:stylesheets', 'stylesheets', 'vendor:javascripts', 'javascripts'], callback);
 });
 
@@ -332,7 +334,7 @@ gulp.task('build', ['jekyll'], function (callback) {
  * 6. Watches scripts for changes
  * 7. Watches styles for changes
  */
-gulp.task('serve', ['build'], function () {
+gulp.task('serve', ['build'], function serveTask() {
   browserSync.init({
     server: {
       baseDir: './public'
