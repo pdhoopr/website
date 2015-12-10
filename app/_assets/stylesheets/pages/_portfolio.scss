@@ -6,7 +6,7 @@
 .portfolio-page {
 
   /* On portfolio page, give border bottom to nav item on hover */
-  #main-nav .nav-item:hover {
+  .main-nav .nav-item:hover {
     border-bottom-color: $ph-yellow;
 
     /* Remove border bottom color on touch devices */
