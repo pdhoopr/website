@@ -6,10 +6,10 @@
    ======================================================================== */
 const $wrapper = $('#wrapper');
 const $masthead = $('#masthead');
-const $mainNav = $('.main-nav');
+const $mainNav = $('#main-nav');
 const $logoLetters = $('.logo-letter.animate');
-const $mainNavAbout = $('.main-nav .nav-about');
-const $mainNavPortfolio = $('.main-nav .nav-portfolio');
+const $mainNavAbout = $('#main-nav .nav-about');
+const $mainNavPortfolio = $('#main-nav .nav-portfolio');
 let $lastActiveSection = null; // Holds last active section while scrolling
 const $heroAnimation = $('#hero .hero-animation');
 const $heroArrow = $('#hero .arrow');
