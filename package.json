@@ -2,7 +2,12 @@
   "name": "patrick-hooper",
   "version": "1.0.0",
   "description": "The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Technology Fanboy, Happily Married, Cheesecake Evangelist, World Traveler, and more. Currently living in Ann Arbor, Michigan as a proud University of Michigan grad - Go Blue!",
-  "author": "Patrick Hooper <patrick.d.hooper@gmail.com>",
+  "homepage": "http://patrick.hoopr.io",
+  "author": {
+    "name": "Patrick Hooper",
+    "email": "patrick.d.hooper@gmail.com",
+    "url": "http://patrick.hoopr.io"
+  },
   "scripts": {
     "start": "gulp serve",
     "lint:stylesheets": "bundle exec scss-lint ./app/_assets/stylesheets/** || exit_code=$?; if [[ $exit_code > 1 ]]; then exit $exit_code; fi",
