@@ -1,0 +1,28 @@
+/* =========================================================================
+   Nav Bar
+   ========================================================================= */
+
+/* Styles for a navigation bar */
+.nav-bar {
+  box-shadow: 0 0 8px $gray-2;
+  max-width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: 999;
+
+  /* Styles for medium and up devices */
+  @include breakpoint($mq-medium) {
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: left;
+  }
+
+  /* Styles for big devices */
+  @include breakpoint($mq-big) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}

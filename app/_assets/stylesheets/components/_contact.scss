@@ -2,8 +2,8 @@
    Contact Icons
    ========================================================================= */
 
-/* Styles for icons in Contact section */
-.contact-icons {
+/* Styles for Contact section */
+.contact {
   font-size: 1rem;
   padding-bottom: 1em;
   text-align: center;
@@ -24,17 +24,7 @@
   }
 }
 
-/* Styles for an individual icon */
+/* Make contact icon text gray normally, lighter gray on hover */
 .contact-icon {
-  transition: .3s;
-
-  /* Change color on hover */
-  &:hover {
-    color: $gray-c;
-
-    /* Keep color the same on hover */
-    .touch & {
-      color: $gray-6;
-    }
-  }
+  @include icon-hover($gray-6, $gray-c);
 }

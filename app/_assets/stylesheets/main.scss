@@ -18,27 +18,31 @@
 @import 'base/color';
 
 /* =========================================================================
+   Components
+   ========================================================================= */
+@import 'components/arrow';
+@import 'components/avatar';
+@import 'components/browser-wireframe';
+@import 'components/button';
+@import 'components/contact';
+@import 'components/logo';
+@import 'components/menu';
+@import 'components/nav-bar';
+@import 'components/overlay';
+@import 'components/phone-wireframe';
+@import 'components/snapshot';
+
+/* =========================================================================
    Layout
    ========================================================================= */
 @import 'layout/grid';
-@import 'layout/header';
 @import 'layout/navigation';
+@import 'layout/header';
 @import 'layout/footer';
-
-/* =========================================================================
-   Components
-   ========================================================================= */
-@import 'components/logo';
-@import 'components/avatar';
-@import 'components/overlay';
-@import 'components/button';
-@import 'components/arrow';
-@import 'components/browser-wireframe';
-@import 'components/phone-wireframe';
-@import 'components/contact-icons';
 
 /* =========================================================================
    Pages
    ========================================================================= */
 @import 'pages/home';
 @import 'pages/portfolio';
+@import 'pages/scrolling';

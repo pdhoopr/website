@@ -2,8 +2,11 @@
    Footer
    ========================================================================= */
 
-/* Styles for the footer */
-footer {
+/* Footer | Colophon
+   ========================================================================= */
+
+/* Styles for the colophon (footer containing contact and site info) */
+.colophon {
   background-color: $gray-2;
   font-family: $ubuntu;
   padding: 1.2em 0 .6em;

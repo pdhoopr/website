@@ -2,45 +2,16 @@
    Mixins
    ========================================================================= */
 
+/* Mixins | Structure
+   ========================================================================= */
+
 /**
- * Mixin that will align an element in the absolute middle of
- * its container.
+ * Mixin that will align an element in the absolute middle of its container.
  */
 @mixin absolute-center($direction, $amount, $y) {
   left: 50%;
   #{$direction}: $amount;
   transform: translate(-50%, $y);
-}
-
-/**
- * Mixin that will make a CSS down arrow using borders.
- */
-@mixin arrow-down($border-width) {
-  border-left: $border-width solid transparent;
-  border-right: $border-width solid transparent;
-  border-top: $border-width solid transparent;
-}
-
-/**
- * Mixin that will set colors and animate for button hovers.
- */
-@mixin button-hover($background-color, $color) {
-  border-color: $background-color;
-  color: $background-color;
-  transition: all .3s;
-
-  /* Hover styles */
-  &:hover {
-    background-color: $background-color;
-    color: $color;
-    transition: all .3s;
-  }
-
-  /* Negate hover styles on touch devices */
-  .touch & {
-    background-color: transparent;
-    color: $background-color;
-  }
 }
 
 /**
@@ -52,10 +23,81 @@
 }
 
 /**
- * Mixin that will vertically align an element in the middle of
- * its container.
+ * Mixin that will vertically align an element in the middle of its container.
  */
 @mixin vertical-align($top) {
   top: $top;
   transform: translateY(-50%);
+}
+
+/* Mixins | Color
+   ========================================================================= */
+
+/**
+ * Mixin that will set background and font color for an element.
+ */
+@mixin color-element($background-color, $color) {
+  background-color: $background-color;
+  color: $color;
+}
+
+/* Mixins | Arrow
+   ========================================================================= */
+
+/**
+ * Mixin that will make a CSS down arrow using borders.
+ */
+@mixin arrow-down($border-width) {
+  border-left: $border-width solid transparent;
+  border-right: $border-width solid transparent;
+  border-top: $border-width solid transparent;
+}
+
+/* Mixins | Button
+   ========================================================================= */
+
+/**
+ * Mixin that will set colors and animate for button hovers.
+ */
+@mixin button-hover($background-color, $color) {
+  border-color: $background-color;
+  color: $background-color;
+  transition: all .3s;
+
+  /* Hover styles */
+  &:hover {
+
+    /* Set background and font colors */
+    @include color-element($background-color, $color);
+
+    /* Animate over .3s */
+    transition: all .3s;
+  }
+
+  /* Negate hover styles on touch devices (reset background and font colors) */
+  .touch & {
+    @include color-element(transparent, $background-color);
+  }
+}
+
+/* Mixins | Icon
+   ========================================================================= */
+
+/**
+ * Mixin that will set hover and touch colors for an icon.
+ */
+@mixin icon-hover($color, $hover-color) {
+
+  /* Transition hover color over .3s */
+  transition: .3s;
+
+  /* Change color on hover */
+  &:hover {
+    color: $hover-color;
+
+    /* Don't change color on hover on touch devices */
+    .touch & {
+      color: $color;
+    }
+  }
 }

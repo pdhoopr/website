@@ -5,8 +5,8 @@
 /* Styles that override/alter components specifically on portfolio pages */
 .portfolio-page {
 
-  /* On portfolio page, give border bottom to nav item on hover */
-  .main-nav .nav-item:hover {
+  /* On portfolio page, make border yellow for main nav menu item on hover */
+  .main-nav .menu-item:hover {
     border-bottom-color: $ph-yellow;
 
     /* Remove border bottom color on touch devices */
@@ -25,6 +25,12 @@
   .browser-photo {
     max-height: 388px;
     overflow: hidden;
+    overflow-y: auto;
+
+    /* No scrolling vertically on touch devices */
+    .touch & {
+      overflow-y: hidden;
+    }
   }
 
   /* Styles specifically for a phone in a project section */
@@ -75,6 +81,12 @@
   .phone-photo {
     max-height: 568px;
     overflow: hidden;
+    overflow-y: auto;
+
+    /* No scrolling vertically on touch devices */
+    .touch & {
+      overflow-y: hidden;
+    }
   }
 }
 
@@ -89,22 +101,22 @@
   @include breakpoint($mq-medium) {
     padding-top: 64px;
   }
-}
 
-/* Override styles for text-only projects */
-.project.wgi-buzz,
-.project.wgiki,
-.project.wgi-informer,
-.project.university-of-michigan-athletics {
+  /* Override styles for text-only projects */
+  &.wgi-buzz-project,
+  &.wgiki-project,
+  &.wgi-informer-project,
+  &.university-of-michigan-athletics-project {
 
-  /* Alter padding for these portfolio pages' project sections */
-  .project-section {
-    padding: 0;
+    /* Alter padding for these portfolio pages' project sections */
+    .project-section {
+      padding: 0;
 
-    /* Increase padding on large devices */
-    @include breakpoint($mq-large) {
-      padding-left: .75em;
-      padding-right: .75em;
+      /* Increase padding on large devices */
+      @include breakpoint($mq-large) {
+        padding-left: .75em;
+        padding-right: .75em;
+      }
     }
   }
 }
@@ -247,7 +259,7 @@
 }
 
 /* Styles for the description of a project */
-.section-description {
+.project-section-description {
   margin-bottom: 1.2em;
 
   /* No margin on large devices */

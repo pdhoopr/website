@@ -1,20 +1,28 @@
-<nav class="main-nav clearfix">
-  {% if page.layout == "default" %}
-    {% for item in site.data.nav %}
-      <a class="nav-item nav-{{ item.id }}" href="#{{ item.id }}" title="{{ item.title }}">
-        <span class="nav-icon fa fa-{{ item.icon }}"></span>
-        <div class="nav-text">{{ item.title }}</div>
-      </a>
-    {% endfor %}
+<nav class="main-nav nav-bar">
+  {% include components/logo.html %}
 
-  {% elsif page.layout == "portfolio" %}
-    <a class="nav-item" href="/portfolio/{{ page.previous }}" title="{{ page.previous-title }}">
-      <span class="nav-icon fa fa-angle-left"></span>
-      <div class="nav-text">Prev</div>
-    </a>
-    <a class="nav-item" href="/portfolio/{{ page.next }}" title="{{ page.next-title }}">
-      <div class="nav-text">Next</div>
-      <span class="nav-icon fa fa-angle-right"></span>
-    </a>
+  {% if page.layout == "default" %}
+    <img class="avatar" src="/assets/img/branding/avatar.jpg">
   {% endif %}
+
+  <div class="menu horizontal-menu clearfix">
+    {% if page.layout == "default" %}
+      {% for item in site.data.nav %}
+        <a class="menu-item menu-item-{{ item.id }}" href="#{{ item.id }}" title="{{ item.title }}">
+          <span class="menu-item-icon fa fa-{{ item.icon }}"></span>
+          <div class="menu-item-text">{{ item.title }}</div>
+        </a>
+      {% endfor %}
+
+    {% elsif page.layout == "portfolio" %}
+      <a class="menu-item" href="/portfolio/{{ page.previous }}" title="{{ page.previous-title }}">
+        <span class="menu-item-icon fa fa-angle-left"></span>
+        <div class="menu-item-text">Prev</div>
+      </a>
+      <a class="menu-item" href="/portfolio/{{ page.next }}" title="{{ page.next-title }}">
+        <div class="menu-item-text">Next</div>
+        <span class="menu-item-icon fa fa-angle-right"></span>
+      </a>
+    {% endif %}
+  </div>
 </nav>
