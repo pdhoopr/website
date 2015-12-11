@@ -2,6 +2,25 @@
 layout: default
 ---
 
+<header class="hero home-hero">
+  <div class="overlay">
+    <span class="arrow"></span>
+  </div>
+
+  <div class="home-hero-animation grid-container">
+    <div class="taglines">
+      <h2 class="tagline">Web (App) Developer...</h2>
+      <h2 class="tagline">Life Enthusiast...</h2>
+      <h2 class="tagline">Technology Fanboy...</h2>
+      <h2 class="tagline">Happily Married...</h2>
+      <h2 class="tagline">Cheesecake Evangelist...</h2>
+      <h2 class="tagline">World Traveler...</h2>
+    </div>
+
+    <a class="btn cta" href="#about">...and more.</a>
+  </div>
+</header>
+
 {% for section in site.home %}
   <section id="{{ section.title }}" class="home-section home-{{ section.title }}-section">
     {{ section.content }}

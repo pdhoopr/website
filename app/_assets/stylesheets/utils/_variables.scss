@@ -2,7 +2,7 @@
    Variables
    ========================================================================= */
 
-/* Variables | Media Queries
+/* Variables | Structure
    ========================================================================= */
 
 /* Device sizes */
@@ -13,7 +13,7 @@ $large-min-width: 62.0625rem; // 993px
 $large-max-width: 75rem; // 1200px
 $big-min-width: 75.0625rem; // 1201px
 
-/* Breakpoint variables */
+/* Breakpoint variables for media queries */
 $mq-small: max-width $small-max-width; // @media (max-width: 46rem)
 $mq-medium: min-width $medium-min-width; // @media (min-width: 46.0625rem)
 $mq-large: min-width $large-min-width; // @media (min-width: 62.0625rem)
@@ -44,7 +44,7 @@ $github-gray: #333;
 $ph-blue: #101e43;
 $ph-yellow: #ffdb00;
 
-/* Project colors */
+/* Snapshot colors */
 $jahleh-and-patricks-wedding: #3feaf9;
 $ms-omearas-multiage: #ff5c58;
 $university-of-michigan-athletics: #ffd856;
@@ -52,8 +52,8 @@ $wgi-buzz: #607d8b;
 $wgi-informer: #19d163;
 $wgiki: $gray-4;
 
-/* Map of colors for portfolio projects */
-$project-colors: (
+/* Map of colors for snapshots */
+$snapshot-colors: (
   jahleh-and-patricks-wedding: $jahleh-and-patricks-wedding,
   ms-omearas-multiage: $ms-omearas-multiage,
   university-of-michigan-athletics: $university-of-michigan-athletics,

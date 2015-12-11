@@ -1,0 +1,36 @@
+/* =========================================================================
+   Scrolling
+   ========================================================================= */
+
+/* Styles for main nav bar when any page is scrolling */
+.scrolling .main-nav {
+  background-color: rgba($ph-blue, .75);
+  box-shadow: 0 0 8px $gray-2;
+
+  /* Styles for the main navigation menu when any page is scrolling */
+  .menu {
+    background-color: transparent;
+    box-shadow: none;
+    position: static;
+  }
+
+  /* Yellow border for active main nav menu item */
+  .menu-item.active {
+    border-bottom-color: $ph-yellow;
+  }
+}
+
+/* Scrolling | Home
+   ========================================================================= */
+
+/* Main nav menu styles when home page is scrolling on small devices */
+.default-page.scrolling .main-nav .menu {
+  @include breakpoint($mq-small) {
+    background-color: rgba($ph-blue, .75);
+    box-shadow: 0 0 8px $gray-2;
+    left: 0;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+  }
+}

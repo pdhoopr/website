@@ -43,10 +43,10 @@ img {
 
 /* Class to scroll vertically when content is too long for area */
 .scroll {
-  overflow-y: auto !important;
+  overflow-y: auto;
 
   /* No scrolling vertically on small devices */
   .touch & {
-    overflow-y: hidden !important;
+    overflow-y: hidden;
   }
 }

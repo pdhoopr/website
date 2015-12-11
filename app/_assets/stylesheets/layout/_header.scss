@@ -2,44 +2,13 @@
    Header
    ========================================================================= */
 
-/* Styles for the masthead */
-header {
-  background-color: $ph-blue;
-  color: $ph-yellow;
-  font-family: $ubuntu;
-  max-width: 100%;
-  padding-left: 8px;
-  position: fixed;
-  text-align: center;
-  width: 100%;
-  z-index: 999;
+/* Styles for a hero header */
+.hero {
 
-  /* Styles for medium and up devices */
-  @include breakpoint($mq-medium) {
-    padding-left: 16px;
-    text-align: left;
-  }
+  /* By default, take up 15% of viewport */
+  @include height-fallback(15);
 
-  /* Styles for big devices */
-  @include breakpoint($mq-big) {
-    padding-left: 24px;
-  }
-
-  /* Styles for masthead when page is scrolling */
-  .scrolling & {
-    background-color: rgba($ph-blue, .75) !important;
-    box-shadow: 0 0 8px $gray-2;
-  }
-
-  /* Styles for the masthead avatar */
-  .avatar {
-    display: inline-block;
-    float: none;
-    margin: .4em 0 0;
-
-    /* Styles for medium and up devices */
-    @include breakpoint($mq-medium) {
-      display: none;
-    }
-  }
+  /* Set background image to be fixed and cover element */
+  background-attachment: fixed;
+  background-size: cover;
 }

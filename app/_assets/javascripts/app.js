@@ -5,20 +5,20 @@
 /* Variables
    ======================================================================== */
 const $page = $('.page');
-const $header = $('header');
-const $mainNav = $('.main-nav');
 const $logoLetters = $('.logo-letter.animate');
-const $mainNavAbout = $('.main-nav .nav-about');
-const $mainNavPortfolio = $('.main-nav .nav-portfolio');
-let $lastActiveSection = null; // Holds last active section while scrolling
-const $heroAnimation = $('.home-hero-section .hero-animation');
-const $heroArrow = $('.home-hero-section .arrow');
-const $heroTaglines = $('.home-hero-section .tagline');
-let heroTaglineNum = 0; // Counter for taglines
-const $heroCTA = $('.home-hero-section .cta');
-const $aboutSection = $('.home-about-section');
-const $portfolioSection = $('.home-portfolio-section');
-const $footer = $('footer');
+const $mainNav = $('.main-nav');
+const $mainNavMenu = $('.main-nav .menu');
+const $mainNavMenuItemAbout = $('.main-nav .menu-item-about');
+const $mainNavMenuItemPortfolio = $('.main-nav .menu-item-portfolio');
+let $lastMainNavMenuItem = null; // Holds last active section while scrolling
+const $homeHeroAnimation = $('.home-hero-animation');
+const $homeHeroAnimationTaglines = $('.home-hero-animation .tagline');
+let homeHeroAnimationTaglineNum = 0; // Counter for taglines
+const $homeHeroAnimationCTA = $('.home-hero-animation .cta');
+const $homeHeroArrow = $('.home-hero .arrow');
+const $homeAboutSection = $('.home-about-section');
+const $homePortfolioSection = $('.home-portfolio-section');
+const $colophon = $('.colophon');
 const $portfolioPage = $('.portfolio-page');
 
 /* Functions
@@ -41,8 +41,8 @@ function tweenLogoLettersComplete() {
  * @returns { Void } Returns no value
  */
 function cycle() {
-  $heroTaglines.eq(heroTaglineNum).fadeIn(1000).delay(1000).fadeOut(1000, cycle);
-  heroTaglineNum = ++heroTaglineNum % $heroTaglines.length;
+  $homeHeroAnimationTaglines.eq(homeHeroAnimationTaglineNum).fadeIn(1000).delay(1000).fadeOut(1000, cycle);
+  homeHeroAnimationTaglineNum = ++homeHeroAnimationTaglineNum % $homeHeroAnimationTaglines.length;
 }
 
 /* GSAP Tweens
@@ -61,19 +61,19 @@ const tweenLogoLetters = TweenMax.to($logoLetters, 0.6, {
 
 /**
  * Tween Hero section from opacity of 1 to opacity of 0. Move top of section
- * from start location to 75% from the top of its parent over the duration
+ * from start location to 66% from the top of its parent over the duration
  * of the tween.
  */
-const fadeHeroDiv = TweenMax.to($heroAnimation, 1, {
+const fadeHomeHeroAnimation = TweenMax.to($homeHeroAnimation, 1, {
   opacity: 0,
-  top: '75%'
+  top: '66%'
 });
 
 /**
  * Tween Hero arrow from border properties over the duration
  * of the tween.
  */
-const fadeHeroArrow = TweenMax.to($heroArrow, 0.3, {
+const fadeHomeHeroArrow = TweenMax.to($homeHeroArrow, 0.3, {
   borderLeftWidth: 320,
   borderRightWidth: 320,
   borderTopWidth: 0,
@@ -87,21 +87,21 @@ const fadeHeroArrow = TweenMax.to($heroArrow, 0.3, {
 /* ScrollMagic Controller to handle scenes */
 const scrollMagicController = new ScrollMagic.Controller();
 
-/* Scene to fade Hero section and produce parallax effect */
-const heroScene = new ScrollMagic.Scene({
-  triggerElement: '.home-hero-section',
+/* Scene to fade home hero section and produce parallax effect */
+const homeHeroAnimationScene = new ScrollMagic.Scene({
+  triggerElement: '.home-hero',
   triggerHook: 'onLeave', // Start when trigger starts leaving viewport
   duration: '100%' // End when viewport has moved 100%
 })
-.setTween(fadeHeroDiv); // Use the fadeHeroDiv tween defined
+.setTween(fadeHomeHeroAnimation); // Use the fadeHomeHeroAnimation tween
 
 /* Scene to smush hero arrow up into itself when scrolling */
-const heroArrowScene = new ScrollMagic.Scene({
-  triggerElement: '.home-hero-section',
+const homeHeroArrowScene = new ScrollMagic.Scene({
+  triggerElement: '.home-hero',
   triggerHook: 'onLeave', // Start when trigger starts leaving viewport
-  duration: '75%' // End when viewport has moved 75%
+  duration: '100%' // End when viewport has moved 75%
 })
-.setTween(fadeHeroArrow);
+.setTween(fadeHomeHeroArrow);
 
 /* Waypoints
    ======================================================================== */
@@ -110,70 +110,70 @@ const heroArrowScene = new ScrollMagic.Scene({
 if ($page.hasClass('default-page')) {
 
   /**
-   * Toggles active class for About and also flags the header as scrolling
+   * Toggles active class for About and also flags the page as scrolling
    */
-  const aboutWaypoint = $aboutSection.waypoint(function aboutWaypointDirection(direction) {
+  const homeAboutSectionWaypoint = $homeAboutSection.waypoint(function homeAboutSectionWaypointDirection(direction) {
 
     /* When going down and you hit about section, do stuff */
     if (direction === 'down') {
-      $page.addClass('scrolling'); // Add class to header for scrolling
-      $mainNavAbout.addClass('active'); // Add active class to about
-      $mainNavPortfolio.removeClass('active'); // Remove active class from portfolio nav
-      $lastActiveSection = $mainNavAbout; // Make about nav the last active
+      $page.addClass('scrolling');
+      $mainNavMenuItemAbout.addClass('active');
+      $mainNavMenuItemPortfolio.removeClass('active');
+      $lastMainNavMenuItem = $mainNavMenuItemAbout;
 
       /* When going up and you hit About section, do stuff */
     } else {
-      $page.removeClass('scrolling'); // Remove scrolling header class
-      $mainNavAbout.removeClass('active'); // Remove active class from about
-      $mainNavPortfolio.removeClass('active'); // Remove active class from portfolio
-      $lastActiveSection = null; // Remove last active element
+      $page.removeClass('scrolling');
+      $mainNavMenuItemAbout.removeClass('active');
+      $mainNavMenuItemPortfolio.removeClass('active');
+      $lastMainNavMenuItem = null;
     }
   }, {
-    /* Make offset the header height or the nav height (small devices) */
-    offset: function aboutWaypointOffset() {
-      return Modernizr.mq('(min-width: 46.0625rem)') ? $header.height() : $mainNav.height() + 1;
+    /* Make offset the nav bar height or the nav menu height (small devices) */
+    offset: function homeAboutSectionWaypointOffset() {
+      return Modernizr.mq('(min-width: 46.0625rem)') ? $mainNav.height() : $mainNavMenu.height();
     }
   });
 
   /**
    * Toggles active class for Portfolio and removes for About
    */
-  const portfolioWaypoint = $portfolioSection.waypoint(function portfolioWaypointDirection(direction) {
+  const homePortfolioSectionWaypoint = $homePortfolioSection.waypoint(function homePortfolioSectionWaypointDirection(direction) {
 
     /* When going down and you hit Portfolio section, do stuff */
     if (direction === 'down') {
-      $mainNavAbout.removeClass('active'); // Remove active class from about
-      $mainNavPortfolio.addClass('active'); // Add active class to portfolio
-      $lastActiveSection = $mainNavPortfolio; // Make portfolio nav the last active
+      $mainNavMenuItemAbout.removeClass('active');
+      $mainNavMenuItemPortfolio.addClass('active');
+      $lastMainNavMenuItem = $mainNavMenuItemPortfolio;
 
       /* When going up and you hit Portfolio section, do stuff */
     } else {
-      $mainNavAbout.addClass('active'); // Add active class to about
-      $mainNavPortfolio.removeClass('active'); // Remove active class from portfolio
-      $lastActiveSection = $mainNavAbout; // Make about the last active
+      $mainNavMenuItemAbout.addClass('active');
+      $mainNavMenuItemPortfolio.removeClass('active');
+      $lastMainNavMenuItem = $mainNavMenuItemAbout;
     }
   }, {
-    /* Make offset the header height or the nav height (small devices) */
-    offset: function portfolioWaypointOffset() {
-      return Modernizr.mq('(min-width: 46.0625rem)') ? $header.height() : $mainNav.height() + 1;
+    /* Make offset the nav bar height or the nav menu height (small devices) */
+    offset: function homePortfolioSectionWaypointOffset() {
+      return Modernizr.mq('(min-width: 46.0625rem)') ? $mainNav.height() : $mainNavMenu.height();
     }
   });
 
   /**
    * Toggles active class Portfolio at bottom, restores previous active on up
    */
-  const footerWaypoint = $footer.waypoint(function footerWaypointDirection(direction) {
+  const colophonWaypoint = $colophon.waypoint(function colophonWaypointDirection(direction) {
 
-    /* When going down and you hit the footer, do stuff */
+    /* When going down and you hit the colophon (footer), do stuff */
     if (direction === 'down') {
-      $mainNavAbout.removeClass('active'); // Remove active class from about
-      $mainNavPortfolio.addClass('active'); // Add active class to portfolio
+      $mainNavMenuItemAbout.removeClass('active');
+      $mainNavMenuItemPortfolio.addClass('active');
 
-      /* When going up and you hit the footer, do stuff */
+      /* When going up and you hit the colophon (footer), do stuff */
     } else {
-      $mainNavAbout.removeClass('active'); // Remove active class from about
-      $mainNavPortfolio.removeClass('active'); // Remove active class from portfolio
-      $lastActiveSection.addClass('active'); // Add active class to last active
+      $mainNavMenuItemAbout.removeClass('active');
+      $mainNavMenuItemPortfolio.removeClass('active');
+      $lastMainNavMenuItem.addClass('active');
     }
   }, {
     /* Offset is 100%, so when it enters into view */
@@ -184,11 +184,11 @@ if ($page.hasClass('default-page')) {
 } else {
 
   /**
-   * Flags Portfolio page header as scrolling
+   * Flags Portfolio page as scrolling
    */
-  const projectWaypoint = $portfolioPage.waypoint(function projectWaypointDirection(direction) {
+  const portfolioPageWaypoint = $portfolioPage.waypoint(function portfolioPageWaypointDirection(direction) {
 
-    /* When going down, add scrolling header class. When up, remove */
+    /* When going down, add scrolling class to page. When up, remove */
     if (direction === 'down') {
       $page.addClass('scrolling');
     } else {
@@ -230,22 +230,22 @@ if ($page.hasClass('default-page')) {
   if (Modernizr.mq('(min-width: 46.0625rem)')) {
 
     /* Hide all taglines to start */
-    $heroTaglines.hide();
+    $homeHeroAnimationTaglines.hide();
 
     /* Start cycling through taglines after specified amount of time */
     setTimeout(cycle, 500);
 
     /* Bring Learn More button to full opacity specified amount of time */
-    setTimeout(function heroCTATimeout() {
-      $heroCTA.animate({opacity: 1}, 3000);
+    setTimeout(function homeHeroAnimationCTATimeout() {
+      $homeHeroAnimationCTA.animate({opacity: 1}, 3000);
     }, 5000);
 
     /* Add hero scenes to controller */
-    scrollMagicController.addScene([heroScene, heroArrowScene]);
+    scrollMagicController.addScene([homeHeroAnimationScene, homeHeroArrowScene]);
   }
 
-  /* Initialize kwicks */
-  $('.kwicks-vertical').kwicks({
+  /* Initialize snapshots with Kwicks */
+  $('.snapshots').kwicks({
     behavior: 'menu',
     duration: 300,
     maxSize: '85%',
