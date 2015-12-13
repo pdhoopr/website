@@ -9,8 +9,25 @@
   @include color-element($ph-blue, $ph-yellow);
 
   /* Main nav bar styles */
+  box-shadow: 0 0 8px $gray-2;
   font-family: $ubuntu;
-  padding-right: 0;
+  max-width: 100%;
+  padding-left: 8px;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: 999;
+
+  /* Styles for medium and up devices */
+  @include breakpoint($mq-medium) {
+    padding-left: 16px;
+    text-align: left;
+  }
+
+  /* Styles for big devices */
+  @include breakpoint($mq-big) {
+    padding-left: 24px;
+  }
 
   /* Float logo left and adjust margin and padding */
   .logo {
