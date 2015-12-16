@@ -40,6 +40,13 @@ img {
 /* Structure | Classes
  =========================================================================== */
 
+/* Make page wrapper 100% height of viewport */
+.page {
+
+  /* Set height in vh with % fallback */
+  @include height-fallback(100);
+}
+
 /* Class to scroll vertically when content is too long for area */
 .scroll {
   overflow-y: auto;
