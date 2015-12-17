@@ -1,11 +1,8 @@
-/* =========================================================================
-   patrick.hoopr.io Gulpfile
-   ========================================================================= */
-
 /* eslint strict: 0 */
 'use strict'; // Strict mode
 
-/* Variables
+/* =========================================================================
+   Variables
    ========================================================================= */
 
 /* Initialize variables required to run gulp */
@@ -32,49 +29,49 @@ const env = process.env.NODE_ENV || 'dev';
 const paths = {
   jekyll: {
     watchFiles: [
-      'config/**/*',
-      'app/**/*',
-      '!app/_assets{,/**/*}'
+      'config/**',
+      'app/**',
+      '!app/_assets{,/**}'
     ],
     src: 'config',
     dest: 'public'
   },
   docs: {
     watchFiles: [
-      'docs/**/*'
+      'docs/**'
     ],
     src: [
-      'docs/**/*'
+      'docs/**'
     ],
     dest: 'public/docs'
   },
   images: {
     watchFiles: [
-      'app/_assets/images/**/*',
-      '!app/_assets/images/portfolio/university-of-michigan-athletics{,/**/*}',
-      '!app/_assets/images/portfolio/wgi*{,/**/*}'
+      'app/_assets/images/**',
+      '!app/_assets/images/portfolio/university-of-michigan-athletics{,/**}',
+      '!app/_assets/images/portfolio/wgi*{,/**}'
     ],
     src: [
-      'app/_assets/images/**/*',
-      '!app/_assets/images/portfolio/university-of-michigan-athletics{,/**/*}',
-      '!app/_assets/images/portfolio/wgi*{,/**/*}'
+      'app/_assets/images/**',
+      '!app/_assets/images/portfolio/university-of-michigan-athletics{,/**}',
+      '!app/_assets/images/portfolio/wgi*{,/**}'
     ],
     dest: 'public/assets/img'
   },
   javascripts: {
     watchFiles: [
-      'app/_assets/javascripts/**/*'
+      'app/_assets/javascripts/**'
     ],
     src: [
-      'app/_assets/javascripts/**/*'
+      'app/_assets/javascripts/**'
     ],
     dest: 'public/assets/js'
   },
   stylesheets: {
     watchFiles: [
-      'vendor/assets/stylesheets/sassy-maps/**/*',
-      'vendor/assets/stylesheets/breakpoint/**/*',
-      'app/_assets/stylesheets/**/*'
+      'vendor/assets/stylesheets/sassy-maps/**',
+      'vendor/assets/stylesheets/breakpoint/**',
+      'app/_assets/stylesheets/**'
     ],
     src: 'app/_assets/stylesheets/main.scss',
     dest: 'public/assets/css'
@@ -82,18 +79,18 @@ const paths = {
   vendor: {
     javascripts: {
       watchFiles: [
-        'vendor/assets/javascripts/**/*'
+        'vendor/assets/javascripts/**'
       ],
       src: [
-        'vendor/assets/javascripts/**/*'
+        'vendor/assets/javascripts/**'
       ],
       dest: 'public/assets/js'
     },
     stylesheets: {
       watchFiles: [
-        'vendor/assets/stylesheets/**/*',
-        '!vendor/assets/stylesheets/sassy-maps/**/*',
-        '!vendor/assets/stylesheets/breakpoint/**/*'
+        'vendor/assets/stylesheets/**',
+        '!vendor/assets/stylesheets/sassy-maps/**',
+        '!vendor/assets/stylesheets/breakpoint/**'
       ],
       src: 'vendor/assets/stylesheets/vendor.scss',
       dest: 'public/assets/css'
@@ -106,7 +103,8 @@ function buildErrorMessage(task) {
   return '<span style="color: red; font-weight: bold;">' + task + ' task error!</span><span style="color: red;"> Please check the console and resolve the error ASAP because the build may be failing!</span>';
 }
 
-/* Tasks
+/* =========================================================================
+   Tasks
    ========================================================================= */
 
 /**

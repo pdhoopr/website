@@ -1,9 +1,6 @@
 /* =========================================================================
-   patrick.hoopr.io JavaScript / jQuery
+   Variables
    ========================================================================= */
-
-/* Variables
-   ======================================================================== */
 const $page = $('.page');
 const $logoLetters = $('.logo-letter.animate');
 const $mainNav = $('.main-nav');
@@ -21,8 +18,9 @@ const $homePortfolioSection = $('.home-portfolio-section');
 const $colophon = $('.colophon');
 const $portfolioPage = $('.portfolio-page');
 
-/* Functions
-   ======================================================================== */
+/* =========================================================================
+   Functions
+   ========================================================================= */
 
 /**
  * Function that adds letter-collpased class and removes GSAP styles
@@ -45,8 +43,9 @@ function cycle() {
   homeHeroAnimationTaglineNum = ++homeHeroAnimationTaglineNum % $homeHeroAnimationTaglines.length;
 }
 
-/* GSAP Tweens
-   ======================================================================== */
+/* =========================================================================
+   GSAP Tweens
+   ========================================================================= */
 
 /**
  * Tween logo letters from opacity of 1 and full width to no width and
@@ -81,8 +80,9 @@ const fadeHomeHeroArrow = TweenMax.to($homeHeroArrow, 0.3, {
   marginLeft: -320
 });
 
-/* ScrollMagic Scenes
-   ======================================================================== */
+/* =========================================================================
+   ScrollMagic Scenes
+   ========================================================================= */
 
 /* ScrollMagic Controller to handle scenes */
 const scrollMagicController = new ScrollMagic.Controller();
@@ -103,8 +103,9 @@ const homeHeroArrowScene = new ScrollMagic.Scene({
 })
 .setTween(fadeHomeHeroArrow);
 
-/* Waypoints
-   ======================================================================== */
+/* =========================================================================
+   Waypoints
+   ========================================================================= */
 
 /* Waypoints only for the home page */
 if ($page.hasClass('default-page')) {
@@ -200,8 +201,9 @@ if ($page.hasClass('default-page')) {
   });
 }
 
-/* Scripts
-   ======================================================================== */
+/* =========================================================================
+   Scripts
+   ========================================================================= */
 
 /* Tell ScrollMagic to animate scroll over 0.5 sec rather than jump */
 scrollMagicController.scrollTo(function animateScrollToAnchor(newpos) {
