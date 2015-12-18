@@ -13,6 +13,7 @@ const browserSync = require('browser-sync').create();
 const childProcess = require('child_process');
 const concat = require('gulp-concat');
 const del = require('del');
+const flatten = require('gulp-flatten');
 const gulpif = require('gulp-if');
 const plumber = require('gulp-plumber');
 const rename = require('gulp-rename');
@@ -163,7 +164,8 @@ gulp.task('docs', ['clean:docs'], function docsTask() {
  *
  * 1. Deletes any previous files in the built images folder
  * 2. Locates the src of images specified in paths object
- * 3. Copies selected images to the destination specified in the paths object
+ * 3. Flattens the directory structure
+ * 4. Copies selected images to the destination specified in the paths object
  */
 gulp.task('clean:images', function cleanImagesTask() {
   return del(paths.images.dest);
@@ -183,6 +185,7 @@ gulp.task('images', ['clean:images'], function imagesTask() {
         }
       }
     }))
+    .pipe(flatten())
     .pipe(gulp.dest(paths.images.dest))
     .pipe(browserSync.stream());
 });
