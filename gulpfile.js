@@ -23,8 +23,8 @@ const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const util = require('gulp-util');
 
-/* Default to dev for environment */
-const env = process.env.NODE_ENV || 'dev';
+/* Default to development for environment */
+const env = process.env.NODE_ENV || 'development';
 
 /* Set path objects used in locating and compiling assets */
 const paths = {
@@ -122,7 +122,7 @@ gulp.task('jekyll', function jekyllTask(done) {
         browserSync.notify('<span style="color: red; font-weight: bold;">jekyll task error!</span><span style="color: red;"> Please check the console and resolve the error ASAP because the build may be failing!</span>');
 
         /* Throw error in production builds to stop npm test/deploy scripts */
-        if (env === 'prd') {
+        if (env === 'production') {
           throw code;
         }
       }
@@ -150,7 +150,7 @@ gulp.task('docs', ['clean:docs'], function docsTask() {
         this.emit('end');
 
         /* Throw error in production builds to stop npm test/deploy scripts */
-        if (env === 'prd') {
+        if (env === 'production') {
           throw err;
         }
       }
@@ -180,7 +180,7 @@ gulp.task('images', ['clean:images'], function imagesTask() {
         this.emit('end');
 
         /* Throw error in production builds to stop npm test/deploy scripts */
-        if (env === 'prd') {
+        if (env === 'production') {
           throw err;
         }
       }
@@ -207,12 +207,12 @@ gulp.task('vendor:stylesheets', function vendorStylesheetsTask() {
         this.emit('end');
 
         /* Throw error in production builds to stop npm test/deploy scripts */
-        if (env === 'prd') {
+        if (env === 'production') {
           throw err;
         }
       }
     }))
-    .pipe(gulpif(env === 'prd', sass({outputStyle: 'compressed'}), sass({outputStyle: 'expanded'})))
+    .pipe(gulpif(env === 'production', sass({outputStyle: 'compressed'}), sass({outputStyle: 'expanded'})))
     .pipe(autoprefixer())
     .pipe(gulp.dest(paths.vendor.stylesheets.dest))
     .pipe(browserSync.stream());
@@ -237,13 +237,13 @@ gulp.task('stylesheets', function stylesheetsTask() {
         this.emit('end');
 
         /* Throw error in production builds to stop npm test/deploy scripts */
-        if (env === 'prd') {
+        if (env === 'production') {
           throw err;
         }
       }
     }))
     .pipe(sourcemaps.init())
-    .pipe(gulpif(env === 'prd', sass({outputStyle: 'compressed'}), sass({outputStyle: 'expanded'})))
+    .pipe(gulpif(env === 'production', sass({outputStyle: 'compressed'}), sass({outputStyle: 'expanded'})))
     .pipe(autoprefixer())
     .pipe(rename({
       basename: 'style'
@@ -270,13 +270,13 @@ gulp.task('vendor:javascripts', function vendorJavascriptsTask() {
         this.emit('end');
 
         /* Throw error in production builds to stop npm test/deploy scripts */
-        if (env === 'prd') {
+        if (env === 'production') {
           throw err;
         }
       }
     }))
     .pipe(concat('vendor.js'))
-    .pipe(gulpif(env === 'prd', uglify()))
+    .pipe(gulpif(env === 'production', uglify()))
     .pipe(gulp.dest(paths.vendor.javascripts.dest))
     .pipe(browserSync.stream());
 });
@@ -300,7 +300,7 @@ gulp.task('javascripts', function javascriptsTask() {
         this.emit('end');
 
         /* Throw error in production builds to stop npm test/deploy scripts */
-        if (env === 'prd') {
+        if (env === 'production') {
           throw err;
         }
       }
@@ -308,7 +308,7 @@ gulp.task('javascripts', function javascriptsTask() {
     .pipe(sourcemaps.init())
     .pipe(concat('bundle.js'))
     .pipe(babel())
-    .pipe(gulpif(env === 'prd', uglify()))
+    .pipe(gulpif(env === 'production', uglify()))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.javascripts.dest))
     .pipe(browserSync.stream({match: '**/*.js'}));
