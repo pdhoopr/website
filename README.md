@@ -4,8 +4,8 @@ The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Tec
 ## Usage
 1. Clone the repository.
 2. Navigate into the repository.
-3. Run `bundle install --path vendor/bundle` (you'll need Ruby and Bundler).
-4. Run `npm install` (you'll need Node.js and npm).
+3. Run `bundle install --path vendor/bundle` (you'll need Ruby & Bundler).
+4. Run `npm install` (you'll need Node.js & npm).
 5. Let npm scripts handle your workflow!
   * Use `npm start` to build development code and start a Browersync server.
   * Use `npm run lint:stylesheets` to run SCSS-Lint on the Sass source code.
