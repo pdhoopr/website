@@ -8,3 +8,6 @@ node_modules/
 
 # Leave all logs out of this repo
 *.log
+
+# Keep build folder out of the repo
+public/
