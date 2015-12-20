@@ -28,15 +28,6 @@ const env = process.env.NODE_ENV || 'development';
 
 /* Set path objects used in locating and compiling assets */
 const paths = {
-  jekyll: {
-    watchFiles: [
-      'config/**',
-      'app/**',
-      '!app/_assets{,/**}'
-    ],
-    src: 'config',
-    dest: 'public'
-  },
   docs: {
     watchFiles: 'docs/**',
     src: 'docs/**',
@@ -59,6 +50,15 @@ const paths = {
     watchFiles: 'app/_assets/javascripts/**',
     src: 'app/_assets/javascripts/**',
     dest: 'public/assets/js'
+  },
+  jekyll: {
+    watchFiles: [
+      'config/**',
+      'app/**',
+      '!app/_assets{,/**}'
+    ],
+    src: 'config',
+    dest: 'public'
   },
   stylesheets: {
     watchFiles: [
@@ -95,28 +95,6 @@ function buildErrorMessage(task) {
 /* =========================================================================
    Tasks
    ========================================================================= */
-
-/**
- * Jekyll Task
- *
- * 1. Spawns child process
- * 2. Runs "jekyll build" in src directory
- * 3. Closes process
- */
-gulp.task('jekyll', function jekyllTask(done) {
-  return childProcess.spawn('bundle', ['exec', 'jekyll', 'build'], {cwd: paths.jekyll.src, stdio: 'inherit'})
-    .on('close', function jekyllTaskClose(code) {
-      if (code !== 0) {
-        browserSync.notify('<span style="color: red; font-weight: bold;">jekyll task error!</span><span style="color: red;"> Please check the console and resolve the error ASAP because the build may be failing!</span>');
-
-        /* Throw error in production builds to stop npm test/deploy scripts */
-        if (env === 'production') {
-          throw code;
-        }
-      }
-      done();
-    });
-});
 
 /**
  * Docs Task
@@ -179,31 +157,25 @@ gulp.task('images', ['clean:images'], function imagesTask() {
 });
 
 /**
- * Vendor JavaScripts Task
+ * Jekyll Task
  *
- * 1. Locates the src of vendor javascripts specified in paths object
- * 2. Concatenates all javascripts into one file called vendor.js
- * 3. Minifies the file if this is a production run
- * 4. Writes the file to the javascripts destination specified in the paths object
+ * 1. Spawns child process
+ * 2. Runs "jekyll build" in src directory
+ * 3. Closes process
  */
-gulp.task('vendor:javascripts', function vendorJavaScriptsTask() {
-  return gulp.src(paths.vendor.javascripts.src)
-    .pipe(plumber({
-      errorHandler: function vendorJavaScriptsTaskError(err) {
-        util.log(err);
-        browserSync.notify(buildErrorMessage('vendor:javascripts'));
-        this.emit('end');
+gulp.task('jekyll', function jekyllTask(done) {
+  return childProcess.spawn('bundle', ['exec', 'jekyll', 'build'], {cwd: paths.jekyll.src, stdio: 'inherit'})
+    .on('close', function jekyllTaskClose(code) {
+      if (code !== 0) {
+        browserSync.notify('<span style="color: red; font-weight: bold;">jekyll task error!</span><span style="color: red;"> Please check the console and resolve the error ASAP because the build may be failing!</span>');
 
         /* Throw error in production builds to stop npm test/deploy scripts */
         if (env === 'production') {
-          throw err;
+          throw code;
         }
       }
-    }))
-    .pipe(concat('vendor.js'))
-    .pipe(gulpif(env === 'production', uglify()))
-    .pipe(gulp.dest(paths.vendor.javascripts.dest))
-    .pipe(browserSync.stream());
+      done();
+    });
 });
 
 /**
@@ -237,34 +209,6 @@ gulp.task('javascripts', function javaScriptsTask() {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.javascripts.dest))
     .pipe(browserSync.stream({match: '**/*.js'}));
-});
-
-/**
- * Vendor Stylesheets Task
- *
- * 1. Locates the src of vendor stylesheets specified in paths object
- * 2. Minifies the file if this is a production run, otherwise leaves expanded
- * 3. Uses Autoprefixer to add vendor prefixes
- * 4. Writes the file to the stylesheets destination specified in the paths object
- */
-gulp.task('vendor:stylesheets', function vendorStylesheetsTask() {
-  return gulp.src(paths.vendor.stylesheets.src)
-    .pipe(plumber({
-      errorHandler: function vendorStylesheetsTaskError(err) {
-        util.log(err);
-        browserSync.notify(buildErrorMessage('vendor:stylesheets'));
-        this.emit('end');
-
-        /* Throw error in production builds to stop npm test/deploy scripts */
-        if (env === 'production') {
-          throw err;
-        }
-      }
-    }))
-    .pipe(gulpif(env === 'production', sass({outputStyle: 'compressed'}), sass({outputStyle: 'expanded'})))
-    .pipe(autoprefixer())
-    .pipe(gulp.dest(paths.vendor.stylesheets.dest))
-    .pipe(browserSync.stream());
 });
 
 /**
@@ -303,13 +247,69 @@ gulp.task('stylesheets', function stylesheetsTask() {
 });
 
 /**
+ * Vendor JavaScripts Task
+ *
+ * 1. Locates the src of vendor javascripts specified in paths object
+ * 2. Concatenates all javascripts into one file called vendor.js
+ * 3. Minifies the file if this is a production run
+ * 4. Writes the file to the javascripts destination specified in the paths object
+ */
+gulp.task('vendor:javascripts', function vendorJavaScriptsTask() {
+  return gulp.src(paths.vendor.javascripts.src)
+    .pipe(plumber({
+      errorHandler: function vendorJavaScriptsTaskError(err) {
+        util.log(err);
+        browserSync.notify(buildErrorMessage('vendor:javascripts'));
+        this.emit('end');
+
+        /* Throw error in production builds to stop npm test/deploy scripts */
+        if (env === 'production') {
+          throw err;
+        }
+      }
+    }))
+    .pipe(concat('vendor.js'))
+    .pipe(gulpif(env === 'production', uglify()))
+    .pipe(gulp.dest(paths.vendor.javascripts.dest))
+    .pipe(browserSync.stream());
+});
+
+/**
+ * Vendor Stylesheets Task
+ *
+ * 1. Locates the src of vendor stylesheets specified in paths object
+ * 2. Minifies the file if this is a production run, otherwise leaves expanded
+ * 3. Uses Autoprefixer to add vendor prefixes
+ * 4. Writes the file to the stylesheets destination specified in the paths object
+ */
+gulp.task('vendor:stylesheets', function vendorStylesheetsTask() {
+  return gulp.src(paths.vendor.stylesheets.src)
+    .pipe(plumber({
+      errorHandler: function vendorStylesheetsTaskError(err) {
+        util.log(err);
+        browserSync.notify(buildErrorMessage('vendor:stylesheets'));
+        this.emit('end');
+
+        /* Throw error in production builds to stop npm test/deploy scripts */
+        if (env === 'production') {
+          throw err;
+        }
+      }
+    }))
+    .pipe(gulpif(env === 'production', sass({outputStyle: 'compressed'}), sass({outputStyle: 'expanded'})))
+    .pipe(autoprefixer())
+    .pipe(gulp.dest(paths.vendor.stylesheets.dest))
+    .pipe(browserSync.stream());
+});
+
+/**
  * Build Task
  *
  * 1. Run the jekyll task first
- * 2. When jekyll task is complete, run docs, images, javascripts, and stylesheets tasks
+ * 2. When jekyll task is complete, run docs, images, stylesheets, and javascripts tasks
  */
 gulp.task('build', ['jekyll'], function buildTask(callback) {
-  runSequence(['docs', 'images', 'vendor:javascripts', 'javascripts', 'vendor:stylesheets', 'stylesheets'], callback);
+  runSequence(['docs', 'images', 'vendor:stylesheets', 'stylesheets', 'vendor:javascripts', 'javascripts'], callback);
 });
 
 /**
@@ -333,10 +333,10 @@ gulp.task('serve', ['build'], function serveTask() {
   gulp.watch(paths.jekyll.watchFiles, ['build'], browserSync.reload);
   gulp.watch(paths.docs.watchFiles, ['docs']);
   gulp.watch(paths.images.watchFiles, ['images']);
-  gulp.watch(paths.vendor.javascripts.watchFiles, ['vendor:javascripts']);
   gulp.watch(paths.javascripts.watchFiles, ['javascripts']);
-  gulp.watch(paths.vendor.stylesheets.watchFiles, ['vendor:stylesheets']);
   gulp.watch(paths.stylesheets.watchFiles, ['stylesheets']);
+  gulp.watch(paths.vendor.javascripts.watchFiles, ['vendor:javascripts']);
+  gulp.watch(paths.vendor.stylesheets.watchFiles, ['vendor:stylesheets']);
 });
 
 /**
