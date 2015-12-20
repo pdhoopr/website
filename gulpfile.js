@@ -157,28 +157,6 @@ gulp.task('images', ['clean:images'], function imagesTask() {
 });
 
 /**
- * Jekyll Task
- *
- * 1. Spawns child process
- * 2. Runs "jekyll build" in src directory
- * 3. Closes process
- */
-gulp.task('jekyll', function jekyllTask(done) {
-  return childProcess.spawn('bundle', ['exec', 'jekyll', 'build'], {cwd: paths.jekyll.src, stdio: 'inherit'})
-    .on('close', function jekyllTaskClose(code) {
-      if (code !== 0) {
-        browserSync.notify('<span style="color: red; font-weight: bold;">jekyll task error!</span><span style="color: red;"> Please check the console and resolve the error ASAP because the build may be failing!</span>');
-
-        /* Throw error in production builds to stop npm test/deploy scripts */
-        if (env === 'production') {
-          throw code;
-        }
-      }
-      done();
-    });
-});
-
-/**
  * JavaScripts Task
  *
  * 1. Deletes any previous files in the built javascripts folder
@@ -209,6 +187,28 @@ gulp.task('javascripts', function javaScriptsTask() {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.javascripts.dest))
     .pipe(browserSync.stream({match: '**/*.js'}));
+});
+
+/**
+ * Jekyll Task
+ *
+ * 1. Spawns child process
+ * 2. Runs "jekyll build" in src directory
+ * 3. Closes process
+ */
+gulp.task('jekyll', function jekyllTask(done) {
+  return childProcess.spawn('bundle', ['exec', 'jekyll', 'build'], {cwd: paths.jekyll.src, stdio: 'inherit'})
+    .on('close', function jekyllTaskClose(code) {
+      if (code !== 0) {
+        browserSync.notify('<span style="color: red; font-weight: bold;">jekyll task error!</span><span style="color: red;"> Please check the console and resolve the error ASAP because the build may be failing!</span>');
+
+        /* Throw error in production builds to stop npm test/deploy scripts */
+        if (env === 'production') {
+          throw code;
+        }
+      }
+      done();
+    });
 });
 
 /**
