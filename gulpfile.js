@@ -28,22 +28,9 @@ const env = process.env.NODE_ENV || 'development';
 
 /* Set path objects used in locating and compiling assets */
 const paths = {
-  jekyll: {
-    watchFiles: [
-      'config/**',
-      'app/**',
-      '!app/_assets{,/**}'
-    ],
-    src: 'config',
-    dest: 'public'
-  },
   docs: {
-    watchFiles: [
-      'docs/**'
-    ],
-    src: [
-      'docs/**'
-    ],
+    watchFiles: 'docs/**',
+    src: 'docs/**',
     dest: 'public/docs'
   },
   images: {
@@ -60,13 +47,18 @@ const paths = {
     dest: 'public/assets/img'
   },
   javascripts: {
-    watchFiles: [
-      'app/_assets/javascripts/**'
-    ],
-    src: [
-      'app/_assets/javascripts/**'
-    ],
+    watchFiles: 'app/_assets/javascripts/**',
+    src: 'app/_assets/javascripts/**',
     dest: 'public/assets/js'
+  },
+  jekyll: {
+    watchFiles: [
+      'config/**',
+      'app/**',
+      '!app/_assets{,/**}'
+    ],
+    src: 'config',
+    dest: 'public'
   },
   stylesheets: {
     watchFiles: [
@@ -79,12 +71,8 @@ const paths = {
   },
   vendor: {
     javascripts: {
-      watchFiles: [
-        'vendor/assets/javascripts/**'
-      ],
-      src: [
-        'vendor/assets/javascripts/**'
-      ],
+      watchFiles: 'vendor/assets/javascripts/**',
+      src: 'vendor/assets/javascripts/**',
       dest: 'public/assets/js'
     },
     stylesheets: {
@@ -109,29 +97,7 @@ function buildErrorMessage(task) {
    ========================================================================= */
 
 /**
- * Jekyll task
- *
- * 1. Spawns child process
- * 2. Runs "jekyll build" in src directory
- * 3. Closes process
- */
-gulp.task('jekyll', function jekyllTask(done) {
-  return childProcess.spawn('bundle', ['exec', 'jekyll', 'build'], {cwd: paths.jekyll.src, stdio: 'inherit'})
-    .on('close', function jekyllTaskClose(code) {
-      if (code !== 0) {
-        browserSync.notify('<span style="color: red; font-weight: bold;">jekyll task error!</span><span style="color: red;"> Please check the console and resolve the error ASAP because the build may be failing!</span>');
-
-        /* Throw error in production builds to stop npm test/deploy scripts */
-        if (env === 'production') {
-          throw code;
-        }
-      }
-      done();
-    });
-});
-
-/**
- * Docs task
+ * Docs Task
  *
  * 1. Deletes any previous files in the built docs folder
  * 2. Locates the src of docs specified in paths object
@@ -160,7 +126,7 @@ gulp.task('docs', ['clean:docs'], function docsTask() {
 });
 
 /**
- * Images task
+ * Images Task
  *
  * 1. Deletes any previous files in the built images folder
  * 2. Locates the src of images specified in paths object
@@ -191,19 +157,21 @@ gulp.task('images', ['clean:images'], function imagesTask() {
 });
 
 /**
- * Vendor Stylesheetsstylesheets task
+ * JavaScripts Task
  *
- * 1. Locates the src of vendor stylesheets specified in paths object
- * 2. Minifies the file if this is a production run, otherwise leaves expanded
- * 3. Uses Autoprefixer to add vendor prefixes
- * 4. Writes the file to the stylesheets destination specified in the paths object
+ * 1. Deletes any previous files in the built javascripts folder
+ * 2. Locates the src of javascripts specified in paths object
+ * 3. Initializes sourcemaps
+ * 4. Concatenates all javascripts into one file called bundle.js
+ * 5. Minifies the file if this is a production run
+ * 6. Writes the file to the javascripts destination specified in the paths object w/ sourcemap
  */
-gulp.task('vendor:stylesheets', function vendorStylesheetsTask() {
-  return gulp.src(paths.vendor.stylesheets.src)
+gulp.task('javascripts', function javaScriptsTask() {
+  return gulp.src(paths.javascripts.src)
     .pipe(plumber({
-      errorHandler: function vendorStylesheetsTaskError(err) {
+      errorHandler: function javaScriptsTaskError(err) {
         util.log(err);
-        browserSync.notify(buildErrorMessage('vendor:stylesheets'));
+        browserSync.notify(buildErrorMessage('javascripts'));
         this.emit('end');
 
         /* Throw error in production builds to stop npm test/deploy scripts */
@@ -212,14 +180,39 @@ gulp.task('vendor:stylesheets', function vendorStylesheetsTask() {
         }
       }
     }))
-    .pipe(gulpif(env === 'production', sass({outputStyle: 'compressed'}), sass({outputStyle: 'expanded'})))
-    .pipe(autoprefixer())
-    .pipe(gulp.dest(paths.vendor.stylesheets.dest))
-    .pipe(browserSync.stream());
+    .pipe(sourcemaps.init())
+    .pipe(concat('bundle.js'))
+    .pipe(babel())
+    .pipe(gulpif(env === 'production', uglify()))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(paths.javascripts.dest))
+    .pipe(browserSync.stream({match: '**/*.js'}));
 });
 
 /**
- * Stylesheets task
+ * Jekyll Task
+ *
+ * 1. Spawns child process
+ * 2. Runs "jekyll build" in src directory
+ * 3. Closes process
+ */
+gulp.task('jekyll', function jekyllTask(done) {
+  return childProcess.spawn('bundle', ['exec', 'jekyll', 'build'], {cwd: paths.jekyll.src, stdio: 'inherit'})
+    .on('close', function jekyllTaskClose(code) {
+      if (code !== 0) {
+        browserSync.notify('<span style="color: red; font-weight: bold;">jekyll task error!</span><span style="color: red;"> Please check the console and resolve the error ASAP because the build may be failing!</span>');
+
+        /* Throw error in production builds to stop npm test/deploy scripts */
+        if (env === 'production') {
+          throw code;
+        }
+      }
+      done();
+    });
+});
+
+/**
+ * Stylesheets Task
  *
  * 1. Locates the src of stylesheets specified in paths object
  * 2. Initializes sourcemaps
@@ -254,17 +247,17 @@ gulp.task('stylesheets', function stylesheetsTask() {
 });
 
 /**
- * Vendor Javascripts task
+ * Vendor JavaScripts Task
  *
  * 1. Locates the src of vendor javascripts specified in paths object
  * 2. Concatenates all javascripts into one file called vendor.js
  * 3. Minifies the file if this is a production run
  * 4. Writes the file to the javascripts destination specified in the paths object
  */
-gulp.task('vendor:javascripts', function vendorJavascriptsTask() {
+gulp.task('vendor:javascripts', function vendorJavaScriptsTask() {
   return gulp.src(paths.vendor.javascripts.src)
     .pipe(plumber({
-      errorHandler: function vendorJavascriptsTaskError(err) {
+      errorHandler: function vendorJavaScriptsTaskError(err) {
         util.log(err);
         browserSync.notify(buildErrorMessage('vendor:javascripts'));
         this.emit('end');
@@ -282,21 +275,19 @@ gulp.task('vendor:javascripts', function vendorJavascriptsTask() {
 });
 
 /**
- * Javascript task
+ * Vendor Stylesheets Task
  *
- * 1. Deletes any previous files in the built javascripts folder
- * 2. Locates the src of javascripts specified in paths object
- * 3. Initializes sourcemaps
- * 4. Concatenates all javascripts into one file called bundle.js
- * 5. Minifies the file if this is a production run
- * 6. Writes the file to the javascripts destination specified in the paths object w/ sourcemap
+ * 1. Locates the src of vendor stylesheets specified in paths object
+ * 2. Minifies the file if this is a production run, otherwise leaves expanded
+ * 3. Uses Autoprefixer to add vendor prefixes
+ * 4. Writes the file to the stylesheets destination specified in the paths object
  */
-gulp.task('javascripts', function javascriptsTask() {
-  return gulp.src(paths.javascripts.src)
+gulp.task('vendor:stylesheets', function vendorStylesheetsTask() {
+  return gulp.src(paths.vendor.stylesheets.src)
     .pipe(plumber({
-      errorHandler: function javascriptsTaskError(err) {
+      errorHandler: function vendorStylesheetsTaskError(err) {
         util.log(err);
-        browserSync.notify(buildErrorMessage('javascripts'));
+        browserSync.notify(buildErrorMessage('vendor:stylesheets'));
         this.emit('end');
 
         /* Throw error in production builds to stop npm test/deploy scripts */
@@ -305,35 +296,33 @@ gulp.task('javascripts', function javascriptsTask() {
         }
       }
     }))
-    .pipe(sourcemaps.init())
-    .pipe(concat('bundle.js'))
-    .pipe(babel())
-    .pipe(gulpif(env === 'production', uglify()))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(paths.javascripts.dest))
-    .pipe(browserSync.stream({match: '**/*.js'}));
+    .pipe(gulpif(env === 'production', sass({outputStyle: 'compressed'}), sass({outputStyle: 'expanded'})))
+    .pipe(autoprefixer())
+    .pipe(gulp.dest(paths.vendor.stylesheets.dest))
+    .pipe(browserSync.stream());
 });
 
 /**
- * Build task
+ * Build Task
  *
  * 1. Run the jekyll task first
- * 2. When jekyll task is complete, run docs, images, javascripts, and stylesheets tasks
+ * 2. When jekyll task is complete, runs other tasks in a specific order
  */
 gulp.task('build', ['jekyll'], function buildTask(callback) {
   runSequence(['docs', 'images', 'vendor:stylesheets', 'stylesheets', 'vendor:javascripts', 'javascripts'], callback);
 });
 
 /**
- * Serve task
+ * Serve Task
  *
  * 1. Run the build of the site first
  * 2. When the build finishes, initialize browser-sync to serve files
- * 3. Watches jekyll files that need to regenerate on change
- * 4. Watches docs for changes
- * 5. Watches images for changes
- * 6. Watches scripts for changes
- * 7. Watches styles for changes
+ * 3. Watches docs for changes
+ * 4. Watches images for changes
+ * 5. Watches javascripts for changes
+ * 6. Watches jekyll files that need to regenerate on change
+ * 7. Watches stylesheets for changes
+ * 8. Watches vendor files for changes
  */
 gulp.task('serve', ['build'], function serveTask() {
   browserSync.init({
@@ -342,17 +331,17 @@ gulp.task('serve', ['build'], function serveTask() {
     }
   });
 
-  gulp.watch(paths.jekyll.watchFiles, ['build'], browserSync.reload);
   gulp.watch(paths.docs.watchFiles, ['docs']);
   gulp.watch(paths.images.watchFiles, ['images']);
-  gulp.watch(paths.vendor.stylesheets.watchFiles, ['vendor:stylesheets']);
+  gulp.watch(paths.javascripts.watchFiles, ['javascripts']);
+  gulp.watch(paths.jekyll.watchFiles, ['build'], browserSync.reload);
   gulp.watch(paths.stylesheets.watchFiles, ['stylesheets']);
   gulp.watch(paths.vendor.javascripts.watchFiles, ['vendor:javascripts']);
-  gulp.watch(paths.javascripts.watchFiles, ['javascripts']);
+  gulp.watch(paths.vendor.stylesheets.watchFiles, ['vendor:stylesheets']);
 });
 
 /**
- * Default task
+ * Default Task
  *
  * 1. Serves the site using serve task by default
  */
