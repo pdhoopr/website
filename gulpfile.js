@@ -306,7 +306,7 @@ gulp.task('vendor:stylesheets', function vendorStylesheetsTask() {
  * Build Task
  *
  * 1. Run the jekyll task first
- * 2. When jekyll task is complete, run docs, images, stylesheets, and javascripts tasks
+ * 2. When jekyll task is complete, runs other tasks in a specific order
  */
 gulp.task('build', ['jekyll'], function buildTask(callback) {
   runSequence(['docs', 'images', 'vendor:stylesheets', 'stylesheets', 'vendor:javascripts', 'javascripts'], callback);
@@ -322,6 +322,7 @@ gulp.task('build', ['jekyll'], function buildTask(callback) {
  * 5. Watches images for changes
  * 6. Watches javascripts for changes
  * 7. Watches stylesheets for changes
+ * 8. Watches vendor files for changes
  */
 gulp.task('serve', ['build'], function serveTask() {
   browserSync.init({
