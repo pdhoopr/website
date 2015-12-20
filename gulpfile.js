@@ -97,7 +97,7 @@ function buildErrorMessage(task) {
    ========================================================================= */
 
 /**
- * Jekyll task
+ * Jekyll Task
  *
  * 1. Spawns child process
  * 2. Runs "jekyll build" in src directory
@@ -119,7 +119,7 @@ gulp.task('jekyll', function jekyllTask(done) {
 });
 
 /**
- * Docs task
+ * Docs Task
  *
  * 1. Deletes any previous files in the built docs folder
  * 2. Locates the src of docs specified in paths object
@@ -148,7 +148,7 @@ gulp.task('docs', ['clean:docs'], function docsTask() {
 });
 
 /**
- * Images task
+ * Images Task
  *
  * 1. Deletes any previous files in the built images folder
  * 2. Locates the src of images specified in paths object
@@ -179,7 +179,7 @@ gulp.task('images', ['clean:images'], function imagesTask() {
 });
 
 /**
- * Vendor JavaScripts task
+ * Vendor JavaScripts Task
  *
  * 1. Locates the src of vendor javascripts specified in paths object
  * 2. Concatenates all javascripts into one file called vendor.js
@@ -207,7 +207,7 @@ gulp.task('vendor:javascripts', function vendorJavaScriptsTask() {
 });
 
 /**
- * JavaScript task
+ * JavaScripts Task
  *
  * 1. Deletes any previous files in the built javascripts folder
  * 2. Locates the src of javascripts specified in paths object
@@ -240,7 +240,7 @@ gulp.task('javascripts', function javaScriptsTask() {
 });
 
 /**
- * Vendor Stylesheets task
+ * Vendor Stylesheets Task
  *
  * 1. Locates the src of vendor stylesheets specified in paths object
  * 2. Minifies the file if this is a production run, otherwise leaves expanded
@@ -268,7 +268,7 @@ gulp.task('vendor:stylesheets', function vendorStylesheetsTask() {
 });
 
 /**
- * Stylesheets task
+ * Stylesheets Task
  *
  * 1. Locates the src of stylesheets specified in paths object
  * 2. Initializes sourcemaps
@@ -303,7 +303,7 @@ gulp.task('stylesheets', function stylesheetsTask() {
 });
 
 /**
- * Build task
+ * Build Task
  *
  * 1. Run the jekyll task first
  * 2. When jekyll task is complete, run docs, images, javascripts, and stylesheets tasks
@@ -313,15 +313,15 @@ gulp.task('build', ['jekyll'], function buildTask(callback) {
 });
 
 /**
- * Serve task
+ * Serve Task
  *
  * 1. Run the build of the site first
  * 2. When the build finishes, initialize browser-sync to serve files
  * 3. Watches jekyll files that need to regenerate on change
  * 4. Watches docs for changes
  * 5. Watches images for changes
- * 6. Watches scripts for changes
- * 7. Watches styles for changes
+ * 6. Watches javascripts for changes
+ * 7. Watches stylesheets for changes
  */
 gulp.task('serve', ['build'], function serveTask() {
   browserSync.init({
@@ -340,7 +340,7 @@ gulp.task('serve', ['build'], function serveTask() {
 });
 
 /**
- * Default task
+ * Default Task
  *
  * 1. Serves the site using serve task by default
  */
