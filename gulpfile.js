@@ -179,6 +179,67 @@ gulp.task('images', ['clean:images'], function imagesTask() {
 });
 
 /**
+ * Vendor Javascripts task
+ *
+ * 1. Locates the src of vendor javascripts specified in paths object
+ * 2. Concatenates all javascripts into one file called vendor.js
+ * 3. Minifies the file if this is a production run
+ * 4. Writes the file to the javascripts destination specified in the paths object
+ */
+gulp.task('vendor:javascripts', function vendorJavascriptsTask() {
+  return gulp.src(paths.vendor.javascripts.src)
+    .pipe(plumber({
+      errorHandler: function vendorJavascriptsTaskError(err) {
+        util.log(err);
+        browserSync.notify(buildErrorMessage('vendor:javascripts'));
+        this.emit('end');
+
+        /* Throw error in production builds to stop npm test/deploy scripts */
+        if (env === 'production') {
+          throw err;
+        }
+      }
+    }))
+    .pipe(concat('vendor.js'))
+    .pipe(gulpif(env === 'production', uglify()))
+    .pipe(gulp.dest(paths.vendor.javascripts.dest))
+    .pipe(browserSync.stream());
+});
+
+/**
+ * Javascript task
+ *
+ * 1. Deletes any previous files in the built javascripts folder
+ * 2. Locates the src of javascripts specified in paths object
+ * 3. Initializes sourcemaps
+ * 4. Concatenates all javascripts into one file called bundle.js
+ * 5. Minifies the file if this is a production run
+ * 6. Writes the file to the javascripts destination specified in the paths object w/ sourcemap
+ */
+gulp.task('javascripts', function javascriptsTask() {
+  return gulp.src(paths.javascripts.src)
+    .pipe(plumber({
+      errorHandler: function javascriptsTaskError(err) {
+        util.log(err);
+        browserSync.notify(buildErrorMessage('javascripts'));
+        this.emit('end');
+
+        /* Throw error in production builds to stop npm test/deploy scripts */
+        if (env === 'production') {
+          throw err;
+        }
+      }
+    }))
+    .pipe(sourcemaps.init())
+    .pipe(concat('bundle.js'))
+    .pipe(babel())
+    .pipe(gulpif(env === 'production', uglify()))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(paths.javascripts.dest))
+    .pipe(browserSync.stream({match: '**/*.js'}));
+});
+
+/**
  * Vendor Stylesheetsstylesheets task
  *
  * 1. Locates the src of vendor stylesheets specified in paths object
@@ -242,74 +303,13 @@ gulp.task('stylesheets', function stylesheetsTask() {
 });
 
 /**
- * Vendor Javascripts task
- *
- * 1. Locates the src of vendor javascripts specified in paths object
- * 2. Concatenates all javascripts into one file called vendor.js
- * 3. Minifies the file if this is a production run
- * 4. Writes the file to the javascripts destination specified in the paths object
- */
-gulp.task('vendor:javascripts', function vendorJavascriptsTask() {
-  return gulp.src(paths.vendor.javascripts.src)
-    .pipe(plumber({
-      errorHandler: function vendorJavascriptsTaskError(err) {
-        util.log(err);
-        browserSync.notify(buildErrorMessage('vendor:javascripts'));
-        this.emit('end');
-
-        /* Throw error in production builds to stop npm test/deploy scripts */
-        if (env === 'production') {
-          throw err;
-        }
-      }
-    }))
-    .pipe(concat('vendor.js'))
-    .pipe(gulpif(env === 'production', uglify()))
-    .pipe(gulp.dest(paths.vendor.javascripts.dest))
-    .pipe(browserSync.stream());
-});
-
-/**
- * Javascript task
- *
- * 1. Deletes any previous files in the built javascripts folder
- * 2. Locates the src of javascripts specified in paths object
- * 3. Initializes sourcemaps
- * 4. Concatenates all javascripts into one file called bundle.js
- * 5. Minifies the file if this is a production run
- * 6. Writes the file to the javascripts destination specified in the paths object w/ sourcemap
- */
-gulp.task('javascripts', function javascriptsTask() {
-  return gulp.src(paths.javascripts.src)
-    .pipe(plumber({
-      errorHandler: function javascriptsTaskError(err) {
-        util.log(err);
-        browserSync.notify(buildErrorMessage('javascripts'));
-        this.emit('end');
-
-        /* Throw error in production builds to stop npm test/deploy scripts */
-        if (env === 'production') {
-          throw err;
-        }
-      }
-    }))
-    .pipe(sourcemaps.init())
-    .pipe(concat('bundle.js'))
-    .pipe(babel())
-    .pipe(gulpif(env === 'production', uglify()))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(paths.javascripts.dest))
-    .pipe(browserSync.stream({match: '**/*.js'}));
-});
-
-/**
  * Build task
  *
  * 1. Run the jekyll task first
  * 2. When jekyll task is complete, run docs, images, javascripts, and stylesheets tasks
  */
 gulp.task('build', ['jekyll'], function buildTask(callback) {
-  runSequence(['docs', 'images', 'vendor:stylesheets', 'stylesheets', 'vendor:javascripts', 'javascripts'], callback);
+  runSequence(['docs', 'images', 'vendor:javascripts', 'javascripts', 'vendor:stylesheets', 'stylesheets'], callback);
 });
 
 /**
@@ -333,10 +333,10 @@ gulp.task('serve', ['build'], function serveTask() {
   gulp.watch(paths.jekyll.watchFiles, ['build'], browserSync.reload);
   gulp.watch(paths.docs.watchFiles, ['docs']);
   gulp.watch(paths.images.watchFiles, ['images']);
-  gulp.watch(paths.vendor.stylesheets.watchFiles, ['vendor:stylesheets']);
-  gulp.watch(paths.stylesheets.watchFiles, ['stylesheets']);
   gulp.watch(paths.vendor.javascripts.watchFiles, ['vendor:javascripts']);
   gulp.watch(paths.javascripts.watchFiles, ['javascripts']);
+  gulp.watch(paths.vendor.stylesheets.watchFiles, ['vendor:stylesheets']);
+  gulp.watch(paths.stylesheets.watchFiles, ['stylesheets']);
 });
 
 /**
