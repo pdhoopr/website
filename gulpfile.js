@@ -38,12 +38,8 @@ const paths = {
     dest: 'public'
   },
   docs: {
-    watchFiles: [
-      'docs/**'
-    ],
-    src: [
-      'docs/**'
-    ],
+    watchFiles: 'docs/**',
+    src: 'docs/**',
     dest: 'public/docs'
   },
   images: {
@@ -60,12 +56,8 @@ const paths = {
     dest: 'public/assets/img'
   },
   javascripts: {
-    watchFiles: [
-      'app/_assets/javascripts/**'
-    ],
-    src: [
-      'app/_assets/javascripts/**'
-    ],
+    watchFiles: 'app/_assets/javascripts/**',
+    src: 'app/_assets/javascripts/**',
     dest: 'public/assets/js'
   },
   stylesheets: {
@@ -79,12 +71,8 @@ const paths = {
   },
   vendor: {
     javascripts: {
-      watchFiles: [
-        'vendor/assets/javascripts/**'
-      ],
-      src: [
-        'vendor/assets/javascripts/**'
-      ],
+      watchFiles: 'vendor/assets/javascripts/**',
+      src: 'vendor/assets/javascripts/**',
       dest: 'public/assets/js'
     },
     stylesheets: {
