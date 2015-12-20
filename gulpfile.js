@@ -179,17 +179,17 @@ gulp.task('images', ['clean:images'], function imagesTask() {
 });
 
 /**
- * Vendor Javascripts task
+ * Vendor JavaScripts task
  *
  * 1. Locates the src of vendor javascripts specified in paths object
  * 2. Concatenates all javascripts into one file called vendor.js
  * 3. Minifies the file if this is a production run
  * 4. Writes the file to the javascripts destination specified in the paths object
  */
-gulp.task('vendor:javascripts', function vendorJavascriptsTask() {
+gulp.task('vendor:javascripts', function vendorJavaScriptsTask() {
   return gulp.src(paths.vendor.javascripts.src)
     .pipe(plumber({
-      errorHandler: function vendorJavascriptsTaskError(err) {
+      errorHandler: function vendorJavaScriptsTaskError(err) {
         util.log(err);
         browserSync.notify(buildErrorMessage('vendor:javascripts'));
         this.emit('end');
@@ -207,7 +207,7 @@ gulp.task('vendor:javascripts', function vendorJavascriptsTask() {
 });
 
 /**
- * Javascript task
+ * JavaScript task
  *
  * 1. Deletes any previous files in the built javascripts folder
  * 2. Locates the src of javascripts specified in paths object
@@ -216,10 +216,10 @@ gulp.task('vendor:javascripts', function vendorJavascriptsTask() {
  * 5. Minifies the file if this is a production run
  * 6. Writes the file to the javascripts destination specified in the paths object w/ sourcemap
  */
-gulp.task('javascripts', function javascriptsTask() {
+gulp.task('javascripts', function javaScriptsTask() {
   return gulp.src(paths.javascripts.src)
     .pipe(plumber({
-      errorHandler: function javascriptsTaskError(err) {
+      errorHandler: function javaScriptsTaskError(err) {
         util.log(err);
         browserSync.notify(buildErrorMessage('javascripts'));
         this.emit('end');
@@ -240,7 +240,7 @@ gulp.task('javascripts', function javascriptsTask() {
 });
 
 /**
- * Vendor Stylesheetsstylesheets task
+ * Vendor Stylesheets task
  *
  * 1. Locates the src of vendor stylesheets specified in paths object
  * 2. Minifies the file if this is a production run, otherwise leaves expanded
