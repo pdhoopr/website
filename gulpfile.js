@@ -317,10 +317,10 @@ gulp.task('build', ['jekyll'], function buildTask(callback) {
  *
  * 1. Run the build of the site first
  * 2. When the build finishes, initialize browser-sync to serve files
- * 3. Watches jekyll files that need to regenerate on change
- * 4. Watches docs for changes
- * 5. Watches images for changes
- * 6. Watches javascripts for changes
+ * 3. Watches docs for changes
+ * 4. Watches images for changes
+ * 5. Watches javascripts for changes
+ * 6. Watches jekyll files that need to regenerate on change
  * 7. Watches stylesheets for changes
  * 8. Watches vendor files for changes
  */
@@ -331,10 +331,10 @@ gulp.task('serve', ['build'], function serveTask() {
     }
   });
 
-  gulp.watch(paths.jekyll.watchFiles, ['build'], browserSync.reload);
   gulp.watch(paths.docs.watchFiles, ['docs']);
   gulp.watch(paths.images.watchFiles, ['images']);
   gulp.watch(paths.javascripts.watchFiles, ['javascripts']);
+  gulp.watch(paths.jekyll.watchFiles, ['build'], browserSync.reload);
   gulp.watch(paths.stylesheets.watchFiles, ['stylesheets']);
   gulp.watch(paths.vendor.javascripts.watchFiles, ['vendor:javascripts']);
   gulp.watch(paths.vendor.stylesheets.watchFiles, ['vendor:stylesheets']);
