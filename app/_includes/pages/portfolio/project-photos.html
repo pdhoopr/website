@@ -1,0 +1,8 @@
+<section class="project-photos grid-100 tablet-grid-100 mobile-grid-100">
+  {% if browser %}
+    {% include components/browser-wireframe.html url=browser.url scroll=browser.image_scroll name=browser.image_name ext=browser.image_extension alt=browser.image_alt %}
+  {% endif %}
+  {% if phone %}
+    {% include components/phone-wireframe.html class="grid-30 tablet-grid-30 mobile-grid-30" scroll=phone.image_scroll name=phone.image_name ext=phone.image_extension alt=phone.image_alt %}
+  {% endif %}
+</section>

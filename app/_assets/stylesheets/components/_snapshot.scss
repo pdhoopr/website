@@ -38,8 +38,8 @@
       opacity: 0;
     }
 
-    /* Move the name to 16px from the top of the snapshot */
-    .snapshot-name {
+    /* Move the title to 16px from the top of the snapshot */
+    .snapshot-title {
       top: 16px;
     }
 
@@ -85,8 +85,8 @@
   }
 }
 
-/* Styles for a snapshot's name */
-.snapshot-name {
+/* Styles for a snapshot's title */
+.snapshot-title {
   color: $white;
   font-family: $ubuntu;
   line-height: 1;

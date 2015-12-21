@@ -25,12 +25,6 @@
   .browser-photo {
     max-height: 388px;
     overflow: hidden;
-    overflow-y: auto;
-
-    /* No scrolling vertically on touch devices */
-    .touch & {
-      overflow-y: hidden;
-    }
   }
 
   /* Styles specifically for a phone in a project section */
@@ -81,12 +75,6 @@
   .phone-photo {
     max-height: 568px;
     overflow: hidden;
-    overflow-y: auto;
-
-    /* No scrolling vertically on touch devices */
-    .touch & {
-      overflow-y: hidden;
-    }
   }
 }
 

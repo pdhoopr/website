@@ -1,0 +1,15 @@
+{% if project_section_loop_index == 1 %}
+  <div class="project-row clearfix">
+{% else %}
+  <div class="hide-on-desktop"><br></div>
+{% endif %}
+  <section class="project-section grid-50 tablet-grid-100 mobile-grid-100">
+    <h3 class="subtitle">{ {{ project_section.subtitle | upcase }} }</h3>
+
+    <p>{{ project_section.description }}</p>
+  </section>
+{% if project_section_loop_index == 0 and forloop.index > 1 %}
+  </div>
+{% elsif forloop.last %}
+  </div>
+{% endif %}
