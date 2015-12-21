@@ -1,0 +1,78 @@
+# Preview Photos
+project_photos:
+  browser:
+    url: 'jahlehandpatrick.hoopr.io'
+    image_name: 'portfolio_jahleh-and-patrick_preview'
+    image_extension: 'jpg'
+
+  phone:
+    image_name: 'portfolio_jahleh-and-patrick_preview_mobile'
+    image_extension: 'jpg'
+    image_alt: ' | Mobile'
+
+# Overview
+project_overview:
+  icon: 'anchor'
+  description: 'My wife, <a class="underline" href="http://marie.hoopr.io" target="_blank">Marie</a>, and I wanted an awesome way to be able to see information about our wedding, check our registry, RSVP, and sign our guestbook. So, we did what we love and built a website for it!'
+  roles: 'Full-Stack, UI'
+  tech: 'Google App Engine (Python)'
+  mobile_ready: true
+  tablet_ready: true
+  desktop_ready: true
+  view_live: false
+  view_github: false
+
+# Sections
+project_sections:
+  - subtitle: 'Our Story'
+    description: "We really wanted to emphasize how we got here and how much fun we've had along the way in a creative, visual way. So we pulled together a bunch of our favorite pictures to help us out, wrote some (clever?) taglines, and played connect the dots."
+    browser:
+      url: 'jahlehandpatrick.hoopr.io'
+      image_scroll: 'scroll'
+      image_name: 'portfolio_jahleh-and-patrick'
+      image_extension: 'jpg'
+      image_alt: ' | Our Story'
+
+  - subtitle: 'Wedding'
+    description: 'We needed a spot to provide actual details about the wedding to guests (kind of important, I guess). So we put that all here, including when, where, some pretty photos, and interesting travel information about the location.'
+    browser:
+      url: 'jahlehandpatrick.hoopr.io/wedding'
+      image_scroll: 'scroll'
+      image_name: 'portfolio_jahleh-and-patrick_wedding'
+      image_extension: 'jpg'
+      image_alt: ' | Wedding'
+
+  - subtitle: 'RSVP'
+    description: 'Each invitation sent out had a personalized code attached. The invitee could then enter this code in the RSVP form to bring up their name and the name of their +1, where applicable. To finalize their RSVP, it was as simple as checking the box if they were attending and then clicking submit. Easy breezy.'
+    browser:
+      url: 'jahlehandpatrick.hoopr.io/rsvp'
+      image_scroll: 'scroll'
+      image_name: 'portfolio_jahleh-and-patrick_rsvp'
+      image_extension: 'jpg'
+      image_alt: ' | RSVP'
+
+  - subtitle: 'Guestbook'
+    description: 'For a little extra fun, we added an online guestbook to our site. Just fill out the form, click sign, and your name and message are forever embodied in our digital wedding archive. Sweet deal.'
+    browser:
+      url: 'jahlehandpatrick.hoopr.io/guestbook'
+      image_scroll: 'scroll'
+      image_name: 'portfolio_jahleh-and-patrick_guestbook'
+      image_extension: 'jpg'
+      image_alt: ' | Guestbook'
+
+  - subtitle: 'Mobile'
+    phones:
+      - image_scroll: 'scroll'
+        image_name: 'portfolio_jahleh-and-patrick_mobile'
+        image_extension: 'jpg'
+        image_alt: ' | Our Story | Mobile'
+
+      - image_scroll: 'scroll'
+        image_name: 'portfolio_jahleh-and-patrick_wedding_mobile'
+        image_extension: 'jpg'
+        image_alt: ' | Wedding | Mobile'
+
+      - image_scroll: 'scroll'
+        image_name: 'portfolio_jahleh-and-patrick_guestbook_mobile'
+        image_extension: 'jpg'
+        image_alt: '  | Guestbook | Mobile'

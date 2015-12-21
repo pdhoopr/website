@@ -1,9 +1,37 @@
 ---
-layout: default
+layout: 'default'
 ---
 
-<article class="project {{ page.title }}-project grid-container">
-  <h2 class="title">{{ page.name }}</h2>
+{% assign page_data = site.data.pages.portfolio[page.url] %}
+{% assign project_photos = page_data.project_photos %}
+{% assign project_overview = page_data.project_overview %}
+{% assign project_sections = page_data.project_sections %}
 
-  {{ content }}
+<article class="project {{ page.url }}-project grid-container">
+  <h2 class="title">{{ page.title }}</h2>
+
+  {% if project_photos %}
+    {% assign browser = project_photos.browser %}
+    {% assign phone = project_photos.phone %}
+
+    {% include pages/portfolio/project-photos.html %}
+  {% endif %}
+
+  {% if project_overview %}
+    {% include pages/portfolio/project-overview.html %}
+  {% endif %}
+
+  {% for project_section in project_sections %}
+    {% assign project_section_browser = project_section.browser %}
+    {% assign project_section_phones = project_section.phones %}
+    {% assign project_section_loop_index = forloop.index | modulo: 2 %}
+
+    {% if project_section_browser %}
+      {% include pages/portfolio/project-section-with-browser.html %}
+    {% elsif project_section_phones %}
+      {% include pages/portfolio/project-section-with-phones.html %}
+    {% else %}
+      {% include pages/portfolio/project-section-with-rows.html %}
+    {% endif %}
+  {% endfor %}
 </article>

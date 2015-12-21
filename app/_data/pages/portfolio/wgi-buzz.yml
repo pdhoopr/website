@@ -1,0 +1,31 @@
+# Overview
+project_overview:
+  icon: 'lightbulb-o'
+  description: 'What started as an experiment in using Google Apps to take a form and the accompanying workflow paperless at Wantman Group, Inc. (WGI) became a full-fledged internal think tank tasked with solving real business problems. What kind of think tank would it be without a name, logo and website, right?'
+  roles: ' Data Visualization, Full-Stack, UI, UX'
+  tech: '<a class="underline" href="http://d3js.org/" target="_blank">D3.js</a>, Google Apps, Google App Engine (Python), <a class="underline" href="http://www.getmdl.io/" target="_blank">Material Design Lite</a>, <a class="underline" href="http://refreshless.com/nouislider/" target="_blank">noUiSlider</a>, <a class="underline" href="http://sass-lang.com/" target="_blank">Sass</a>, <a class="underline" href="http://underscorejs.org/" target="_blank">Underscore.js</a>'
+  mobile_ready: true
+  tablet_ready: true
+  desktop_ready: true
+  view_live: false
+  view_github: 'https://github.com/impatrickhooper/wgi.buzz'
+
+# Sections
+project_sections:
+  - subtitle: 'Home'
+    description: 'WGI.buzz needed a way for users to easily access the various tools available to them. The solution was to organize those tools by category on a clean, simple splash page. For a little extra flair, each category was given a color and some action links.'
+
+  - subtitle: 'Clients'
+    description: 'This choropleth gives people at WGI a way to visually see where and with which clients their work has been concentrated historically. The view can be toggled to be by dollars or number of projects in a district, county, or entity. The time period can also be adjusted to view the desired years of data. Hovering over an area gives a brief summary of the measurement in the view, and when clicked, more detailed information is provided below the graph.'
+
+  - subtitle: 'Opportunities'
+    description: 'WGI needed a method to track its efforts trying to bring in new work. Thus, the Opportunities section of WGI.buzz was born. It places each project and its 3 phases on a timeline. Users can hover over each phase to see more information. It also has a filter so project mangers can zero in on their division or location. The data is housed in collaborative Google Sheets accessed by the Google Drive API.'
+
+  - subtitle: 'Project Initiation'
+    description: 'The original reason WGI.buzz was started was to reinvent a paper form as an online form fit for the 21st century. The specific form was called the Project Initiation Form and manifested itself as a Google Apps Script form with conditional fields, dynamically created fields, and file uploads. Upon submission, it writes to a Google Sheet, is electronically transmitted to the approver, and then forward to the Accounting division.'
+
+  - subtitle: 'Sales Goals'
+    description: 'WGI sets annual sales goals for its project managers, but until now had no reliable, centralized system for tracking performance against the goals. Using an easy-to-update Google Sheet and the Google Drive API to feed a chart that would (hopefully) make United Way proud, users can now view annual goals by location and interact with the chart to see the current sales and goal. A toggle exists to let users easily switch between years.'
+
+  - subtitle: 'Sales Reports'
+    description: "A lot of data is stored in WGI's project tracking software, but not much has ever been done to report on it. Well, that's beginning to change. Using Google Apps, a script was written to parse monthly XML files of sales data, sort it for each of the 11 company divisions, and write each division''s data to their specific Google Sheet containing a summary sheet with a snapshot of each month's totals as well as a month-specific sheet containing a detailed list of sales data by project. Once that's done, the data is used to populate a more multi-purpose sales report spreadsheet where you can see the entire company's performance and sales by month, graphs, and other useful info, all in one place."

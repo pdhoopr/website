@@ -1,5 +1,5 @@
 ---
-title: portfolio
+title: 'portfolio'
 ---
 
 <div class="grid-container">
@@ -7,51 +7,52 @@ title: portfolio
 
   <div class="snapshots-wrapper kwicks-wrapper grid-33 tablet-grid-33 mobile-grid-100">
     <ul class="snapshots kwicks kwicks-vertical">
-      {% for snapshot in site.data.portfolio %}
-        {% assign loopindex = forloop.index | modulo: 2 %}
+      {% for snapshot in site.portfolio reversed %}
+        {% assign snapshot_overview = site.data.pages.portfolio[snapshot.url].project_overview %}
+        {% assign snapshot_loop_index = forloop.index | modulo: 2 %}
 
-        {% if loopindex == 1 and forloop.index > 1 %}
+        {% if snapshot_loop_index == 1 and forloop.index > 1 %}
             </ul>
           </div>
           <div class="snapshots-wrapper kwicks-wrapper grid-33 tablet-grid-33 mobile-grid-100">
             <ul class="snapshots kwicks kwicks-vertical">
         {% endif %}
 
-        <li class="snapshot {{ snapshot.title }}-snapshot">
+        <li class="snapshot {{ snapshot.url }}-snapshot">
           <div class="snapshot-center">
-            <div class="snapshot-name">{{ snapshot.name }}</div>
+            <div class="snapshot-title">{{ snapshot.title }}</div>
 
-            <i class="snapshot-icon fa fa-3x fa-{{ snapshot.icon}}"></i>
+            <i class="snapshot-icon fa fa-3x fa-{{ snapshot_overview.icon}}"></i>
 
             <div class="snapshot-body">
               <div class="snapshot-roles">
                 <p class="snapshot-label">Roles</p>
-                <p>{{ snapshot.roles }}</p>
+                <p>{{ snapshot_overview.roles }}</p>
               </div>
 
               <div class="snapshot-tech">
                 <p class="snapshot-label">Tech</p>
-                <p>{{ snapshot.tech }}</p>
+                <p>{{ snapshot_overview.tech | strip_html }}</p>
               </div>
 
               <div class="snapshot-devices">
                 <p class="snapshot-label">Platforms</p>
                 <div class="snapshot-devices-icons">
-                  {% if snapshot.desktop %}
-                    <span class="fa fa-desktop"></span>
+                  {% if snapshot_overview.mobile_ready %}
+                    <span class="fa fa-mobile"></span>
                   {% endif %}
-                  {% if snapshot.tablet %}
+                  {% if snapshot_overview.tablet_ready %}
                     <span class="fa fa-tablet"></span>
                   {% endif %}
-                  {% if snapshot.mobile %}
-                    <span class="fa fa-mobile"></span>
+                  {% if snapshot_overview.desktop_ready %}
+                    <span class="fa fa-desktop"></span>
                   {% endif %}
                 </div>
               </div>
             </div>
 
             <div class="snapshot-view">
-              <a class="btn" href="/portfolio/{{ snapshot.title }}">View Project<span class="fa fa-angle-right"></span></a>
+              <a class="btn" href="/portfolio/{{ snapshot.url }}">View Project<span class="fa fa-angle-right"></span></a>
             </div>
           </div>
         </li>
