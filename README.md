@@ -17,6 +17,10 @@ The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Tec
 
 ## Libraries
 
+#### Fonts
+- Roboto ([https://www.google.com/fonts/specimen/Roboto))
+- Ubuntu ([https://www.google.com/fonts/specimen/Ubuntu))
+
 #### CSS + Sass
 - Breakpoint ([http://breakpoint-sass.com/](http://breakpoint-sass.com/))
 - Font Awesome ([http://fortawesome.github.io/Font-Awesome/](http://fortawesome.github.io/Font-Awesome/))
