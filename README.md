@@ -15,14 +15,16 @@ The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Tec
   * Use `npm run build` to compile production code.
   * Use `npm run deploy` to test code, compile it for production, and upload the *public* folder to Surge.
 
-## Sass Libraries
+## Libraries
+
+#### CSS + Sass
 - Breakpoint ([http://breakpoint-sass.com/](http://breakpoint-sass.com/))
 - Font Awesome ([http://fortawesome.github.io/Font-Awesome/](http://fortawesome.github.io/Font-Awesome/))
 - Reset CSS ([http://meyerweb.com/eric/tools/css/reset/](https://necolas.github.io/normalize.css/))
 - Sassy Maps ([https://github.com/at-import/Sassy-Maps](https://github.com/at-import/Sassy-Maps))
 - Unsemantic Grid System ([http://unsemantic.com/](http://unsemantic.com/))
 
-## JavaScript Libraries
+#### JavaScript
 - GSAP ([http://greensock.com/gsap](http://greensock.com/gsap))
 - jQuery ([https://jquery.com](https://jquery.com))
 - Kwicks ([http://devsmash.com/projects/kwicks](http://devsmash.com/projects/kwicks))
