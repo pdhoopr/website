@@ -73,6 +73,7 @@
   /* Styles for a menu item */
   .menu-item {
     border-bottom: 3px solid transparent;
+    font-size: 1.25rem;
     padding-bottom: 9px;
     padding-top: 14px;
     transition: .3s;
@@ -102,6 +103,19 @@
 
   /* Animate menu icon properties over .3s */
   .menu-item-icon {
+    font-size: 1.5rem;
     transition: .3s;
+    vertical-align: -5%;
+
+    /* Move grid icon down */
+    &.fa-th {
+      vertical-align: -10%;
+    }
+
+    /* Add left padding to right angle icon */
+    &.fa-angle-right {
+      margin-left: .16667em;
+      margin-right: 0;
+    }
   }
 }

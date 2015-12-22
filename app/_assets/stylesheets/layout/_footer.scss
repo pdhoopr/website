@@ -11,6 +11,17 @@
   font-family: $ubuntu;
   padding: 1.2em 0 .6em;
 
+  /* Styles for the contact section inside the colophon */
+  .contact {
+    font-size: 1rem;
+    padding-bottom: 1em;
+
+    /* Increase font size on medium and up devices */
+    @include breakpoint($mq-medium) {
+      font-size: 1.25rem;
+    }
+  }
+
   /* Styles for credit to Jekyll */
   .credit {
     font-size: .75rem;
