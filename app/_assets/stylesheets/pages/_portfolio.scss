@@ -210,6 +210,23 @@
         margin-left: .5em;
       }
     }
+
+    /* Give right margin to button icon and pull it down a little */
+    .fa {
+      font-size: 1.125rem;
+      margin-right: .5em;
+      vertical-align: -10%;
+
+      /* Increase icon size on medium and up devices */
+      @include breakpoint($mq-medium) {
+        font-size: 1.5rem;
+      }
+
+      /* Move GitHub up a little more than other icons */
+      &.fa-github {
+        vertical-align: 0%;
+      }
+    }
   }
 }
 
