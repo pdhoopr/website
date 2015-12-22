@@ -18,12 +18,13 @@ The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Tec
 ## Libraries
 
 #### Fonts
+- Font Awesome ([http://fortawesome.github.io/Font-Awesome/](http://fortawesome.github.io/Font-Awesome/))
 - Roboto ([https://www.google.com/fonts/specimen/Roboto](https://www.google.com/fonts/specimen/Roboto))
 - Ubuntu ([https://www.google.com/fonts/specimen/Ubuntu](https://www.google.com/fonts/specimen/Ubuntu))
 
 #### CSS + Sass
 - Breakpoint ([http://breakpoint-sass.com/](http://breakpoint-sass.com/))
-- Font Awesome ([http://fortawesome.github.io/Font-Awesome/](http://fortawesome.github.io/Font-Awesome/))
+- Kwicks ([http://devsmash.com/projects/kwicks](http://devsmash.com/projects/kwicks))
 - Reset CSS ([http://meyerweb.com/eric/tools/css/reset/](https://necolas.github.io/normalize.css/))
 - Sassy Maps ([https://github.com/at-import/Sassy-Maps](https://github.com/at-import/Sassy-Maps))
 - Unsemantic Grid System ([http://unsemantic.com/](http://unsemantic.com/))
