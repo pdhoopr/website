@@ -6,11 +6,11 @@
     {% include base/google-tag-manager.html %}
 
     <div class="page {{ page.layout }}-page">
-      {% include layout/navigation.html %}
+      {% include layout/navigation/main-nav.html %}
 
       {{ content }}
 
-      {% include layout/footer.html %}
+      {% include layout/footer/colophon.html %}
     </div>
 
     {% include base/scripts.html %}
