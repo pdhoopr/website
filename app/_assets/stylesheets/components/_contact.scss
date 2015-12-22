@@ -4,14 +4,7 @@
 
 /* Styles for Contact section */
 .contact {
-  font-size: 1rem;
-  padding-bottom: 1em;
   text-align: center;
-
-  /* Increase font size on medium and up devices */
-  @include breakpoint($mq-medium) {
-    font-size: 1.25rem;
-  }
 
   /* Styles for all but first icon */
   :not(:first-child) {
