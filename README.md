@@ -22,7 +22,7 @@ The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Tec
 - Roboto ([https://www.google.com/fonts/specimen/Roboto](https://www.google.com/fonts/specimen/Roboto))
 - Ubuntu ([https://www.google.com/fonts/specimen/Ubuntu](https://www.google.com/fonts/specimen/Ubuntu))
 
-#### CSS + Sass
+#### CSS & Sass
 - Breakpoint ([http://breakpoint-sass.com/](http://breakpoint-sass.com/))
 - Kwicks ([http://devsmash.com/projects/kwicks](http://devsmash.com/projects/kwicks))
 - Reset CSS ([http://meyerweb.com/eric/tools/css/reset/](https://necolas.github.io/normalize.css/))
