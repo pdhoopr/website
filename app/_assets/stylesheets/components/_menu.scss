@@ -8,9 +8,14 @@
   text-align: center;
 }
 
-/* Base styles for a menu icon */
-.menu-item-icon {
+/* Give right margin to menu items that are left of text */
+.menu-item-icon-left {
   margin-right: .16667em;
+}
+
+/* Give left margin to menu items that are right of text */
+.menu-item-icon-right {
+  margin-left: .16667em;
 }
 
 /* Display menu item text inline */
