@@ -38,3 +38,13 @@ a.btn-raised {
 .btn-live {
   background-color: $ph-blue;
 }
+
+/* Give right margin to icons that are left of button text */
+.btn-icon-left {
+  margin-right: .5em;
+}
+
+/* Give left margin to icons that are right of button text */
+.btn-icon-right {
+  margin-left: .5em;
+}
