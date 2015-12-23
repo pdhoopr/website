@@ -4,11 +4,7 @@ project_overview:
   description: 'In 2012, the University of Michigan moved from Exchange to Google Apps. I was fortunate to be part of the team that orchestrated an explosion of online, automated processes within Athletics.'
   roles: 'Process Optimization'
   tech: 'Google Apps'
-  mobile_ready: false
-  tablet_ready: false
   desktop_ready: true
-  view_live: false
-  view_github: false
 
 # Sections
 project_sections:
