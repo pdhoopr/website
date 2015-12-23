@@ -19,8 +19,6 @@ project_overview:
   mobile_ready: true
   tablet_ready: true
   desktop_ready: true
-  view_live: false
-  view_github: false
 
 # Sections
 project_sections:

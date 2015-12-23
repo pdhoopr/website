@@ -7,7 +7,6 @@ project_overview:
   mobile_ready: true
   tablet_ready: true
   desktop_ready: true
-  view_live: false
   view_github: 'https://github.com/impatrickhooper/wgi.buzz'
 
 # Sections
@@ -28,4 +27,4 @@ project_sections:
     description: 'WGI sets annual sales goals for its project managers, but until now had no reliable, centralized system for tracking performance against the goals. Using an easy-to-update Google Sheet and the Google Drive API to feed a chart that would (hopefully) make United Way proud, users can now view annual goals by location and interact with the chart to see the current sales and goal. A toggle exists to let users easily switch between years.'
 
   - subtitle: 'Sales Reports'
-    description: "A lot of data is stored in WGI's project tracking software, but not much has ever been done to report on it. Well, that's beginning to change. Using Google Apps, a script was written to parse monthly XML files of sales data, sort it for each of the 11 company divisions, and write each division''s data to their specific Google Sheet containing a summary sheet with a snapshot of each month's totals as well as a month-specific sheet containing a detailed list of sales data by project. Once that's done, the data is used to populate a more multi-purpose sales report spreadsheet where you can see the entire company's performance and sales by month, graphs, and other useful info, all in one place."
+    description: "A lot of data is stored in WGI's project tracking software, but not much has ever been done to report on it. Well, that's beginning to change. Using Google Apps, a script was written to parse monthly XML files of sales data, sort it for each of the 11 company divisions, and write each division's data to their specific Google Sheet containing a summary sheet with a snapshot of each month's totals as well as a month-specific sheet containing a detailed list of sales data by project. Once that's done, the data is used to populate a more multi-purpose sales report spreadsheet where you can see the entire company's performance and sales by month, graphs, and other useful info, all in one place."

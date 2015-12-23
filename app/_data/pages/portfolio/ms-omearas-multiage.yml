@@ -20,7 +20,6 @@ project_overview:
   tablet_ready: true
   desktop_ready: true
   view_live: 'http://msomearasmultiage.com'
-  view_github: false
 
 # Sections
 project_sections:
