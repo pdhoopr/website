@@ -19,6 +19,8 @@ project_overview:
   mobile_ready: true
   tablet_ready: true
   desktop_ready: true
+  view_github: 'https://github.com/impatrickhooper/jahleh-and-patrick'
+  view_live: 'http://jahlehandpatrick.hoopr.io'
 
 # Sections
 project_sections:
