@@ -91,10 +91,7 @@
   }
 
   /* Override styles for text-only projects */
-  &.wgi-buzz-project,
-  &.wgiki-project,
-  &.wgi-informer-project,
-  &.university-of-michigan-athletics-project {
+  &.text-only-project {
 
     /* Alter padding for these portfolio pages' project sections */
     .project-section {
