@@ -27,10 +27,10 @@
     // Ignore the animation/waypoint variables declared but never reused
     "no-unused-vars": [2, {"vars": "all", "varsIgnorePattern": "^tweenLogoLetters$|Waypoint$", "args": "all"}],
 
-    // Don't enforce padding within blocks (this is just stylistic preference)
-    "padded-blocks": [0, "never"],
-
     // Allow spaces inside brackets (this is just stylistic preference)
-    "object-curly-spacing": [0, "always"]
+    "object-curly-spacing": [0, "always"],
+
+    // Don't enforce padding within blocks (this is just stylistic preference)
+    "padded-blocks": [0, "never"]
   }
 }
