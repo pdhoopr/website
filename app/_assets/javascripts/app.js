@@ -113,7 +113,7 @@ if ($page.hasClass('default-page')) {
   /**
    * Toggles active class for About and also flags the page as scrolling
    */
-  const homeAboutSectionWaypoint = $homeAboutSection.waypoint(function homeAboutSectionWaypointDirection(direction) {
+  const homeAboutSectionWaypoint = $homeAboutSection.waypoint((direction) => {
 
     /* When going down and you hit about section, do stuff */
     if (direction === 'down') {
@@ -131,7 +131,7 @@ if ($page.hasClass('default-page')) {
     }
   }, {
     /* Make offset the nav bar height or the nav menu height (small devices) */
-    offset: function homeAboutSectionWaypointOffset() {
+    offset() {
       return Modernizr.mq('(min-width: 46.0625rem)') ? $mainNav.height() : $mainNavMenu.height();
     }
   });
@@ -139,7 +139,7 @@ if ($page.hasClass('default-page')) {
   /**
    * Toggles active class for Portfolio and removes for About
    */
-  const homePortfolioSectionWaypoint = $homePortfolioSection.waypoint(function homePortfolioSectionWaypointDirection(direction) {
+  const homePortfolioSectionWaypoint = $homePortfolioSection.waypoint((direction) => {
 
     /* When going down and you hit Portfolio section, do stuff */
     if (direction === 'down') {
@@ -155,7 +155,7 @@ if ($page.hasClass('default-page')) {
     }
   }, {
     /* Make offset the nav bar height or the nav menu height (small devices) */
-    offset: function homePortfolioSectionWaypointOffset() {
+    offset() {
       return Modernizr.mq('(min-width: 46.0625rem)') ? $mainNav.height() : $mainNavMenu.height();
     }
   });
@@ -163,7 +163,7 @@ if ($page.hasClass('default-page')) {
   /**
    * Toggles active class Portfolio at bottom, restores previous active on up
    */
-  const colophonWaypoint = $colophon.waypoint(function colophonWaypointDirection(direction) {
+  const colophonWaypoint = $colophon.waypoint((direction) => {
 
     /* When going down and you hit the colophon (footer), do stuff */
     if (direction === 'down') {
@@ -187,7 +187,7 @@ if ($page.hasClass('default-page')) {
   /**
    * Flags Portfolio page as scrolling
    */
-  const portfolioPageWaypoint = $portfolioPage.waypoint(function portfolioPageWaypointDirection(direction) {
+  const portfolioPageWaypoint = $portfolioPage.waypoint((direction) => {
 
     /* When going down, add scrolling class to page. When up, remove */
     if (direction === 'down') {
@@ -206,13 +206,21 @@ if ($page.hasClass('default-page')) {
    ========================================================================= */
 
 /* Tell ScrollMagic to animate scroll over 0.5 sec rather than jump */
-scrollMagicController.scrollTo(function animateScrollToAnchor(newpos) {
+scrollMagicController.scrollTo((newpos) => {
   TweenMax.to(window, 0.5, {scrollTo: {y: newpos}});
 });
 
 /* Tell ScrollMagic to listen for anchor link clicks and scroll to them */
-$(document).on('click', 'a[href^="#"]', function scrollToAnchor(e) {
-  const id = $(this).attr('href');
+$(document).on('click', 'a[href^="#"]', (e) => {
+  const $target = $(e.target); // Get the target
+  let id = $target.attr('href'); // Get the href of the target
+
+  /* If the target is not a link, find the closest link */
+  if ($(e.target).not('a')) {
+    id = $target.closest('a').attr('href');
+  }
+
+  /* If the element the ID links to exists (length > 0), scroll to it */
   if ($(id).length > 0) {
     e.preventDefault();
     scrollMagicController.scrollTo(id);
@@ -238,7 +246,7 @@ if ($page.hasClass('default-page')) {
     setTimeout(cycle, 500);
 
     /* Bring Learn More button to full opacity specified amount of time */
-    setTimeout(function homeHeroAnimationCTATimeout() {
+    setTimeout(() => {
       $homeHeroAnimationCTA.animate({opacity: 1}, 3000);
     }, 5000);
 

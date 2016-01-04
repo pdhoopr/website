@@ -89,7 +89,7 @@ const paths = {
 
 /* Returns a customized error message based on the task throwing the error */
 function buildErrorMessage(task) {
-  return '<span style="color: red; font-weight: bold;">' + task + ' task error!</span><span style="color: red;"> Please check the console and resolve the error ASAP because the build may be failing!</span>';
+  return '<span style="color: red; font-weight: bold;">' + task + ' task error!</span><span style="color: red;"> Please check the command line and resolve the error ASAP because the build may be failing!</span>';
 }
 
 /* =========================================================================
@@ -103,14 +103,14 @@ function buildErrorMessage(task) {
  * 2. Locates the src of docs specified in paths object
  * 3. Copies selected docs to the destination specified in the paths object
  */
-gulp.task('clean:docs', function cleanDocsTask() {
+gulp.task('clean:docs', () => {
   return del(paths.docs.dest);
 });
 
-gulp.task('docs', ['clean:docs'], function docsTask() {
+gulp.task('docs', ['clean:docs'], () => {
   return gulp.src(paths.docs.src)
     .pipe(plumber({
-      errorHandler: function docsTaskError(err) {
+      errorHandler(err) {
         util.log(err);
         browserSync.notify(buildErrorMessage('docs'));
         this.emit('end');
@@ -133,14 +133,14 @@ gulp.task('docs', ['clean:docs'], function docsTask() {
  * 3. Flattens the directory structure
  * 4. Copies selected images to the destination specified in the paths object
  */
-gulp.task('clean:images', function cleanImagesTask() {
+gulp.task('clean:images', () => {
   return del(paths.images.dest);
 });
 
-gulp.task('images', ['clean:images'], function imagesTask() {
+gulp.task('images', ['clean:images'], () => {
   return gulp.src(paths.images.src)
     .pipe(plumber({
-      errorHandler: function imagesTaskError(err) {
+      errorHandler(err) {
         util.log(err);
         browserSync.notify(buildErrorMessage('images'));
         this.emit('end');
@@ -166,10 +166,10 @@ gulp.task('images', ['clean:images'], function imagesTask() {
  * 5. Minifies the file if this is a production run
  * 6. Writes the file to the javascripts destination specified in the paths object w/ sourcemap
  */
-gulp.task('javascripts', function javaScriptsTask() {
+gulp.task('javascripts', () => {
   return gulp.src(paths.javascripts.src)
     .pipe(plumber({
-      errorHandler: function javaScriptsTaskError(err) {
+      errorHandler(err) {
         util.log(err);
         browserSync.notify(buildErrorMessage('javascripts'));
         this.emit('end');
@@ -196,11 +196,11 @@ gulp.task('javascripts', function javaScriptsTask() {
  * 2. Runs "jekyll build" in src directory
  * 3. Closes process
  */
-gulp.task('jekyll', function jekyllTask(done) {
+gulp.task('jekyll', (done) => {
   return childProcess.spawn('bundle', ['exec', 'jekyll', 'build'], {cwd: paths.jekyll.src, stdio: 'inherit'})
-    .on('close', function jekyllTaskClose(code) {
+    .on('close', (code) => {
       if (code !== 0) {
-        browserSync.notify('<span style="color: red; font-weight: bold;">jekyll task error!</span><span style="color: red;"> Please check the console and resolve the error ASAP because the build may be failing!</span>');
+        browserSync.notify('<span style="color: red; font-weight: bold;">jekyll task error!</span><span style="color: red;"> Please check the command line and resolve the error ASAP because the build may be failing!</span>');
 
         /* Throw error in production builds to stop npm test/deploy scripts */
         if (env === 'production') {
@@ -221,10 +221,10 @@ gulp.task('jekyll', function jekyllTask(done) {
  * 5. Renames file to style.css
  * 6. Writes the file to the stylesheets destination specified in the paths object w/ sourcemap
  */
-gulp.task('stylesheets', function stylesheetsTask() {
+gulp.task('stylesheets', () => {
   return gulp.src(paths.stylesheets.src)
     .pipe(plumber({
-      errorHandler: function stylesheetsTaskError(err) {
+      errorHandler(err) {
         util.log(err);
         browserSync.notify(buildErrorMessage('stylesheets'));
         this.emit('end');
@@ -254,10 +254,10 @@ gulp.task('stylesheets', function stylesheetsTask() {
  * 3. Minifies the file if this is a production run
  * 4. Writes the file to the javascripts destination specified in the paths object
  */
-gulp.task('vendor:javascripts', function vendorJavaScriptsTask() {
+gulp.task('vendor:javascripts', () => {
   return gulp.src(paths.vendor.javascripts.src)
     .pipe(plumber({
-      errorHandler: function vendorJavaScriptsTaskError(err) {
+      errorHandler(err) {
         util.log(err);
         browserSync.notify(buildErrorMessage('vendor:javascripts'));
         this.emit('end');
@@ -282,10 +282,10 @@ gulp.task('vendor:javascripts', function vendorJavaScriptsTask() {
  * 3. Uses Autoprefixer to add vendor prefixes
  * 4. Writes the file to the stylesheets destination specified in the paths object
  */
-gulp.task('vendor:stylesheets', function vendorStylesheetsTask() {
+gulp.task('vendor:stylesheets', () => {
   return gulp.src(paths.vendor.stylesheets.src)
     .pipe(plumber({
-      errorHandler: function vendorStylesheetsTaskError(err) {
+      errorHandler(err) {
         util.log(err);
         browserSync.notify(buildErrorMessage('vendor:stylesheets'));
         this.emit('end');
@@ -308,7 +308,7 @@ gulp.task('vendor:stylesheets', function vendorStylesheetsTask() {
  * 1. Run the jekyll task first
  * 2. When jekyll task is complete, runs other tasks in a specific order
  */
-gulp.task('build', ['jekyll'], function buildTask(callback) {
+gulp.task('build', ['jekyll'], (callback) => {
   runSequence(['docs', 'images', 'vendor:stylesheets', 'stylesheets', 'vendor:javascripts', 'javascripts'], callback);
 });
 
@@ -324,7 +324,7 @@ gulp.task('build', ['jekyll'], function buildTask(callback) {
  * 7. Watches stylesheets for changes
  * 8. Watches vendor files for changes
  */
-gulp.task('serve', ['build'], function serveTask() {
+gulp.task('serve', ['build'], () => {
   browserSync.init({
     server: {
       baseDir: './public'
