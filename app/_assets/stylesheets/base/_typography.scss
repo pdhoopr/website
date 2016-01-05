@@ -10,7 +10,7 @@ html {
   font-size: 100%;
 }
 
-/* Assign body Roboto font and slightly larger font size/line height for readability */
+/* Assign body Roboto font and slightly larger font size/line height */
 body {
   font-family: $roboto;
   font-size: 125%;
@@ -29,7 +29,7 @@ h6 {
   font-weight: 500;
 }
 
-/* Paragraph font size */
+/* Make paragraph font size slightly larger */
 p {
   font-size: 1.125rem;
 
@@ -48,7 +48,7 @@ strong {
 /* Typography | Classes
    ========================================================================= */
 
-/* Styles for titles */
+/* Use this class to style titles */
 .title {
   font-size: 2rem;
   line-height: 1;
@@ -62,7 +62,7 @@ strong {
   }
 }
 
-/* Styles for subtitles */
+/* Use this class to style subtitles */
 .subtitle {
   font-size: 1.3rem;
   padding-bottom: .75em;

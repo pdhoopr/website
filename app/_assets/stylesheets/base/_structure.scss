@@ -47,7 +47,7 @@ img {
   @include height-fallback(100);
 }
 
-/* Class to scroll vertically when content is too long for area */
+/* Use this class to scroll vertically when content is too long for area */
 .scroll {
   overflow-y: auto !important;
 
