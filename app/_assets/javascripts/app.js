@@ -8,6 +8,10 @@ const $mainNavMenu = $('.main-nav .menu');
 const $mainNavMenuItemAbout = $('.main-nav .menu-item-about');
 const $mainNavMenuItemPortfolio = $('.main-nav .menu-item-portfolio');
 let $lastMainNavMenuItem = null; // Holds last active section while scrolling
+const $colophon = $('.colophon');
+
+/* Variables | Home
+   ========================================================================= */
 const $homeHeroAnimation = $('.home-hero-animation');
 const $homeHeroAnimationTaglines = $('.home-hero-animation .tagline');
 let homeHeroAnimationTaglineNum = 0; // Counter for taglines
@@ -15,7 +19,9 @@ const $homeHeroAnimationCTA = $('.home-hero-animation .cta');
 const $homeHeroArrow = $('.home-hero .arrow');
 const $homeAboutSection = $('.home-about-section');
 const $homePortfolioSection = $('.home-portfolio-section');
-const $colophon = $('.colophon');
+
+/* Variables | Portfolio
+   ========================================================================= */
 const $portfolioPage = $('.portfolio-page');
 
 /* =========================================================================
@@ -31,6 +37,9 @@ const $portfolioPage = $('.portfolio-page');
 function tweenLogoLettersComplete() {
   $logoLetters.addClass('collapsed').removeAttr('style');
 }
+
+/* Functions | Home
+   ========================================================================= */
 
 /**
  * Function cycles through taglines in Hero section by fading in and out
@@ -58,6 +67,9 @@ const tweenLogoLetters = TweenMax.to($logoLetters, 0.6, {
   onComplete: tweenLogoLettersComplete
 });
 
+/* GSAP Tweens | Home
+   ========================================================================= */
+
 /**
  * Tween Hero section from opacity of 1 to opacity of 0. Move top of section
  * from start location to 66% from the top of its parent over the duration
@@ -83,11 +95,14 @@ const fadeHomeHeroArrow = TweenMax.to($homeHeroArrow, 0.3, {
 /* =========================================================================
    ScrollMagic Scenes
    ========================================================================= */
-
-/* ScrollMagic Controller to handle scenes */
 const scrollMagicController = new ScrollMagic.Controller();
 
-/* Scene to fade home hero section and produce parallax effect */
+/* ScrollMagic Scenes | Home
+   ========================================================================= */
+
+/**
+ * Fade Home Hero section and produce parallax effect
+ */
 const homeHeroAnimationScene = new ScrollMagic.Scene({
   triggerElement: '.home-hero',
   triggerHook: 'onLeave', // Start when trigger starts leaving viewport
@@ -95,7 +110,9 @@ const homeHeroAnimationScene = new ScrollMagic.Scene({
 })
 .setTween(fadeHomeHeroAnimation); // Use the fadeHomeHeroAnimation tween
 
-/* Scene to smush hero arrow up into itself when scrolling */
+/**
+ * Smush Hero arrow up into itself when scrolling
+ */
 const homeHeroArrowScene = new ScrollMagic.Scene({
   triggerElement: '.home-hero',
   triggerHook: 'onLeave', // Start when trigger starts leaving viewport
@@ -107,7 +124,8 @@ const homeHeroArrowScene = new ScrollMagic.Scene({
    Waypoints
    ========================================================================= */
 
-/* Waypoints only for the home page */
+/* Waypoints | Home
+   ========================================================================= */
 if ($page.hasClass('default-page')) {
 
   /**
@@ -181,7 +199,8 @@ if ($page.hasClass('default-page')) {
     offset: '100%'
   });
 
-  /* Waypoints for Portfolio pages */
+/* Waypoints | Portfolio
+   ========================================================================= */
 } else {
 
   /**
