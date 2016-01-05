@@ -211,14 +211,10 @@ scrollMagicController.scrollTo((newpos) => {
 });
 
 /* Tell ScrollMagic to listen for anchor link clicks and scroll to them */
-$(document).on('click', 'a[href^="#"]', (e) => {
-  const $target = $(e.target); // Get the target
-  let id = $target.attr('href'); // Get the href of the target
+$(document).on('click', 'a[href^="#"]', function scrollToAnchor(e) {
 
-  /* If the target is not a link, find the closest link */
-  if ($(e.target).not('a')) {
-    id = $target.closest('a').attr('href');
-  }
+  /* Get the element the link points to from the href attribute of this link */
+  const id = $(this).attr('href');
 
   /* If the element the ID links to exists (length > 0), scroll to it */
   if ($(id).length > 0) {
