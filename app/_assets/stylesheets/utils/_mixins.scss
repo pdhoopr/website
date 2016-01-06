@@ -6,7 +6,10 @@
    ========================================================================= */
 
 /**
- * Mixin that will align an element in the absolute middle of its container.
+ * Align an element in the absolute middle of its container.
+ * @param { String } $direction - Center with respect to top or bottom
+ * @param { Number } $amount - Amount to move element in given direction
+ * @param { Number } $y - Translated Y position of element
  */
 @mixin absolute-center($direction, $amount, $y) {
   left: 50%;
@@ -15,7 +18,8 @@
 }
 
 /**
- * Mixin that will set a height in vh and percentage units
+ * Set an element's height in vh and percentage units.
+ * @param { Number } $height - Height of element
  */
 @mixin height-fallback($height) {
   height: $height * 1%;
@@ -23,7 +27,8 @@
 }
 
 /**
- * Mixin that will vertically align an element in the middle of its container.
+ * Vertically align an element in the middle of its container.
+ * @param { Number } $top - Amount to move element from the top
  */
 @mixin vertical-align($top) {
   top: $top;
@@ -34,7 +39,9 @@
    ========================================================================= */
 
 /**
- * Mixin that will set background and font color for an element.
+ * Set background and font color for an element.
+ * @param { String } $background-color - Background color for element
+ * @param { String } $color - Text color for element
  */
 @mixin color-element($background-color, $color) {
   background-color: $background-color;
@@ -45,7 +52,8 @@
    ========================================================================= */
 
 /**
- * Mixin that will make a CSS down arrow using borders.
+ * Make a CSS down arrow using borders.
+ * @param { Number } $border-width - Width/thickeness of the borders
  */
 @mixin arrow-down($border-width) {
   border-left: $border-width solid transparent;
@@ -57,7 +65,9 @@
    ========================================================================= */
 
 /**
- * Mixin that will set colors and animate for button hovers.
+ * Set colors and animate for button hovers.
+ * @param { String } $background-color - Background color for button
+ * @param { String } $color - Text color for button
  */
 @mixin button-hover($background-color, $color) {
   border-color: $background-color;
@@ -84,7 +94,9 @@
    ========================================================================= */
 
 /**
- * Mixin that will set hover and touch colors for an icon.
+ * Set hover and touch colors for an icon.
+ * @param { String } $color - Text color for icon
+ * @param { String } $hover-color - Hover text color for icon
  */
 @mixin icon-hover($color, $hover-color) {
 
