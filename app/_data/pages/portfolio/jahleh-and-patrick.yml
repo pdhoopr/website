@@ -29,7 +29,7 @@ project_sections:
     browser:
       url: 'jahlehandpatrick.hoopr.io'
       image_scroll: 'scroll'
-      image_name: 'portfolio_jahleh-and-patrick'
+      image_name: 'portfolio_jahleh-and-patrick_our-story'
       image_extension: 'jpg'
       image_alt: ' | Our Story'
 
@@ -60,10 +60,19 @@ project_sections:
       image_extension: 'jpg'
       image_alt: ' | Guestbook'
 
+  - subtitle: 'Registry'
+    description: 'And of course, we added company logos as links out to our different registries. So simple, yet so classy.'
+    browser:
+      url: 'jahlehandpatrick.hoopr.io/registry'
+      image_scroll: 'scroll'
+      image_name: 'portfolio_jahleh-and-patrick_registry'
+      image_extension: 'jpg'
+      image_alt: ' | Registry'
+
   - subtitle: 'Mobile'
     phones:
       - image_scroll: 'scroll'
-        image_name: 'portfolio_jahleh-and-patrick_mobile'
+        image_name: 'portfolio_jahleh-and-patrick_our-story_mobile'
         image_extension: 'jpg'
         image_alt: ' | Our Story | Mobile'
 
