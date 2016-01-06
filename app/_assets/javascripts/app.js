@@ -9,6 +9,7 @@ const $mainNavMenuItemAbout = $('.main-nav .menu-item-about');
 const $mainNavMenuItemPortfolio = $('.main-nav .menu-item-portfolio');
 let $lastMainNavMenuItem = null; // Holds last active section while scrolling
 const $colophon = $('.colophon');
+const scrollMagicController = new ScrollMagic.Controller();
 
 /* Variables | Home
    ========================================================================= */
@@ -29,10 +30,9 @@ const $portfolioPage = $('.portfolio-page');
    ========================================================================= */
 
 /**
- * Function that adds letter-collpased class and removes GSAP styles
- * from logo letters once tween is complete.
- *
- * @returns { Void } Returns no value
+ * Function that adds letter-collpased class and removes GSAP styles from logo
+ * letters once tween is complete.
+ * @returns { Void } No return value
  */
 function tweenLogoLettersComplete() {
   $logoLetters.addClass('collapsed').removeAttr('style');
@@ -42,14 +42,32 @@ function tweenLogoLettersComplete() {
    ========================================================================= */
 
 /**
- * Function cycles through taglines in Hero section by fading in and out
+ * Function that cycles through taglines in Hero section by fading in and out
  * taglines. Goes back to beginning once it reaches the end.
- *
- * @returns { Void } Returns no value
+ * @returns { Void } No return value
  */
-function cycle() {
-  $homeHeroAnimationTaglines.eq(homeHeroAnimationTaglineNum).fadeIn(1000).delay(1000).fadeOut(1000, cycle);
+function cycleHomeHeroTaglines() {
+  $homeHeroAnimationTaglines.eq(homeHeroAnimationTaglineNum).fadeIn(1000).delay(1000).fadeOut(1000, cycleHomeHeroTaglines);
   homeHeroAnimationTaglineNum = ++homeHeroAnimationTaglineNum % $homeHeroAnimationTaglines.length;
+}
+
+/**
+ * Function that runs through the necessary steps to initialize the home hero
+ * animation.
+ * @returns { Void } No return value
+ */
+function playHomeHeroAnimation() {
+
+  /* Hide all taglines to start */
+  $homeHeroAnimationTaglines.hide();
+
+  /* Start cycling through taglines after specified amount of time */
+  setTimeout(cycleHomeHeroTaglines, 500);
+
+  /* Bring "Learn More" button to full opacity specified amount of time */
+  setTimeout(() => {
+    $homeHeroAnimationCTA.animate({opacity: 1}, 3000);
+  }, 5000);
 }
 
 /* =========================================================================
@@ -57,8 +75,9 @@ function cycle() {
    ========================================================================= */
 
 /**
- * Tween logo letters from opacity of 1 and full width to no width and
- * opacity of 0. Start 1 seconds after page is ready.
+ * Tween logo letters from opacity of 1 and full width to no width and opacity
+ * of 0. Start 1 seconds after page is ready.
+ * @type { TweenMax }
  */
 const tweenLogoLetters = TweenMax.to($logoLetters, 0.6, {
   delay: 0.6,
@@ -74,6 +93,7 @@ const tweenLogoLetters = TweenMax.to($logoLetters, 0.6, {
  * Tween Hero section from opacity of 1 to opacity of 0. Move top of section
  * from start location to 66% from the top of its parent over the duration
  * of the tween.
+ * @type { TweenMax }
  */
 const fadeHomeHeroAnimation = TweenMax.to($homeHeroAnimation, 1, {
   opacity: 0,
@@ -81,8 +101,8 @@ const fadeHomeHeroAnimation = TweenMax.to($homeHeroAnimation, 1, {
 });
 
 /**
- * Tween Hero arrow from border properties over the duration
- * of the tween.
+ * Tween Hero arrow from border properties over the duration of the tween.
+ * @type { TweenMax }
  */
 const fadeHomeHeroArrow = TweenMax.to($homeHeroArrow, 0.3, {
   borderLeftWidth: 320,
@@ -95,13 +115,18 @@ const fadeHomeHeroArrow = TweenMax.to($homeHeroArrow, 0.3, {
 /* =========================================================================
    ScrollMagic Scenes
    ========================================================================= */
-const scrollMagicController = new ScrollMagic.Controller();
+
+/* Tell ScrollMagic to animate scroll over 0.5 sec rather than jump */
+scrollMagicController.scrollTo((newpos) => {
+  TweenMax.to(window, 0.5, {scrollTo: {y: newpos}});
+});
 
 /* ScrollMagic Scenes | Home
    ========================================================================= */
 
 /**
- * Fade Home Hero section and produce parallax effect
+ * Fade out the Home Hero section and produce parallax scrolling effect.
+ * @type { ScrollMagic Scene }
  */
 const homeHeroAnimationScene = new ScrollMagic.Scene({
   triggerElement: '.home-hero',
@@ -111,7 +136,8 @@ const homeHeroAnimationScene = new ScrollMagic.Scene({
 .setTween(fadeHomeHeroAnimation); // Use the fadeHomeHeroAnimation tween
 
 /**
- * Smush Hero arrow up into itself when scrolling
+ * Smush Hero arrow up into itself when scrolling down the Home page.
+ * @type { ScrollMagic Scene }
  */
 const homeHeroArrowScene = new ScrollMagic.Scene({
   triggerElement: '.home-hero',
@@ -129,7 +155,8 @@ const homeHeroArrowScene = new ScrollMagic.Scene({
 if ($page.hasClass('default-page')) {
 
   /**
-   * Toggles active class for About and also flags the page as scrolling
+   * Toggle the active class for About section and flag the page as scrolling.
+   * @type { Waypoint }
    */
   const homeAboutSectionWaypoint = $homeAboutSection.waypoint((direction) => {
 
@@ -148,14 +175,18 @@ if ($page.hasClass('default-page')) {
       $lastMainNavMenuItem = null;
     }
   }, {
-    /* Make offset the nav bar height or the nav menu height (small devices) */
+    /**
+     * Make offset the nav bar height or the nav menu height (small devices).
+     * @returns {Number} The height in pixels of the main navigation or menu
+     */
     offset() {
       return Modernizr.mq('(min-width: 46.0625rem)') ? $mainNav.height() : $mainNavMenu.height();
     }
   });
 
   /**
-   * Toggles active class for Portfolio and removes for About
+   * Toggles active class for Portfolio section and removes for About section.
+   * @type { Waypoint }
    */
   const homePortfolioSectionWaypoint = $homePortfolioSection.waypoint((direction) => {
 
@@ -172,14 +203,19 @@ if ($page.hasClass('default-page')) {
       $lastMainNavMenuItem = $mainNavMenuItemAbout;
     }
   }, {
-    /* Make offset the nav bar height or the nav menu height (small devices) */
+    /**
+     * Make offset the nav bar height or the nav menu height (small devices).
+     * @returns {Number} The height in pixels of the main navigation or menu
+     */
     offset() {
       return Modernizr.mq('(min-width: 46.0625rem)') ? $mainNav.height() : $mainNavMenu.height();
     }
   });
 
   /**
-   * Toggles active class Portfolio at bottom, restores previous active on up
+   * Toggles Portfolio section as active at bottom, restores previous active
+   * section when scrolling back up.
+   * @type { Waypoint }
    */
   const colophonWaypoint = $colophon.waypoint((direction) => {
 
@@ -195,7 +231,7 @@ if ($page.hasClass('default-page')) {
       $lastMainNavMenuItem.addClass('active');
     }
   }, {
-    /* Offset is 100%, so when it enters into view */
+    /* Offset is 100%, so when element enters into view */
     offset: '100%'
   });
 
@@ -204,7 +240,8 @@ if ($page.hasClass('default-page')) {
 } else {
 
   /**
-   * Flags Portfolio page as scrolling
+   * Flags the Portfolio page as scrolling.
+   * @type { Waypoint }
    */
   const portfolioPageWaypoint = $portfolioPage.waypoint((direction) => {
 
@@ -221,15 +258,13 @@ if ($page.hasClass('default-page')) {
 }
 
 /* =========================================================================
-   Scripts
+   Event Listeners
    ========================================================================= */
 
-/* Tell ScrollMagic to animate scroll over 0.5 sec rather than jump */
-scrollMagicController.scrollTo((newpos) => {
-  TweenMax.to(window, 0.5, {scrollTo: {y: newpos}});
-});
-
-/* Tell ScrollMagic to listen for anchor link clicks and scroll to them */
+/**
+ * Tell ScrollMagic to listen for anchor link clicks and scroll to them.
+ * @type { Click Event Listener }
+ */
 $(document).on('click', 'a[href^="#"]', function scrollToAnchor(e) {
 
   /* Get the element the link points to from the href attribute of this link */
@@ -237,39 +272,32 @@ $(document).on('click', 'a[href^="#"]', function scrollToAnchor(e) {
 
   /* If the element the ID links to exists (length > 0), scroll to it */
   if ($(id).length > 0) {
+
+    /* Prevent default link action (following the href) */
     e.preventDefault();
+
+    /* Scroll to the href of the link */
     scrollMagicController.scrollTo(id);
+
+    /* Push the section id to the url */
     if (window.history && window.history.pushState) {
       history.pushState('', document.title, id);
     }
   }
 });
 
+/* =========================================================================
+   Other
+   ========================================================================= */
+
 /* Lazy loads images as they're 568px outside the view */
 $('img.lazy').unveil(568);
 
-/* Do the following only if this is the home page */
+/* Other | Home
+   ========================================================================= */
 if ($page.hasClass('default-page')) {
 
-  /* Do the following only if this is a large screen */
-  if (Modernizr.mq('(min-width: 46.0625rem)')) {
-
-    /* Hide all taglines to start */
-    $homeHeroAnimationTaglines.hide();
-
-    /* Start cycling through taglines after specified amount of time */
-    setTimeout(cycle, 500);
-
-    /* Bring Learn More button to full opacity specified amount of time */
-    setTimeout(() => {
-      $homeHeroAnimationCTA.animate({opacity: 1}, 3000);
-    }, 5000);
-
-    /* Add hero scenes to controller */
-    scrollMagicController.addScene([homeHeroAnimationScene, homeHeroArrowScene]);
-  }
-
-  /* Initialize snapshots with Kwicks */
+  /* Initialize home page snapshots with Kwicks */
   $('.snapshots').kwicks({
     behavior: 'menu',
     duration: 300,
@@ -278,4 +306,14 @@ if ($page.hasClass('default-page')) {
     selectOnClick: false,
     spacing: 0
   });
+
+  /* Do the following only if this is a large screen */
+  if (Modernizr.mq('(min-width: 46.0625rem)')) {
+
+    /* Start the home hero section intro animation */
+    playHomeHeroAnimation();
+
+    /* Add hero scenes to controller */
+    scrollMagicController.addScene([homeHeroAnimationScene, homeHeroArrowScene]);
+  }
 }
