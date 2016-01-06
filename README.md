@@ -17,6 +17,10 @@ The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Tec
 
 ## Libraries
 
+#### Analytics
+- Google Analytics ([https://www.google.com/analytics/](https://www.google.com/analytics/))
+- Google Tag Manager ([https://www.google.com/analytics/tag-manager/](https://www.google.com/analytics/tag-manager/))
+
 #### CSS & Sass
 - Breakpoint ([http://breakpoint-sass.com/](http://breakpoint-sass.com/))
 - Kwicks ([http://devsmash.com/projects/kwicks](http://devsmash.com/projects/kwicks))
