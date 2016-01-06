@@ -267,16 +267,14 @@ if ($page.hasClass('default-page')) {
  */
 $(document).on('click', 'a[href^="#"]', function scrollToAnchor(e) {
 
-  /* Get the element the link points to from the href attribute of this link */
+  /* Get target element from the href attribute of this anchor link */
   const id = $(this).attr('href');
 
-  /* If the element the ID links to exists (length > 0), scroll to it */
+  /* If the element the ID links to exists (length > 0), do stuff */
   if ($(id).length > 0) {
 
-    /* Prevent default link action (following the href) */
+    /* Prevent default link action of jumping to the href and scroll instead */
     e.preventDefault();
-
-    /* Scroll to the href of the link */
     scrollMagicController.scrollTo(id);
 
     /* Push the section id to the url */
@@ -307,13 +305,9 @@ if ($page.hasClass('default-page')) {
     spacing: 0
   });
 
-  /* Do the following only if this is a large screen */
+  /* Start home hero section animation and add scenes only if large screen */
   if (Modernizr.mq('(min-width: 46.0625rem)')) {
-
-    /* Start the home hero section intro animation */
     playHomeHeroAnimation();
-
-    /* Add hero scenes to controller */
     scrollMagicController.addScene([homeHeroAnimationScene, homeHeroArrowScene]);
   }
 }
