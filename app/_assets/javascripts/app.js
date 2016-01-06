@@ -59,10 +59,8 @@ function cycleHomeHeroTaglines() {
  */
 function playHomeHeroAnimation() {
 
-  /* Hide all taglines to start */
+  /* Hide all taglines to start then cycle through them after given time */
   $homeHeroAnimationTaglines.hide();
-
-  /* Start cycling through taglines after specified amount of time */
   setTimeout(cycleHomeHeroTaglines, 500);
 
   /* Bring "Learn More" button to full opacity specified amount of time */
@@ -268,10 +266,9 @@ if ($page.hasClass('default-page')) {
  */
 $(document).on('click', 'a[href^="#"]', function scrollToAnchor(e) {
 
-  /* Get target element from the href attribute of this anchor link */
+  /* Get target element from the href attribute and if it exists, do stuff */
   const id = $(this).attr('href');
 
-  /* If the element the ID links to exists (length > 0), do stuff */
   if ($(id).length > 0) {
 
     /* Prevent default link action of jumping to the href and scroll instead */
