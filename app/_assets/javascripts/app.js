@@ -30,7 +30,7 @@ const $portfolioPage = $('.portfolio-page');
    ========================================================================= */
 
 /**
- * Function that adds letter-collpased class and removes GSAP styles from logo
+ * Adds letter-collpased class and removes GSAP styles from logo
  * letters once tween is complete.
  * @returns { Void } No return value
  */
@@ -42,7 +42,7 @@ function tweenLogoLettersComplete() {
    ========================================================================= */
 
 /**
- * Function that cycles through taglines in Hero section by fading in and out
+ * Cycles through taglines in Hero section by fading in and out
  * taglines. Goes back to beginning once it reaches the end.
  * @returns { Void } No return value
  */
@@ -53,7 +53,7 @@ function cycleHomeHeroTaglines() {
 }
 
 /**
- * Function that runs through the necessary steps to initialize the home hero
+ * Runs through the necessary steps to initialize the home hero
  * animation.
  * @returns { Void } No return value
  */
