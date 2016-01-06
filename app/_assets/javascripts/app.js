@@ -48,6 +48,7 @@ function tweenLogoLettersComplete() {
  */
 function cycleHomeHeroTaglines() {
   $homeHeroAnimationTaglines.eq(homeHeroAnimationTaglineNum).fadeIn(1000).delay(1000).fadeOut(1000, cycleHomeHeroTaglines);
+
   homeHeroAnimationTaglineNum = ++homeHeroAnimationTaglineNum % $homeHeroAnimationTaglines.length;
 }
 
