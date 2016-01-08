@@ -1,6 +1,2 @@
 # Let Git normalize line endings automatically
 * text=auto
-
-# Track these file types with Git Large File Storage (LFS)
-*.psd filter=lfs diff=lfs merge=lfs -text
-*.sketch filter=lfs diff=lfs merge=lfs -text
