@@ -7,7 +7,7 @@ project_overview:
   mobile_ready: true
   tablet_ready: true
   desktop_ready: true
-  view_github: 'https://github.com/impatrickhooper/wgi.buzz'
+  view_github: 'https://github.com/impatrickhooper/wgi-buzz'
 
 # Sections
 project_sections:
