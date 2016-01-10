@@ -7,7 +7,7 @@ The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Tec
 3. Run `bundle install --path vendor/bundle` (you'll need [Ruby](https://www.ruby-lang.org/en/) & [Bundler](http://bundler.io/)).
 4. Run `npm install` (you'll need [Node.js](https://nodejs.org/en/) & [npm](https://www.npmjs.com/)).
 5. Let npm scripts handle your workflow!
-  * Use `npm start` to build development code and start a Browersync server.
+  * Use `npm start` to build development code and start a [Browersync](https://www.browsersync.io/) server.
   * Use `npm run lint:stylesheets` to run [SCSS-Lint](https://github.com/brigade/scss-lint) on the Sass source code.
   * Use `npm run lint:javascripts` to run [ESLint](http://eslint.org/) on the JavaScript source code.
   * Use `npm run lint` to run lint both Sass and JavaScript source code in one task.
