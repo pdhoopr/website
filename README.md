@@ -26,7 +26,7 @@ The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Tec
 - Kwicks ([http://devsmash.com/projects/kwicks](http://devsmash.com/projects/kwicks))
 - Reset CSS ([http://meyerweb.com/eric/tools/css/reset/](https://necolas.github.io/normalize.css/))
 - Sassy Maps ([https://github.com/at-import/Sassy-Maps](https://github.com/at-import/Sassy-Maps))
-- Unsemantic Grid System ([http://unsemantic.com/](http://unsemantic.com/))
+- Unsemantic ([http://unsemantic.com/](http://unsemantic.com/))
 
 #### Fonts
 - Font Awesome ([http://fortawesome.github.io/Font-Awesome/](http://fortawesome.github.io/Font-Awesome/))
