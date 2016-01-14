@@ -19,7 +19,7 @@ project_overview:
   mobile_ready: true
   tablet_ready: true
   desktop_ready: true
-  view_live: 'http://impatrickhooper.github.io/ms-omearas-multiage'
+  view_live: 'https://impatrickhooper.github.io/ms-omearas-multiage/'
   view_github: 'https://github.com/impatrickhooper/ms-omearas-multiage'
 
 # Sections
