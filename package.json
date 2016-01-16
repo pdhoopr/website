@@ -14,8 +14,7 @@
     "lint:javascripts": "eslint ./app/_assets/javascripts/**",
     "lint": "npm run lint:stylesheets && npm run lint:javascripts",
     "test": "npm run lint && gulp build",
-    "build": "NODE_ENV=production gulp build",
-    "deploy": "npm test && npm run build && surge ./public"
+    "build": "NODE_ENV=production gulp build"
   },
   "repository": {
     "type": "git",
@@ -41,7 +40,6 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.4.2",
     "gulp-util": "^3.0.7",
-    "run-sequence": "^1.1.4",
-    "surge": "^0.17.2"
+    "run-sequence": "^1.1.4"
   }
 }
