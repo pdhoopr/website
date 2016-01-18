@@ -1,7 +1,7 @@
-- id: 'about'
-  title: 'About'
-  icon: 'heartbeat'
+- id: about
+  title: About
+  icon: heartbeat
 
-- id: 'portfolio'
-  title: 'Portfolio'
-  icon: 'th'
+- id: portfolio
+  title: Portfolio
+  icon: th

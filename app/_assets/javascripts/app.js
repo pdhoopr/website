@@ -1,29 +1,29 @@
 /* =========================================================================
    Variables
    ========================================================================= */
-const $page = $('.page');
-const $logoLetters = $('.logo-letter.animate');
-const $mainNav = $('.main-nav');
-const $mainNavMenu = $('.main-nav .menu');
-const $mainNavMenuItemAbout = $('.main-nav .menu-item-about');
-const $mainNavMenuItemPortfolio = $('.main-nav .menu-item-portfolio');
+const $page = $(".page");
+const $logoLetters = $(".logo-letter.animate");
+const $mainNav = $(".main-nav");
+const $mainNavMenu = $(".main-nav .menu");
+const $mainNavMenuItemAbout = $(".main-nav .menu-item-about");
+const $mainNavMenuItemPortfolio = $(".main-nav .menu-item-portfolio");
 let $lastMainNavMenuItem = null; // Holds last active section while scrolling
-const $colophon = $('.colophon');
+const $colophon = $(".colophon");
 const scrollMagicController = new ScrollMagic.Controller();
 
 /* Variables | Home
    ========================================================================= */
-const $homeHeroAnimation = $('.home-hero-animation');
-const $homeHeroAnimationTaglines = $('.home-hero-animation .tagline');
+const $homeHeroAnimation = $(".home-hero-animation");
+const $homeHeroAnimationTaglines = $(".home-hero-animation .tagline");
 let homeHeroAnimationTaglineNum = 0; // Counter for taglines
-const $homeHeroAnimationCTA = $('.home-hero-animation .cta');
-const $homeHeroArrow = $('.home-hero .arrow');
-const $homeAboutSection = $('.home-about-section');
-const $homePortfolioSection = $('.home-portfolio-section');
+const $homeHeroAnimationCTA = $(".home-hero-animation .cta");
+const $homeHeroArrow = $(".home-hero .arrow");
+const $homeAboutSection = $(".home-about-section");
+const $homePortfolioSection = $(".home-portfolio-section");
 
 /* Variables | Portfolio
    ========================================================================= */
-const $portfolioPage = $('.portfolio-page');
+const $portfolioPage = $(".portfolio-page");
 
 /* =========================================================================
    Functions
@@ -35,7 +35,7 @@ const $portfolioPage = $('.portfolio-page');
  * @returns { Void } No return value
  */
 function tweenLogoLettersComplete() {
-  $logoLetters.addClass('collapsed').removeAttr('style');
+  $logoLetters.addClass("collapsed").removeAttr("style");
 }
 
 /* Functions | Home
@@ -96,7 +96,7 @@ const tweenLogoLetters = TweenMax.to($logoLetters, 0.6, {
  */
 const fadeHomeHeroAnimation = TweenMax.to($homeHeroAnimation, 1, {
   opacity: 0,
-  top: '66%'
+  top: "66%"
 });
 
 /**
@@ -128,9 +128,9 @@ scrollMagicController.scrollTo((newpos) => {
  * @type { ScrollMagic Scene }
  */
 const homeHeroAnimationScene = new ScrollMagic.Scene({
-  triggerElement: '.home-hero',
-  triggerHook: 'onLeave', // Start when trigger starts leaving viewport
-  duration: '100%' // End when viewport has moved 100%
+  triggerElement: ".home-hero",
+  triggerHook: "onLeave", // Start when trigger starts leaving viewport
+  duration: "100%" // End when viewport has moved 100%
 })
 .setTween(fadeHomeHeroAnimation); // Use the fadeHomeHeroAnimation tween
 
@@ -139,9 +139,9 @@ const homeHeroAnimationScene = new ScrollMagic.Scene({
  * @type { ScrollMagic Scene }
  */
 const homeHeroArrowScene = new ScrollMagic.Scene({
-  triggerElement: '.home-hero',
-  triggerHook: 'onLeave', // Start when trigger starts leaving viewport
-  duration: '100%' // End when viewport has moved 75%
+  triggerElement: ".home-hero",
+  triggerHook: "onLeave", // Start when trigger starts leaving viewport
+  duration: "100%" // End when viewport has moved 75%
 })
 .setTween(fadeHomeHeroArrow);
 
@@ -151,7 +151,7 @@ const homeHeroArrowScene = new ScrollMagic.Scene({
 
 /* Waypoints | Home
    ========================================================================= */
-if ($page.hasClass('default-page')) {
+if ($page.hasClass("default-page")) {
 
   /**
    * Toggle the active class for About section and flag the page as scrolling.
@@ -160,17 +160,17 @@ if ($page.hasClass('default-page')) {
   const homeAboutSectionWaypoint = $homeAboutSection.waypoint((direction) => {
 
     /* When going down and you hit about section, do stuff */
-    if (direction === 'down') {
-      $page.addClass('scrolling');
-      $mainNavMenuItemAbout.addClass('active');
-      $mainNavMenuItemPortfolio.removeClass('active');
+    if (direction === "down") {
+      $page.addClass("scrolling");
+      $mainNavMenuItemAbout.addClass("active");
+      $mainNavMenuItemPortfolio.removeClass("active");
       $lastMainNavMenuItem = $mainNavMenuItemAbout;
 
       /* When going up and you hit About section, do stuff */
     } else {
-      $page.removeClass('scrolling');
-      $mainNavMenuItemAbout.removeClass('active');
-      $mainNavMenuItemPortfolio.removeClass('active');
+      $page.removeClass("scrolling");
+      $mainNavMenuItemAbout.removeClass("active");
+      $mainNavMenuItemPortfolio.removeClass("active");
       $lastMainNavMenuItem = null;
     }
   }, {
@@ -179,7 +179,7 @@ if ($page.hasClass('default-page')) {
      * @returns {Number} The height in pixels of the main navigation or menu
      */
     offset() {
-      return Modernizr.mq('(min-width: 46.0625rem)') ? $mainNav.height() : $mainNavMenu.height();
+      return Modernizr.mq("(min-width: 46.0625rem)") ? $mainNav.height() : $mainNavMenu.height();
     }
   });
 
@@ -190,15 +190,15 @@ if ($page.hasClass('default-page')) {
   const homePortfolioSectionWaypoint = $homePortfolioSection.waypoint((direction) => {
 
     /* When going down and you hit Portfolio section, do stuff */
-    if (direction === 'down') {
-      $mainNavMenuItemAbout.removeClass('active');
-      $mainNavMenuItemPortfolio.addClass('active');
+    if (direction === "down") {
+      $mainNavMenuItemAbout.removeClass("active");
+      $mainNavMenuItemPortfolio.addClass("active");
       $lastMainNavMenuItem = $mainNavMenuItemPortfolio;
 
       /* When going up and you hit Portfolio section, do stuff */
     } else {
-      $mainNavMenuItemAbout.addClass('active');
-      $mainNavMenuItemPortfolio.removeClass('active');
+      $mainNavMenuItemAbout.addClass("active");
+      $mainNavMenuItemPortfolio.removeClass("active");
       $lastMainNavMenuItem = $mainNavMenuItemAbout;
     }
   }, {
@@ -207,7 +207,7 @@ if ($page.hasClass('default-page')) {
      * @returns {Number} The height in pixels of the main navigation or menu
      */
     offset() {
-      return Modernizr.mq('(min-width: 46.0625rem)') ? $mainNav.height() : $mainNavMenu.height();
+      return Modernizr.mq("(min-width: 46.0625rem)") ? $mainNav.height() : $mainNavMenu.height();
     }
   });
 
@@ -219,19 +219,19 @@ if ($page.hasClass('default-page')) {
   const colophonWaypoint = $colophon.waypoint((direction) => {
 
     /* When going down and you hit the colophon (footer), do stuff */
-    if (direction === 'down') {
-      $mainNavMenuItemAbout.removeClass('active');
-      $mainNavMenuItemPortfolio.addClass('active');
+    if (direction === "down") {
+      $mainNavMenuItemAbout.removeClass("active");
+      $mainNavMenuItemPortfolio.addClass("active");
 
       /* When going up and you hit the colophon (footer), do stuff */
     } else {
-      $mainNavMenuItemAbout.removeClass('active');
-      $mainNavMenuItemPortfolio.removeClass('active');
-      $lastMainNavMenuItem.addClass('active');
+      $mainNavMenuItemAbout.removeClass("active");
+      $mainNavMenuItemPortfolio.removeClass("active");
+      $lastMainNavMenuItem.addClass("active");
     }
   }, {
     /* Offset is 100%, so when element enters into view */
-    offset: '100%'
+    offset: "100%"
   });
 
 /* Waypoints | Portfolio
@@ -245,14 +245,14 @@ if ($page.hasClass('default-page')) {
   const portfolioPageWaypoint = $portfolioPage.waypoint((direction) => {
 
     /* When going down, add scrolling class to page. When up, remove */
-    if (direction === 'down') {
-      $page.addClass('scrolling');
+    if (direction === "down") {
+      $page.addClass("scrolling");
     } else {
-      $page.removeClass('scrolling');
+      $page.removeClass("scrolling");
     }
   }, {
     /* Offset is the top margin of the portfolio page title */
-    offset: parseFloat($portfolioPage.find('.title').css('margin-top')) * -1
+    offset: parseFloat($portfolioPage.find(".title").css("margin-top")) * -1
   });
 }
 
@@ -264,10 +264,10 @@ if ($page.hasClass('default-page')) {
  * Tell ScrollMagic to listen for anchor link clicks and scroll to them.
  * @type { Click Event Listener }
  */
-$(document).on('click', 'a[href^="#"]', function scrollToAnchor(e) {
+$(document).on("click", 'a[href^="#"]', function scrollToAnchor(e) {
 
   /* Get target element from the href attribute and if it exists, do stuff */
-  const id = $(this).attr('href');
+  const id = $(this).attr("href");
 
   if ($(id).length > 0) {
 
@@ -277,7 +277,7 @@ $(document).on('click', 'a[href^="#"]', function scrollToAnchor(e) {
 
     /* Push the section id to the url */
     if (window.history && window.history.pushState) {
-      history.pushState('', document.title, id);
+      history.pushState("", document.title, id);
     }
   }
 });
@@ -287,24 +287,24 @@ $(document).on('click', 'a[href^="#"]', function scrollToAnchor(e) {
    ========================================================================= */
 
 /* Lazy loads images as they're 568px outside the view */
-$('img.lazy').unveil(568);
+$("img.lazy").unveil(568);
 
 /* Other | Home
    ========================================================================= */
-if ($page.hasClass('default-page')) {
+if ($page.hasClass("default-page")) {
 
   /* Initialize home page snapshots with Kwicks */
-  $('.snapshots').kwicks({
-    behavior: 'menu',
+  $(".snapshots").kwicks({
+    behavior: "menu",
     duration: 300,
-    maxSize: '85%',
+    maxSize: "85%",
     isVertical: true,
     selectOnClick: false,
     spacing: 0
   });
 
   /* Start home hero section animation and add scenes only if large screen */
-  if (Modernizr.mq('(min-width: 46.0625rem)')) {
+  if (Modernizr.mq("(min-width: 46.0625rem)")) {
     playHomeHeroAnimation();
     scrollMagicController.addScene([homeHeroAnimationScene, homeHeroArrowScene]);
   }
