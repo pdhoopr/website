@@ -12,7 +12,7 @@
 
     /* Main nav bar styles on small devices on home page */
     @include breakpoint($mq-small) {
-      background: $ph-blue url('/assets/img/dots-pattern.png') fixed;
+      background: $ph-blue url("/assets/img/dots-pattern.png") fixed;
       padding: 0;
       position: static;
     }
@@ -92,7 +92,7 @@
   @include height-fallback(95);
 
   /* Set background image and hide section */
-  background-image: url('/assets/img/home_hero_background.jpg');
+  background-image: url("/assets/img/home_hero_background.jpg");
   display: none;
 
   /* Show only on medium and up devices */
@@ -107,7 +107,7 @@
     @include height-fallback(95);
 
     /* Other styles for the overlay */
-    background: url('/assets/img/dots-pattern.png') fixed;
+    background: url("/assets/img/dots-pattern.png") fixed;
     text-align: center;
   }
 
@@ -168,7 +168,7 @@
 
   /* Set background image */
   background-attachment: fixed;
-  background-image: url('/assets/img/home_about_background.jpg');
+  background-image: url("/assets/img/home_about_background.jpg");
   background-size: cover;
 }
 

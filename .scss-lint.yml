@@ -4,3 +4,7 @@ linters:
   # Disable Comment linter
   Comment:
     enabled: false
+
+  # Prefer double quoted strings
+  StringQuotes:
+    style: "double_quotes"

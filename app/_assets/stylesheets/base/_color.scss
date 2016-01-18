@@ -23,7 +23,7 @@ a:visited {
    ========================================================================= */
 
 /* On touch devices, no hover effects for external links */
-.touch [target='_blank']:hover {
+.touch [target="_blank"]:hover {
   opacity: 1;
 }
 

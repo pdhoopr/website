@@ -1,68 +1,68 @@
 # Preview Photos
 project_photos:
   browser:
-    url: 'msomearasmultiage.com'
-    image_name: 'portfolio_ms-omearas-multiage_preview'
-    image_extension: 'jpg'
+    url: "msomearasmultiage.com"
+    image_name: "portfolio_ms-omearas-multiage_preview"
+    image_extension: jpg
 
   phone:
-    image_name: 'portfolio_ms-omearas-multiage_preview_mobile'
-    image_extension: 'jpg'
-    image_alt: ' | Mobile'
+    image_name: "portfolio_ms-omearas-multiage_preview_mobile"
+    image_extension: jpg
+    image_alt: " | Mobile"
 
 # Overview
 project_overview:
-  icon: 'apple'
+  icon: apple
   description: 'My mom teaches a multiage (1st, 2nd, 3rd grade) classroom and was looking for a better way to share resources, photos, information, and more with parents and students. <a class="underline" href="http://marie.hoopr.io" target="_blank">Marie</a> and I helped her out by creating a website that caters to both kids and adults in a fun and natural way. While our original WordPress iteration of her classroom site has been retired, you can still visit a working, static version of it using the button below!'
-  roles: 'Full-Stack, Logo, UI, UX'
+  roles: "Full-Stack, Logo, UI, UX"
   tech: '<a class="underline" href="https://pages.github.com/" target="_blank">GitHub Pages</a>, <a class="underline" href="https://icomoon.io/" target="_blank">IcoMoon</a>, <a class="underline" href="https://jquery.com/" target="_blank">jQuery</a>, <a class="underline" href="http://sass-lang.com/" target="_blank">Sass</a>, <a class="underline" href="https://wordpress.org/" target="_blank">WordPress</a> + <a class="underline" href="http://underscores.me/" target="_blank">Underscores</a>, <a class="underline" href="https://github.com/impatrickhooper/ms-omearas-multiage#user-content-ms-omearas-multiage" target="_blank">and more...</a>'
   mobile_ready: true
   tablet_ready: true
   desktop_ready: true
-  view_live: 'https://impatrickhooper.github.io/ms-omearas-multiage/'
-  view_github: 'https://github.com/impatrickhooper/ms-omearas-multiage'
+  view_live: "https://impatrickhooper.github.io/ms-omearas-multiage/"
+  view_github: "https://github.com/impatrickhooper/ms-omearas-multiage"
 
 # Sections
 project_sections:
-  - subtitle: 'Home'
-    description: 'The home page provides information about the class, multiage, and the teacher using the theme of journeys and the sea. The page starts with a hero image to set the tone for that theme and then breaks into colored sections to provide more detailed information.'
+  - subtitle: Home
+    description: "The home page provides information about the class, multiage, and the teacher using the theme of journeys and the sea. The page starts with a hero image to set the tone for that theme and then breaks into colored sections to provide more detailed information."
     browser:
-      url: 'msomearasmultiage.com'
-      image_scroll: 'scroll'
-      image_name: 'portfolio_ms-omearas-multiage'
-      image_extension: 'jpg'
-      image_alt: ' | Home'
+      url: "msomearasmultiage.com"
+      image_scroll: scroll
+      image_name: "portfolio_ms-omearas-multiage"
+      image_extension: jpg
+      image_alt: " | Home"
 
-  - subtitle: 'Kids'
-    description: 'The kids section was designed to be fun and easy to use for 1st, 2nd, and 3rd graders. The default kids page presents them with big, colorful buttons for each subject. Once on a subject page, students will still see that navigation to jump between subjects, and then can use the accordion menus to browse links of resources.'
+  - subtitle: Kids
+    description: "The kids section was designed to be fun and easy to use for 1st, 2nd, and 3rd graders. The default kids page presents them with big, colorful buttons for each subject. Once on a subject page, students will still see that navigation to jump between subjects, and then can use the accordion menus to browse links of resources."
     browser:
-      url: 'msomearasmultiage.com/kids'
-      image_name: 'portfolio_ms-omearas-multiage_kids'
-      image_extension: 'gif'
-      image_alt: ' | Kids'
+      url: "msomearasmultiage.com/kids"
+      image_name: "portfolio_ms-omearas-multiage_kids"
+      image_extension: gif
+      image_alt: " | Kids"
 
-  - subtitle: 'Parents'
-    description: 'Parents are greeted with a corkboard explaining what they can expect to find here. Below the image, there is a secondary navigation to allow for easy navigation between different categories of information. Within each category, sections are organzied into accordion menus to present a less overwhelming amount of information at once.'
+  - subtitle: Parents
+    description: "Parents are greeted with a corkboard explaining what they can expect to find here. Below the image, there is a secondary navigation to allow for easy navigation between different categories of information. Within each category, sections are organzied into accordion menus to present a less overwhelming amount of information at once."
     browser:
-      url: 'msomearasmultiage.com/parents'
-      image_scroll: 'scroll'
-      image_name: 'portfolio_ms-omearas-multiage_parents'
-      image_extension: 'jpg'
-      image_alt: ' | Parents'
+      url: "msomearasmultiage.com/parents"
+      image_scroll: scroll
+      image_name: "portfolio_ms-omearas-multiage_parents"
+      image_extension: jpg
+      image_alt: " | Parents"
 
-  - subtitle: 'Mobile'
+  - subtitle: Mobile
     phones:
-      - image_scroll: 'scroll'
-        image_name: 'portfolio_ms-omearas-multiage_parents_mobile'
-        image_extension: 'jpg'
-        image_alt: ' | Parents | Mobile'
+      - image_scroll: scroll
+        image_name: "portfolio_ms-omearas-multiage_parents_mobile"
+        image_extension: jpg
+        image_alt: " | Parents | Mobile"
 
-      - image_scroll: 'scroll'
-        image_name: 'portfolio_ms-omearas-multiage_mobile'
-        image_extension: 'jpg'
-        image_alt: ' | Home | Mobile'
+      - image_scroll: scroll
+        image_name: "portfolio_ms-omearas-multiage_mobile"
+        image_extension: jpg
+        image_alt: " | Home | Mobile"
 
-      - image_scroll: 'scroll'
-        image_name: 'portfolio_ms-omearas-multiage_kids_mobile'
-        image_extension: 'jpg'
-        image_alt: '  | Kids | Mobile'
+      - image_scroll: scroll
+        image_name: "portfolio_ms-omearas-multiage_kids_mobile"
+        image_extension: jpg
+        image_alt: " | Kids | Mobile"

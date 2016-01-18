@@ -31,6 +31,9 @@
     "object-curly-spacing": [0, "always"],
 
     // Don't enforce padding within blocks (this is just stylistic preference)
-    "padded-blocks": [0, "never"]
+    "padded-blocks": [0, "never"],
+
+    // Warn for single quoted strings
+    "quotes": [1, "double"]
   }
 }
