@@ -1,5 +1,5 @@
 ---
-title: portfolio
+title: Portfolio
 ---
 
 <div class="grid-container">
@@ -8,7 +8,7 @@ title: portfolio
   <div class="snapshots-wrapper kwicks-wrapper grid-33 tablet-grid-33 mobile-grid-100">
     <ul class="snapshots kwicks kwicks-vertical">
       {% for snapshot in site.portfolio reversed %}
-        {% assign snapshot_overview = site.data.pages.portfolio[snapshot.url].project_overview %}
+        {% assign snapshot_overview = site.data.pages.portfolio[snapshot.slug].project_overview %}
         {% assign snapshot_loop_index = forloop.index | modulo: 2 %}
 
         {% if snapshot_loop_index == 1 and forloop.index > 1 %}
@@ -18,7 +18,7 @@ title: portfolio
             <ul class="snapshots kwicks kwicks-vertical">
         {% endif %}
 
-        <li class="snapshot {{ snapshot.url }}-snapshot">
+        <li class="snapshot {{ snapshot.slug }}-snapshot">
           <div class="snapshot-center">
             <div class="snapshot-title">{{ snapshot.title }}</div>
 
@@ -52,7 +52,7 @@ title: portfolio
             </div>
 
             <div class="snapshot-view">
-              <a class="btn" href="/portfolio/{{ snapshot.url }}">View Project<span class="btn-icon btn-icon-right fa fa-angle-right"></span></a>
+              <a class="btn" href="{{ snapshot.url }}">View Project<span class="btn-icon btn-icon-right fa fa-angle-right"></span></a>
             </div>
           </div>
         </li>
