@@ -7,5 +7,9 @@ install:
   - npm install
   - "npm install -g surge"
   - "bundle install --path vendor/bundle"
-after_success:
-  - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_BRANCH}" = "master"} ] && npm run build && surge ./public || false'
+deploy:
+  provider: script
+  script: "npm run build && surge ./public"
+  skip_cleanup: true
+  on:
+    branch: master
