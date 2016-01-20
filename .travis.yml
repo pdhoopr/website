@@ -13,5 +13,6 @@ before_deploy:
 deploy:
   provider: script
   script: "surge ./public"
+  skip_cleanup: true
   on:
     branch: master
