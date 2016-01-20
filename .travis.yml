@@ -8,5 +8,4 @@ install:
   - "npm install -g surge"
   - "bundle install --path vendor/bundle"
 after_success:
-  - npm run build
-  - "surge ./public"
+  - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_BRANCH}" = "master"} ] && npm run build && surge ./public || false'
