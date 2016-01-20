@@ -24,6 +24,9 @@
     // Enforce no trailing commas
     "comma-dangle": [2, "never"],
 
+    // Only warn about maximum line length
+    "max-len": [1, 80, 2],
+
     // Ignore the animation/waypoint variables declared but never reused
     "no-unused-vars": [2, {"vars": "all", "varsIgnorePattern": "^tweenLogoLetters$|Waypoint$", "args": "all"}],
 
