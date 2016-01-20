@@ -5,7 +5,14 @@ before_install:
   - "rvm install 2.3.0"
 install:
   - npm install
-  - "npm install -g surge"
   - "bundle install --path vendor/bundle"
 after_success:
-  - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_BRANCH}" = "master"} ] && npm run build && surge ./public || false'
+  - npm run build
+before_deploy:
+  - "npm install -g surge"
+deploy:
+  provider: script
+  script: "surge ./public"
+  skip_cleanup: true
+  on:
+    branch: master
