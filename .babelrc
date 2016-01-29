@@ -1,4 +1,4 @@
 {
-  // Add plugins to compile ES6 and other proposed/future features
-  "presets": ["es2015", "stage-0"]
+  // Add preset for plugins to compile ES2015 (ES6) features
+  "presets": ["es2015"]
 }
