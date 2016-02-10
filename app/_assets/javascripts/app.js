@@ -16,7 +16,7 @@ const scrollMagicController = new ScrollMagic.Controller();
 const $homeHeroAnimation = $(".home-hero-animation");
 const $homeHeroAnimationTaglines = $(".home-hero-animation .tagline");
 let homeHeroAnimationTaglineNum = 0; // Counter for taglines
-const $homeHeroAnimationCTA = $(".home-hero-animation .cta");
+const $homeHeroAnimationCta = $(".home-hero-animation .cta");
 const $homeHeroArrow = $(".home-hero .arrow");
 const $homeAboutSection = $(".home-about-section");
 const $homePortfolioSection = $(".home-portfolio-section");
@@ -65,7 +65,7 @@ function playHomeHeroAnimation() {
 
   /* Bring "Learn More" button to full opacity specified amount of time */
   setTimeout(() => {
-    $homeHeroAnimationCTA.animate({opacity: 1}, 3000);
+    $homeHeroAnimationCta.animate({opacity: 1}, 3000);
   }, 5000);
 }
 
