@@ -33,23 +33,39 @@ const paths = {
     src: "docs/**",
     dest: "public/docs"
   },
+  favicon: {
+    watchFiles: "app/_assets/images/branding/favicon/**",
+    src: "app/_assets/images/branding/favicon/**",
+    dest: "public",
+    manifest: [
+      "public/android-chrome*.png",
+      "public/apple-touch-icon*.png",
+      "public/browserconfig.xml",
+      "public/favicon*",
+      "public/manifest.json",
+      "public/mstile*.png",
+      "public/safari-pinned-tab.svg"
+    ]
+  },
   images: {
     watchFiles: [
       "app/_assets/images/**",
+      "!app/_assets/images/branding/favicon/**",
       "!app/_assets/images/portfolio/university-of-michigan-athletics{,/**}",
       "!app/_assets/images/portfolio/wgi*{,/**}"
     ],
     src: [
       "app/_assets/images/**",
+      "!app/_assets/images/branding/favicon/**",
       "!app/_assets/images/portfolio/university-of-michigan-athletics{,/**}",
       "!app/_assets/images/portfolio/wgi*{,/**}"
     ],
-    dest: "public/assets/img"
+    dest: "public/img"
   },
   javascripts: {
     watchFiles: "app/_assets/javascripts/**",
     src: "app/_assets/javascripts/**",
-    dest: "public/assets/js"
+    dest: "public/js"
   },
   jekyll: {
     watchFiles: [
@@ -67,13 +83,13 @@ const paths = {
       "app/_assets/stylesheets/**"
     ],
     src: "app/_assets/stylesheets/main.scss",
-    dest: "public/assets/css"
+    dest: "public/css"
   },
   vendor: {
     javascripts: {
       watchFiles: "vendor/assets/javascripts/**",
       src: "vendor/assets/javascripts/**",
-      dest: "public/assets/js"
+      dest: "public/js"
     },
     stylesheets: {
       watchFiles: [
@@ -82,7 +98,7 @@ const paths = {
         "!vendor/assets/stylesheets/breakpoint/**"
       ],
       src: "vendor/assets/stylesheets/vendor.scss",
-      dest: "public/assets/css"
+      dest: "public/css"
     }
   }
 };
@@ -122,6 +138,36 @@ gulp.task("docs", ["clean:docs"], () => {
       }
     }))
     .pipe(gulp.dest(paths.docs.dest))
+    .pipe(browserSync.stream());
+});
+
+/**
+ * Favicon Task
+ *
+ * 1. Deletes any previous files in the build folder
+ * 2. Locates the src of images specified in paths object
+ * 3. Flattens the directory structure
+ * 4. Copies selected images to the destination specified in the paths object
+ */
+gulp.task("clean:favicon", () => {
+  return del(paths.favicon.manifest);
+});
+
+gulp.task("favicon", ["clean:favicon"], () => {
+  return gulp.src(paths.favicon.src)
+    .pipe(plumber({
+      errorHandler(err) {
+        util.log(err);
+        browserSync.notify(buildErrorMessage("favicon"));
+        this.emit("end");
+
+        /* Throw error in production builds to stop npm test/deploy scripts */
+        if (env === "production") {
+          throw err;
+        }
+      }
+    }))
+    .pipe(gulp.dest(paths.favicon.dest))
     .pipe(browserSync.stream());
 });
 
@@ -309,7 +355,15 @@ gulp.task("vendor:stylesheets", () => {
  * 2. When jekyll task is complete, runs other tasks in a specific order
  */
 gulp.task("build", ["jekyll"], (callback) => {
-  runSequence(["docs", "images", "vendor:stylesheets", "stylesheets", "vendor:javascripts", "javascripts"], callback);
+  runSequence([
+    "docs",
+    "favicon",
+    "images",
+    "vendor:stylesheets",
+    "stylesheets",
+    "vendor:javascripts",
+    "javascripts"
+  ], callback);
 });
 
 /**
@@ -317,12 +371,7 @@ gulp.task("build", ["jekyll"], (callback) => {
  *
  * 1. Run the build of the site first
  * 2. When the build finishes, initialize browser-sync to serve files
- * 3. Watches docs for changes
- * 4. Watches images for changes
- * 5. Watches javascripts for changes
- * 6. Watches jekyll files that need to regenerate on change
- * 7. Watches stylesheets for changes
- * 8. Watches vendor files for changes
+ * 3. Watch various file paths and rerun respective task when something changes
  */
 gulp.task("serve", ["build"], () => {
   browserSync.init({
@@ -332,6 +381,7 @@ gulp.task("serve", ["build"], () => {
   });
 
   gulp.watch(paths.docs.watchFiles, ["docs"]);
+  gulp.watch(paths.favicon.watchFiles, ["favicon"]);
   gulp.watch(paths.images.watchFiles, ["images"]);
   gulp.watch(paths.javascripts.watchFiles, ["javascripts"]);
   gulp.watch(paths.jekyll.watchFiles, ["build"], browserSync.reload);
