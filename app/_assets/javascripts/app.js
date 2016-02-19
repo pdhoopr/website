@@ -47,7 +47,11 @@ function tweenLogoLettersComplete() {
  * @returns { Void } No return value
  */
 function cycleHomeHeroTaglines() {
-  $homeHeroAnimationTaglines.eq(homeHeroAnimationTaglineNum).fadeIn(1000).delay(1000).fadeOut(1000, cycleHomeHeroTaglines);
+  $homeHeroAnimationTaglines
+    .eq(homeHeroAnimationTaglineNum)
+    .fadeIn(1000)
+    .delay(1000)
+    .fadeOut(1000, cycleHomeHeroTaglines);
 
   homeHeroAnimationTaglineNum = ++homeHeroAnimationTaglineNum % $homeHeroAnimationTaglines.length;
 }
@@ -286,8 +290,8 @@ $(document).on("click", 'a[href^="#"]', function scrollToAnchor(e) {
    Other
    ========================================================================= */
 
-/* Lazy loads images as they're 568px outside the view */
-$("img.lazy").unveil(568);
+/* Lazy loads images as they're <= 142px out of view */
+$("img.lazy").unveil(142);
 
 /* Other | Home
    ========================================================================= */
