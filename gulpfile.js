@@ -86,9 +86,26 @@ const paths = {
     dest: "public/css"
   },
   vendor: {
+    fonts: {
+      watchFiles: "vendor/assets/fonts/**",
+      src: "vendor/assets/fonts/**",
+      dest: "public/fonts"
+    },
     javascripts: {
       watchFiles: "vendor/assets/javascripts/**",
-      src: "vendor/assets/javascripts/**",
+      src: [
+        "vendor/assets/javascripts/modernizr/modernizr.min.js",
+        "vendor/assets/javascripts/jquery/jquery.js",
+        "vendor/assets/javascripts/gsap/TweenMax.js",
+        "vendor/assets/javascripts/gsap/jquery.gsap.js",
+        "vendor/assets/javascripts/gsap/ScrollToPlugin.js",
+        "vendor/assets/javascripts/scrollmagic/ScrollMagic.js",
+        "vendor/assets/javascripts/scrollmagic/animation.gsap.js",
+        "vendor/assets/javascripts/waypoints/jquery.waypoints.js",
+        "vendor/assets/javascripts/unveil/jquery.unveil.js",
+        "vendor/assets/javascripts/kwicks/jquery.kwicks.js",
+        "vendor/assets/javascripts/babel/polyfill.js"
+      ],
       dest: "public/js"
     },
     stylesheets: {
@@ -293,6 +310,37 @@ gulp.task("stylesheets", () => {
 });
 
 /**
+ * Vendor Fonts Task
+ *
+ * 1. Deletes all fonts in the destination directory
+ * 2. Locates the src of vendor fonts specified in paths object
+ * 3. Flattens the folder structure to one folder
+ * 4. Copies flattened structure to fonts destination specified in the paths object
+ */
+gulp.task("clean:fonts", () => {
+  return del(paths.vendor.fonts.dest);
+});
+
+gulp.task("vendor:fonts", ["clean:fonts"], () => {
+  return gulp.src(paths.vendor.fonts.src)
+    .pipe(plumber({
+      errorHandler(err) {
+        util.log(err);
+        browserSync.notify(buildErrorMessage("vendor:fonts"));
+        this.emit("end");
+
+        /* Throw error in production builds to stop npm test/deploy scripts */
+        if (env === "production") {
+          throw err;
+        }
+      }
+    }))
+    .pipe(flatten())
+    .pipe(gulp.dest(paths.vendor.fonts.dest))
+    .pipe(browserSync.stream());
+});
+
+/**
  * Vendor JavaScripts Task
  *
  * 1. Locates the src of vendor javascripts specified in paths object
@@ -314,8 +362,10 @@ gulp.task("vendor:javascripts", () => {
         }
       }
     }))
+    .pipe(sourcemaps.init())
     .pipe(concat("vendor.js"))
     .pipe(gulpif(env === "production", uglify()))
+    .pipe(sourcemaps.write("."))
     .pipe(gulp.dest(paths.vendor.javascripts.dest))
     .pipe(browserSync.stream());
 });
@@ -342,8 +392,10 @@ gulp.task("vendor:stylesheets", () => {
         }
       }
     }))
+    .pipe(sourcemaps.init())
     .pipe(gulpif(env === "production", sass({outputStyle: "compressed"}), sass({outputStyle: "expanded"})))
     .pipe(autoprefixer())
+    .pipe(sourcemaps.write("."))
     .pipe(gulp.dest(paths.vendor.stylesheets.dest))
     .pipe(browserSync.stream());
 });
@@ -359,6 +411,7 @@ gulp.task("build", ["jekyll"], (callback) => {
     "docs",
     "favicon",
     "images",
+    "vendor:fonts",
     "vendor:stylesheets",
     "stylesheets",
     "vendor:javascripts",
@@ -386,6 +439,7 @@ gulp.task("serve", ["build"], () => {
   gulp.watch(paths.javascripts.watchFiles, ["javascripts"]);
   gulp.watch(paths.jekyll.watchFiles, ["build"], browserSync.reload);
   gulp.watch(paths.stylesheets.watchFiles, ["stylesheets"]);
+  gulp.watch(paths.vendor.fonts.watchFiles, ["vendor:fonts"]);
   gulp.watch(paths.vendor.javascripts.watchFiles, ["vendor:javascripts"]);
   gulp.watch(paths.vendor.stylesheets.watchFiles, ["vendor:stylesheets"]);
 });
