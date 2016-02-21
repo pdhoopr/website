@@ -1,0 +1,34 @@
+# Lint files ending in .sass or .scss in the following path(s)
+files:
+  include: "**/*.s+(a|c)ss"
+  ignore:
+    - "app/_assets/stylesheets/utils/_mixins.scss" # REMOVE THIS AFTER v1.6 IS RELEASED
+    - "node_modules/**/*.*"
+    - "public/**/*.*"
+    - "vendor/**/*.*"
+
+# Format as stylish and bring in default rules
+options:
+  formatter: stylish
+  merge-default-rules: true
+
+# Custom overrides of default rules
+rules:
+
+  # Don't force elements to be nested (this should be left up to discretion, nesting can get nuts)
+  force-attribute-nesting: 0
+  force-element-nesting: 0
+  force-pseudo-nesting: 0
+
+  # Increase nesting depth to 3 levels
+  nesting-depth:
+    - 1
+    - max-depth: 3
+
+  # Don't enforce any specific style of commenting
+  no-css-comments: 0
+
+  # Warn that double quotes are recommended for strings
+  quotes:
+    - 1
+    - style: double
