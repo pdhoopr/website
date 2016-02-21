@@ -1,0 +1,3 @@
+# Don't lint the following folders
+public/
+vendor/
