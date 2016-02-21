@@ -1,4 +1,4 @@
-# Lint files ending in .sass or .scss in the following path(s)
+# Lint files ending in .sass or .scss in the following path(s) that aren't ignored
 files:
   include: "**/*.s+(a|c)ss"
   ignore:
