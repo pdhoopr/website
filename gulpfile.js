@@ -1,4 +1,4 @@
-/* eslint strict: 0, arrow-body-style: 1 */
+/* eslint strict: 0 */
 "use strict"; // Strict mode
 
 /* =========================================================================

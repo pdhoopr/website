@@ -21,6 +21,9 @@
   // Specific ESLint rules to override locally
   "rules": {
 
+    // Don't enforce a style for an ES2015 (ES6) arrow function body
+    "arrow-body-style": 0,
+
     // Enforce no trailing commas
     "comma-dangle": [2, "never"],
 
