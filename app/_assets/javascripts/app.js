@@ -7,7 +7,7 @@ const $header = $("header");
 const $headerMenu = $("header .menu");
 const $headerMenuItemAbout = $("header .menu-item-about");
 const $headerMenuItemPortfolio = $("header .menu-item-portfolio");
-let $lastheaderMenuItem = null; // Holds last active section while scrolling
+let $lastHeaderMenuItem = null; // Holds last active section while scrolling
 const $colophon = $(".colophon");
 const scrollMagicController = new ScrollMagic.Controller();
 
@@ -168,14 +168,14 @@ if ($page.hasClass("default-page")) {
       $page.addClass("scrolling");
       $headerMenuItemAbout.addClass("active");
       $headerMenuItemPortfolio.removeClass("active");
-      $lastheaderMenuItem = $headerMenuItemAbout;
+      $lastHeaderMenuItem = $headerMenuItemAbout;
 
       /* When going up and you hit About section, do stuff */
     } else {
       $page.removeClass("scrolling");
       $headerMenuItemAbout.removeClass("active");
       $headerMenuItemPortfolio.removeClass("active");
-      $lastheaderMenuItem = null;
+      $lastHeaderMenuItem = null;
     }
   }, {
     /**
@@ -197,13 +197,13 @@ if ($page.hasClass("default-page")) {
     if (direction === "down") {
       $headerMenuItemAbout.removeClass("active");
       $headerMenuItemPortfolio.addClass("active");
-      $lastheaderMenuItem = $headerMenuItemPortfolio;
+      $lastHeaderMenuItem = $headerMenuItemPortfolio;
 
       /* When going up and you hit Portfolio section, do stuff */
     } else {
       $headerMenuItemAbout.addClass("active");
       $headerMenuItemPortfolio.removeClass("active");
-      $lastheaderMenuItem = $headerMenuItemAbout;
+      $lastHeaderMenuItem = $headerMenuItemAbout;
     }
   }, {
     /**
@@ -231,7 +231,7 @@ if ($page.hasClass("default-page")) {
     } else {
       $headerMenuItemAbout.removeClass("active");
       $headerMenuItemPortfolio.removeClass("active");
-      $lastheaderMenuItem.addClass("active");
+      $lastHeaderMenuItem.addClass("active");
     }
   }, {
     /* Offset is 100%, so when element enters into view */
