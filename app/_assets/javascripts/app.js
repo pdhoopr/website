@@ -3,11 +3,11 @@
    ========================================================================= */
 const $page = $(".page");
 const $logoLetters = $(".logo-letter.animate");
-const $mainNav = $(".main-nav");
-const $mainNavMenu = $(".main-nav .menu");
-const $mainNavMenuItemAbout = $(".main-nav .menu-item-about");
-const $mainNavMenuItemPortfolio = $(".main-nav .menu-item-portfolio");
-let $lastMainNavMenuItem = null; // Holds last active section while scrolling
+const $header = $("header");
+const $headerMenu = $("header .menu");
+const $headerMenuItemAbout = $("header .menu-item-about");
+const $headerMenuItemPortfolio = $("header .menu-item-portfolio");
+let $lastheaderMenuItem = null; // Holds last active section while scrolling
 const $colophon = $(".colophon");
 const scrollMagicController = new ScrollMagic.Controller();
 
@@ -166,16 +166,16 @@ if ($page.hasClass("default-page")) {
     /* When going down and you hit about section, do stuff */
     if (direction === "down") {
       $page.addClass("scrolling");
-      $mainNavMenuItemAbout.addClass("active");
-      $mainNavMenuItemPortfolio.removeClass("active");
-      $lastMainNavMenuItem = $mainNavMenuItemAbout;
+      $headerMenuItemAbout.addClass("active");
+      $headerMenuItemPortfolio.removeClass("active");
+      $lastheaderMenuItem = $headerMenuItemAbout;
 
       /* When going up and you hit About section, do stuff */
     } else {
       $page.removeClass("scrolling");
-      $mainNavMenuItemAbout.removeClass("active");
-      $mainNavMenuItemPortfolio.removeClass("active");
-      $lastMainNavMenuItem = null;
+      $headerMenuItemAbout.removeClass("active");
+      $headerMenuItemPortfolio.removeClass("active");
+      $lastheaderMenuItem = null;
     }
   }, {
     /**
@@ -183,7 +183,7 @@ if ($page.hasClass("default-page")) {
      * @returns {Number} The height in pixels of the main navigation or menu
      */
     offset() {
-      return Modernizr.mq("(min-width: 46.0625rem)") ? $mainNav.height() : $mainNavMenu.height();
+      return Modernizr.mq("(min-width: 46.0625rem)") ? $header.height() : $headerMenu.height();
     }
   });
 
@@ -195,15 +195,15 @@ if ($page.hasClass("default-page")) {
 
     /* When going down and you hit Portfolio section, do stuff */
     if (direction === "down") {
-      $mainNavMenuItemAbout.removeClass("active");
-      $mainNavMenuItemPortfolio.addClass("active");
-      $lastMainNavMenuItem = $mainNavMenuItemPortfolio;
+      $headerMenuItemAbout.removeClass("active");
+      $headerMenuItemPortfolio.addClass("active");
+      $lastheaderMenuItem = $headerMenuItemPortfolio;
 
       /* When going up and you hit Portfolio section, do stuff */
     } else {
-      $mainNavMenuItemAbout.addClass("active");
-      $mainNavMenuItemPortfolio.removeClass("active");
-      $lastMainNavMenuItem = $mainNavMenuItemAbout;
+      $headerMenuItemAbout.addClass("active");
+      $headerMenuItemPortfolio.removeClass("active");
+      $lastheaderMenuItem = $headerMenuItemAbout;
     }
   }, {
     /**
@@ -211,7 +211,7 @@ if ($page.hasClass("default-page")) {
      * @returns {Number} The height in pixels of the main navigation or menu
      */
     offset() {
-      return Modernizr.mq("(min-width: 46.0625rem)") ? $mainNav.height() : $mainNavMenu.height();
+      return Modernizr.mq("(min-width: 46.0625rem)") ? $header.height() : $headerMenu.height();
     }
   });
 
@@ -224,14 +224,14 @@ if ($page.hasClass("default-page")) {
 
     /* When going down and you hit the colophon (footer), do stuff */
     if (direction === "down") {
-      $mainNavMenuItemAbout.removeClass("active");
-      $mainNavMenuItemPortfolio.addClass("active");
+      $headerMenuItemAbout.removeClass("active");
+      $headerMenuItemPortfolio.addClass("active");
 
       /* When going up and you hit the colophon (footer), do stuff */
     } else {
-      $mainNavMenuItemAbout.removeClass("active");
-      $mainNavMenuItemPortfolio.removeClass("active");
-      $lastMainNavMenuItem.addClass("active");
+      $headerMenuItemAbout.removeClass("active");
+      $headerMenuItemPortfolio.removeClass("active");
+      $lastheaderMenuItem.addClass("active");
     }
   }, {
     /* Offset is 100%, so when element enters into view */

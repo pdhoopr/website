@@ -5,8 +5,8 @@
 /* Styles that override/alter components specifically on portfolio pages */
 .portfolio-page {
 
-  /* On portfolio page, make border yellow for main nav menu item on hover */
-  .main-nav .menu-item:hover {
+  /* On portfolio page, make border yellow for header menu item on hover */
+  header .menu-item:hover {
     border-bottom-color: $ph-yellow;
 
     /* Remove border bottom color on touch devices */

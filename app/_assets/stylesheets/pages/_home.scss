@@ -5,26 +5,26 @@
 /* Styles that override/alter components specifically on the home page */
 .default-page {
 
-  /* Main nav bar styles for home page */
-  .main-nav {
+  /* Header styles for home page */
+  header {
     background: none;
     box-shadow: none;
 
-    /* Main nav bar styles on small devices on home page */
+    /* Header styles on small devices on home page */
     @include breakpoint($mq-small) {
       background: $ph-blue url("/img/dots-pattern.png") fixed;
       padding: 0;
       position: static;
     }
 
-    /* Main nav menu styles on small devices on home page */
+    /* Header menu styles on small devices on home page */
     .menu {
       @include breakpoint($mq-small) {
         float: none;
         width: 100%;
       }
 
-      /* Main nav menu item styles on small devices on home page */
+      /* Header menu item styles on small devices on home page */
       .menu-item {
         @include breakpoint($mq-small) {
           padding: 13px 0 10px;
