@@ -8,7 +8,7 @@
   // Specify the environments code will run in
   "env": {
     "es6": true,
-    "jquery": true,
+    "jquery": true
   },
 
   // Global variables for this project that ESLint should recognize
