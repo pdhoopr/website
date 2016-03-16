@@ -48,10 +48,11 @@ function tweenLogoLettersComplete() {
  */
 function cycleHomeHeroTaglines() {
   $homeHeroAnimationTaglines
+    .css("display", "none")
     .eq(homeHeroAnimationTaglineNum)
-    .fadeIn(1000)
-    .delay(1000)
-    .fadeOut(1000, cycleHomeHeroTaglines);
+    .toggle("slide", {direction: "right"}, 900)
+    .delay(1800)
+    .toggle("slide", {direction: "left"}, 900, cycleHomeHeroTaglines);
 
   homeHeroAnimationTaglineNum = ++homeHeroAnimationTaglineNum % $homeHeroAnimationTaglines.length;
 }
@@ -62,15 +63,13 @@ function cycleHomeHeroTaglines() {
  * @returns { Void } No return value
  */
 function playHomeHeroAnimation() {
-
-  /* Hide all taglines to start then cycle through them after given time */
-  $homeHeroAnimationTaglines.hide();
+  /* Cycle through taglines them after given time */
   setTimeout(cycleHomeHeroTaglines, 500);
 
   /* Bring "Learn More" button to full opacity specified amount of time */
   setTimeout(() => {
-    $homeHeroAnimationCta.animate({opacity: 1}, 3000);
-  }, 5000);
+    $homeHeroAnimationCta.animate({opacity: 1}, 900);
+  }, 2700);
 }
 
 /* =========================================================================

@@ -96,6 +96,7 @@ const paths = {
       src: [
         "vendor/assets/javascripts/modernizr/modernizr.min.js",
         "vendor/assets/javascripts/jquery/jquery.js",
+        "vendor/assets/javascripts/jquery/jquery-ui.js",
         "vendor/assets/javascripts/gsap/TweenMax.js",
         "vendor/assets/javascripts/gsap/jquery.gsap.js",
         "vendor/assets/javascripts/gsap/ScrollToPlugin.js",
@@ -244,7 +245,7 @@ gulp.task("javascripts", () => {
       }
     }))
     .pipe(sourcemaps.init())
-    .pipe(concat("bundle.js"))
+    .pipe(concat("app.js"))
     .pipe(babel())
     .pipe(gulpif(env === "production", uglify()))
     .pipe(sourcemaps.write("."))

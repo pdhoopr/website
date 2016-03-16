@@ -35,6 +35,7 @@ The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Tec
 #### JavaScript
 - [GSAP](http://greensock.com/gsap)
 - [jQuery](https://jquery.com)
+- [jQuery UI](https://jqueryui.com)
 - [Kwicks](http://devsmash.com/projects/kwicks)
 - [Modernizr](http://modernizr.com/)
 - [ScrollMagic](http://scrollmagic.io/)
