@@ -289,26 +289,14 @@ $(document).on("click", 'a[href^="#"]', function scrollToAnchor(e) {
    Other
    ========================================================================= */
 
-/* Lazy loads images as they're <= 142px out of view */
+/* Lazy loads images as they're <= 284px out of view */
 $("img.lazy").unveil(284);
 
 /* Other | Home
    ========================================================================= */
-if ($page.hasClass("default-page")) {
 
-  /* Initialize home page snapshots with Kwicks */
-  $(".snapshots").kwicks({
-    behavior: "menu",
-    duration: 300,
-    maxSize: "85%",
-    isVertical: true,
-    selectOnClick: false,
-    spacing: 0
-  });
-
-  /* Start home hero section animation and add scenes only if large screen */
-  if (Modernizr.mq("(min-width: 46.0625rem)")) {
-    playHomeHeroAnimation();
-    scrollMagicController.addScene([homeHeroAnimationScene, homeHeroArrowScene]);
-  }
+/* Start home hero section animation and add scenes only if large screen */
+if ($page.hasClass("default-page") && Modernizr.mq("(min-width: 46.0625rem)")) {
+  playHomeHeroAnimation();
+  scrollMagicController.addScene([homeHeroAnimationScene, homeHeroArrowScene]);
 }
