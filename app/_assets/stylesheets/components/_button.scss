@@ -10,7 +10,9 @@ a.btn {
   cursor: pointer;
   display: inline-block;
   font-family: $ubuntu;
-  padding: .66667em 1.5em;
+  height: 72px;
+  line-height: 72px;
+  padding: 0 1.5em;
 }
 
 /* Styles for a raised button */
@@ -36,7 +38,7 @@ a.btn-raised {
 
 /* Give Live button a blue background color */
 .btn-live {
-  background-color: $ph-blue;
+  background-color: lighten($ph-blue, 12%);
 }
 
 /* Give Overview button a slightly darkened yellow background color */

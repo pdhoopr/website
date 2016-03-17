@@ -22,7 +22,6 @@ The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Tec
 
 #### CSS & Sass
 - [Breakpoint](http://breakpoint-sass.com/)
-- [Kwicks](http://devsmash.com/projects/kwicks)
 - [Reset CSS](https://necolas.github.io/normalize.css/)
 - [Sassy Maps](https://github.com/at-import/Sassy-Maps)
 - [Unsemantic](http://unsemantic.com/)
@@ -36,7 +35,6 @@ The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Tec
 - [GSAP](http://greensock.com/gsap)
 - [jQuery](https://jquery.com)
 - [jQuery UI](https://jqueryui.com)
-- [Kwicks](http://devsmash.com/projects/kwicks)
 - [Modernizr](http://modernizr.com/)
 - [ScrollMagic](http://scrollmagic.io/)
 - [Unveil](http://luis-almeida.github.io/unveil/)
