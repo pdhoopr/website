@@ -5,58 +5,27 @@ title: Portfolio
 <div class="grid-container">
   <h2 class="title">{ PORTFOLIO }</h2>
 
-  <div class="snapshots-wrapper kwicks-wrapper grid-33 tablet-grid-33 mobile-grid-100">
-    <ul class="snapshots kwicks kwicks-vertical">
-      {% for snapshot in site.portfolio reversed %}
-        {% assign snapshot_overview = site.data.pages.portfolio[snapshot.slug].project_overview %}
-        {% assign snapshot_loop_index = forloop.index | modulo: 2 %}
+  <ul class="project-list">
+    {% for project in site.portfolio reversed %}
+      {% assign project_overview = site.data.pages.portfolio[project.slug].project_overview %}
 
-        {% if snapshot_loop_index == 1 and forloop.index > 1 %}
-            </ul>
+      <li>
+        <h3 class="project-list-title">{{ project.title }}</h3>
+
+        <div class="project-list-body">
+          <p class="project-list-teaser">{{ project_overview.teaser }}</p>
+
+          <div class="project-list-buttons">
+            <a class="btn btn-raised btn-overview" href="{{ project.url }}"><span class="btn-icon btn-icon-left fa fa-sitemap"></span>Overview</a>
+            {% if project_overview.view_live %}
+              <a class="btn btn-raised btn-live" href="{{ project_overview.view_live }}"><span class="btn-icon btn-icon-left fa fa-external-link"></span>Live</a>
+            {% endif %}
+            {% if project_overview.view_github %}
+              <a class="btn btn-raised btn-github" href="{{ project_overview.view_github }}"><span class="btn-icon btn-icon-left fa fa-github"></span>GitHub</a>
+            {% endif %}
           </div>
-          <div class="snapshots-wrapper kwicks-wrapper grid-33 tablet-grid-33 mobile-grid-100">
-            <ul class="snapshots kwicks kwicks-vertical">
-        {% endif %}
-
-        <li class="snapshot {{ snapshot.slug }}-snapshot">
-          <div class="snapshot-center">
-            <div class="snapshot-title">{{ snapshot.title }}</div>
-
-            <i class="snapshot-icon fa fa-3x fa-{{ snapshot_overview.icon}}"></i>
-
-            <div class="snapshot-body">
-              <div class="snapshot-roles">
-                <p class="snapshot-label">Roles</p>
-                <p>{{ snapshot_overview.roles }}</p>
-              </div>
-
-              <div class="snapshot-tech">
-                <p class="snapshot-label">Tech</p>
-                <p>{{ snapshot_overview.tech | strip_html }}</p>
-              </div>
-
-              <div class="snapshot-devices">
-                <p class="snapshot-label">Platforms</p>
-                <div class="snapshot-devices-icons">
-                  {% if snapshot_overview.mobile_ready %}
-                    <span class="fa fa-mobile"></span>
-                  {% endif %}
-                  {% if snapshot_overview.tablet_ready %}
-                    <span class="fa fa-tablet"></span>
-                  {% endif %}
-                  {% if snapshot_overview.desktop_ready %}
-                    <span class="fa fa-desktop"></span>
-                  {% endif %}
-                </div>
-              </div>
-            </div>
-
-            <div class="snapshot-view">
-              <a class="btn" href="{{ snapshot.url }}">View Project<span class="btn-icon btn-icon-right fa fa-angle-right"></span></a>
-            </div>
-          </div>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
 </div>

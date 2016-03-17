@@ -217,25 +217,46 @@
 /* Styles for the Portfolio section */
 .home-portfolio-section {
 
-  /* Text/font styles for the roles, tech, and platforms */
-  .snapshot-roles,
-  .snapshot-tech,
-  .snapshot-devices {
-    color: $white;
-    line-height: 1.25;
-    text-align: center;
+  /* Give bottom padding to all but the last project */
+  .project-list li:not(:last-of-type) {
+    padding-bottom: 1.5em;
   }
 
-  /* Give bottom margin to roles and tech */
-  .snapshot-roles,
-  .snapshot-tech {
-    margin-bottom: 1.5em;
-    padding-bottom: 0;
-  }
-
-  /* Change font styles for platforms */
-  .snapshot-devices {
+  /* Change font size and bottom margin for project title */
+  .project-list-title {
     font-size: 1.5rem;
-    line-height: 1;
+    margin-bottom: .25em;
+  }
+
+  /* Display the container for paragraph and buttons as flex on medium and up devices */
+  .project-list-body {
+    @include breakpoint($mq-medium) {
+      display: flex;
+    }
+  }
+
+  /* Give bottom padding to the teaser paragraph */
+  .project-list-teaser {
+    padding-bottom: .75em;
+
+    /* Flex on medium and up devices and alter spacing */
+    @include breakpoint($mq-medium) {
+      flex: 1;
+      padding-bottom: 0;
+      padding-right: 1.5em;
+    }
+  }
+
+  /* Give button container a minimum width of about 300px (when font is 16px) */
+  .project-list-buttons {
+    min-width: 18.75rem;
+
+    /* Make buttons a little smaller than the default */
+    .btn {
+      font-size: 1rem;
+      height: 36px;
+      line-height: 36px;
+      padding: 0 .75em;
+    }
   }
 }
