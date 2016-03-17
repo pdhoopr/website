@@ -70,15 +70,15 @@ header {
   /* Styles for a header menu item */
   .menu-item {
     border-bottom: 3px solid transparent;
-    font-size: 1.25rem;
-    padding-bottom: 9px;
-    padding-top: 14px;
+    font-size: 1rem;
+    padding-bottom: 13px;
+    padding-top: 16px;
     transition: .3s;
 
     /* Styles for medium and up devices */
     @include breakpoint($mq-medium) {
-      padding-bottom: 13px;
-      padding-top: 18px;
+      padding-bottom: 17px;
+      padding-top: 20px;
     }
 
     /* Styles for hovering over a header menu item (yellow underline) */
@@ -100,13 +100,11 @@ header {
 
   /* Animate header menu icon properties over .3s */
   .menu-item-icon {
-    font-size: 1.5rem;
     transition: .3s;
-    vertical-align: -5%;
 
     /* Move grid icon down */
     &.fa-th {
-      vertical-align: -10%;
+      vertical-align: -5%;
     }
   }
 }

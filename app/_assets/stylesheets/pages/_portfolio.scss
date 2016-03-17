@@ -183,16 +183,14 @@
 
   /* Styles for the the buttons to go to the live site or GitHub */
   .btn {
-    font-size: 1.25rem;
-    margin-top: 1.125em;
-    padding-left: 1.125em;
-    padding-right: 1.125em;
+    margin-top: 1.25em;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
     width: auto;
 
     /* Alter some styles on medium and up devices */
     @include breakpoint($mq-medium) {
-      font-size: 1.5rem;
-      margin-top: 1em;
+      margin-top: 1.125em;
       padding-left: 1.5em;
       padding-right: 1.5em;
       width: auto;
@@ -200,7 +198,7 @@
 
     /* Increase top margin on large devices */
     @include breakpoint($mq-large) {
-      margin-top: 2em;
+      margin-top: 3em;
     }
 
     /* For all but first button, add left margin on medium and up devices */
@@ -212,18 +210,7 @@
 
     /* Give right margin to button icon and pull it down a little */
     .btn-icon {
-      font-size: 1.125rem;
       vertical-align: -10%;
-
-      /* Increase icon size on medium and up devices */
-      @include breakpoint($mq-medium) {
-        font-size: 1.5rem;
-      }
-
-      /* Move GitHub up a little more than other icons */
-      &.fa-github {
-        vertical-align: 0%;
-      }
     }
   }
 }
