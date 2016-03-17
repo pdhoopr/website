@@ -72,6 +72,11 @@ function playHomeHeroAnimation() {
   }, 2700);
 }
 
+/* Start home hero section animation on home page */
+if ($page.hasClass("default-page")) {
+  playHomeHeroAnimation();
+}
+
 /* =========================================================================
    GSAP Tweens
    ========================================================================= */
@@ -126,27 +131,32 @@ scrollMagicController.scrollTo((newpos) => {
 /* ScrollMagic Scenes | Home
    ========================================================================= */
 
-/**
- * Fade out the Home Hero section and produce parallax scrolling effect.
- * @type { ScrollMagic Scene }
- */
-const homeHeroAnimationScene = new ScrollMagic.Scene({
-  triggerElement: ".home-hero",
-  triggerHook: "onLeave", // Start when trigger starts leaving viewport
-  duration: "100%" // End when viewport has moved 100%
-})
-.setTween(fadeHomeHeroAnimation); // Use the fadeHomeHeroAnimation tween
+if ($page.hasClass("default-page")) {
+  /**
+   * Fade out the Home Hero section and produce parallax scrolling effect.
+   * @type { ScrollMagic Scene }
+   */
+  const homeHeroAnimationScene = new ScrollMagic.Scene({
+    triggerElement: ".home-hero",
+    triggerHook: "onLeave", // Start when trigger starts leaving viewport
+    duration: "100%" // End when viewport has moved 100%
+  })
+  .setTween(fadeHomeHeroAnimation); // Use the fadeHomeHeroAnimation tween
 
-/**
- * Smush Hero arrow up into itself when scrolling down the Home page.
- * @type { ScrollMagic Scene }
- */
-const homeHeroArrowScene = new ScrollMagic.Scene({
-  triggerElement: ".home-hero",
-  triggerHook: "onLeave", // Start when trigger starts leaving viewport
-  duration: "100%" // End when viewport has moved 75%
-})
-.setTween(fadeHomeHeroArrow);
+  /**
+   * Smush Hero arrow up into itself when scrolling down the Home page.
+   * @type { ScrollMagic Scene }
+   */
+  const homeHeroArrowScene = new ScrollMagic.Scene({
+    triggerElement: ".home-hero",
+    triggerHook: "onLeave", // Start when trigger starts leaving viewport
+    duration: "100%" // End when viewport has moved 75%
+  })
+  .setTween(fadeHomeHeroArrow);
+
+  /* Add home animations to ScrollMagic controller */
+  scrollMagicController.addScene([homeHeroAnimationScene, homeHeroArrowScene]);
+}
 
 /* =========================================================================
    Waypoints
@@ -291,12 +301,3 @@ $(document).on("click", 'a[href^="#"]', function scrollToAnchor(e) {
 
 /* Lazy loads images as they're <= 284px out of view */
 $("img.lazy").unveil(284);
-
-/* Other | Home
-   ========================================================================= */
-
-/* Start home hero section animation and add scenes only if large screen */
-if ($page.hasClass("default-page") && Modernizr.mq("(min-width: 46.0625rem)")) {
-  playHomeHeroAnimation();
-  scrollMagicController.addScene([homeHeroAnimationScene, homeHeroArrowScene]);
-}
