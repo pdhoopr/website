@@ -38,7 +38,6 @@
   .logo {
     @include breakpoint($mq-small) {
       float: none;
-      font-size: 3rem;
       line-height: 1;
       padding: .4em 0 .2em;
     }
@@ -147,7 +146,7 @@
     opacity: 0;
     position: relative;
     text-align: center;
-    top: 5em;
+    top: 4.75em;
   }
 
   /* Styles for hero taglines */
@@ -249,11 +248,10 @@
 
   /* Give button container a minimum width of about 300px (when font is 16px) */
   .project-list-buttons {
-    min-width: 18.75rem;
+    min-width: 18rem;
 
     /* Make buttons a little smaller than the default */
     .btn {
-      font-size: 1rem;
       height: 36px;
       line-height: 36px;
       padding: 0 .75em;
