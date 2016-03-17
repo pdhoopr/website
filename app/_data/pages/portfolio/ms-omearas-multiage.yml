@@ -12,7 +12,7 @@ project_photos:
 
 # Overview
 project_overview:
-  icon: apple
+  teaser: "The original, whimsical WordPress site for the classroom of Ms. O'Meara (my mom), her students, and their parents."
   description: 'My mom teaches a multiage (1st, 2nd, 3rd grade) classroom and was looking for a better way to share resources, photos, information, and more with parents and students. <a class="underline" href="http://marie.hoopr.io" target="_blank">Marie</a> and I helped her out by creating a website that caters to both kids and adults in a fun and natural way. While our original WordPress iteration of her classroom site has been retired, you can still visit a working, static version of it using the button below!'
   roles: "Full-Stack, Logo, UI, UX"
   tech: '<a class="underline" href="https://pages.github.com/" target="_blank">GitHub Pages</a>, <a class="underline" href="https://icomoon.io/" target="_blank">IcoMoon</a>, <a class="underline" href="https://jquery.com/" target="_blank">jQuery</a>, <a class="underline" href="http://sass-lang.com/" target="_blank">Sass</a>, <a class="underline" href="https://wordpress.org/" target="_blank">WordPress</a> + <a class="underline" href="http://underscores.me/" target="_blank">Underscores</a>, <a class="underline" href="https://github.com/impatrickhooper/ms-omearas-multiage#user-content-ms-omearas-multiage" target="_blank">and more...</a>'

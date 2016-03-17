@@ -104,7 +104,6 @@ const paths = {
         "vendor/assets/javascripts/scrollmagic/animation.gsap.js",
         "vendor/assets/javascripts/waypoints/jquery.waypoints.js",
         "vendor/assets/javascripts/unveil/jquery.unveil.js",
-        "vendor/assets/javascripts/kwicks/jquery.kwicks.js",
         "vendor/assets/javascripts/babel/polyfill.js"
       ],
       dest: "public/js"

@@ -34,9 +34,14 @@ a.btn-raised {
   background-color: $github-gray;
 }
 
-/* Give Live Site button a blue background color */
+/* Give Live button a blue background color */
 .btn-live {
   background-color: $ph-blue;
+}
+
+/* Give Overview button a slightly darkened yellow background color */
+.btn-overview {
+  background-color: darken($ph-yellow, 3%);
 }
 
 /* Give right margin to icons that are left of button text */
