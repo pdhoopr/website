@@ -1,11 +1,11 @@
 /* =========================================================================
-   Portfolio
+   Project
    ========================================================================= */
 
-/* Styles that override/alter components specifically on portfolio pages */
-.portfolio-page {
+/* Styles that override/alter components specifically on project pages */
+.project-page {
 
-  /* On portfolio page, make border yellow for header menu item on hover */
+  /* On project page, make border yellow for header menu item on hover */
   header .menu-item:hover {
     border-bottom-color: $ph-yellow;
 
@@ -78,10 +78,7 @@
   }
 }
 
-/* Portfolio | Project
-   ========================================================================= */
-
-/* Styles for the main content on a portfolio page */
+/* Styles for the main content on a project page */
 .project {
   padding-top: 56px;
 
@@ -93,7 +90,7 @@
   /* Override styles for text-only projects */
   &.text-only-project {
 
-    /* Alter padding for these portfolio page's project sections */
+    /* Alter padding for these project's sections */
     .project-section {
       padding: 0;
 
@@ -106,7 +103,7 @@
   }
 }
 
-/* Portfolio | Project Photos
+/*  Project | Photos
    ========================================================================= */
 
 /* Styles for the project photos (overview/preview photos) */
@@ -121,7 +118,7 @@
   }
 }
 
-/* Portfolio | Project Overview
+/* Project | Overview
    ========================================================================= */
 
 /* Styles for project overview section */
@@ -215,12 +212,12 @@
   }
 }
 
-/* Portfolio | Project Section
+/* Project | Section
    ========================================================================= */
 
 /* Styles for a row of a project page (where used) */
 .project-row {
-  padding-bottom: 1.8em;
+  padding-bottom: 1.5em;
 
   /* Increase bottom padding for last project row on a page */
   &:last-of-type {

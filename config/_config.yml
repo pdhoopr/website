@@ -6,9 +6,9 @@ destination: "../public"
 collections:
   home:
     output: false
-  portfolio:
+  projects:
     output: true
-    permalink: "/portfolio/:title/"
+    permalink: "/projects/:title/"
 gems:
   - "jekyll-sitemap"
 markdown: rdiscount
