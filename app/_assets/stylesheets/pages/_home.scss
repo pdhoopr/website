@@ -218,7 +218,12 @@
 
   /* Give bottom padding to all but the last project */
   .project-list li:not(:last-of-type) {
-    padding-bottom: 1.5em;
+    padding-bottom: 2.4em;
+
+    /* Reduce spacing slightly on medium and up devices */
+    @include breakpoint($mq-medium) {
+      padding-bottom: 1.8em;
+    }
   }
 
   /* Change font size and bottom margin for project title */
