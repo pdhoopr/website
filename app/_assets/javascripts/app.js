@@ -21,7 +21,7 @@ const $homeHeroArrow = $(".home-hero .arrow");
 const $homeAboutSection = $(".home-about-section");
 const $homeProjectsSection = $(".home-projects-section");
 
-/* Variables | Projects
+/* Variables | Project
    ========================================================================= */
 const $projectPage = $(".project-page");
 
@@ -247,7 +247,7 @@ if ($page.hasClass("default-page")) {
     offset: "100%"
   });
 
-/* Waypoints | Projects
+/* Waypoints | Project
    ========================================================================= */
 } else {
 
