@@ -1,13 +1,13 @@
 ---
-title: Portfolio
+title: Projects
 ---
 
 <div class="grid-container">
-  <h2 class="title">{ PORTFOLIO }</h2>
+  <h2 class="title">{ PROJECTS }</h2>
 
   <ul class="project-list">
-    {% for project in site.portfolio reversed %}
-      {% assign project_overview = site.data.pages.portfolio[project.slug].project_overview %}
+    {% for project in site.projects reversed %}
+      {% assign project_overview = site.data.pages.projects[project.slug].project_overview %}
 
       <li>
         <h3 class="project-list-title">{{ project.title }}</h3>

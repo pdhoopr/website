@@ -6,18 +6,18 @@
    ========================================================================= */
 
 /* Device sizes */
-$small-max-width: 46rem; // 736px
-$medium-min-width: 46.0625rem; // 737px
-$medium-max-width: 62rem; // 992px
-$large-min-width: 62.0625rem; // 993px
-$large-max-width: 75rem; // 1200px
-$big-min-width: 75.0625rem; // 1201px
+$small-max-width: 46em; // 736px
+$medium-min-width: 46.0625em; // 737px
+$medium-max-width: 62em; // 992px
+$large-min-width: 62.0625em; // 993px
+$large-max-width: 75em; // 1200px
+$big-min-width: 75.0625em; // 1201px
 
 /* Breakpoint variables for media queries */
-$mq-small: max-width $small-max-width; // @media (max-width: 46rem)
-$mq-medium: min-width $medium-min-width; // @media (min-width: 46.0625rem)
-$mq-large: min-width $large-min-width; // @media (min-width: 62.0625rem)
-$mq-big: min-width $big-min-width; // @media (min-width: 75.0625rem)
+$mq-small: max-width $small-max-width; // @media (max-width: 46em)
+$mq-medium: min-width $medium-min-width; // @media (min-width: 46.0625em)
+$mq-large: min-width $large-min-width; // @media (min-width: 62.0625em)
+$mq-big: min-width $big-min-width; // @media (min-width: 75.0625em)
 
 /* Variables | Typography
    ========================================================================= */

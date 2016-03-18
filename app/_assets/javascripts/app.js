@@ -6,7 +6,7 @@ const $logoLetters = $(".logo-letter.animate");
 const $header = $("header");
 const $headerMenu = $("header .menu");
 const $headerMenuItemAbout = $("header .menu-item-about");
-const $headerMenuItemPortfolio = $("header .menu-item-portfolio");
+const $headerMenuItemProjects = $("header .menu-item-projects");
 let $lastHeaderMenuItem = null; // Holds last active section while scrolling
 const $colophon = $(".colophon");
 const scrollMagicController = new ScrollMagic.Controller();
@@ -19,11 +19,11 @@ let homeHeroAnimationTaglineNum = 0; // Counter for taglines
 const $homeHeroAnimationCta = $(".home-hero-animation .cta");
 const $homeHeroArrow = $(".home-hero .arrow");
 const $homeAboutSection = $(".home-about-section");
-const $homePortfolioSection = $(".home-portfolio-section");
+const $homeProjectsSection = $(".home-projects-section");
 
-/* Variables | Portfolio
+/* Variables | Project
    ========================================================================= */
-const $portfolioPage = $(".portfolio-page");
+const $projectPage = $(".project-page");
 
 /* =========================================================================
    Functions
@@ -176,14 +176,14 @@ if ($page.hasClass("default-page")) {
     if (direction === "down") {
       $page.addClass("scrolling");
       $headerMenuItemAbout.addClass("active");
-      $headerMenuItemPortfolio.removeClass("active");
+      $headerMenuItemProjects.removeClass("active");
       $lastHeaderMenuItem = $headerMenuItemAbout;
 
       /* When going up and you hit About section, do stuff */
     } else {
       $page.removeClass("scrolling");
       $headerMenuItemAbout.removeClass("active");
-      $headerMenuItemPortfolio.removeClass("active");
+      $headerMenuItemProjects.removeClass("active");
       $lastHeaderMenuItem = null;
     }
   }, {
@@ -192,26 +192,26 @@ if ($page.hasClass("default-page")) {
      * @returns {Number} The height in pixels of the main navigation or menu
      */
     offset() {
-      return Modernizr.mq("(min-width: 46.0625rem)") ? $header.height() : $headerMenu.height();
+      return Modernizr.mq("(min-width: 46.0625em)") ? $header.height() : $headerMenu.height();
     }
   });
 
   /**
-   * Toggles active class for Portfolio section and removes for About section.
+   * Toggles active class for Projects section and removes for About section.
    * @type { Waypoint }
    */
-  const homePortfolioSectionWaypoint = $homePortfolioSection.waypoint((direction) => {
+  const homeProjectsSectionWaypoint = $homeProjectsSection.waypoint((direction) => {
 
-    /* When going down and you hit Portfolio section, do stuff */
+    /* When going down and you hit Projects section, do stuff */
     if (direction === "down") {
       $headerMenuItemAbout.removeClass("active");
-      $headerMenuItemPortfolio.addClass("active");
-      $lastHeaderMenuItem = $headerMenuItemPortfolio;
+      $headerMenuItemProjects.addClass("active");
+      $lastHeaderMenuItem = $headerMenuItemProjects;
 
-      /* When going up and you hit Portfolio section, do stuff */
+      /* When going up and you hit Projects section, do stuff */
     } else {
       $headerMenuItemAbout.addClass("active");
-      $headerMenuItemPortfolio.removeClass("active");
+      $headerMenuItemProjects.removeClass("active");
       $lastHeaderMenuItem = $headerMenuItemAbout;
     }
   }, {
@@ -220,12 +220,12 @@ if ($page.hasClass("default-page")) {
      * @returns {Number} The height in pixels of the main navigation or menu
      */
     offset() {
-      return Modernizr.mq("(min-width: 46.0625rem)") ? $header.height() : $headerMenu.height();
+      return Modernizr.mq("(min-width: 46.0625em)") ? $header.height() : $headerMenu.height();
     }
   });
 
   /**
-   * Toggles Portfolio section as active at bottom, restores previous active
+   * Toggles Projects section as active at bottom, restores previous active
    * section when scrolling back up.
    * @type { Waypoint }
    */
@@ -234,12 +234,12 @@ if ($page.hasClass("default-page")) {
     /* When going down and you hit the colophon (footer), do stuff */
     if (direction === "down") {
       $headerMenuItemAbout.removeClass("active");
-      $headerMenuItemPortfolio.addClass("active");
+      $headerMenuItemProjects.addClass("active");
 
       /* When going up and you hit the colophon (footer), do stuff */
     } else {
       $headerMenuItemAbout.removeClass("active");
-      $headerMenuItemPortfolio.removeClass("active");
+      $headerMenuItemProjects.removeClass("active");
       $lastHeaderMenuItem.addClass("active");
     }
   }, {
@@ -247,15 +247,15 @@ if ($page.hasClass("default-page")) {
     offset: "100%"
   });
 
-/* Waypoints | Portfolio
+/* Waypoints | Project
    ========================================================================= */
 } else {
 
   /**
-   * Flags the Portfolio page as scrolling.
+   * Flags a project page as scrolling.
    * @type { Waypoint }
    */
-  const portfolioPageWaypoint = $portfolioPage.waypoint((direction) => {
+  const projectPageWaypoint = $projectPage.waypoint((direction) => {
 
     /* When going down, add scrolling class to page. When up, remove */
     if (direction === "down") {
@@ -264,8 +264,8 @@ if ($page.hasClass("default-page")) {
       $page.removeClass("scrolling");
     }
   }, {
-    /* Offset is the top margin of the portfolio page title */
-    offset: parseFloat($portfolioPage.find(".title").css("margin-top")) * -1
+    /* Offset is the top margin of the project page title */
+    offset: parseFloat($projectPage.find(".title").css("margin-top")) * -1
   });
 }
 
