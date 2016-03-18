@@ -51,13 +51,13 @@ const paths = {
     watchFiles: [
       "app/_assets/images/**",
       "!app/_assets/images/branding/favicon/**",
-      "!app/_assets/images/projects/university-of-michigan-athletics{,/**}",
+      "!app/_assets/images/projects/umich-athletics{,/**}",
       "!app/_assets/images/projects/wgi*{,/**}"
     ],
     src: [
       "app/_assets/images/**",
       "!app/_assets/images/branding/favicon/**",
-      "!app/_assets/images/projects/university-of-michigan-athletics{,/**}",
+      "!app/_assets/images/projects/umich-athletics{,/**}",
       "!app/_assets/images/projects/wgi*{,/**}"
     ],
     dest: "public/img"

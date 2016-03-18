@@ -1,0 +1,26 @@
+# Preview Photos
+project_photos:
+  browser:
+    url: "health.hmrc.kines.umich.edu"
+    image_scroll: scroll
+    image_name: "projects_umich-hmrc_preview"
+    image_extension: jpg
+
+# Overview
+project_overview:
+  teaser: "Some DevOps and a little bit of front-end development to help bring HMRC into the modern era."
+  description: "The Health Management Research Center (HMRC) at the University of Michigan had a suite of health products with a great research foundation, but a slightly dated tech stack. Working together with the rest of the team there, I was fortunate to be a part of HMRC's transition into the modern era. This meant new everything: computers, virtual servers, version control system, database, web apps, and even an API!"
+  roles: "DevOps, Front-End, UI, UX"
+  tech: '<a class="underline" href="http://aurelia.io/" target="_blank">Aurelia</a>, <a class="underline" href="https://www.dreamfactory.com/" target="_blank">DreamFactory</a>, <a class="underline" href="https://about.gitlab.com/" target="_blank">GitLab</a>, <a class="underline" href="https://www.nginx.com/" target="_blank">NGINX</a>, <a class="underline" href="https://facebook.github.io/react/" target="_blank">React</a>, <a class="underline" href="https://github.com/reactjs/react-router" target="_blank">React Router</a>, <a class="underline" href="https://github.com/reactjs/redux" target="_blank">Redux</a>, <a class="underline" href="https://webpack.github.io/" target="_blank">Webpack</a>'
+  desktop_ready: true
+
+# Sections
+project_sections:
+  - subtitle: Product Suite
+    description: "HMRC hopes to revitalize its current product offerings with fresh designs and technology, like a JavaScript framework. The photo you see above is the design I created for the home page, and the initial wave of products will be rebuilt from the ground up using either Aurelia or React. The apps will run on an NGINX web server I setup on a virtual machine."
+
+  - subtitle: DreamFactory
+    description: "HMRC uses Oracle, and before DreamFactory there wasn't really an easy-to-use way of getting data on the front end. However, the great guys at DreamFactory helped us get up and running with their product, allowing me to make simple API calls to get front-end friendly JSON data! I helped get DreamFactory up and running smoothly with NGINX and PHP, and then installed extensions to allow custom scripting with V8.js and Node.js."
+
+  - subtitle: GitLab
+    description: "Before I arrived, people at HMRC were using Team Foundation Server for version control, but it was wildly unstable and crashed frequently. I guided them towards using Git, compiled a getting started guide with plenty of useful resources, then installed a self-hosted verison of GitLab CE on a virtual server, customized for our team. I also helped convert repos from TFS to Git, when necessary."
