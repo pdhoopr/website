@@ -27,7 +27,7 @@
       /* Header menu item styles on small devices on home page */
       .menu-item {
         @include breakpoint($mq-small) {
-          padding: 13px 0 10px;
+          padding: 16px 0 13px;
           width: 50%;
         }
       }
