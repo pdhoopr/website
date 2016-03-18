@@ -54,7 +54,7 @@
 /* Home | Home Section
    ========================================================================= */
 
-/* Styles for home sections (About, Portfolio, Contact) */
+/* Styles for home sections (About, Projects, Contact) */
 .home-section {
   padding: 2.4em 0;
 
@@ -210,11 +210,11 @@
   }
 }
 
-/* Home | Portfolio
+/* Home | Projects
    ========================================================================= */
 
-/* Styles for the Portfolio section */
-.home-portfolio-section {
+/* Styles for the Projects section */
+.home-projects-section {
 
   /* Give bottom padding to all but the last project */
   .project-list li:not(:last-of-type) {
@@ -222,7 +222,7 @@
 
     /* Reduce spacing slightly on medium and up devices */
     @include breakpoint($mq-medium) {
-      padding-bottom: 1.8em;
+      padding-bottom: 1.5em;
     }
   }
 
