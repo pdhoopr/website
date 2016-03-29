@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
   <!-- Site information -->
-  <title>{{ site.title }}{% if page.layout == "project" %} | {{ page.title }}{% endif %}</title>
-  <meta name="description" content="{{ site.description }}">
+  <title>{% if page.layout == "project" %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{% if page.layout == 'project' %}{{ site.data.pages.projects[page.slug].project_overview.teaser }}{% else %}{{ site.description }}{% endif %}">
 
   <!-- DNS Prefetches -->
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
