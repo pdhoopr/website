@@ -3,7 +3,7 @@ project_photos:
   browser:
     url: "health.hmrc.kines.umich.edu"
     image_scroll: scroll
-    image_name: "projects_umich-hmrc_preview"
+    image_name: "projects-umich-hmrc-preview"
     image_extension: jpg
 
 # Overview
