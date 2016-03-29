@@ -91,7 +91,7 @@
   @include height-fallback(95);
 
   /* Set background image and hide section */
-  background-image: url("/img/home_hero_background.jpg");
+  background-image: url("/img/home-hero-background.jpg");
   display: none;
 
   /* Show only on medium and up devices */
@@ -146,7 +146,7 @@
     opacity: 0;
     position: relative;
     text-align: center;
-    top: 4.75em;
+    top: 4.5em;
   }
 
   /* Styles for hero taglines */
@@ -168,7 +168,7 @@
 
   /* Set background image */
   background-attachment: fixed;
-  background-image: url("/img/home_about_background.jpg");
+  background-image: url("/img/home-about-background.jpg");
   background-size: cover;
 }
 

@@ -2,11 +2,11 @@
 project_photos:
   browser:
     url: "msomearasmultiage.com"
-    image_name: "projects_ms-omearas-multiage_preview"
+    image_name: "projects-ms-omearas-multiage-preview"
     image_extension: jpg
 
   phone:
-    image_name: "projects_ms-omearas-multiage_preview_mobile"
+    image_name: "projects-ms-omearas-multiage-preview-mobile"
     image_extension: jpg
     image_alt: " | Mobile"
 
@@ -29,7 +29,7 @@ project_sections:
     browser:
       url: "msomearasmultiage.com"
       image_scroll: scroll
-      image_name: "projects_ms-omearas-multiage"
+      image_name: "projects-ms-omearas-multiage"
       image_extension: jpg
       image_alt: " | Home"
 
@@ -37,7 +37,7 @@ project_sections:
     description: "The kids section was designed to be fun and easy to use for 1st, 2nd, and 3rd graders. The default kids page presents them with big, colorful buttons for each subject. Once on a subject page, students will still see that navigation to jump between subjects, and then can use the accordion menus to browse links of resources."
     browser:
       url: "msomearasmultiage.com/kids"
-      image_name: "projects_ms-omearas-multiage_kids"
+      image_name: "projects-ms-omearas-multiage-kids"
       image_extension: gif
       image_alt: " | Kids"
 
@@ -46,23 +46,23 @@ project_sections:
     browser:
       url: "msomearasmultiage.com/parents"
       image_scroll: scroll
-      image_name: "projects_ms-omearas-multiage_parents"
+      image_name: "projects-ms-omearas-multiage-parents"
       image_extension: jpg
       image_alt: " | Parents"
 
   - subtitle: Mobile
     phones:
       - image_scroll: scroll
-        image_name: "projects_ms-omearas-multiage_parents_mobile"
+        image_name: "projects-ms-omearas-multiage-parents-mobile"
         image_extension: jpg
         image_alt: " | Parents | Mobile"
 
       - image_scroll: scroll
-        image_name: "projects_ms-omearas-multiage_mobile"
+        image_name: "projects-ms-omearas-multiage-mobile"
         image_extension: jpg
         image_alt: " | Home | Mobile"
 
       - image_scroll: scroll
-        image_name: "projects_ms-omearas-multiage_kids_mobile"
+        image_name: "projects-ms-omearas-multiage-kids-mobile"
         image_extension: jpg
         image_alt: " | Kids | Mobile"
