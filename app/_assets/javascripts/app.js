@@ -47,7 +47,7 @@ if ($page.hasClass("default-page")) {
     stringsElement: $(".typed-strings"),
     startDelay: 500,
     typeSpeed: 50,
-    backDelay: 1500,
+    backDelay: 1000,
     loop: true,
     loopCount: false
   });
