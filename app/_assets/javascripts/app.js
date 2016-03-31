@@ -46,7 +46,7 @@ if ($page.hasClass("default-page")) {
   $(".typed").typed({
     stringsElement: $(".typed-strings"),
     startDelay: 500,
-    typeSpeed: 25,
+    typeSpeed: 50,
     backDelay: 1500,
     loop: true,
     loopCount: false
