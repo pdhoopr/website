@@ -1,0 +1,32 @@
+/* =========================================================================
+   Typed
+   ========================================================================= */
+
+/* Styles for typed.js text */
+.typed {
+  display: inline-block;
+  font-family: $ubuntu;
+  font-size: 5rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+/* Styles for typed.js cursor */
+.typed-cursor {
+  animation: blink 1s infinite;
+  font-size: 5rem;
+  line-height: 1.5;
+  opacity: 1;
+}
+
+/* Hide strings used to populate typed.js data */
+.typed-strings {
+  display: none;
+}
+
+/* Keyframe that blinks the cursor */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}

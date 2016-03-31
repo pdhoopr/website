@@ -96,13 +96,13 @@ const paths = {
       src: [
         "vendor/assets/javascripts/modernizr/modernizr.min.js",
         "vendor/assets/javascripts/jquery/jquery.js",
-        "vendor/assets/javascripts/jquery/jquery-ui.js",
         "vendor/assets/javascripts/gsap/TweenMax.js",
         "vendor/assets/javascripts/gsap/jquery.gsap.js",
         "vendor/assets/javascripts/gsap/ScrollToPlugin.js",
         "vendor/assets/javascripts/scrollmagic/ScrollMagic.js",
         "vendor/assets/javascripts/scrollmagic/animation.gsap.js",
         "vendor/assets/javascripts/waypoints/jquery.waypoints.js",
+        "vendor/assets/javascripts/typedjs/typed.js",
         "vendor/assets/javascripts/unveil/jquery.unveil.js",
         "vendor/assets/javascripts/babel/polyfill.js"
       ],
