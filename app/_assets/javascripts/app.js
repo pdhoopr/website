@@ -14,8 +14,6 @@ const scrollMagicController = new ScrollMagic.Controller();
 /* Variables | Home
    ========================================================================= */
 const $homeHeroAnimation = $(".home-hero-animation");
-const $homeHeroAnimationTaglines = $(".home-hero-animation .tagline");
-let homeHeroAnimationTaglineNum = 0; // Counter for taglines
 const $homeHeroAnimationCta = $(".home-hero-animation .cta");
 const $homeHeroArrow = $(".home-hero .arrow");
 const $homeAboutSection = $(".home-about-section");
@@ -41,40 +39,23 @@ function tweenLogoLettersComplete() {
 /* Functions | Home
    ========================================================================= */
 
-/**
- * Cycles through taglines in Hero section by fading in and out
- * taglines. Goes back to beginning once it reaches the end.
- * @returns { Void } No return value
- */
-function cycleHomeHeroTaglines() {
-  $homeHeroAnimationTaglines
-    .css("display", "none")
-    .eq(homeHeroAnimationTaglineNum)
-    .toggle("slide", {direction: "right"}, 900)
-    .delay(1800)
-    .toggle("slide", {direction: "left"}, 900, cycleHomeHeroTaglines);
+/* Start home hero section animation on home page */
+if ($page.hasClass("default-page")) {
 
-  homeHeroAnimationTaglineNum = ++homeHeroAnimationTaglineNum % $homeHeroAnimationTaglines.length;
-}
-
-/**
- * Runs through the necessary steps to initialize the home hero
- * animation.
- * @returns { Void } No return value
- */
-function playHomeHeroAnimation() {
-  /* Cycle through taglines them after given time */
-  setTimeout(cycleHomeHeroTaglines, 500);
+  /* Start typed animation on home page hero section */
+  $(".typed").typed({
+    stringsElement: $(".typed-strings"),
+    startDelay: 500,
+    typeSpeed: 25,
+    backDelay: 1500,
+    loop: true,
+    loopCount: false
+  });
 
   /* Bring "Learn More" button to full opacity specified amount of time */
   setTimeout(() => {
-    $homeHeroAnimationCta.animate({opacity: 1}, 900);
-  }, 2700);
-}
-
-/* Start home hero section animation on home page */
-if ($page.hasClass("default-page")) {
-  playHomeHeroAnimation();
+    $homeHeroAnimationCta.animate({opacity: 1}, 500);
+  }, 3000);
 }
 
 /* =========================================================================
