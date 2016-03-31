@@ -254,6 +254,7 @@
 
   /* Give button container a minimum width of about 300px (when font is 16px) */
   .project-list-buttons {
+    align-self: center;
     min-width: 18rem;
 
     /* Make buttons a little smaller than the default */
