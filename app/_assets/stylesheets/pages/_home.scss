@@ -39,7 +39,7 @@
     @include breakpoint($mq-small) {
       float: none;
       line-height: 1;
-      padding: .4em 0 .2em;
+      padding: 0.4em 0 0.2em;
     }
 
     /* Logo h1 styles for home page on small devices */
@@ -190,7 +190,7 @@
 
   /* Add left and right padding on large devices */
   @include breakpoint($mq-large) {
-    padding: 0 .75em;
+    padding: 0 0.75em;
   }
 
   /* Styles for the resume paragraph on large devices */
@@ -223,7 +223,7 @@
   .project-list-title {
     font-size: 1.5rem;
     line-height: 1;
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
   }
 
   /* Display the container for paragraph and buttons as flex on medium and up devices */
@@ -235,7 +235,7 @@
 
   /* Give bottom padding to the teaser paragraph */
   .project-list-teaser {
-    padding-bottom: .75em;
+    padding-bottom: 0.75em;
 
     /* Flex on medium and up devices and alter spacing */
     @include breakpoint($mq-medium) {
@@ -254,7 +254,7 @@
     .btn {
       height: 36px;
       line-height: 36px;
-      padding: 0 .75em;
+      padding: 0 0.75em;
     }
   }
 }

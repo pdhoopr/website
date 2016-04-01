@@ -9,7 +9,7 @@
   @include height-fallback(100);
 
   /* Styles for the overlay */
-  background: rgba($black, .5) fixed;
+  background: rgba($black, 0.5) fixed;
   left: 0;
   position: absolute;
   top: 0;

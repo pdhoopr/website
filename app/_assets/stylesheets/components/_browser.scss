@@ -13,13 +13,13 @@
 .browser-controls {
   border-bottom: 2px solid $gray-c;
   height: 36px;
-  padding: .15em 0;
+  padding: 0.15em 0;
   position: relative;
 
   /* Increase height on medium and up devices */
   @include breakpoint($mq-medium) {
     height: 48px;
-    padding: .4em 0;
+    padding: 0.4em 0;
   }
 }
 
@@ -28,7 +28,7 @@
   display: inline-block;
   height: 28px;
   list-style-type: none;
-  padding-left: .2em;
+  padding-left: 0.2em;
   text-align: center;
 }
 

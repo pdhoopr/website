@@ -4,7 +4,7 @@
 
 /* Styles for header when any page is scrolling */
 .scrolling header {
-  background-color: rgba($ph-blue, .75);
+  background-color: rgba($ph-blue, 0.75);
   box-shadow: 0 0 8px $gray-2;
 
   /* Styles for the header menu when any page is scrolling */
@@ -26,7 +26,7 @@
 /* Header menu styles when home page is scrolling on small devices */
 .default-page.scrolling header .menu {
   @include breakpoint($mq-small) {
-    background-color: rgba($ph-blue, .75);
+    background-color: rgba($ph-blue, 0.75);
     box-shadow: 0 0 8px $gray-2;
     left: 0;
     position: fixed;

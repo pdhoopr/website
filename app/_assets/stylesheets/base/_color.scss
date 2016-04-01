@@ -30,12 +30,12 @@ a:visited {
 /* Use this class to underline an element */
 .underline {
   text-decoration: underline;
-  transition: opacity .15s ease-in-out;
+  transition: opacity 0.15s ease-in-out;
 
   /* On hover, make less opaque */
   &:hover {
-    opacity: .75;
+    opacity: 0.75;
     text-decoration: underline;
-    transition: opacity .15s ease-in-out;
+    transition: opacity 0.15s ease-in-out;
   }
 }

@@ -55,7 +55,7 @@
 
         /* Styles for large devices */
         @include breakpoint($mq-large) {
-          margin-left: .8em;
+          margin-left: 0.8em;
         }
       }
 
@@ -96,8 +96,8 @@
 
       /* Increase padding on large devices */
       @include breakpoint($mq-large) {
-        padding-left: .75em;
-        padding-right: .75em;
+        padding-left: 0.75em;
+        padding-right: 0.75em;
       }
     }
   }
@@ -201,7 +201,7 @@
     /* For all but first button, add left margin on medium and up devices */
     &:not(:first-of-type) {
       @include breakpoint($mq-medium) {
-        margin-left: .5em;
+        margin-left: 0.5em;
       }
     }
 
