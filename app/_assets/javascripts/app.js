@@ -67,8 +67,8 @@ if ($page.hasClass("default-page")) {
  * of 0. Start 1 seconds after page is ready.
  * @type { TweenMax }
  */
-const tweenLogoLetters = TweenMax.to($logoLetters, 0.6, {
-  delay: 0.6,
+const tweenLogoLetters = TweenMax.to($logoLetters, .5, {
+  delay: .5,
   width: 0,
   opacity: 0,
   onComplete: tweenLogoLettersComplete
@@ -92,7 +92,7 @@ const fadeHomeHeroAnimation = TweenMax.to($homeHeroAnimation, 1, {
  * Tween Hero arrow from border properties over the duration of the tween.
  * @type { TweenMax }
  */
-const fadeHomeHeroArrow = TweenMax.to($homeHeroArrow, 0.3, {
+const fadeHomeHeroArrow = TweenMax.to($homeHeroArrow, .25, {
   borderLeftWidth: 320,
   borderRightWidth: 320,
   borderTopWidth: 0,
@@ -106,7 +106,7 @@ const fadeHomeHeroArrow = TweenMax.to($homeHeroArrow, 0.3, {
 
 /* Tell ScrollMagic to animate scroll over 0.5 sec rather than jump */
 scrollMagicController.scrollTo((newpos) => {
-  TweenMax.to(window, 0.5, {scrollTo: {y: newpos}});
+  TweenMax.to(window, .5, {scrollTo: {y: newpos}});
 });
 
 /* ScrollMagic Scenes | Home
