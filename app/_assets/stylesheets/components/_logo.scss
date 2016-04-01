@@ -12,7 +12,7 @@
   &:hover .logo-letter.collapsed {
     max-width: 37px;
     opacity: 1;
-    transition: all .3s ease-out;
+    transition: all 0.3s ease-out;
 
     /* Negate hover styles for touch devices */
     .touch & {
@@ -39,6 +39,6 @@
   &.collapsed {
     max-width: 0;
     opacity: 0;
-    transition: all .3s ease-out;
+    transition: all 0.3s ease-out;
   }
 }

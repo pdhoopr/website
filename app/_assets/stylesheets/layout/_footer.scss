@@ -9,7 +9,7 @@
 .colophon {
   background-color: $gray-2;
   font-family: $ubuntu;
-  padding: 1.2em 0 .6em;
+  padding: 1.2em 0 0.6em;
 
   /* Styles for the contact section inside the colophon */
   .contact {
@@ -24,7 +24,7 @@
 
   /* Styles for credit to Jekyll */
   .credit {
-    font-size: .75rem;
+    font-size: 0.75rem;
     text-align: center;
   }
 }

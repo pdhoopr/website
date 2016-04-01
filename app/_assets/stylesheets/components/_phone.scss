@@ -7,7 +7,7 @@
   background-color: $white;
   border: 2px solid $gray-c;
   border-radius: 16px;
-  padding: 0 .3em;
+  padding: 0 0.3em;
   position: absolute;
   right: 0%;
   top: 25%;
@@ -21,13 +21,13 @@
 
 /* Styles for top part of phone (camera, sensor, speaker) */
 .phone-top {
-  margin: .2em 0 .6em;
+  margin: 0.2em 0 0.6em;
   text-align: center;
 }
 
 /* Styles for camera */
 .phone-camera {
-  line-height: .75;
+  line-height: 0.75;
 
   /* Styles for camera span */
   span {
@@ -41,7 +41,7 @@
 
 /* Styles for top parts of phone (sensor, speaker) */
 .phone-top-parts {
-  line-height: .75;
+  line-height: 0.75;
   margin-left: -12px;
 }
 
@@ -77,8 +77,8 @@
 
 /* Styles for phone button (big one at bottom) */
 .phone-button {
-  line-height: .75;
-  margin: .2em 0;
+  line-height: 0.75;
+  margin: 0.2em 0;
   text-align: center;
 
   /* Styles for phone button span */

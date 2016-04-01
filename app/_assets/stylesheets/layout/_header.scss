@@ -54,7 +54,7 @@ header {
   .avatar {
     display: inline-block;
     float: none;
-    margin: .4em 0 0;
+    margin: 0.4em 0 0;
 
     /* Hide on medium and up devices */
     @include breakpoint($mq-medium) {
@@ -73,7 +73,7 @@ header {
     font-size: 1rem;
     padding-bottom: 12px;
     padding-top: 17px;
-    transition: .3s;
+    transition: 0.3s;
 
     /* Styles for medium and up devices */
     @include breakpoint($mq-medium) {
@@ -88,7 +88,7 @@ header {
       /* Styles for hovering over header menu item icons */
       .menu-item-icon {
         transform: scale(1.25);
-        transition: .3s;
+        transition: 0.3s;
 
         /* Don't scale icons on touch devices */
         .touch & {
@@ -100,7 +100,7 @@ header {
 
   /* Animate header menu icon properties over .3s */
   .menu-item-icon {
-    transition: .3s;
+    transition: 0.3s;
 
     /* Move grid icon down */
     &.fa-th {

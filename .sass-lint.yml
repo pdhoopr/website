@@ -20,6 +20,11 @@ rules:
   force-element-nesting: 0
   force-pseudo-nesting: 0
 
+  # Force leading zeros for decimal numbers
+  leading-zero:
+    - 1
+    - include: true
+
   # Increase nesting depth to 3 levels
   nesting-depth:
     - 1
