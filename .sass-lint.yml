@@ -22,7 +22,7 @@ rules:
 
   # Force leading zeros for decimal numbers
   leading-zero:
-    - 1
+    - 2
     - include: true
 
   # Increase nesting depth to 3 levels
