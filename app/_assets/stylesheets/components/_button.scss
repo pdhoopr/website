@@ -47,7 +47,7 @@ a.btn-raised {
 
 /* Give Overview button a slightly darkened yellow background color */
 .btn-view {
-  background-color: darken($ph-yellow, 3%);
+  background-color: $ph-yellow;
 }
 
 /* Give right margin to icons that are left of button text */
