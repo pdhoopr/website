@@ -260,7 +260,7 @@ gulp.task("javascripts", () => {
  * 3. Closes process
  */
 gulp.task("jekyll", (done) => {
-  return childProcess.spawn("bundle", ["exec", "jekyll", "build"], {cwd: paths.jekyll.src, stdio: "inherit"})
+  return childProcess.spawn("jekyll", ["build"], {cwd: paths.jekyll.src, stdio: "inherit"})
     .on("close", (code) => {
       if (code !== 0) {
         browserSync.notify('<span style="color: red; font-weight: bold;">jekyll task error!</span><span style="color: red;"> Please check the command line and resolve the error ASAP because the build may be failing!</span>');

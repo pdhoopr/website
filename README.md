@@ -4,7 +4,7 @@ The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Tec
 ## Usage
 1. Clone the repository.
 2. Navigate into the repository.
-3. Run `bundle install --path vendor/bundle` (you'll need [Ruby](https://www.ruby-lang.org/en/) & [Bundler](http://bundler.io/)).
+3. Run `bundle install` (you'll need [Ruby](https://www.ruby-lang.org/en/) & [Bundler](http://bundler.io/)).
 4. Run `npm install` (you'll need [Node.js](https://nodejs.org/en/) & [npm](https://www.npmjs.com/)).
 5. Let npm scripts handle your workflow!
   * Use `npm start` to build development code and start a [Browersync](https://www.browsersync.io/) server.

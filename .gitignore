@@ -1,7 +1,6 @@
 # Ruby stuff to keep out of this repo
 .bundle/
 .sass-cache/
-vendor/bundle/
 
 # Node stuff to keep out of this repo
 node_modules/
