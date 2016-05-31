@@ -1,7 +1,5 @@
 - id: about
   title: About
-  icon: heartbeat
 
 - id: projects
   title: Projects
-  icon: th

@@ -5,16 +5,6 @@
 /* Styles that override/alter components specifically on project pages */
 .project-page {
 
-  /* On project page, make border yellow for header menu item on hover */
-  header .menu-item:hover {
-    border-bottom-color: $ph-yellow;
-
-    /* Remove border bottom color on touch devices */
-    .touch & {
-      border-bottom-color: transparent;
-    }
-  }
-
   /* Styles specifically for a browser in a project section */
   .browser {
     margin: 0 auto;
