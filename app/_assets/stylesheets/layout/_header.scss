@@ -83,7 +83,12 @@ header {
 
     /* Styles for hovering over a header menu item (yellow underline) */
     &:hover {
-      border-bottom-color: transparent;
+      border-bottom-color: $ph-yellow;
+
+      /* Remove border bottom hover color on touch devices */
+      .touch & {
+        border-bottom-color: transparent;
+      }
 
       /* Styles for hovering over header menu item icons */
       .menu-item-icon {
