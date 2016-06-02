@@ -7,7 +7,6 @@
 
   // Specify the environments code will run in
   "env": {
-    "es6": true,
     "jquery": true
   },
 
