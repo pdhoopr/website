@@ -1,12 +1,16 @@
 {
   "name": "patrick-hooper",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Technology Fanboy, Happily Married, Cheesecake Evangelist, World Traveler, and more. Currently living in Ann Arbor, Michigan as a proud University of Michigan grad - Go Blue!",
   "homepage": "http://patrick.hoopr.io",
   "author": {
     "name": "Patrick Hooper",
     "email": "patrick.d.hooper@gmail.com",
     "url": "http://patrick.hoopr.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/impatrickhooper/patrick-hooper"
   },
   "scripts": {
     "start": "gulp serve",
@@ -15,10 +19,6 @@
     "lint": "npm run lint:stylesheets && npm run lint:javascripts",
     "test": "npm run lint && gulp build",
     "build": "NODE_ENV=production gulp build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/impatrickhooper/patrick-hooper"
   },
   "devDependencies": {
     "babel-eslint": "^6.0.4",
