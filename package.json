@@ -14,9 +14,9 @@
   },
   "scripts": {
     "start": "gulp serve",
-    "lint:stylesheets": "sass-lint -v",
-    "lint:javascripts": "eslint .",
-    "lint": "npm run lint:stylesheets && npm run lint:javascripts",
+    "lint:sass": "sass-lint -v",
+    "lint:javascript": "eslint .",
+    "lint": "npm run lint:sass && npm run lint:javascript",
     "test": "npm run lint && gulp build",
     "build": "NODE_ENV=production gulp build"
   },
