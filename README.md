@@ -9,7 +9,7 @@ The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Tec
 5. Let npm scripts handle your workflow!
   * Use `npm start` to build development code and start a [Browersync](https://www.browsersync.io/) server.
   * Use `npm run lint:sass` to run [Sass Lint](https://github.com/sasstools/sass-lint) on the Sass source code.
-  * Use `npm run lint:javascript` to run [ESLint](http://eslint.org/) on the JavaScript source code.
+  * Use `npm run lint:js` to run [ESLint](http://eslint.org/) on the JavaScript source code.
   * Use `npm run lint` to run lint both Sass and JavaScript source code in one task.
   * Use `npm test` to check for lint and development build errors.
   * Use `npm run build` to compile production code.
