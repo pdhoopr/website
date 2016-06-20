@@ -89,27 +89,12 @@ header {
       .touch & {
         border-bottom-color: transparent;
       }
-
-      /* Styles for hovering over header menu item icons */
-      .menu-item-icon {
-        transform: scale(1.25);
-        transition: 0.3s;
-
-        /* Don't scale icons on touch devices */
-        .touch & {
-          transform: scale(1);
-        }
-      }
     }
   }
 
-  /* Animate header menu icon properties over .3s */
+  /* Increase the size of a Font Awesome icon in the menu */
   .menu-item-icon {
-    transition: 0.3s;
-
-    /* Move grid icon down */
-    &.fa-th {
-      vertical-align: -5%;
-    }
+    font-size: 1.25rem;
+    vertical-align: -5%;
   }
 }
