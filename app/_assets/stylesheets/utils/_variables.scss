@@ -21,8 +21,8 @@ $mq-big: min-width $big-min-width; // @media (min-width: 75.0625em)
 
 /* Variables | Typography
    ========================================================================= */
-$roboto: "Roboto", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-$ubuntu: "Ubuntu", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$roboto: 'Roboto', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+$ubuntu: 'Ubuntu', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 
 /* Variables | Color
    ========================================================================= */
@@ -43,3 +43,11 @@ $white: #fff;
 $github-gray: #333;
 $ph-blue: #101e43;
 $ph-yellow: #ffcb05;
+
+/* Transparent colors (overlays and shadows) */
+$black-transparent-12: rgba($black, 0.12);
+$black-transparent-15: rgba($black, 0.15);
+$black-transparent-16: rgba($black, 0.16);
+$black-transparent-18: rgba($black, 0.18);
+$black-transparent-50: rgba($black, 0.5);
+$ph-blue-transparent-75: rgba($ph-blue, 0.75);

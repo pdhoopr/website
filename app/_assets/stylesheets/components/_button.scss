@@ -20,7 +20,7 @@ a.btn {
 .btn-raised,
 a.btn-raised {
   border: 0;
-  box-shadow: 0 2px 5px 0 rgba($black, 0.16), 0 2px 10px 0 rgba($black, 0.12);
+  box-shadow: 0 2px 5px 0 $black-transparent-16, 0 2px 10px 0 $black-transparent-12;
   color: $white;
   height: 54px;
   line-height: 54px;
@@ -29,7 +29,7 @@ a.btn-raised {
 
   /* Increase box shadow and lighten on hover */
   &:hover {
-    box-shadow: 0 5px 11px 0 rgba($black, 0.18), 0 4px 15px 0 rgba($black, 0.15);
+    box-shadow: 0 5px 11px 0 $black-transparent-18, 0 4px 15px 0 $black-transparent-15;
     color: $white;
     opacity: 0.75;
   }

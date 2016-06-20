@@ -72,7 +72,7 @@
 @mixin button-hover($background-color, $color) {
   border-color: $background-color;
   color: $background-color;
-  transition: all .3s;
+  transition: all 0.3s;
 
   /* Hover styles */
   &:hover {
@@ -81,7 +81,7 @@
     @include color-element($background-color, $color);
 
     /* Animate over .3s */
-    transition: all .3s;
+    transition: all 0.3s;
   }
 
   /* Negate hover styles on touch devices (reset background and font colors) */
@@ -101,7 +101,7 @@
 @mixin icon-hover($color, $hover-color) {
 
   /* Transition hover color over .3s */
-  transition: .3s;
+  transition: 0.3s;
 
   /* Change color on hover */
   &:hover {
