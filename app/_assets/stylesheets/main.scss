@@ -1,47 +1,47 @@
 /* =========================================================================
    Vendor (3rd-party) Libraries
    ========================================================================= */
-@import "../../../vendor/assets/stylesheets/sassy-maps/memo";
-@import "../../../vendor/assets/stylesheets/breakpoint/breakpoint";
+@import '../../../vendor/assets/stylesheets/sassy-maps/memo';
+@import '../../../vendor/assets/stylesheets/breakpoint/breakpoint';
 
 /* =========================================================================
    Utils
    ========================================================================= */
-@import "utils/variables";
-@import "utils/mixins";
+@import 'utils/variables';
+@import 'utils/mixins';
 
 /* =========================================================================
    Base
    ======================================================================== */
-@import "base/structure";
-@import "base/typography";
-@import "base/color";
+@import 'base/structure';
+@import 'base/typography';
+@import 'base/color';
 
 /* =========================================================================
    Components
    ========================================================================= */
-@import "components/arrow";
-@import "components/avatar";
-@import "components/browser";
-@import "components/button";
-@import "components/contact";
-@import "components/hero";
-@import "components/logo";
-@import "components/menu";
-@import "components/overlay";
-@import "components/phone";
-@import "components/typedjs";
+@import 'components/arrow';
+@import 'components/avatar';
+@import 'components/browser';
+@import 'components/button';
+@import 'components/contact';
+@import 'components/hero';
+@import 'components/logo';
+@import 'components/menu';
+@import 'components/overlay';
+@import 'components/phone';
+@import 'components/typedjs';
 
 /* =========================================================================
    Layout
    ========================================================================= */
-@import "layout/grid";
-@import "layout/header";
-@import "layout/footer";
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/footer';
 
 /* =========================================================================
    Pages
    ========================================================================= */
-@import "pages/home";
-@import "pages/project";
-@import "pages/scrolling";
+@import 'pages/home';
+@import 'pages/project';
+@import 'pages/scrolling';
