@@ -11,7 +11,6 @@ collections:
     permalink: "/projects/:title/"
 gems:
   - "jekyll-sitemap"
-markdown: rdiscount
 permalink: pretty
 compress_html:
   clippings: all
