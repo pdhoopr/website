@@ -63,9 +63,11 @@
   display: inline-block;
   font-size: 1rem;
   left: 44px;
+  overflow-y: hidden;
   padding-left: 8px;
   position: absolute;
   right: 4px;
+  text-overflow: ellipsis;
 }
 
 /* Styles for browser image */
