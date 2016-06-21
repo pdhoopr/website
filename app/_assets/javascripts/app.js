@@ -1,27 +1,27 @@
 /* =========================================================================
    Variables
    ========================================================================= */
-const $page = $(".page");
-const $logoLetters = $(".logo-letter.animate");
-const $header = $("header");
-const $headerMenu = $("header .menu");
-const $headerMenuItemAbout = $("header .menu-item-about");
-const $headerMenuItemProjects = $("header .menu-item-projects");
+const $page = $('.page');
+const $logoLetters = $('.logo-letter.animate');
+const $header = $('header');
+const $headerMenu = $('header .menu');
+const $headerMenuItemAbout = $('header .menu-item-about');
+const $headerMenuItemProjects = $('header .menu-item-projects');
 let $lastHeaderMenuItem = null; // Holds last active section while scrolling
-const $colophon = $(".colophon");
+const $colophon = $('.colophon');
 const scrollMagicController = new ScrollMagic.Controller();
 
 /* Variables | Home
    ========================================================================= */
-const $homeHeroAnimation = $(".home-hero-animation");
-const $homeHeroAnimationCta = $(".home-hero-animation .cta");
-const $homeHeroArrow = $(".home-hero .arrow");
-const $homeAboutSection = $(".home-about-section");
-const $homeProjectsSection = $(".home-projects-section");
+const $homeHeroAnimation = $('.home-hero-animation');
+const $homeHeroAnimationCta = $('.home-hero-animation .cta');
+const $homeHeroArrow = $('.home-hero .arrow');
+const $homeAboutSection = $('.home-about-section');
+const $homeProjectsSection = $('.home-projects-section');
 
 /* Variables | Project
    ========================================================================= */
-const $projectPage = $(".project-page");
+const $projectPage = $('.project-page');
 
 /* =========================================================================
    Functions
@@ -33,28 +33,30 @@ const $projectPage = $(".project-page");
  * @returns { Void } No return value
  */
 function tweenLogoLettersComplete() {
-  $logoLetters.addClass("collapsed").removeAttr("style");
+  $logoLetters.addClass('collapsed').removeAttr('style');
 }
 
 /* Functions | Home
    ========================================================================= */
 
 /* Start home hero section animation on home page */
-if ($page.hasClass("default-page")) {
+if ($page.hasClass('default-page')) {
 
   /* Start typed animation on home page hero section */
-  $(".typed").typed({
-    stringsElement: $(".typed-strings"),
-    startDelay: 500,
-    typeSpeed: 50,
+  $('.typed').typed({
     backDelay: 1000,
     loop: true,
-    loopCount: false
+    loopCount: false,
+    startDelay: 500,
+    stringsElement: $('.typed-strings'),
+    typeSpeed: 50,
   });
 
-  /* Bring "Learn More" button to full opacity specified amount of time */
+  /* Bring 'Learn More' button to full opacity specified amount of time */
   setTimeout(() => {
-    $homeHeroAnimationCta.animate({opacity: 1}, 500);
+    $homeHeroAnimationCta.animate({
+      opacity: 1,
+    }, 500);
   }, 3000);
 }
 
@@ -69,9 +71,9 @@ if ($page.hasClass("default-page")) {
  */
 const tweenLogoLetters = TweenMax.to($logoLetters, 0.5, {
   delay: 0.5,
-  width: 0,
+  onComplete: tweenLogoLettersComplete,
   opacity: 0,
-  onComplete: tweenLogoLettersComplete
+  width: 0,
 });
 
 /* GSAP Tweens | Home
@@ -85,7 +87,7 @@ const tweenLogoLetters = TweenMax.to($logoLetters, 0.5, {
  */
 const fadeHomeHeroAnimation = TweenMax.to($homeHeroAnimation, 1, {
   opacity: 0,
-  top: "66%"
+  top: '66%',
 });
 
 /**
@@ -97,7 +99,7 @@ const fadeHomeHeroArrow = TweenMax.to($homeHeroArrow, 0.25, {
   borderRightWidth: 320,
   borderTopWidth: 0,
   bottom: 0,
-  marginLeft: -320
+  marginLeft: -320,
 });
 
 /* =========================================================================
@@ -106,21 +108,25 @@ const fadeHomeHeroArrow = TweenMax.to($homeHeroArrow, 0.25, {
 
 /* Tell ScrollMagic to animate scroll over 0.5 sec rather than jump */
 scrollMagicController.scrollTo((newpos) => {
-  TweenMax.to(window, 0.5, {scrollTo: {y: newpos}});
+  TweenMax.to(window, 0.5, {
+    scrollTo: {
+      y: newpos,
+    },
+  });
 });
 
 /* ScrollMagic Scenes | Home
    ========================================================================= */
 
-if ($page.hasClass("default-page")) {
+if ($page.hasClass('default-page')) {
   /**
    * Fade out the Home Hero section and produce parallax scrolling effect.
    * @type { ScrollMagic Scene }
    */
   const homeHeroAnimationScene = new ScrollMagic.Scene({
-    triggerElement: ".home-hero",
-    triggerHook: "onLeave", // Start when trigger starts leaving viewport
-    duration: "100%" // End when viewport has moved 100%
+    duration: '100%', // End when viewport has moved 100%
+    triggerElement: '.home-hero',
+    triggerHook: 'onLeave', // Start when trigger starts leaving viewport
   })
   .setTween(fadeHomeHeroAnimation); // Use the fadeHomeHeroAnimation tween
 
@@ -129,9 +135,9 @@ if ($page.hasClass("default-page")) {
    * @type { ScrollMagic Scene }
    */
   const homeHeroArrowScene = new ScrollMagic.Scene({
-    triggerElement: ".home-hero",
-    triggerHook: "onLeave", // Start when trigger starts leaving viewport
-    duration: "100%" // End when viewport has moved 75%
+    duration: '100%', // End when viewport has moved 75%
+    triggerElement: '.home-hero',
+    triggerHook: 'onLeave', // Start when trigger starts leaving viewport
   })
   .setTween(fadeHomeHeroArrow);
 
@@ -145,7 +151,7 @@ if ($page.hasClass("default-page")) {
 
 /* Waypoints | Home
    ========================================================================= */
-if ($page.hasClass("default-page")) {
+if ($page.hasClass('default-page')) {
 
   /**
    * Toggle the active class for About section and flag the page as scrolling.
@@ -154,17 +160,17 @@ if ($page.hasClass("default-page")) {
   const homeAboutSectionWaypoint = $homeAboutSection.waypoint((direction) => {
 
     /* When going down and you hit about section, do stuff */
-    if (direction === "down") {
-      $page.addClass("scrolling");
-      $headerMenuItemAbout.addClass("active");
-      $headerMenuItemProjects.removeClass("active");
+    if (direction === 'down') {
+      $page.addClass('scrolling');
+      $headerMenuItemAbout.addClass('active');
+      $headerMenuItemProjects.removeClass('active');
       $lastHeaderMenuItem = $headerMenuItemAbout;
 
       /* When going up and you hit About section, do stuff */
     } else {
-      $page.removeClass("scrolling");
-      $headerMenuItemAbout.removeClass("active");
-      $headerMenuItemProjects.removeClass("active");
+      $page.removeClass('scrolling');
+      $headerMenuItemAbout.removeClass('active');
+      $headerMenuItemProjects.removeClass('active');
       $lastHeaderMenuItem = null;
     }
   }, {
@@ -173,8 +179,8 @@ if ($page.hasClass("default-page")) {
      * @returns {Number} The height in pixels of the main navigation or menu
      */
     offset() {
-      return Modernizr.mq("(min-width: 46.0625em)") ? $header.height() : $headerMenu.height();
-    }
+      return Modernizr.mq('(min-width: 46.0625em)') ? $header.height() : $headerMenu.height();
+    },
   });
 
   /**
@@ -184,15 +190,15 @@ if ($page.hasClass("default-page")) {
   const homeProjectsSectionWaypoint = $homeProjectsSection.waypoint((direction) => {
 
     /* When going down and you hit Projects section, do stuff */
-    if (direction === "down") {
-      $headerMenuItemAbout.removeClass("active");
-      $headerMenuItemProjects.addClass("active");
+    if (direction === 'down') {
+      $headerMenuItemAbout.removeClass('active');
+      $headerMenuItemProjects.addClass('active');
       $lastHeaderMenuItem = $headerMenuItemProjects;
 
       /* When going up and you hit Projects section, do stuff */
     } else {
-      $headerMenuItemAbout.addClass("active");
-      $headerMenuItemProjects.removeClass("active");
+      $headerMenuItemAbout.addClass('active');
+      $headerMenuItemProjects.removeClass('active');
       $lastHeaderMenuItem = $headerMenuItemAbout;
     }
   }, {
@@ -201,8 +207,8 @@ if ($page.hasClass("default-page")) {
      * @returns {Number} The height in pixels of the main navigation or menu
      */
     offset() {
-      return Modernizr.mq("(min-width: 46.0625em)") ? $header.height() : $headerMenu.height();
-    }
+      return Modernizr.mq('(min-width: 46.0625em)') ? $header.height() : $headerMenu.height();
+    },
   });
 
   /**
@@ -213,19 +219,19 @@ if ($page.hasClass("default-page")) {
   const colophonWaypoint = $colophon.waypoint((direction) => {
 
     /* When going down and you hit the colophon (footer), do stuff */
-    if (direction === "down") {
-      $headerMenuItemAbout.removeClass("active");
-      $headerMenuItemProjects.addClass("active");
+    if (direction === 'down') {
+      $headerMenuItemAbout.removeClass('active');
+      $headerMenuItemProjects.addClass('active');
 
       /* When going up and you hit the colophon (footer), do stuff */
     } else {
-      $headerMenuItemAbout.removeClass("active");
-      $headerMenuItemProjects.removeClass("active");
-      $lastHeaderMenuItem.addClass("active");
+      $headerMenuItemAbout.removeClass('active');
+      $headerMenuItemProjects.removeClass('active');
+      $lastHeaderMenuItem.addClass('active');
     }
   }, {
     /* Offset is 100%, so when element enters into view */
-    offset: "100%"
+    offset: '100%',
   });
 
 /* Waypoints | Project
@@ -239,14 +245,14 @@ if ($page.hasClass("default-page")) {
   const projectPageWaypoint = $projectPage.waypoint((direction) => {
 
     /* When going down, add scrolling class to page. When up, remove */
-    if (direction === "down") {
-      $page.addClass("scrolling");
+    if (direction === 'down') {
+      $page.addClass('scrolling');
     } else {
-      $page.removeClass("scrolling");
+      $page.removeClass('scrolling');
     }
   }, {
     /* Offset is the top margin of the project page title */
-    offset: parseFloat($projectPage.find(".title").css("margin-top")) * -1
+    offset: parseFloat($projectPage.find('.title').css('margin-top')) * -1,
   });
 }
 
@@ -258,10 +264,10 @@ if ($page.hasClass("default-page")) {
  * Tell ScrollMagic to listen for anchor link clicks and scroll to them.
  * @type { Click Event Listener }
  */
-$(document).on("click", 'a[href^="#"]', function scrollToAnchor(e) {
+$(document).on('click', 'a[href^="#"]', function scrollToAnchor(e) {
 
   /* Get target element from the href attribute and if it exists, do stuff */
-  const id = $(this).attr("href");
+  const id = $(this).attr('href');
 
   if ($(id).length > 0) {
 
@@ -271,7 +277,7 @@ $(document).on("click", 'a[href^="#"]', function scrollToAnchor(e) {
 
     /* Push the section id to the url */
     if (window.history && window.history.pushState) {
-      history.pushState("", document.title, id);
+      history.pushState('', document.title, id);
     }
   }
 });
@@ -281,4 +287,4 @@ $(document).on("click", 'a[href^="#"]', function scrollToAnchor(e) {
    ========================================================================= */
 
 /* Lazy loads images as they're <= 284px out of view */
-$("img.lazy").unveil(284);
+$('img.lazy').unveil(284);
