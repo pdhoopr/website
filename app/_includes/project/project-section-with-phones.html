@@ -5,7 +5,7 @@
 
   <div class="project-section-photos photos-mobile grid-100">
     {% for project_section_phone in project_section_phones %}
-      {% include components/phone.html class="mobile" scroll=project_section_phone.image_scroll name=project_section_phone.image_name ext=project_section_phone.image_extension alt=project_section_phone.image_alt %}
+      {% include project/phone.html class="mobile" scroll=project_section_phone.image_scroll name=project_section_phone.image_name ext=project_section_phone.image_extension alt=project_section_phone.image_alt %}
     {% endfor %}
   </div>
 </section>
