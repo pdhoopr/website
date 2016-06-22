@@ -12,3 +12,4 @@ rules:
     - 1
     - max-depth: 3
   no-css-comments: 0
+  trailing-semicolon: 2
