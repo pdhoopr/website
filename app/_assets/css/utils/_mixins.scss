@@ -18,6 +18,15 @@
 }
 
 /**
+ * Set an element's max-width and center it.
+ * @param { Number } $width - Max width of element
+ */
+@mixin constrain-width($width) {
+  margin: 0 auto;
+  max-width: $width;
+}
+
+/**
  * Set an element's height in vh and percentage units.
  * @param { Number } $height - Height of element
  */

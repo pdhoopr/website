@@ -76,21 +76,6 @@
   @include breakpoint($mq-medium) {
     padding-top: 64px;
   }
-
-  /* Override styles for text-only projects */
-  &.text-only-project {
-
-    /* Alter padding for these project's sections */
-    .project-section {
-      padding: 0;
-
-      /* Increase padding on large devices */
-      @include breakpoint($mq-large) {
-        padding-left: 0.75em;
-        padding-right: 0.75em;
-      }
-    }
-  }
 }
 
 /*  Project | Photos
@@ -113,6 +98,7 @@
 
 /* Styles for project overview section */
 .project-overview {
+  @include constrain-width(52.5rem);
   padding-bottom: 2.4em;
 
   /* Increase bottom padding on medium and up devices */
@@ -134,12 +120,15 @@
       font-size: 2rem;
     }
   }
+
+  /* For projects that have no photos, reduce the space under the overview */
+  .text-only-project & {
+    padding-bottom: 2.4em;
+  }
 }
 
 /* Styles for project description */
 .project-description {
-  margin: 0 auto;
-  max-width: 69rem;
   padding-bottom: 1.2em;
 
   /* Increase bottom padding on large devices */
@@ -205,16 +194,6 @@
 /* Project | Section
    ========================================================================= */
 
-/* Styles for a row of a project page (where used) */
-.project-row {
-  padding-bottom: 1.5em;
-
-  /* Increase bottom padding for last project row on a page */
-  &:last-of-type {
-    padding-bottom: 2.4em;
-  }
-}
-
 /* Styles for a section of a project page */
 .project-section {
   padding: 0 0 2.4em;
@@ -233,15 +212,24 @@
   &:last-of-type {
     padding-bottom: 2.4em;
   }
+
+  /* Constrain width and reduce padding for sections that are only text */
+  &-just-text {
+    @include constrain-width(52.5rem);
+    padding-bottom: 2.4em;
+  }
 }
 
 /* Styles for the description of a project */
 .project-section-description {
+  @include constrain-width(52.5rem);
   margin-bottom: 1.2em;
+  padding: 0;
 
-  /* No margin on large devices */
+  /* No margin on large devices and add some padding */
   @include breakpoint($mq-large) {
     margin-bottom: 0;
+    padding: 0 12px;
   }
 }
 
