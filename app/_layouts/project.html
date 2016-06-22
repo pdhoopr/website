@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% assign page_data = site.data.pages.projects[page.slug] %}
+{% assign page_data = site.data.project[page.slug] %}
 {% assign project_photos = page_data.project_photos %}
 {% assign project_overview = page_data.project_overview %}
 {% assign project_sections = page_data.project_sections %}
@@ -14,11 +14,11 @@ layout: default
     {% assign browser = project_photos.browser %}
     {% assign phone = project_photos.phone %}
 
-    {% include pages/project/project-photos.html %}
+    {% include project/project-photos.html %}
   {% endif %}
 
   {% if project_overview %}
-    {% include pages/project/project-overview.html %}
+    {% include project/project-overview.html %}
   {% endif %}
 
   {% for project_section in project_sections %}
@@ -27,11 +27,11 @@ layout: default
     {% assign project_section_loop_index = forloop.index | modulo: 2 %}
 
     {% if project_section_browser %}
-      {% include pages/project/project-section-with-browser.html %}
+      {% include project/project-section-with-browser.html %}
     {% elsif project_section_phones %}
-      {% include pages/project/project-section-with-phones.html %}
+      {% include project/project-section-with-phones.html %}
     {% else %}
-      {% include pages/project/project-section-with-rows.html %}
+      {% include project/project-section-just-text.html %}
     {% endif %}
   {% endfor %}
 </article>

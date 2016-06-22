@@ -1,0 +1,239 @@
+/* =========================================================================
+   Project
+   ========================================================================= */
+
+/* Styles that override/alter components specifically on project pages */
+.project-page {
+
+  /* Styles specifically for a browser in a project section */
+  .browser {
+    margin: 0 auto;
+    max-width: 725px;
+  }
+
+  /* Styles specifically for a browser photo in a project section */
+  .browser-photo {
+    max-height: 388px;
+    overflow: hidden;
+  }
+
+  /* Styles specifically for a phone in a project section */
+  .phone {
+    margin: 0 auto;
+    max-width: 355px;
+
+    /* Reduce top position on medium and up devices */
+    @include breakpoint($mq-medium) {
+      top: 15%;
+    }
+
+    /* Styles specifically for a mobile phone */
+    &.mobile {
+      display: block;
+      position: static;
+      width: 100%;
+
+      /* Styles for large devices */
+      @include breakpoint($mq-large) {
+        display: inline-block;
+        margin: 0 auto;
+        width: 30%;
+      }
+
+      /* Styles specifically for all but the first mobile phone */
+      &:not(:first-of-type) {
+
+        /* Styles for large devices */
+        @include breakpoint($mq-large) {
+          margin-left: 0.8em;
+        }
+      }
+
+      /* Styles specifically for all but the last mobile phone */
+      &:not(:last-of-type) {
+        margin-bottom: 1.2em;
+
+        /* Remove bottom margin on large devices */
+        @include breakpoint($mq-large) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  /* Styles specifically for a phone photo in a project section */
+  .phone-photo {
+    max-height: 568px;
+    overflow: hidden;
+  }
+}
+
+/* Styles for the main content on a project page */
+.project {
+  padding-top: 56px;
+
+  /* Increase top padding on medium and up devices */
+  @include breakpoint($mq-medium) {
+    padding-top: 64px;
+  }
+}
+
+/*  Project | Photos
+   ========================================================================= */
+
+/* Styles for the project photos (overview/preview photos) */
+.project-photos {
+  margin: 0 auto 2.8em;
+  max-width: 640px;
+  position: relative;
+
+  /* Increase bottom margin on medium and up devices */
+  @include breakpoint($mq-medium) {
+    margin-bottom: 3.7em;
+  }
+}
+
+/* Project | Overview
+   ========================================================================= */
+
+/* Styles for project overview section */
+.project-overview {
+  @include constrain-width(52.5rem);
+  padding-bottom: 2.4em;
+
+  /* Increase bottom padding on medium and up devices */
+  @include breakpoint($mq-medium) {
+    padding-bottom: 3.6em;
+  }
+
+  /* Increase bottom padding even more on large devices */
+  @include breakpoint($mq-large) {
+    padding-bottom: 4.8em;
+  }
+
+  /* Alter font size of overview subtitle */
+  .subtitle {
+    font-size: 1.5rem;
+
+    /* Increase overview subtitle font size on medium and up devices */
+    @include breakpoint($mq-medium) {
+      font-size: 2rem;
+    }
+  }
+
+  /* For projects that have no photos, reduce the space under the overview */
+  .text-only-project & {
+    padding-bottom: 2.4em;
+  }
+}
+
+/* Styles for project description */
+.project-description {
+  padding-bottom: 1.2em;
+
+  /* Increase bottom padding on large devices */
+  @include breakpoint($mq-large) {
+    padding-bottom: 2.4em;
+  }
+}
+
+/* Styles for container of roles, tech, and platforms */
+.project-thirds {
+  text-align: center;
+}
+
+/* Give bottom padding to roles and tech */
+.project-roles,
+.project-tech {
+  padding-bottom: 1.2em;
+
+  /* Remove bottom padding on large devices */
+  @include breakpoint($mq-large) {
+    padding-bottom: 0;
+  }
+}
+
+/* Center align the buttons that go to live site or GitHub */
+.project-live {
+  text-align: center;
+
+  /* Styles for the the buttons to go to the live site or GitHub */
+  .btn {
+    margin-top: 1.25em;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+    width: auto;
+
+    /* Alter some styles on medium and up devices */
+    @include breakpoint($mq-medium) {
+      margin-top: 1.125em;
+      padding-left: 1.5em;
+      padding-right: 1.5em;
+      width: auto;
+    }
+
+    /* Increase top margin on large devices */
+    @include breakpoint($mq-large) {
+      margin-top: 3em;
+    }
+
+    /* For all but first button, add left margin on medium and up devices */
+    &:not(:first-of-type) {
+      @include breakpoint($mq-medium) {
+        margin-left: 0.5em;
+      }
+    }
+
+    /* Give right margin to button icon and pull it down a little */
+    .btn-icon {
+      vertical-align: -10%;
+    }
+  }
+}
+
+/* Project | Section
+   ========================================================================= */
+
+/* Styles for a section of a project page */
+.project-section {
+  padding: 0 0 2.4em;
+
+  /* Increase bottom padding on medium and up devices */
+  @include breakpoint($mq-medium) {
+    padding-bottom: 3.6em;
+  }
+
+  /* Increase bottom padding even more on large devices */
+  @include breakpoint($mq-large) {
+    padding-bottom: 4.8em;
+  }
+
+  /* Alter bottom padding for last project section */
+  &:last-of-type {
+    padding-bottom: 2.4em;
+  }
+
+  /* Constrain width and reduce padding for sections that are only text */
+  &-just-text {
+    @include constrain-width(52.5rem);
+    padding-bottom: 2.4em;
+  }
+}
+
+/* Styles for the description of a project */
+.project-section-description {
+  @include constrain-width(52.5rem);
+  margin-bottom: 1.2em;
+  padding: 0;
+
+  /* No margin on large devices and add some padding */
+  @include breakpoint($mq-large) {
+    margin-bottom: 0;
+    padding: 0 12px;
+  }
+}
+
+/* Styles specifically for a mobile project images */
+.photos-mobile {
+  text-align: center;
+}

@@ -1,0 +1,26 @@
+<header>
+  {% include shared/logo.html %}
+
+  {% if page.layout == "default" %}
+    <img class="avatar" src="/img/avatar.jpg" alt="Patrick Hooper">
+  {% endif %}
+
+  <nav class="menu horizontal-menu clearfix">
+    {% if page.layout == "default" %}
+      {% for item in site.data.shared.header %}
+        <a class="menu-item menu-item-{{ item.id }}" href="#{{ item.id }}" title="{{ item.title }}">
+          <div class="menu-item-text">{{ item.title }}</div>
+        </a>
+      {% endfor %}
+    {% elsif page.layout == "project" %}
+      <a class="menu-item" href="/projects/{{ page.previous_url }}" title="{{ page.previous_title }}">
+        <span class="menu-item-icon menu-item-icon-left fa fa-angle-left"></span>
+        <div class="menu-item-text">Prev</div>
+      </a>
+      <a class="menu-item" href="/projects/{{ page.next_url }}" title="{{ page.next_title }}">
+        <div class="menu-item-text">Next</div>
+        <span class="menu-item-icon menu-item-icon-right fa fa-angle-right"></span>
+      </a>
+    {% endif %}
+  </nav>
+</header>

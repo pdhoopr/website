@@ -1,44 +1,24 @@
 {
-  // Use the Airbnb ESLint base config (without React) as a starting point
-  "extends": "airbnb/base",
-
-  // Parse code with Babel
+  "extends": "airbnb",
   "parser": "babel-eslint",
-
-  // Specify the environments code will run in
   "env": {
     "jquery": true
   },
-
-  // Global variables for this project that ESLint should recognize
   "globals": {
     "Modernizr": true,
     "ScrollMagic": true,
     "TweenMax": true
   },
-
-  // Specific ESLint rules to override locally
   "rules": {
-
-    // Don't enforce a style for an ES2015 (ES6) arrow function body
-    "arrow-body-style": 0,
-
-    // Enforce no trailing commas
-    "comma-dangle": [2, "never"],
-
-    // Warn, not error, about max line length (of 100) being exceeded
-    "max-len": 1,
-
-    // Ignore the animation/waypoint variables declared but never reused
-    "no-unused-vars": [2, {"vars": "all", "varsIgnorePattern": "^tweenLogoLetters$|Waypoint$", "args": "all"}],
-
-    // Allow spaces inside brackets (this is just stylistic preference)
-    "object-curly-spacing": [0, "always"],
-
-    // Don't enforce padding within blocks (this is just stylistic preference)
+    "no-unused-vars": [2, {
+      "args": "all",
+      "vars": "all",
+      "varsIgnorePattern": "^tweenLogoLetters$|Waypoint$"
+    }],
     "padded-blocks": [0, "never"],
-
-    // Warn for single quoted strings
-    "quotes": [1, "double"]
+    "quotes": [2, "single", {
+      "allowTemplateLiterals": true,
+      "avoidEscape": true
+    }]
   }
 }

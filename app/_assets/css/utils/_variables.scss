@@ -1,0 +1,53 @@
+/* =========================================================================
+   Variables
+   ========================================================================= */
+
+/* Variables | Structure
+   ========================================================================= */
+
+/* Device sizes */
+$small-max-width: 46em; // 736px
+$medium-min-width: 46.0625em; // 737px
+$medium-max-width: 62em; // 992px
+$large-min-width: 62.0625em; // 993px
+$large-max-width: 75em; // 1200px
+$big-min-width: 75.0625em; // 1201px
+
+/* Breakpoint variables for media queries */
+$mq-small: max-width $small-max-width; // @media (max-width: 46em)
+$mq-medium: min-width $medium-min-width; // @media (min-width: 46.0625em)
+$mq-large: min-width $large-min-width; // @media (min-width: 62.0625em)
+$mq-big: min-width $big-min-width; // @media (min-width: 75.0625em)
+
+/* Variables | Typography
+   ========================================================================= */
+$roboto: 'Roboto', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+$ubuntu: 'Ubuntu', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+
+/* Variables | Color
+   ========================================================================= */
+
+/* Base colors */
+$black: #000;
+$gray-2: #222;
+$gray-4: #444;
+$gray-6: #666;
+$gray-d: #ddd;
+$gray-c: #ccc;
+$green: #008000;
+$orange: #ffa500;
+$red: #f00;
+$white: #fff;
+
+/* Brand colors */
+$github-gray: #333;
+$ph-blue: #101e43;
+$ph-yellow: #ffcb05;
+
+/* Transparent colors (overlays and shadows) */
+$black-transparent-12: rgba($black, 0.12);
+$black-transparent-15: rgba($black, 0.15);
+$black-transparent-16: rgba($black, 0.16);
+$black-transparent-18: rgba($black, 0.18);
+$black-transparent-50: rgba($black, 0.5);
+$ph-blue-transparent-75: rgba($ph-blue, 0.75);

@@ -4,17 +4,17 @@ layout: compress
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-  {% include base/head.html %}
+  {% include core/head.html %}
 
   <body>
-    {% include base/google-tag-manager.html %}
+    {% include core/google-tag-manager.html %}
 
     <main class="page {{ page.layout }}-page">
-      {% include layout/header.html %}
+      {% include shared/header.html %}
 
       {{ content }}
 
-      {% include layout/footer.html %}
+      {% include shared/footer.html %}
     </main>
 
     <script src="/js/vendor.js"></script>
