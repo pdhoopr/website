@@ -98,7 +98,7 @@
 
 /* Styles for project overview section */
 .project-overview {
-  @include constrain-width(52.5rem);
+  @include constrain-width(45rem);
   padding-bottom: 2.4em;
 
   /* Increase bottom padding on medium and up devices */
@@ -106,8 +106,9 @@
     padding-bottom: 3.6em;
   }
 
-  /* Increase bottom padding even more on large devices */
+  /* Increase bottom padding and content width even more on large devices */
   @include breakpoint($mq-large) {
+    @include constrain-width(52.5rem);
     padding-bottom: 4.8em;
   }
 
@@ -215,19 +216,25 @@
 
   /* Constrain width and reduce padding for sections that are only text */
   &-just-text {
-    @include constrain-width(52.5rem);
+    @include constrain-width(45rem);
     padding-bottom: 2.4em;
+
+    /* Make content width slightly wider on large devices */
+    @include breakpoint($mq-large) {
+      @include constrain-width(52.5rem);
+    }
   }
 }
 
 /* Styles for the description of a project */
 .project-section-description {
-  @include constrain-width(52.5rem);
+  @include constrain-width(45rem);
   margin-bottom: 1.2em;
   padding: 0;
 
-  /* No margin on large devices and add some padding */
+  /* No margin on large devices, add some padding, and take content width out a little wider */
   @include breakpoint($mq-large) {
+    @include constrain-width(52.5rem);
     margin-bottom: 0;
     padding: 0 12px;
   }
