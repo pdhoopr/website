@@ -47,7 +47,7 @@ const paths = {
       'public/safari-pinned-tab.svg',
     ],
   },
-  images: {
+  img: {
     watchFiles: [
       'app/_assets/img/**',
       '!app/_assets/img/branding/favicon/**',
@@ -160,9 +160,9 @@ gulp.task('docs', ['clean:docs'], () =>
  * Favicon Task
  *
  * 1. Deletes any previous files in the build folder
- * 2. Locates the src of images specified in paths object
+ * 2. Locates the src of favicon files specified in paths object
  * 3. Flattens the directory structure
- * 4. Copies selected images to the destination specified in the paths object
+ * 4. Copies favicon files to the destination specified in the paths object
  */
 gulp.task('clean:favicon', () =>
   del(paths.favicon.manifest)
@@ -189,21 +189,21 @@ gulp.task('favicon', ['clean:favicon'], () =>
 /**
  * Images Task
  *
- * 1. Deletes any previous files in the built images folder
- * 2. Locates the src of images specified in paths object
+ * 1. Deletes any previous files in the built img folder
+ * 2. Locates the src of img files specified in paths object
  * 3. Flattens the directory structure
- * 4. Copies selected images to the destination specified in the paths object
+ * 4. Copies img files to the destination specified in the paths object
  */
-gulp.task('clean:images', () =>
-  del(paths.images.dest)
+gulp.task('clean:img', () =>
+  del(paths.img.dest)
 );
 
-gulp.task('images', ['clean:images'], () =>
-  gulp.src(paths.images.src)
+gulp.task('img', ['clean:img'], () =>
+  gulp.src(paths.img.src)
     .pipe(plumber({
       errorHandler(err) {
         util.log(err);
-        browserSync.notify(buildErrorMessage('images'));
+        browserSync.notify(buildErrorMessage('img'));
         this.emit('end');
 
         /* Throw error in production builds to stop npm test/deploy scripts */
@@ -213,7 +213,7 @@ gulp.task('images', ['clean:images'], () =>
       },
     }))
     .pipe(flatten())
-    .pipe(gulp.dest(paths.images.dest))
+    .pipe(gulp.dest(paths.img.dest))
     .pipe(browserSync.stream())
 );
 
@@ -436,7 +436,7 @@ gulp.task('build', ['jekyll'], (callback) => {
   runSequence([
     'docs',
     'favicon',
-    'images',
+    'img',
     'vendor:fonts',
     'vendor:stylesheets',
     'stylesheets',
@@ -461,7 +461,7 @@ gulp.task('serve', ['build'], () => {
 
   gulp.watch(paths.docs.watchFiles, ['docs']);
   gulp.watch(paths.favicon.watchFiles, ['favicon']);
-  gulp.watch(paths.images.watchFiles, ['images']);
+  gulp.watch(paths.img.watchFiles, ['img']);
   gulp.watch(paths.js.watchFiles, ['js']);
   gulp.watch(paths.jekyll.watchFiles, ['build'], browserSync.reload);
   gulp.watch(paths.stylesheets.watchFiles, ['stylesheets']);
