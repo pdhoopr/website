@@ -68,8 +68,8 @@ const paths = {
     dest: 'public/js',
   },
   jekyll: {
-    watchFiles: ['config/**', 'app/**', '!app/_assets{,/**}'],
-    src: 'config',
+    watchFiles: ['_config.yml', 'app/**', '!app/_assets{,/**}'],
+    src: '.',
     dest: 'public',
   },
   stylesheets: {
