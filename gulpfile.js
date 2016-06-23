@@ -72,7 +72,7 @@ const paths = {
     src: '.',
     dest: 'public',
   },
-  stylesheets: {
+  css: {
     watchFiles: [
       'vendor/assets/css/sassy-maps/**',
       'vendor/assets/css/breakpoint/**',
@@ -104,7 +104,7 @@ const paths = {
       ],
       dest: 'public/js',
     },
-    stylesheets: {
+    css: {
       watchFiles: [
         'vendor/assets/css/**',
         '!vendor/assets/css/sassy-maps/**',
@@ -285,19 +285,19 @@ gulp.task('jekyll', (done) =>
 /**
  * Stylesheets Task
  *
- * 1. Locates the src of stylesheets specified in paths object
+ * 1. Locates the src of css files specified in paths object
  * 2. Initializes sourcemaps
  * 3. Minifies the file if this is a production run, otherwise leaves expanded
  * 4. Uses Autoprefixer to add vendor prefixes
  * 5. Renames file to style.css
- * 6. Writes the file to the stylesheets destination specified in the paths object w/ sourcemap
+ * 6. Writes the file to the css destination specified in the paths object w/ sourcemap
  */
-gulp.task('stylesheets', () =>
-  gulp.src(paths.stylesheets.src)
+gulp.task('css', () =>
+  gulp.src(paths.css.src)
     .pipe(plumber({
       errorHandler(err) {
         util.log(err);
-        browserSync.notify(buildErrorMessage('stylesheets'));
+        browserSync.notify(buildErrorMessage('css'));
         this.emit('end');
 
         /* Throw error in production builds to stop npm test/deploy scripts */
@@ -321,7 +321,7 @@ gulp.task('stylesheets', () =>
       basename: 'style',
     }))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(paths.stylesheets.dest))
+    .pipe(gulp.dest(paths.css.dest))
     .pipe(browserSync.stream({
       match: '**/*.css',
     }))
@@ -391,17 +391,17 @@ gulp.task('vendor:js', () =>
 /**
  * Vendor Stylesheets Task
  *
- * 1. Locates the src of vendor stylesheets specified in paths object
+ * 1. Locates the src of vendor css files specified in paths object
  * 2. Minifies the file if this is a production run, otherwise leaves expanded
  * 3. Uses Autoprefixer to add vendor prefixes
- * 4. Writes the file to the stylesheets destination specified in the paths object
+ * 4. Writes the file to the vendor css destination specified in the paths object
  */
-gulp.task('vendor:stylesheets', () =>
-  gulp.src(paths.vendor.stylesheets.src)
+gulp.task('vendor:css', () =>
+  gulp.src(paths.vendor.css.src)
     .pipe(plumber({
       errorHandler(err) {
         util.log(err);
-        browserSync.notify(buildErrorMessage('vendor:stylesheets'));
+        browserSync.notify(buildErrorMessage('vendor:css'));
         this.emit('end');
 
         /* Throw error in production builds to stop npm test/deploy scripts */
@@ -422,7 +422,7 @@ gulp.task('vendor:stylesheets', () =>
     ))
     .pipe(autoprefixer())
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(paths.vendor.stylesheets.dest))
+    .pipe(gulp.dest(paths.vendor.css.dest))
     .pipe(browserSync.stream())
 );
 
@@ -438,8 +438,8 @@ gulp.task('build', ['jekyll'], (callback) => {
     'favicon',
     'img',
     'vendor:fonts',
-    'vendor:stylesheets',
-    'stylesheets',
+    'vendor:css',
+    'css',
     'vendor:js',
     'js',
   ], callback);
@@ -464,10 +464,10 @@ gulp.task('serve', ['build'], () => {
   gulp.watch(paths.img.watchFiles, ['img']);
   gulp.watch(paths.js.watchFiles, ['js']);
   gulp.watch(paths.jekyll.watchFiles, ['build'], browserSync.reload);
-  gulp.watch(paths.stylesheets.watchFiles, ['stylesheets']);
+  gulp.watch(paths.css.watchFiles, ['css']);
   gulp.watch(paths.vendor.fonts.watchFiles, ['vendor:fonts']);
   gulp.watch(paths.vendor.js.watchFiles, ['vendor:js']);
-  gulp.watch(paths.vendor.stylesheets.watchFiles, ['vendor:stylesheets']);
+  gulp.watch(paths.vendor.css.watchFiles, ['vendor:css']);
 });
 
 /**
