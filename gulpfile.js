@@ -62,7 +62,7 @@ const paths = {
     ],
     dest: 'public/img',
   },
-  javascripts: {
+  js: {
     watchFiles: 'app/_assets/js/**',
     src: 'app/_assets/js/**',
     dest: 'public/js',
@@ -87,7 +87,7 @@ const paths = {
       src: 'vendor/assets/fonts/**',
       dest: 'public/fonts',
     },
-    javascripts: {
+    js: {
       watchFiles: 'vendor/assets/js/**',
       src: [
         'vendor/assets/js/modernizr/modernizr.min.js',
@@ -218,21 +218,21 @@ gulp.task('images', ['clean:images'], () =>
 );
 
 /**
- * JavaScripts Task
+ * JavaScript Task
  *
- * 1. Deletes any previous files in the built javascripts folder
- * 2. Locates the src of javascripts specified in paths object
+ * 1. Deletes any previous files in the built js folder
+ * 2. Locates the src of js files specified in paths object
  * 3. Initializes sourcemaps
- * 4. Concatenates all javascripts into one file called bundle.js
+ * 4. Concatenates all js files into one file called bundle.js
  * 5. Minifies the file if this is a production run
- * 6. Writes the file to the javascripts destination specified in the paths object w/ sourcemap
+ * 6. Writes the file to the js destination specified in the paths object w/ sourcemap
  */
-gulp.task('javascripts', () =>
-  gulp.src(paths.javascripts.src)
+gulp.task('js', () =>
+  gulp.src(paths.js.src)
     .pipe(plumber({
       errorHandler(err) {
         util.log(err);
-        browserSync.notify(buildErrorMessage('javascripts'));
+        browserSync.notify(buildErrorMessage('js'));
         this.emit('end');
 
         /* Throw error in production builds to stop npm test/deploy scripts */
@@ -246,7 +246,7 @@ gulp.task('javascripts', () =>
     .pipe(babel())
     .pipe(gulpif(env === 'production', uglify()))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(paths.javascripts.dest))
+    .pipe(gulp.dest(paths.js.dest))
     .pipe(browserSync.stream({
       match: '**/*.js',
     }))
@@ -359,19 +359,19 @@ gulp.task('vendor:fonts', ['clean:fonts'], () =>
 );
 
 /**
- * Vendor JavaScripts Task
+ * Vendor JavaScript Task
  *
- * 1. Locates the src of vendor javascripts specified in paths object
- * 2. Concatenates all javascripts into one file called vendor.js
+ * 1. Locates the src of vendor js files specified in paths object
+ * 2. Concatenates all vendor js files into one file called vendor.js
  * 3. Minifies the file if this is a production run
- * 4. Writes the file to the javascripts destination specified in the paths object
+ * 4. Writes the file to the vendor js destination specified in the paths object
  */
-gulp.task('vendor:javascripts', () =>
-  gulp.src(paths.vendor.javascripts.src)
+gulp.task('vendor:js', () =>
+  gulp.src(paths.vendor.js.src)
     .pipe(plumber({
       errorHandler(err) {
         util.log(err);
-        browserSync.notify(buildErrorMessage('vendor:javascripts'));
+        browserSync.notify(buildErrorMessage('vendor:js'));
         this.emit('end');
 
         /* Throw error in production builds to stop npm test/deploy scripts */
@@ -384,7 +384,7 @@ gulp.task('vendor:javascripts', () =>
     .pipe(concat('vendor.js'))
     .pipe(gulpif(env === 'production', uglify()))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(paths.vendor.javascripts.dest))
+    .pipe(gulp.dest(paths.vendor.js.dest))
     .pipe(browserSync.stream())
 );
 
@@ -440,8 +440,8 @@ gulp.task('build', ['jekyll'], (callback) => {
     'vendor:fonts',
     'vendor:stylesheets',
     'stylesheets',
-    'vendor:javascripts',
-    'javascripts',
+    'vendor:js',
+    'js',
   ], callback);
 });
 
@@ -462,11 +462,11 @@ gulp.task('serve', ['build'], () => {
   gulp.watch(paths.docs.watchFiles, ['docs']);
   gulp.watch(paths.favicon.watchFiles, ['favicon']);
   gulp.watch(paths.images.watchFiles, ['images']);
-  gulp.watch(paths.javascripts.watchFiles, ['javascripts']);
+  gulp.watch(paths.js.watchFiles, ['js']);
   gulp.watch(paths.jekyll.watchFiles, ['build'], browserSync.reload);
   gulp.watch(paths.stylesheets.watchFiles, ['stylesheets']);
   gulp.watch(paths.vendor.fonts.watchFiles, ['vendor:fonts']);
-  gulp.watch(paths.vendor.javascripts.watchFiles, ['vendor:javascripts']);
+  gulp.watch(paths.vendor.js.watchFiles, ['vendor:js']);
   gulp.watch(paths.vendor.stylesheets.watchFiles, ['vendor:stylesheets']);
 });
 
