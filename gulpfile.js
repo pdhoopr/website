@@ -111,8 +111,8 @@ const tasks = {
       ],
       src: [
         'app/_assets/vendor/modernizr/modernizr.min.js',
-        'node_modules/babel-polyfill/dist/polyfill.js',
-        'node_modules/jquery/dist/jquery.js',
+        'node_modules/babel-polyfill/dist/polyfill.min.js',
+        'node_modules/jquery/dist/jquery.min.js',
         'node_modules/gsap/src/minified/TweenMax.min.js',
         'node_modules/gsap/src/minified/jquery.gsap.min.js',
         'node_modules/gsap/src/minified/plugins/ScrollToPlugin.min.js',
@@ -179,7 +179,7 @@ gulp.task('css', () =>
     ))
     .pipe(autoprefixer())
     .pipe(rename({
-      basename: 'style',
+      basename: 'app',
     }))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(tasks.css.dest))
@@ -340,51 +340,6 @@ gulp.task('js', () =>
     .pipe(gulp.dest(tasks.js.dest))
     .pipe(browserSync.stream({
       match: '**/*.js',
-    }))
-);
-
-/**
- * Stylesheets Task
- *
- * 1. Locates the src of css files specified in tasks object
- * 2. Initializes sourcemaps
- * 3. Minifies the file if this is a production run, otherwise leaves expanded
- * 4. Uses Autoprefixer to add vendor prefixes
- * 5. Renames file to style.css
- * 6. Writes the file to the css destination specified in the tasks object w/ sourcemap
- */
-gulp.task('css', () =>
-  gulp.src(tasks.css.src)
-    .pipe(plumber({
-      errorHandler(err) {
-        util.log(err);
-        browserSync.notify(buildErrorMessage('css'));
-        this.emit('end');
-
-        /* Throw error in production builds to stop npm test/deploy scripts */
-        if (env === 'production') {
-          throw err;
-        }
-      },
-    }))
-    .pipe(sourcemaps.init())
-    .pipe(gulpif(
-      env === 'production',
-      sass(Object.assign(tasks.css.sass, {
-        outputStyle: 'compressed',
-      })),
-      sass(Object.assign(tasks.css.sass), {
-        outputStyle: 'expanded',
-      })
-    ))
-    .pipe(autoprefixer())
-    .pipe(rename({
-      basename: 'style',
-    }))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(tasks.css.dest))
-    .pipe(browserSync.stream({
-      match: '**/*.css',
     }))
 );
 
