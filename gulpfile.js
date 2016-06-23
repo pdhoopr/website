@@ -482,7 +482,6 @@ gulp.task('vendor:js', () =>
     }))
     .pipe(sourcemaps.init())
     .pipe(concat('vendor.js'))
-    .pipe(gulpif(env === 'production', uglify()))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(tasks.vendor.js.dest))
     .pipe(browserSync.stream())
