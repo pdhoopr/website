@@ -19,6 +19,15 @@ $mq-medium: min-width $medium-min-width; // @media (min-width: 46.0625em)
 $mq-large: min-width $large-min-width; // @media (min-width: 62.0625em)
 $mq-big: min-width $big-min-width; // @media (min-width: 75.0625em)
 
+/* Unsemantic variables for grid system */
+$container-gutter: 16px;
+$container-max-width: 75rem;
+$gutter-half: 12px;
+$media-desktop-min: 62.0625rem;
+$media-mobile-max: 46rem;
+$media-tablet-max: 62rem;
+$media-tablet-min: 46.0625rem;
+
 /* Variables | Typography
    ========================================================================= */
 $roboto: 'Roboto', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;

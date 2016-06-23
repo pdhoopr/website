@@ -287,4 +287,6 @@ $(document).on('click', 'a[href^="#"]', function scrollToAnchor(e) {
    ========================================================================= */
 
 /* Lazy loads images as they're <= 284px out of view */
-$('img.lazy').unveil(284);
+$('img.lazy').unveil({
+  offset: 284,
+});
