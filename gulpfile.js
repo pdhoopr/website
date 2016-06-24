@@ -135,8 +135,8 @@ const tasks = {
 /* Returns a customized error message based on the task throwing the error */
 function buildErrorMessage(task) {
   return `<span style="color: red; font-weight: bold;">${task} task error!</span>` +
-    '<span style="color: red;"> Please check the command line and resolve the error ASAP because ' +
-    'the build may be failing!</span>';
+    `<span style="color: red;"> Please check the command line and resolve the error ASAP because ` +
+    `the build may be failing!</span>`;
 }
 
 /* =========================================================================
