@@ -6,11 +6,7 @@
   "bugs": {
     "url": "https://github.com/impatrickhooper/patrick-hooper/issues"
   },
-  "author": {
-    "name": "Patrick Hooper",
-    "email": "patrick.d.hooper@gmail.com",
-    "url": "http://patrick.hoopr.io"
-  },
+  "author": "Patrick Hooper <patrick.d.hooper@gmail.com> (http://patrick.hoopr.io/)",
   "repository": {
     "type": "git",
     "url": "https://github.com/impatrickhooper/patrick-hooper"
