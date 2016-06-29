@@ -6,6 +6,8 @@ before_install:
 install:
   - npm install
   - "bundle install"
+script:
+  - npm run lint
 after_success:
   - npm run build
 before_deploy:
@@ -14,5 +16,6 @@ deploy:
   provider: script
   script: "surge ./public"
   skip_cleanup: true
-  on:
-    branch: master
+branches:
+  only:
+    - master
