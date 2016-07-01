@@ -12,9 +12,11 @@ script:
 before_deploy:
   - "npm install -g surge"
 deploy:
-  provider: script
-  script: "surge ./public"
+  on: production
+  provider: surge
+  script: "./public"
   skip_cleanup: true
 branches:
   only:
     - master
+    - production
