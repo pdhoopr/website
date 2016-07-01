@@ -12,6 +12,7 @@ script:
 before_deploy:
   - "npm install -g surge"
 deploy:
+  domain: "patrick.hoopr.io"
   on: production
   provider: surge
   script: "./public"
