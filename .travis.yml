@@ -14,8 +14,8 @@ before_deploy:
 deploy:
   domain: "patrick.hoopr.io"
   on: production
+  project: "./public"
   provider: surge
-  script: "./public"
   skip_cleanup: true
 branches:
   only:
