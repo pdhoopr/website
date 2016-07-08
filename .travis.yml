@@ -1,6 +1,11 @@
+sudo: false
+branches:
+  only:
+    - master
+    - production
 language: "node_js"
 node_js:
-  - "6.2.2"
+  - "node"
 before_install:
   - "rvm install 2.3.1"
 install:
@@ -18,7 +23,7 @@ deploy:
   project: "./public"
   provider: surge
   skip_cleanup: true
-branches:
-  only:
-    - master
-    - production
+cache:
+  bundler: true
+  directories:
+    - "node_modules"
