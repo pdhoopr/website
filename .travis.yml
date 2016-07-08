@@ -1,12 +1,17 @@
 language: "node_js"
 node_js:
   - "node"
+cache:
+  bundler: true
+  directories:
+    - "node_modules"
 before_install:
   - "rvm install 2.3.1"
 install:
   - npm install
   - "bundle install"
 script:
+  - bundle show jekyll
   - npm run lint
   - npm run build
 before_deploy:
@@ -18,10 +23,6 @@ deploy:
   project: "./public"
   provider: surge
   skip_cleanup: true
-cache:
-  bundler: true
-  directories:
-    - "node_modules"
 branches:
   only:
     - master
