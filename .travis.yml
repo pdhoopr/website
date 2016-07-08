@@ -1,8 +1,3 @@
-sudo: false
-branches:
-  only:
-    - master
-    - production
 language: "node_js"
 node_js:
   - "node"
@@ -27,3 +22,7 @@ cache:
   bundler: true
   directories:
     - "node_modules"
+branches:
+  only:
+    - master
+    - production
