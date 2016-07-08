@@ -1,4 +1,7 @@
 # Patrick Hooper
+
+[![Travis](https://img.shields.io/travis/impatrickhooper/patrick-hooper.svg?style=flat-square)](https://travis-ci.org/impatrickhooper/patrick-hooper)
+
 The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Technology Fanboy, Happily Married, Cheesecake Evangelist, World Traveler, and more. Currently living in Ann Arbor, Michigan as a proud University of Michigan grad - Go Blue!
 
 ## Libraries
