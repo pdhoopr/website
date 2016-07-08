@@ -1,6 +1,10 @@
 language: "node_js"
 node_js:
-  - "6.2.2"
+  - "node"
+cache:
+  bundler: true
+  directories:
+    - "node_modules"
 before_install:
   - "rvm install 2.3.1"
 install:
@@ -12,11 +16,12 @@ script:
 before_deploy:
   - "npm install -g surge"
 deploy:
-  domain: "patrick.hoopr.io"
-  on: production
-  project: "./public"
   provider: surge
+  project: "./public"
+  domain: "patrick.hoopr.io"
   skip_cleanup: true
+  on:
+    branch: production
 branches:
   only:
     - master
