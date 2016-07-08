@@ -12,16 +12,12 @@ script:
 before_deploy:
   - "npm install -g surge"
 deploy:
+  provider: surge 
+  project: "./public"
   domain: "patrick.hoopr.io"
+  skip_cleanup: true
   on: 
     branch: production
-  project: "./public"
-  provider: surge
-  skip_cleanup: true
-cache:
-  directories:
-    - "$HOME/.rvm/gems/ruby-2.3.1/gems"
-    - "node_modules"
 branches:
   only:
     - master
