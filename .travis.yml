@@ -22,7 +22,3 @@ deploy:
   skip_cleanup: true
   on:
     branch: production
-branches:
-  only:
-    - master
-    - production
