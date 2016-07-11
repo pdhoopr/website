@@ -1,5 +1,3 @@
-.bundle/
-.sass-cache/
-*.log
+/public/
 node_modules/
-public/
+npm-debug.log

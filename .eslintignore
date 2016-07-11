@@ -1,2 +1,2 @@
-app/_assets/vendor/
-public/
+/app/_assets/vendor/**
+/public/**
