@@ -1,27 +1,31 @@
 # Patrick Hooper
 
-[![Travis](https://img.shields.io/travis/impatrickhooper/patrick-hooper.svg?style=flat-square)](https://travis-ci.org/impatrickhooper/patrick-hooper)
-
 The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Technology Fanboy, Happily Married, Cheesecake Evangelist, World Traveler, and more. Currently living in Ann Arbor, Michigan as a proud University of Michigan grad - Go Blue!
+
+[![Travis](https://img.shields.io/travis/impatrickhooper/patrick-hooper/master.svg?style=flat-square)](https://travis-ci.org/impatrickhooper/patrick-hooper)
 
 ## Libraries
 
 #### Analytics
+
 - [Google Analytics](https://www.google.com/analytics/)
 - [Google Tag Manager](https://www.google.com/analytics/tag-manager/)
 
 #### CSS & Sass
+
 - [Breakpoint](http://breakpoint-sass.com/)
 - [Reset CSS](https://necolas.github.io/normalize.css/)
 - [Sassy Maps](https://github.com/at-import/Sassy-Maps)
 - [Unsemantic](http://unsemantic.com/)
 
 #### Fonts
+
 - [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 - [Roboto](https://www.google.com/fonts/specimen/Roboto)
 - [Ubuntu](https://www.google.com/fonts/specimen/Ubuntu)
 
 #### JavaScript
+
 - [Babel Polyfill](https://babeljs.io/docs/usage/polyfill/)
 - [GSAP](http://greensock.com/gsap)
 - [jQuery](https://jquery.com)
@@ -32,6 +36,7 @@ The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Tec
 - [Waypoints](http://imakewebthings.com/waypoints/)
 
 ## Development
+
 1. Clone the repository.
 2. Navigate into the repository.
 3. Run `bundle install` (you'll need [Ruby](https://www.ruby-lang.org/en/) & [Bundler](http://bundler.io/)).
