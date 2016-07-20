@@ -3,11 +3,11 @@ project_overview:
   teaser: "A sandbox for the WGI think tank (ninjas) to play around with cutting-edge business intelligence ideas."
   description: "What started as an experiment in using Google Apps to take a form and the accompanying workflow paperless at Wantman Group, Inc. (WGI) became a full-fledged internal think tank tasked with solving real business problems. What kind of think tank would it be without a name, logo and website, right?"
   roles: "Data Visualization, Full-Stack, UI, UX"
-  tech: '<a class="underline" href="http://d3js.org/" target="_blank">D3.js</a>, <a class="underline" href="https://apps.google.com/" target="_blank">Google Apps</a>, <a class="underline" href="https://cloud.google.com/appengine/" target="_blank">Google App Engine (Python)</a>, <a class="underline" href="http://gulpjs.com/" target="_blank">Gulp</a>, <a class="underline" href="https://jquery.com/" target="_blank">jQuery</a>, <a class="underline" href="http://www.getmdl.io/" target="_blank">Material Design Lite</a>, <a class="underline" href="http://sass-lang.com/" target="_blank">Sass</a>, <a class="underline" href="https://github.com/impatrickhooper/wgi-buzz#user-content-wgibuzz" target="_blank">and more...</a>'
+  tech: '<a class="underline" href="http://d3js.org/" target="_blank">D3.js</a>, <a class="underline" href="https://apps.google.com/" target="_blank">Google Apps</a>, <a class="underline" href="https://cloud.google.com/appengine/" target="_blank">Google App Engine (Python)</a>, <a class="underline" href="http://gulpjs.com/" target="_blank">Gulp</a>, <a class="underline" href="https://jquery.com/" target="_blank">jQuery</a>, <a class="underline" href="http://www.getmdl.io/" target="_blank">Material Design Lite</a>, <a class="underline" href="http://sass-lang.com/" target="_blank">Sass</a>, <a class="underline" href="https://github.com/pdhoopr/wgi-buzz#user-content-wgibuzz" target="_blank">and more...</a>'
   mobile_ready: true
   tablet_ready: true
   desktop_ready: true
-  view_github: "https://github.com/impatrickhooper/wgi-buzz"
+  view_github: "https://github.com/pdhoopr/wgi-buzz"
 
 # Sections
 project_sections:
