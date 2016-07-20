@@ -4,12 +4,12 @@
   "description": "The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Technology Fanboy, Happily Married, Cheesecake Evangelist, World Traveler, and more. Currently living in Ann Arbor, Michigan as a proud University of Michigan grad - Go Blue!",
   "homepage": "http://patrick.hoopr.io",
   "bugs": {
-    "url": "https://github.com/impatrickhooper/patrick-hooper/issues"
+    "url": "https://github.com/pdhoopr/patrick-hooper/issues"
   },
   "author": "Patrick Hooper <patrick.d.hooper@gmail.com> (http://patrick.hoopr.io)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/impatrickhooper/patrick-hooper"
+    "url": "https://github.com/pdhoopr/patrick-hooper"
   },
   "scripts": {
     "build": "NODE_ENV=production gulp build",

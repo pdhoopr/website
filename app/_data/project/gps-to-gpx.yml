@@ -1,4 +1,4 @@
 # Overview
 project_overview:
   teaser: "A simple JavaScript library that formats GPS waypoint data from an activity (a run, bike ride, hike, etc.) as GPX."
-  view_github: "https://github.com/impatrickhooper/gps-to-gpx"
+  view_github: "https://github.com/pdhoopr/gps-to-gpx"
