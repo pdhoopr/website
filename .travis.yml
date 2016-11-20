@@ -21,4 +21,4 @@ deploy:
   domain: "patrick.hoopr.io"
   skip_cleanup: true
   on:
-    branch: production
+    branch: master
