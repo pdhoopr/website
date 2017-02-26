@@ -1,8 +1,6 @@
 # Patrick Hooper
 
-The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Technology Fanboy, Happily Married, Cheesecake Evangelist, World Traveler, and more. Currently living in Ann Arbor, Michigan as a proud University of Michigan grad - Go Blue!
-
-[![Travis](https://img.shields.io/travis/pdhoopr/patrick-hooper/master.svg?style=flat-square)](https://travis-ci.org/pdhoopr/patrick-hooper)
+The portfolio website for Patrick Hooper — web (app) developer, life enthusiast, [University of Michigan](http://umich.edu/) alumnus, and all-around neat guy living in Ann Arbor, MI. Also, [Marie Hooper's](https://mariehooper.me) biggest fan.
 
 ## Libraries
 

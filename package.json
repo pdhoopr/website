@@ -1,21 +1,22 @@
 {
   "name": "patrick-hooper",
   "version": "0.0.0",
-  "description": "The portfolio site for Patrick Hooper. Web (App) Developer, Life Enthusiast, Technology Fanboy, Happily Married, Cheesecake Evangelist, World Traveler, and more. Currently living in Ann Arbor, Michigan as a proud University of Michigan grad - Go Blue!",
-  "homepage": "http://patrick.hoopr.io",
+  "description": "The portfolio website for Patrick Hooper.",
+  "homepage": "https://patrickhooper.me",
   "bugs": {
-    "url": "https://github.com/pdhoopr/patrick-hooper/issues"
+    "url": "https://github.com/pdhoopr/website/issues"
   },
-  "author": "Patrick Hooper <patrick.d.hooper@gmail.com> (http://patrick.hoopr.io)",
+  "author": "Patrick Hooper <patrick.d.hooper@gmail.com> (https://patrickhooper.me)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pdhoopr/patrick-hooper"
+    "url": "https://github.com/pdhoopr/website"
   },
   "scripts": {
     "build": "NODE_ENV=production gulp build",
+    "deploy": "npm run lint && npm run build",
+    "lint": "npm run lint:js && npm run lint:sass",
     "lint:js": "eslint app",
     "lint:sass": "sass-lint 'app/**/*.scss' -v",
-    "lint": "npm run lint:js && npm run lint:sass",
     "start": "gulp serve"
   },
   "devDependencies": {
