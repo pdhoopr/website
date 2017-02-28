@@ -2,7 +2,8 @@
 layout: default
 ---
 
-{% assign page_data = site.data.project[page.slug] %}
+{% assign page_slug = page.slug | replace: '.', '-' %}
+{% assign page_data = site.data.project[page_slug] %}
 {% assign project_photos = page_data.project_photos %}
 {% assign project_overview = page_data.project_overview %}
 {% assign project_sections = page_data.project_sections %}

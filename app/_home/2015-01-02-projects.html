@@ -7,7 +7,8 @@ title: Projects
 
   <ul class="project-list">
     {% for project in site.projects reversed %}
-      {% assign project_overview = site.data.project[project.slug].project_overview %}
+      {% assign project_slug = project.slug | replace: '.', '-' %}
+      {% assign project_overview = site.data.project[project_slug].project_overview %}
 
       <li>
         <h3 class="project-list-title">{{ project.title }}</h3>

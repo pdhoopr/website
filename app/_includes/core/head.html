@@ -1,3 +1,5 @@
+{% assign page_slug = page.slug | replace: '.', '-' %}
+
 <head>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -13,7 +15,7 @@
 
   <!-- Site information -->
   <title>{% if page.layout == "project" %}{{ page.title }} | {% endif %}{{ site.title }}{% if page.layout == "default" %} | Web (App) Developer and more in Ann Arbor, Michigan{% endif %}</title>
-  <meta name="description" content="{% if page.layout == 'project' %}{{ site.data.project[page.slug].project_overview.teaser }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="description" content="{% if page.layout == 'project' %}{{ site.data.project[page_slug].project_overview.teaser }}{% else %}{{ site.description }}{% endif %}">
 
   <!-- DNS Prefetches -->
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
