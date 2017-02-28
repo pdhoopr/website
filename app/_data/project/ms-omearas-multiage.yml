@@ -1,7 +1,7 @@
 # Preview Photos
 project_photos:
   browser:
-    url: "msomearasmultiage.com"
+    url: "msomearasmultiage.netlify.com"
     image_name: "projects-ms-omearas-multiage-preview"
     image_extension: jpg
 
@@ -15,19 +15,19 @@ project_overview:
   teaser: "The original, whimsical website for the classroom of Ms. O'Meara (my mom), her students, and their parents."
   description: 'My mom teaches a multiage (1st, 2nd, 3rd grade) classroom and was looking for a better way to share resources, photos, information, and more with parents and students. <a class="underline" href="https://mariehooper.me" target="_blank">Marie</a> and I helped her out by creating a website that caters to both kids and adults in a fun and natural way. While our original WordPress iteration of her classroom site has been retired, you can still visit a working, static version of it using the button below!'
   roles: "Full-Stack, Logo, UI, UX"
-  tech: '<a class="underline" href="https://pages.github.com/" target="_blank">GitHub Pages</a>, <a class="underline" href="https://icomoon.io/" target="_blank">IcoMoon</a>, <a class="underline" href="https://jquery.com/" target="_blank">jQuery</a>, <a class="underline" href="http://sass-lang.com/" target="_blank">Sass</a>, <a class="underline" href="https://wordpress.org/" target="_blank">WordPress</a> + <a class="underline" href="http://underscores.me/" target="_blank">Underscores</a>, <a class="underline" href="https://github.com/pdhoopr/ms-omearas-multiage#user-content-ms-omearas-multiage" target="_blank">and more...</a>'
+  tech: '<a class="underline" href="https://icomoon.io/" target="_blank">IcoMoon</a>, <a class="underline" href="https://jquery.com/" target="_blank">jQuery</a>, <a class="underline" href="https://www.netlify.com/" target="_blank">Netlify</a>, <a class="underline" href="http://sass-lang.com/" target="_blank">Sass</a>, <a class="underline" href="https://wordpress.org/" target="_blank">WordPress</a> + <a class="underline" href="http://underscores.me/" target="_blank">Underscores</a>, <a class="underline" href="https://github.com/hoopr/ms-omearas-multiage#user-content-ms-omearas-multiage" target="_blank">and more...</a>'
   mobile_ready: true
   tablet_ready: true
   desktop_ready: true
-  view_live: "https://pdhoopr.github.io/ms-omearas-multiage/"
-  view_github: "https://github.com/pdhoopr/ms-omearas-multiage"
+  view_live: "https://msomearasmultiage.netlify.com/"
+  view_github: "https://github.com/hoopr/ms-omearas-multiage"
 
 # Sections
 project_sections:
   - subtitle: Home
     description: "The home page provides information about the class, multiage, and the teacher using the theme of journeys and the sea. The page starts with a hero image to set the tone for that theme and then breaks into colored sections to provide more detailed information."
     browser:
-      url: "msomearasmultiage.com"
+      url: "msomearasmultiage.netlify.com"
       image_scroll: scroll
       image_name: "projects-ms-omearas-multiage"
       image_extension: jpg
@@ -36,7 +36,7 @@ project_sections:
   - subtitle: Kids
     description: "The kids section was designed to be fun and easy to use for 1st, 2nd, and 3rd graders. The default kids page presents them with big, colorful buttons for each subject. Once on a subject page, students will still see that navigation to jump between subjects, and then can use the accordion menus to browse links of resources."
     browser:
-      url: "msomearasmultiage.com/kids"
+      url: "msomearasmultiage.netlify.com/kids"
       image_name: "projects-ms-omearas-multiage-kids"
       image_extension: gif
       image_alt: " | Kids"
@@ -44,7 +44,7 @@ project_sections:
   - subtitle: Parents
     description: "Parents are greeted with a corkboard explaining what they can expect to find here. Below the image, there is a secondary navigation to allow for easy navigation between different categories of information. Within each category, sections are organzied into accordion menus to present a less overwhelming amount of information at once."
     browser:
-      url: "msomearasmultiage.com/parents"
+      url: "msomearasmultiage.netlify.com/parents"
       image_scroll: scroll
       image_name: "projects-ms-omearas-multiage-parents"
       image_extension: jpg
