@@ -2,11 +2,11 @@
 project_photos:
   browser:
     url: "jahlehandpatrick.netlify.com"
-    image_name: "projects-jahleh-and-patrick-preview"
+    image_name: "jahleh-and-patrick-preview"
     image_extension: jpg
 
   phone:
-    image_name: "projects-jahleh-and-patrick-preview-mobile"
+    image_name: "jahleh-and-patrick-preview-mobile"
     image_extension: jpg
     image_alt: " | Mobile"
 
@@ -29,7 +29,7 @@ project_sections:
     browser:
       url: "jahlehandpatrick.netlify.com"
       image_scroll: scroll
-      image_name: "projects-jahleh-and-patrick-our-story"
+      image_name: "jahleh-and-patrick-our-story"
       image_extension: jpg
       image_alt: " | Our Story"
 
@@ -38,7 +38,7 @@ project_sections:
     browser:
       url: "jahlehandpatrick.netlify.com/wedding"
       image_scroll: scroll
-      image_name: "projects-jahleh-and-patrick-wedding"
+      image_name: "jahleh-and-patrick-wedding"
       image_extension: jpg
       image_alt: " | Wedding"
 
@@ -47,7 +47,7 @@ project_sections:
     browser:
       url: "jahlehandpatrick.netlify.com/rsvp"
       image_scroll: scroll
-      image_name: "projects-jahleh-and-patrick-rsvp"
+      image_name: "jahleh-and-patrick-rsvp"
       image_extension: jpg
       image_alt: " | RSVP"
 
@@ -56,7 +56,7 @@ project_sections:
     browser:
       url: "jahlehandpatrick.netlify.com/guestbook"
       image_scroll: scroll
-      image_name: "projects-jahleh-and-patrick-guestbook"
+      image_name: "jahleh-and-patrick-guestbook"
       image_extension: jpg
       image_alt: " | Guestbook"
 
@@ -65,23 +65,23 @@ project_sections:
     browser:
       url: "jahlehandpatrick.netlify.com/registry"
       image_scroll: scroll
-      image_name: "projects-jahleh-and-patrick-registry"
+      image_name: "jahleh-and-patrick-registry"
       image_extension: jpg
       image_alt: " | Registry"
 
   - subtitle: Mobile
     phones:
       - image_scroll: scroll
-        image_name: "projects-jahleh-and-patrick-our-story-mobile"
+        image_name: "jahleh-and-patrick-our-story-mobile"
         image_extension: jpg
         image_alt: " | Our Story | Mobile"
 
       - image_scroll: scroll
-        image_name: "projects-jahleh-and-patrick-wedding-mobile"
+        image_name: "jahleh-and-patrick-wedding-mobile"
         image_extension: jpg
         image_alt: " | Wedding | Mobile"
 
       - image_scroll: scroll
-        image_name: "projects-jahleh-and-patrick-guestbook-mobile"
+        image_name: "jahleh-and-patrick-guestbook-mobile"
         image_extension: jpg
         image_alt: " | Guestbook | Mobile"

@@ -48,18 +48,8 @@ const tasks = {
     ],
   },
   img: {
-    watchFiles: [
-      'app/_assets/img/**',
-      '!app/_assets/img/branding/favicon/**',
-      '!app/_assets/img/projects/umich-athletics{,/**}',
-      '!app/_assets/img/projects/wgi*{,/**}',
-    ],
-    src: [
-      'app/_assets/img/**',
-      '!app/_assets/img/branding/favicon/**',
-      '!app/_assets/img/projects/umich-athletics{,/**}',
-      '!app/_assets/img/projects/wgi*{,/**}',
-    ],
+    watchFiles: ['app/_assets/img/**', '!app/_assets/img/branding/favicon/**'],
+    src: ['app/_assets/img/**', '!app/_assets/img/branding/favicon/**'],
     dest: 'public/img',
   },
   js: {

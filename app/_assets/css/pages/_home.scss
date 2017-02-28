@@ -91,7 +91,7 @@
   @include height-fallback(95);
 
   /* Set background image and hide section */
-  background-image: url('/img/home-hero-background.jpg');
+  background-image: url('/img/hero-background.jpg');
   display: none;
 
   /* Show only on medium and up devices */
@@ -161,7 +161,7 @@
 
   /* Set background image */
   background-attachment: fixed;
-  background-image: url('/img/home-about-background.jpg');
+  background-image: url('/img/about-background.jpg');
   background-size: cover;
 }
 

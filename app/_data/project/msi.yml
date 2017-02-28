@@ -2,11 +2,11 @@
 project_photos:
   browser:
     url: "msissl.com"
-    image_name: "projects-msi-preview"
+    image_name: "msi-preview"
     image_extension: jpg
 
   phone:
-    image_name: "projects-msi-preview-mobile"
+    image_name: "msi-preview-mobile"
     image_extension: jpg
     image_alt: " | Mobile"
 
@@ -27,7 +27,7 @@ project_sections:
     description: "The home section is a hero section of sorts. It provides visitors with a full-screen slide show of images and business areas MSi lights up, from retail to hospitality to the Liberty Bell."
     browser:
       url: "msissl.com"
-      image_name: "projects-msi"
+      image_name: "msi-home"
       image_extension: jpg
       image_alt: " | Home"
 
@@ -35,7 +35,7 @@ project_sections:
     description: "MSi's entire product line is elegantly put on display in this section, presenting you first with a thumbnail of each item followed by more information and a larger image loaded via AJAX when an is clicked."
     browser:
       url: "msissl.com/#product-line"
-      image_name: "projects-msi-product-line"
+      image_name: "msi-product-line"
       image_extension: jpg
       image_alt: " | Product Line"
 
@@ -43,7 +43,7 @@ project_sections:
     description: "This section brings a burst of color onto the page with a background composition made up of the MSi green and a few of their products. On top of this background lies a cleanly organized list of the tech MSi uses."
     browser:
       url: "msissl.com/#technology"
-      image_name: "projects-msi-technology"
+      image_name: "msi-technology"
       image_extension: jpg
       image_alt: " | Technology"
 
@@ -51,7 +51,7 @@ project_sections:
     description: "A simple, gently styled list of news and press releases is displayed in this section. Nothing too over-the-top, just enough to be appealing and allow you to focus on what's important here: the content."
     browser:
       url: "msissl.com/press-releases"
-      image_name: "projects-msi-press-releases"
+      image_name: "msi-press-releases"
       image_extension: jpg
       image_alt: " | Press Releases"
 
@@ -59,20 +59,20 @@ project_sections:
     description: "MSi also has a wealth of additional information about each product and many other resources like presentations and rebate information that clients find useful. The trick with all this information on a website was organizing it in a way that is intutive and simple. The answer? Custom-made Google Image-style drawers and accordions inside of those to hide and reveal information as necessary!"
     browser:
       url: "msissl.com/sales-kit"
-      image_name: "projects-msi-sales-kit"
+      image_name: "msi-sales-kit"
       image_extension: gif
       image_alt: " | Sales Kit"
 
   - subtitle: Mobile
     phones:
-      - image_name: "projects-msi-mobile"
+      - image_name: "msi-home-mobile"
         image_extension: jpg
         image_alt: " | Home | Mobile"
 
-      - image_name: "projects-msi-gallery-mobile"
+      - image_name: "msi-gallery-mobile"
         image_extension: jpg
         image_alt: " | Gallery | Mobile"
 
-      - image_name: "projects-msi-menu-mobile"
+      - image_name: "msi-navigation-mobile"
         image_extension: jpg
         image_alt: " | Menu | Mobile"
