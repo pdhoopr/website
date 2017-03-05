@@ -60,7 +60,7 @@ project_sections:
     browser:
       url: "msissl.com/sales-kit"
       image_name: "msi-sales-kit"
-      image_extension: gif
+      image_extension: mp4
       image_alt: " | Sales Kit"
 
   - subtitle: Mobile

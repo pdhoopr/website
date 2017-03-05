@@ -38,7 +38,7 @@ project_sections:
     browser:
       url: "msomearasmultiage.netlify.com/kids"
       image_name: "ms-omearas-multiage-kids"
-      image_extension: gif
+      image_extension: mp4
       image_alt: " | Kids"
 
   - subtitle: Parents
