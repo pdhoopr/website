@@ -286,7 +286,7 @@ $(document).on('click', 'a[href^="#"]', function scrollToAnchor(e) {
    Other
    ========================================================================= */
 
-/* Lazy loads images as they're <= 284px out of view */
-$('img.lazy').unveil({
-  offset: 284,
-});
+/* If this is a high-density device, lazy load 2x media assets instead */
+if (window.devicePixelRatio > 1) {
+  $.lazyLoadXT.srcAttr = 'data-src-2x';
+}

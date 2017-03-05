@@ -27,10 +27,10 @@ The portfolio website for Patrick Hooper — web (app) developer, life enthusias
 - [Babel Polyfill](https://babeljs.io/docs/usage/polyfill/)
 - [GSAP](http://greensock.com/gsap)
 - [jQuery](https://jquery.com)
+- [Lazy Load XT](http://ressio.github.io/lazy-load-xt/)
 - [Modernizr](http://modernizr.com/)
 - [ScrollMagic](http://scrollmagic.io/)
 - [Typed.js](http://www.mattboldt.com/demos/typed-js/)
-- [Unveil](http://luis-almeida.github.io/unveil/)
 - [Waypoints](http://imakewebthings.com/waypoints/)
 
 ## Development
