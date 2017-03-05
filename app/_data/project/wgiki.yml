@@ -1,3 +1,15 @@
+# Preview Photos
+project_photos:
+  browser:
+    url: "&nbsp;"
+    image_name: "wgiki-preview"
+    image_extension: jpg
+
+  phone:
+    image_name: "wgiki-preview-mobile"
+    image_extension: jpg
+    image_alt: " | Mobile"
+
 # Overview
 project_overview:
   teaser: "A resource repository that took the pain out of finding important company materials in a colorful way."
@@ -13,18 +25,64 @@ project_overview:
 project_sections:
   - subtitle: Home
     description: "The home page lists each division of WGI and its associated color in a stacked card-style format. Clicking a card will take you to the page for that division. At the bottom of the home page (and every page) is a footer containg the names of the content managers for each division."
+    browser:
+      url: "&nbsp;"
+      image_scroll: scroll
+      image_name: "wgiki-home"
+      image_extension: jpg
+      image_alt: " | Home"
 
   - subtitle: Navigation
     description: "The WGIki has a few navigational components. A menu icon opens the left side slide-in nav with some user info as well as division links. Categories for a division appear if you're under that division's umbrella of pages. Clicking the star icon opens the Favorites drawer with quick links. Finally, fixed in the bottom right corner are floating action buttons that open for feedback or help forms."
+    browser:
+      url: "&nbsp;"
+      image_name: "wgiki-navigation"
+      image_extension: jpg
+      image_alt: " | Navigation"
 
   - subtitle: Divisions
     description: "At the top of the resource hierachy is the division. Each division within WGI has its own categories and resources that it maintains. On the main page for each division, links to all its categories are listed with a brief description. Oh, and just for a little added flare, each division also has a unique color that is used thematically throughout its pages (even the nav bar)."
+    browser:
+      url: "&nbsp;"
+      image_name: "wgiki-divisions"
+      image_extension: jpg
+      image_alt: " | Divisions"
 
   - subtitle: Categories
     description: "Next up in the hierachy are categories. Individual resources are assigned categories, and the main page for each category lists all the resources that make it up. A short description is provided to help give users an idea of what they'll find here. Resources are presented in a tab-like list with icons and other useful information to let users know what they're in for. Hovering over a resource makes it scale up (slightly)."
+    browser:
+      url: "&nbsp;"
+      image_name: "wgiki-categories"
+      image_extension: jpg
+      image_alt: " | Categories"
 
   - subtitle: Resources
     description: "Finally, at the bottom of the hierachy are individual resources. These can come in a variety of formats (single files, multiple files, external links, self-composed articles, etc.), and an edit button is available to content managers for quick access to the backend of a page."
+    browser:
+      url: "&nbsp;"
+      image_scroll: scroll
+      image_name: "wgiki-resources"
+      image_extension: jpg
+      image_alt: " | Resources"
 
   - subtitle: Search
     description: 'The search functionality of the WGIki scours all resources and returns a list of the most relevant ones (using <a class="underline" href="http://www.relevanssi.com/" target="_blank">Relevanssi</a>). The results are listed just like resources on a category page, with a little additional information about where to find them specifically.'
+    browser:
+      url: "&nbsp;"
+      image_name: "wgiki-search"
+      image_extension: jpg
+      image_alt: " | Search"
+
+  - subtitle: Mobile
+    phones:
+      - image_name: "wgiki-navigation-mobile"
+        image_extension: jpg
+        image_alt: " | Navigation"
+
+      - image_name: "wgiki-home-mobile"
+        image_extension: jpg
+        image_alt: " | Home | Mobile"
+
+      - image_name: "wgiki-search-mobile"
+        image_extension: jpg
+        image_alt: " | Search | Mobile"

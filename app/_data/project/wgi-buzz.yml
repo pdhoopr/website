@@ -48,6 +48,14 @@ project_sections:
       image_extension: mp4
       image_alt: " | Opportunities"
 
+  - subtitle: Sales Goals
+    description: "WGI sets annual sales goals for its project managers, but until now had no reliable, centralized system for tracking performance against the goals. Using an easy-to-update Google Sheet and the Google Drive API to feed a chart that would (hopefully) make United Way proud, users can now view annual goals by location and interact with the chart to see the current sales and goal. A toggle exists to let users easily switch between years."
+    browser:
+      url: "wgibuzz.netlify.com/sales-goals"
+      image_name: "wgi-buzz-sales-goals"
+      image_extension: mp4
+      image_alt: " | Sales Goals"
+
   - subtitle: Project Initiation
     description: "The original reason WGI.buzz was started was to reinvent a paper form as an online form fit for the 21st century. The specific form was called the Project Initiation Form and manifested itself as a Google Apps Script form with conditional fields, dynamically created fields, and file uploads. Upon submission, it writes to a Google Sheet, is electronically transmitted to the approver, and then forward to the Accounting division."
     browser:
@@ -56,14 +64,6 @@ project_sections:
       image_name: "wgi-buzz-project-initiation"
       image_extension: jpg
       image_alt: " | Project Initiation"
-
-  - subtitle: Sales Goals
-    description: "WGI sets annual sales goals for its project managers, but until now had no reliable, centralized system for tracking performance against the goals. Using an easy-to-update Google Sheet and the Google Drive API to feed a chart that would (hopefully) make United Way proud, users can now view annual goals by location and interact with the chart to see the current sales and goal. A toggle exists to let users easily switch between years."
-    browser:
-      url: "wgibuzz.netlify.com/sales-goals"
-      image_name: "wgi-buzz-sales-goals"
-      image_extension: mp4
-      image_alt: " | Sales Goals"
 
   - subtitle: Mobile
     phones:
