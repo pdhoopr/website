@@ -71,7 +71,8 @@
 }
 
 /* Styles for browser image */
-.browser-photo img {
+.browser-photo img,
+.browser-photo video {
   float: left;
   max-width: 100%;
 }

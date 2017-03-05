@@ -30,7 +30,8 @@ body {
 }
 
 /* Make images float left and fill their container */
-img {
+img,
+video {
   float: left;
   height: auto;
   max-width: 100%;
