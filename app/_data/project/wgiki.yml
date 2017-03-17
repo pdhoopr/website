@@ -77,7 +77,7 @@ project_sections:
     phones:
       - image_name: "wgiki-navigation-mobile"
         image_extension: jpg
-        image_alt: " | Navigation"
+        image_alt: " | Navigation | Mobile"
 
       - image_name: "wgiki-home-mobile"
         image_extension: jpg
