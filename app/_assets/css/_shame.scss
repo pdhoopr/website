@@ -1,9 +1,0 @@
-/*
- * REMOVE OR REFACTOR WHEN SITE IS UPDATED
- *
- * This is a quick hack to hide the `VIEW` button for projects that don't need a full-blown
- * project page.
- */
-.project-list li:first-child .btn-view {
-  display: none;
-}
