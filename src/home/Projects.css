@@ -1,4 +1,4 @@
-@import '../app/variables.css';
+@import '../app/utils/variables.css';
 
 .projects-list {
   list-style: none;

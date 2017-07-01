@@ -2,7 +2,7 @@ import React from 'react';
 
 import contactData from './contactData';
 import './Header.css';
-import icons from './icons.svg';
+import icons from '../ui/icons.svg';
 
 export default function Header() {
   return (

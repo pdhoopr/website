@@ -3,10 +3,10 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import './global.css';
-import Header from './Header.jsx';
+import Header from './layout/Header.jsx';
 import Home from '../home/Home.jsx';
 
-export default function App({ ContentTag, Router, routerProps }) {
+export default function Root({ ContentTag, Router, routerProps }) {
   return (
     <ContentTag>
       <Header />
@@ -21,7 +21,7 @@ export default function App({ ContentTag, Router, routerProps }) {
   );
 }
 
-App.propTypes = {
+Root.propTypes = {
   ContentTag: PropTypes.string.isRequired,
   Router: PropTypes.func.isRequired,
   routerProps: PropTypes.shape({
@@ -29,6 +29,6 @@ App.propTypes = {
   }),
 };
 
-App.defaultProps = {
+Root.defaultProps = {
   routerProps: {},
 };
