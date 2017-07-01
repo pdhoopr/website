@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { BrowserRouter } from 'react-router-dom';
 
-import App from './app/App.jsx';
+import Root from './app/Root.jsx';
 
 delete AppContainer.prototype.unstable_handleError;
 
@@ -17,10 +17,10 @@ function render(Component) {
   );
 }
 
-render(App);
+render(Root);
 
 if (module.hot) {
-  module.hot.accept('./app/App.jsx', () => {
-    render(App);
+  module.hot.accept('./app/Root.jsx', () => {
+    render(Root);
   });
 }
