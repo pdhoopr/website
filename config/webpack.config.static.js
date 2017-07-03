@@ -13,7 +13,7 @@ const folders = {
 module.exports = {
   entry: path.resolve(folders.src, 'static.jsx'),
   output: {
-    filename: 'static/js/app.js',
+    filename: 'static/js/site.js',
     libraryTarget: 'umd',
     path: folders.build,
     publicPath: '/',
@@ -45,7 +45,7 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: 'static/css/app.css',
+      filename: 'static/css/site.css',
       allChunks: true,
     }),
     new StaticSiteGeneratorPlugin({
