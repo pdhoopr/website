@@ -33,7 +33,7 @@ module.exports = {
         }),
       },
       {
-        test: /\.jpg|mp4|png|svg$/,
+        test: /\.jpg|mp4|png/,
         use: [{
           loader: 'file-loader',
           options: {
