@@ -1,0 +1,32 @@
+@import './utils/variables.css';
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  color: var(--color-night-rider);
+  font-family: var(--font-pt-sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-space-mono);
+  margin: 0 0 1em;
+  text-align: center;
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.5;
+}

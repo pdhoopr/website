@@ -1,0 +1,44 @@
+@import '../app/utils/variables.css';
+
+#about {
+  padding: 3.75rem 0 9%;
+
+  &,
+  & .container {
+    position: relative;
+  }
+}
+
+.gradient {
+  background: linear-gradient(150deg, var(--color-robins-egg-blue), var(--color-light-cyan));
+  height: 101%;
+  position: absolute;
+  top: 0;
+  transform: skewY(-6deg);
+  transform-origin: 0;
+  width: 100%;
+}
+
+.intro {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: var(--font-space-mono);
+  font-weight: 700;
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 6rem;
+  margin-right: 1.5rem;
+  width: 6rem;
+}
+
+.tagline {
+  margin-bottom: 0;
+}
+
+.more-taglines {
+  margin-bottom: 0;
+  width: 100%;
+}
