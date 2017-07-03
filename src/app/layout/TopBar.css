@@ -57,6 +57,7 @@
   width: 1rem;
 }
 
-.contact a[title='Instagram'] svg {
-  vertical-align: -45%;
+.contact a[title='LinkedIn'] svg {
+  height: 1.125rem;
+  width: 1.125rem;
 }
