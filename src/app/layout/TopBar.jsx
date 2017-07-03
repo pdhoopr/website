@@ -1,16 +1,17 @@
 import React from 'react';
 
 import contactData from './contactData';
-import './Header.css';
+import './TopBar.css';
+import Link from '../ui/Link.jsx';
 import icons from '../ui/icons.svg';
 
-export default function Header() {
+export default function TopBar() {
   return (
-    <header className="header">
+    <header className="top-bar">
       <nav className="global-nav">
         <ul>
           <li>
-            <a href="/" className="logo" title="Patrick Hooper">Patrick Hooper</a>
+            <Link className="logo" to="/">Patrick Hooper</Link>
           </li>
         </ul>
       </nav>
@@ -18,11 +19,11 @@ export default function Header() {
         <ul>
           {Object.entries(contactData).map(([icon, contactMethod]) => (
             <li key={icon}>
-              <a href={contactMethod.url} title={contactMethod.title}>
+              <Link title={contactMethod.title} to={contactMethod.url}>
                 <svg>
                   <use xlinkHref={`${icons}#${icon}`} />
                 </svg>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

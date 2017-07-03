@@ -1,25 +1,29 @@
 import React from 'react';
 
+import Container from '../app/layout/Container.jsx';
+import SectionTitle from '../app/typography/SectionTitle.jsx';
+import SubsectionTitle from '../app/typography/SubsectionTitle.jsx';
+import Link from '../app/ui/Link.jsx';
 import './Projects.css';
 import projectData from './projectData';
 
 export default function Projects() {
   return (
     <section id="projects">
-      <div className="container">
-        <h2 className="page-title">Projects</h2>
+      <Container>
+        <SectionTitle>Projects</SectionTitle>
         <ul className="projects-list">
           {Object.entries(projectData).map(([slug, project]) => (
             <li className="project" key={slug}>
               <div className="project-container">
-                <h3 className="project-title">{project.title}</h3>
+                <SubsectionTitle className="project-title">{project.title}</SubsectionTitle>
                 <p className="project-description">{project.description}</p>
-                <a className="button" href={`/projects/${slug}`}>View Project</a>
+                <Link theme="button" to={`/projects/${slug}`}>View Project</Link>
               </div>
             </li>
           ))}
         </ul>
-      </div>
+      </Container>
     </section>
   );
 }

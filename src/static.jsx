@@ -8,6 +8,6 @@ import Root from './app/Root.jsx';
 export default function render({ path: location, webpackStats }) {
   return renderHtml(
     webpackStats,
-    <Root ContentTag="body" Router={StaticRouter} routerProps={{ location }} />,
+    <Root HtmlTag="body" Router={StaticRouter} routerProps={{ location }} />,
   );
 }
