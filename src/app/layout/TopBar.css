@@ -1,0 +1,63 @@
+@import '../utils/variables.css';
+
+.top-bar {
+  display: flex;
+  left: 0;
+  padding: 1rem 1.5rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.top-bar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.top-bar li {
+  display: inline-block;
+}
+
+.top-bar a {
+  &::before {
+    content: none;
+  }
+
+  &::after {
+    border-bottom-width: 2px;
+    padding-top: 0.25rem;
+  }
+}
+
+.global-nav {
+  flex: 1;
+}
+
+.logo {
+  font-family: var(--font-space-mono);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.contact {
+  font-style: normal;
+}
+
+.contact li:not(:first-of-type) {
+  margin-left: 1rem;
+}
+
+.contact svg {
+  display: inline-block;
+  fill: currentColor;
+  height: 1rem;
+  vertical-align: -40%;
+  width: 1rem;
+}
+
+.contact a[title='LinkedIn'] svg {
+  height: 1.125rem;
+  width: 1.125rem;
+}
