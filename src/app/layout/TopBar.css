@@ -1,6 +1,6 @@
 @import '../utils/variables.css';
 
-.header {
+.top-bar {
   display: flex;
   left: 0;
   padding: 1rem 1.5rem;
@@ -10,17 +10,17 @@
   z-index: 1;
 }
 
-.header ul {
+.top-bar ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.header li {
+.top-bar li {
   display: inline-block;
 }
 
-.header a {
+.top-bar a {
   &::before {
     content: none;
   }
@@ -39,6 +39,10 @@
   font-family: var(--font-space-mono);
   font-size: 1.125rem;
   font-weight: 700;
+}
+
+.contact {
+  font-style: normal;
 }
 
 .contact li:not(:first-of-type) {

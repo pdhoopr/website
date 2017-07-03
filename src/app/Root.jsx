@@ -1,28 +1,23 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
 
 import './global.css';
-import Header from './layout/Header.jsx';
-import Home from '../home/Home.jsx';
+import Content from './layout/Content.jsx';
+import TopBar from './layout/TopBar.jsx';
 
-export default function Root({ ContentTag, Router, routerProps }) {
+export default function Root({ HtmlTag, Router, routerProps }) {
   return (
-    <ContentTag>
-      <Header />
-      <main className="content">
-        <Router {...routerProps}>
-          <Switch>
-            <Route exact path="/" component={Home} />
-          </Switch>
-        </Router>
-      </main>
-    </ContentTag>
+    <Router {...routerProps}>
+      <HtmlTag>
+        <TopBar />
+        <Content />
+      </HtmlTag>
+    </Router>
   );
 }
 
 Root.propTypes = {
-  ContentTag: PropTypes.string.isRequired,
+  HtmlTag: PropTypes.string.isRequired,
   Router: PropTypes.func.isRequired,
   routerProps: PropTypes.shape({
     location: PropTypes.string,

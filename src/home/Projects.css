@@ -31,8 +31,8 @@
 }
 
 .project-title {
-  margin-bottom: 0;
-  margin-top: -0.125em;
+  margin: -0.125em 0 0;
+  text-align: left;
 }
 
 .project-description {

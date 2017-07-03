@@ -11,7 +11,7 @@ delete AppContainer.prototype.unstable_handleError;
 function render(Component) {
   ReactDOM.render(
     <AppContainer>
-      <Component ContentTag="div" Router={BrowserRouter} />
+      <Component HtmlTag="div" Router={BrowserRouter} />
     </AppContainer>,
     document.getElementById('app'),
   );
