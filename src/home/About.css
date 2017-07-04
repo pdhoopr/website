@@ -1,7 +1,7 @@
 @import '../app/utils/variables.css';
 
 #about {
-  padding: 3.75rem 0 9%;
+  padding: 4.25rem 0 9%;
 
   &,
   & .container {
@@ -20,25 +20,38 @@
 }
 
 .intro {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
   font-family: var(--font-space-mono);
   font-weight: 700;
+  text-align: center;
+
+  @media (--large-viewport) {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .avatar {
   border-radius: 50%;
-  height: 6rem;
-  margin-right: 1.5rem;
-  width: 6rem;
+  height: 9rem;
+  margin: 0 0 1rem;
+  width: 9rem;
+
+  @media (--large-viewport) {
+    height: 6rem;
+    margin: 0 1.5rem 0 0;
+    width: 6rem;
+  }
 }
 
 .tagline {
-  margin-bottom: 0;
+  @media (--large-viewport) {
+    margin-bottom: 0;
+  }
 }
 
 .more-taglines {
   margin-bottom: 0;
+  text-align: left;
   width: 100%;
 }

@@ -6,8 +6,8 @@ export default {
   },
   'wgi.buzz': {
     title: 'WGI.buzz',
-    description: 'A sandbox for the WGI think tank (ninjas) to play around with cutting-edge business intelligence ideas.',
-    view: 'https://wgibuzz.netlify.com',
+    description: 'A sandbox for the WGI think tank to play around with cutting-edge business intelligence ideas.',
+    website: 'https://wgibuzz.netlify.com',
     github: 'https://github.com/hoopr/wgi.buzz',
   },
   wgiki: {
@@ -23,18 +23,18 @@ export default {
   msi: {
     title: 'MSi',
     description: "A super trendy revamp of MSi's marketing website.",
-    view: 'http://msissl.com',
+    website: 'http://msissl.com',
   },
   'jahleh-and-patrick': {
     title: 'Jahleh + Patrick',
     description: 'The wedding website for me and my beautiful wife, made with love and buckets of ice cream.',
-    view: 'https://jahlehandpatrick.netlify.com',
     github: 'https://github.com/hoopr/jahleh-and-patrick',
+    website: 'https://jahlehandpatrick.netlify.com',
   },
   'ms-omearas-multiage': {
     title: "Ms. O'Meara's Multiage",
     description: "The original, whimsical website for the classroom of Ms. O'Meara (my mom), her students, and their parents.",
-    view: 'https://msomearasmultiage.netlify.com/',
     github: 'https://github.com/hoopr/ms-omearas-multiage',
+    website: 'https://msomearasmultiage.netlify.com/',
   },
 };

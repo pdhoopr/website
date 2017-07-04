@@ -22,7 +22,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-space-mono);
-  margin: 0 0 1em;
+  margin: 0;
   text-align: center;
 }
 

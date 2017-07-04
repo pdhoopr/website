@@ -39,8 +39,13 @@
   color: white;
   font-family: var(--font-space-mono);
   font-size: 0.875rem;
+  font-weight: 700;
   padding: 0.42857em 0.57143em;
   transition: background-color 0.15s;
+
+  @media (--medium-viewport) {
+    font-weight: 400;
+  }
 
   &::before,
   &::after {
