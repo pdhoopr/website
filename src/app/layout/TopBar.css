@@ -20,15 +20,9 @@
   display: inline-block;
 }
 
-.top-bar a {
-  &::before {
-    content: none;
-  }
-
-  &::after {
-    border-bottom-width: 2px;
-    padding-top: 0.25rem;
-  }
+.top-bar a::after {
+  border-bottom-width: 2px;
+  padding-top: 0.25rem;
 }
 
 .global-nav {

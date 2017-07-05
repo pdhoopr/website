@@ -9,7 +9,7 @@ import avatar from './avatar.jpg';
 export default function About() {
   return (
     <section id="about">
-      <div className="gradient" />
+      <div className="connections-pattern" />
       <Container>
         <div className="intro">
           <img alt="Patrick Hooper" className="avatar" src={avatar} />

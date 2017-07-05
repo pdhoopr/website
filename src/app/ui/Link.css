@@ -1,7 +1,7 @@
 @import '../utils/variables.css';
 
 .link {
-  color: var(--color-night-rider);
+  color: var(--color-bittersweet);
   display: inline-block;
   position: relative;
   text-decoration: none;
@@ -32,9 +32,8 @@
 }
 
 .button {
-  background: var(--color-robins-egg-blue);
-  border-bottom: 2px solid var(--color-robins-egg-blue);
-  border-bottom-color: var(--color-persian-green);
+  background: var(--color-bittersweet);
+  border-bottom: 2px solid var(--color-red-orange);
   border-radius: 2px;
   color: white;
   font-family: var(--font-space-mono);
@@ -55,6 +54,6 @@
   &:hover,
   &:active,
   &:focus {
-    background: var(--color-persian-green);
+    background: var(--color-red-orange);
   }
 }

@@ -7,7 +7,6 @@ const config = require('../config/webpack.config.dev');
 const devServerConfig = config.devServer;
 const { host, port } = devServerConfig;
 
-new WebpackDevServer(webpack(config), devServerConfig)
-  .listen(port, host, () => {
-    opn(`http://localhost:${port}`);
-  });
+new WebpackDevServer(webpack(config), devServerConfig).listen(port, host, () => {
+  opn(`http://localhost:${port}`);
+});
