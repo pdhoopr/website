@@ -6,22 +6,11 @@
   position: relative;
   text-decoration: none;
 
-  &::before,
   &::after {
+    border-bottom-style: solid;
     border-bottom-width: 1px;
     content: '';
     display: block;
-  }
-
-  &::before {
-    border-bottom-style: dotted;
-    bottom: 0;
-    position: absolute;
-    width: 100%;
-  }
-
-  &::after {
-    border-bottom-style: solid;
     transform: scaleX(0);
     transition: transform 0.15s;
   }
@@ -42,18 +31,17 @@
   padding: 0.42857em 0.57143em;
   transition: background-color 0.15s;
 
-  @media (--medium-viewport) {
-    font-weight: 400;
-  }
-
-  &::before,
-  &::after {
-    content: none;
-  }
-
   &:hover,
   &:active,
   &:focus {
     background: var(--color-red-orange);
+  }
+
+  @media (--medium-viewport) {
+    font-weight: 400;
+  }
+
+  &::after {
+    content: none;
   }
 }

@@ -16,6 +16,11 @@ export default function renderHtml(data, body) {
             .filter(asset => asset.match(/\.css(\.map)?$/))
             .map(stylesheet => <link href={`/${stylesheet}`} rel="stylesheet" />)
           }
+          <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+          <link rel="icon" type="image/png" sizes="16x16 32x32 48x48" href="/favicon.png" />
+          <link rel="manifest" href="/manifest.json" />
+          <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#fa755a" />
+          <meta name="theme-color" content="#ffffff" />
         </head>
         {body || <body><div id="app" /></body>}
       </html>,

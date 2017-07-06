@@ -3,6 +3,7 @@ const path = require('path');
 
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const chalk = require('chalk');
+const CopyPlugin = require('copy-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
@@ -62,6 +63,10 @@ module.exports = {
   },
   plugins: [
     new CaseSensitivePathsPlugin(),
+    new CopyPlugin([{
+      from: path.resolve(folders.public, 'favicons'),
+      to: folders.build,
+    }]),
     new FriendlyErrorsPlugin({
       compilationSuccessInfo: {
         messages: [
