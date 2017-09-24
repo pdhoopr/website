@@ -1,4 +1,4 @@
-@import './utils/variables.css';
+@import './variables.css';
 
 html {
   box-sizing: border-box;
@@ -12,7 +12,7 @@ html {
 
 body {
   color: var(--color-night-rider);
-  font-family: var(--font-pt-sans);
+  font-family: var(--font-titillium);
 }
 
 h1,
@@ -22,7 +22,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-space-mono);
-  margin: 0 0 1em;
+  margin: 0;
   text-align: center;
 }
 

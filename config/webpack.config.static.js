@@ -1,5 +1,6 @@
 const path = require('path');
 
+const CopyPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 const webpack = require('webpack');
@@ -33,7 +34,7 @@ module.exports = {
         }),
       },
       {
-        test: /\.jpg|mp4|png|svg$/,
+        test: /\.(jpg|mp4|pdf|png)$/,
         use: [{
           loader: 'file-loader',
           options: {
@@ -44,6 +45,10 @@ module.exports = {
     ],
   },
   plugins: [
+    new CopyPlugin([{
+      from: path.resolve(folders.public, 'favicons'),
+      to: folders.build,
+    }]),
     new ExtractTextPlugin({
       filename: 'static/css/site.css',
       allChunks: true,

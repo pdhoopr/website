@@ -18,7 +18,7 @@ export default function Projects() {
               <div className="project-container">
                 <SubsectionTitle className="project-title">{project.title}</SubsectionTitle>
                 <p className="project-description">{project.description}</p>
-                <Link theme="button" to={`/projects/${slug}`}>View Project</Link>
+                <Link theme="button" to={project.github || project.website}>View Project</Link>
               </div>
             </li>
           ))}

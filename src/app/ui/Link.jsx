@@ -6,7 +6,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import './Link.css';
 
 export default function Link({ children, className, theme, title, to }) {
-  const isExternal = /^.+:/.test(to);
+  const isExternal = /^((.+:)|(\/static\/))/.test(to);
   const HtmlTag = isExternal ? 'a' : RouterLink;
   const props = {
     className: classNames('link', className, theme),

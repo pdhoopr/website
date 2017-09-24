@@ -1,27 +1,17 @@
-@import '../utils/variables.css';
+@import '../variables.css';
 
 .link {
-  color: var(--color-night-rider);
+  color: var(--color-bittersweet);
   display: inline-block;
+  font-weight: 600;
   position: relative;
   text-decoration: none;
 
-  &::before,
   &::after {
+    border-bottom-style: solid;
     border-bottom-width: 1px;
     content: '';
     display: block;
-  }
-
-  &::before {
-    border-bottom-style: dotted;
-    bottom: 0;
-    position: absolute;
-    width: 100%;
-  }
-
-  &::after {
-    border-bottom-style: solid;
     transform: scaleX(0);
     transition: transform 0.15s;
   }
@@ -32,24 +22,27 @@
 }
 
 .button {
-  background: var(--color-robins-egg-blue);
-  border-bottom: 2px solid var(--color-robins-egg-blue);
-  border-bottom-color: var(--color-persian-green);
+  background: var(--color-bittersweet);
+  border-bottom: 2px solid var(--color-red-orange);
   border-radius: 2px;
   color: white;
   font-family: var(--font-space-mono);
   font-size: 0.875rem;
+  font-weight: 700;
   padding: 0.42857em 0.57143em;
   transition: background-color 0.15s;
-
-  &::before,
-  &::after {
-    content: none;
-  }
 
   &:hover,
   &:active,
   &:focus {
-    background: var(--color-persian-green);
+    background: var(--color-red-orange);
+  }
+
+  @media (--medium-viewport) {
+    font-weight: 400;
+  }
+
+  &::after {
+    content: none;
   }
 }

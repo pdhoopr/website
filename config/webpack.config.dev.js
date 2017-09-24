@@ -3,6 +3,7 @@ const path = require('path');
 
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const chalk = require('chalk');
+const CopyPlugin = require('copy-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
@@ -55,13 +56,31 @@ module.exports = {
         ],
       },
       {
-        test: /\.jpg|mp4|png|svg$/,
-        use: ['file-loader'],
+        test: /\.(jpg|mp4|png)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            name: 'static/media/[name].[ext]',
+          },
+        }],
+      },
+      {
+        test: /\.pdf$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: 'static/media/[name].[ext]',
+          },
+        }],
       },
     ],
   },
   plugins: [
     new CaseSensitivePathsPlugin(),
+    new CopyPlugin([{
+      from: path.resolve(folders.public, 'favicons'),
+      to: folders.build,
+    }]),
     new FriendlyErrorsPlugin({
       compilationSuccessInfo: {
         messages: [

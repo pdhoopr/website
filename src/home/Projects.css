@@ -1,4 +1,16 @@
-@import '../app/utils/variables.css';
+@import '../app/variables.css';
+
+#projects {
+  padding-top: 2.5rem;
+
+  @media (--medium-viewport) {
+    padding-top: 1.5rem;
+  }
+
+  @media (--large-viewport) {
+    padding-top: 0;
+  }
+}
 
 .projects-list {
   list-style: none;

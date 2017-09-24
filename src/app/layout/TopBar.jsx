@@ -14,7 +14,8 @@ export default function TopBar() {
       <nav className="global-nav">
         <ul>
           <li>
-            <Link className="logo" to="/">Patrick Hooper</Link>
+            <Link className="logo full-name" to="/">Patrick Hooper</Link>
+            <Link className="logo initials" title="Patrick Hooper" to="/">PDH</Link>
           </li>
         </ul>
       </nav>
