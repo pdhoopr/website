@@ -56,8 +56,22 @@ module.exports = {
         ],
       },
       {
-        test: /\.jpg|mp4|png/,
-        use: ['url-loader'],
+        test: /\.(jpg|mp4|png)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            name: 'static/media/[name].[ext]',
+          },
+        }],
+      },
+      {
+        test: /\.pdf$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: 'static/media/[name].[ext]',
+          },
+        }],
       },
     ],
   },
