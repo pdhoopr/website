@@ -11,7 +11,7 @@ export default function renderHtml(data, body) {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <title>Patrick Hooper</title>
           <meta name="description" content="Web (app) developer, life enthusiast, University of Michigan alumnus, and all-around neat guy living in Ann Arbor, MI. Also, Marie Hooper's biggest fan." />
-          <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700|Titillium+Web:400" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700|Titillium+Web:400,600" rel="stylesheet" />
           {Object.keys(data.compilation.assets)
             .filter(asset => asset.match(/\.css(\.map)?$/))
             .map(stylesheet => <link href={`/${stylesheet}`} rel="stylesheet" />)
