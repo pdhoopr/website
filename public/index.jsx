@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 
+import { gtmScript } from './googleTagManager';
+
 export default function renderHtml(data, body) {
   return `
     <!DOCTYPE html>
     ${ReactDOMServer.renderToStaticMarkup(
       <html lang="en">
         <head>
+          {(process.env.NODE_ENV === 'production') &&
+            <script dangerouslySetInnerHTML={{ __html: gtmScript }} />
+          }
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <title>Patrick Hooper</title>
