@@ -2,8 +2,13 @@ const path = require('path');
 
 const CopyPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const SitemapPlugin = require('sitemap-webpack-plugin').default;
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 const webpack = require('webpack');
+
+const { homepage } = require('../package.json');
+
+const paths = ['/'];
 
 const folders = {
   build: path.resolve(__dirname, '../build'),
@@ -53,9 +58,8 @@ module.exports = {
       filename: 'static/css/site.css',
       allChunks: true,
     }),
-    new StaticSiteGeneratorPlugin({
-      paths: ['/'],
-    }),
+    new SitemapPlugin(homepage, paths),
+    new StaticSiteGeneratorPlugin({ paths }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     }),
