@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 import './global.css';
 import Content from './layout/Content.jsx';
@@ -17,7 +18,7 @@ export default function Root({ HtmlTag, Router, routerProps }) {
 }
 
 Root.propTypes = {
-  HtmlTag: PropTypes.string.isRequired,
+  HtmlTag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]).isRequired,
   Router: PropTypes.func.isRequired,
   routerProps: PropTypes.shape({
     location: PropTypes.string,
@@ -25,5 +26,7 @@ Root.propTypes = {
 };
 
 Root.defaultProps = {
+  HtmlTag: 'div',
+  Router: BrowserRouter,
   routerProps: {},
 };
