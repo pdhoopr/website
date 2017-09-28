@@ -38,10 +38,6 @@
     background: var(--color-red-orange);
   }
 
-  @media (--medium-viewport) {
-    font-weight: 400;
-  }
-
   &::after {
     content: none;
   }
