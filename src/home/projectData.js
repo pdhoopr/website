@@ -8,7 +8,7 @@ export default {
     title: 'WGI.buzz',
     description: 'A sandbox for the WGI think tank to play around with cutting-edge business intelligence ideas.',
     website: 'https://wgibuzz.netlify.com',
-    github: 'https://github.com/hoopr/wgi.buzz',
+    github: 'https://github.com/pdhoopr/wgi.buzz',
   },
   wgiki: {
     title: 'WGIki',
@@ -28,13 +28,13 @@ export default {
   'jahleh-and-patrick': {
     title: 'Jahleh + Patrick',
     description: 'The wedding website for me and my beautiful wife, made with love and buckets of ice cream.',
-    github: 'https://github.com/hoopr/jahleh-and-patrick',
+    github: 'https://github.com/pdhoopr/jahleh-and-patrick',
     website: 'https://jahlehandpatrick.netlify.com',
   },
   'ms-omearas-multiage': {
     title: "Ms. O'Meara's Multiage",
     description: "The original, whimsical website for the classroom of Ms. O'Meara (my mom), her students, and their parents.",
-    github: 'https://github.com/hoopr/ms-omearas-multiage',
+    github: 'https://github.com/pdhoopr/ms-omearas-multiage',
     website: 'https://msomearasmultiage.netlify.com/',
   },
 };
