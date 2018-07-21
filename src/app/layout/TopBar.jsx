@@ -6,7 +6,6 @@ import GitHubIcon from '../ui/icons/GitHubIcon.jsx';
 import GoogleIcon from '../ui/icons/GoogleIcon.jsx';
 import InstagramIcon from '../ui/icons/InstagramIcon.jsx';
 import LinkedInIcon from '../ui/icons/LinkedInIcon.jsx';
-import TwitterIcon from '../ui/icons/TwitterIcon.jsx';
 
 export default function TopBar() {
   return (
@@ -14,8 +13,12 @@ export default function TopBar() {
       <nav className="global-nav">
         <ul>
           <li>
-            <Link className="logo full-name" to="/">Patrick Hooper</Link>
-            <Link className="logo initials" title="Patrick Hooper" to="/">PDH</Link>
+            <Link className="logo full-name" to="/">
+              Patrick Hooper
+            </Link>
+            <Link className="logo initials" title="Patrick Hooper" to="/">
+              PDH
+            </Link>
           </li>
         </ul>
       </nav>
@@ -29,11 +32,6 @@ export default function TopBar() {
           <li>
             <Link title="GitHub" to="https://github.com/pdhoopr">
               <GitHubIcon />
-            </Link>
-          </li>
-          <li>
-            <Link title="Twitter" to="https://twitter.com/pdhoopr">
-              <TwitterIcon />
             </Link>
           </li>
           <li>
