@@ -1,39 +1,40 @@
 export default {
+  codework: {
+    title: 'Codework',
+    description: "A programming challenge app where users can add challenges, submit solutions, and view friends' submissions; all in realtime.",
+    website: 'https://codework.netlify.com/',
+    github: 'https://github.com/letscodework/codework',
+  },
   'gps-to-gpx': {
     title: 'GPS to GPX',
-    description: 'A simple JavaScript library that formats GPS waypoint data from an activity (a run, bike ride, hike, etc.) as GPX.',
+    description: 'A simple library that formats GPS waypoint data from an activity (a run, bike ride, hike, etc.) as GPX.',
     github: 'https://github.com/pdhoopr/gps-to-gpx',
   },
   'wgi.buzz': {
     title: 'WGI.buzz',
-    description: 'A sandbox for the WGI think tank to play around with cutting-edge business intelligence ideas.',
+    description: 'A sandbox app for the WGI think tank to try out cutting-edge business intelligence ideas.',
     website: 'https://wgibuzz.netlify.com',
     github: 'https://github.com/pdhoopr/wgi.buzz',
   },
   wgiki: {
     title: 'WGIki',
-    description: 'A resource repository that took the pain out of finding important company materials in a colorful way.',
+    description: 'A colorful resource website made for easy discovery of important WGI materials.',
     github: 'https://github.com/pdhoopr/wgiki',
   },
   'wgi-informer': {
     title: 'WGI Informer',
-    description: 'The totally hip and reimagined WGI intranet website.',
+    description: 'A totally hip and reimagined website built for sharing news within WGI.',
     github: 'https://github.com/pdhoopr/wgi-informer',
-  },
-  msi: {
-    title: 'MSi',
-    description: "A super trendy revamp of MSi's marketing website.",
-    website: 'http://msissl.com',
   },
   'jahleh-and-patrick': {
     title: 'Jahleh + Patrick',
-    description: 'The wedding website for me and my beautiful wife, made with love and buckets of ice cream.',
+    description: 'The wedding website for me and my beautiful wife, made with love and a lot of ice cream.',
     github: 'https://github.com/pdhoopr/jahleh-and-patrick',
     website: 'https://jahlehandpatrick.netlify.com',
   },
   'ms-omearas-multiage': {
     title: "Ms. O'Meara's Multiage",
-    description: "The original, whimsical website for the classroom of Ms. O'Meara (my mom), her students, and their parents.",
+    description: "The whimsical classroom website for Ms. O'Meara (my mom), her students, and their parents.",
     github: 'https://github.com/pdhoopr/ms-omearas-multiage',
     website: 'https://msomearasmultiage.netlify.com/',
   },

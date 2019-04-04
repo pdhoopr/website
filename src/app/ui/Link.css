@@ -21,14 +21,15 @@
   }
 }
 
-.button {
-  background: var(--color-bittersweet);
+.button,
+.alternate-button {
   border-radius: 2px;
-  color: white;
   font-family: var(--font-space-mono);
   font-size: 0.875rem;
   font-weight: 700;
+  min-width: 3.75rem;
   padding: 0.5em;
+  text-align: center;
   transition: box-shadow 0.15s ease;
 
   &:hover,
@@ -40,4 +41,18 @@
   &::after {
     content: none;
   }
+}
+
+.button {
+  background: var(--color-bittersweet);
+  color: white;
+}
+
+.alternate-button {
+  background: var(--color-porcelain);
+  color: var(--color-emperor);
+}
+
+.button + .alternate-button {
+  margin-left: 0.5em;
 }
