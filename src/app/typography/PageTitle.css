@@ -1,8 +1,8 @@
 @import '../variables.css';
 
 .page-title {
-  font-size: 2.5rem;
-  margin-bottom: 0.6em;
+  font-size: 2rem;
+  margin-bottom: 0.75em;
 
   @media (--medium-viewport) {
     font-size: 3rem;
