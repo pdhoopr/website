@@ -50,7 +50,7 @@
 
   @media (--large-viewport) {
     height: 6rem;
-    margin: 0 1.5rem 0 0;
+    margin: 0 2rem 0 0;
     width: 6rem;
   }
 }
@@ -59,10 +59,4 @@
   @media (--large-viewport) {
     margin-bottom: 0;
   }
-}
-
-.more-taglines {
-  margin-bottom: 0;
-  text-align: left;
-  width: 100%;
 }
