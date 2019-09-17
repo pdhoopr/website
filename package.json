@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "patrick-hooper",
-  "version": "3.0.0-dev",
+  "version": "3.0.0",
   "description": "The portfolio website for Patrick Hooper.",
   "homepage": "https://patrickhooper.me",
   "bugs": {

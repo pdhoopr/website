@@ -2,6 +2,17 @@
 
 This project uses [Semantic Versioning](https://semver.org/). All releases are documented both on the GitHub [releases page](https://github.com/pdhoopr/website/releases) and in this file.
 
+## v3.0.0 (September 17, 2019)
+
+- Generate the site with Gatsby and other improved tooling (styled-components, Prettier, ESLint, Stylelint, etc.) ([#88](https://github.com/pdhoopr/website/issues/88))
+- Use more accessible color combinations and system font stacks ([#90](https://github.com/pdhoopr/website/issues/90))
+- Update bio wording, tweak résumé, and consolidate some projects ([#91](https://github.com/pdhoopr/website/issues/91))
+- Optimize assets ([#64](https://github.com/pdhoopr/website/issues/64))
+- Improve SEO
+- Add offline support
+- Add a README ([#66](https://github.com/pdhoopr/website/issues/66))
+- Add a changelog ([#89](https://github.com/pdhoopr/website/issues/89))
+
 ## v2.0.0 (April 5, 2019)
 
 - Change size of page and section titles on small devices ([#87](https://github.com/pdhoopr/website/pull/87))
