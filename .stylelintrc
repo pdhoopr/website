@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-styled-components",
+    "stylelint-config-prettier"
+  ],
+  "processors": ["stylelint-processor-styled-components"],
+  "plugins": ["stylelint-no-unsupported-browser-features"],
+  "rules": {
+    "no-descending-specificity": null
+  }
+}
