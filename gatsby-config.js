@@ -16,6 +16,14 @@ module.exports = {
         icon: 'src/images/favicon.svg',
       },
     },
+    {
+      resolve: 'gatsby-plugin-nprogress',
+      options: {
+        color: theme.colors.orange,
+        showSpinner: false,
+      },
+    },
+    'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     {
