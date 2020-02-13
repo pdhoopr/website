@@ -1,27 +1,33 @@
+import { ReactComponent as DevIcon } from '../images/dev-community.svg'
 import { ReactComponent as GithubIcon } from '../images/github.svg'
-import { ReactComponent as GoogleIcon } from '../images/google.svg'
 import { ReactComponent as InstagramIcon } from '../images/instagram.svg'
 import { ReactComponent as LinkedinIcon } from '../images/linkedin.svg'
+import { ReactComponent as TwitterIcon } from '../images/twitter.svg'
 
 export default [
   {
-    icon: GoogleIcon,
-    label: 'Send me an email',
-    link: 'mailto:patrick.d.hooper@gmail.com',
-  },
-  {
     icon: GithubIcon,
-    label: 'View my GitHub profile',
     link: 'https://github.com/pdhoopr',
+    title: 'GitHub',
   },
   {
-    icon: LinkedinIcon,
-    label: 'View my LinkedIn profile',
-    link: 'https://www.linkedin.com/in/pdhoopr',
+    icon: TwitterIcon,
+    link: 'https://twitter.com/pdhoopr',
+    title: 'Twitter',
+  },
+  {
+    icon: DevIcon,
+    link: 'https://dev.to/pdhoopr',
+    title: 'DEV Community',
   },
   {
     icon: InstagramIcon,
-    label: 'View my Instagram profile',
     link: 'https://instagram.com/pdhoopr',
+    title: 'Instagram',
+  },
+  {
+    icon: LinkedinIcon,
+    link: 'https://www.linkedin.com/in/pdhoopr',
+    title: 'LinkedIn',
   },
 ]

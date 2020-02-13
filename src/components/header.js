@@ -78,7 +78,7 @@ export default function Header() {
             key={profile.link}
             as={Link}
             to={profile.link}
-            title={profile.label}
+            title={`See my ${profile.title} profile`}
           >
             <Icon as={profile.icon} />
           </Item>
