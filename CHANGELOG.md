@@ -2,6 +2,12 @@
 
 This project uses [Semantic Versioning](https://semver.org/). All releases are documented both on the GitHub [releases page](https://github.com/pdhoopr/website/releases) and in this file.
 
+## v3.1.0 (February 13, 2020)
+
+- Rewrite bio ([83d55f7](https://github.com/pdhoopr/website/commit/83d55f762630087f1d99f94a311488ca6d386af8))
+- Update social links to include Twitter and DEV Community ([685c362](https://github.com/pdhoopr/website/commit/685c362390dbd07e489cd9d2cbf081abd6ba01d0))
+- Switch to npm from Yarn ([252ee75](https://github.com/pdhoopr/website/commit/252ee75022a9a6620ec6f0774283c29424f4cce6))
+
 ## v3.0.0 (September 17, 2019)
 
 - Generate the site with Gatsby and other improved tooling (styled-components, Prettier, ESLint, Stylelint, etc.) ([#88](https://github.com/pdhoopr/website/issues/88))
