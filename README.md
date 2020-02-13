@@ -1,3 +1,3 @@
-# Patrick Hooper
+# Patrick Hooper's website
 
-The portfolio website for [Patrick Hooper](https://patrickhooper.me) — web (app) developer, life enthusiast, [University of Michigan](https://umich.edu/) alumnus, and all-around neat guy living in Ann Arbor, MI. Also, [Marie Hooper's](https://mariehooper.me) biggest fan.
+This is the code for my personal website. Feel free to explore (it's a [Gatsby](https://www.gatsbyjs.org/) site) or head to [https://patrickhooper.me](https://patrickhooper.me) to see the finished product!

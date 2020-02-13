@@ -1,18 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 import Background from '../components/background'
+import ButtonLink from '../components/button-link'
 import Container from '../components/container'
 import Heading1 from '../components/heading-1'
 import Heading2 from '../components/heading-2'
 import Heading3 from '../components/heading-3'
-import ButtonLink from '../components/button-link'
 import Link from '../components/link'
 import Paragraph from '../components/paragraph'
 import SEO from '../components/seo'
 import projects from '../data/projects'
 import site from '../data/site'
 import theme from '../data/theme'
-import resume from '../docs/patrick-hooper-resume.pdf'
 import opengraphPhoto from '../images/patrick-hooper-opengraph.jpg'
 import photo from '../images/patrick-hooper.jpg'
 
@@ -137,24 +136,20 @@ export default function Home() {
             <Heading1>Hi! I&apos;m Patrick.</Heading1>
           </Greeting>
           <Paragraph>
-            I&apos;m a web (app) developer, life enthusiast,{' '}
-            <Link to='https://umich.edu/'>University of Michigan</Link> alumnus,
-            and all-around neat guy living in Ann Arbor, MI. I&apos;m also{' '}
+            I&apos;m a web (app) developer, life enthusiast, national park
+            junkie, and all-around neat guy. I&apos;m also{' '}
             <Link to='https://mariehooper.me'>Marie Hooper&apos;s</Link> biggest
-            fan.
+            fan, probably. I live in Ann Arbor, Michigan, with my amazing wife
+            and our adorable baby girl.
           </Paragraph>
           <Paragraph>
-            Ever since I was a little kid, I&apos;ve had an affinity for keeping
-            things clean. I like when things are streamlined and seamless. I
-            believe in quality over quantity and all that jazz. I even have a
-            degree centered around optimization and efficiency. Nerdy, I know.
-            But now I get to pair my love of web development with my education
-            to create cool things every day!
-          </Paragraph>
-          <Paragraph>
-            If you&apos;re looking for more info, feel free to contact me or
-            check out my other profiles using the links above. You can also see{' '}
-            <Link to={resume}>my résumé</Link> if it interests you.
+            I&apos;ve had an affinity for cleanliness and simplicity since I was
+            little. Stories about my love of tidying up are well-known in my
+            family. I guess some things never change, because I turned that
+            innate love into an actual education focused on optimization and
+            efficiency. Now I work on cool web projects every day, still always
+            looking for simplicity, even in problems that are inherently
+            complex.
           </Paragraph>
         </Container>
       </About>
