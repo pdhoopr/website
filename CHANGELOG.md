@@ -2,6 +2,10 @@
 
 This project uses [Semantic Versioning](https://semver.org/). All releases are documented both on the GitHub [releases page](https://github.com/pdhoopr/website/releases) and in this file.
 
+## v3.1.1 (March 31, 2020)
+
+- Update all dependencies, tool configs, and npm scripts ([#99](https://github.com/pdhoopr/website/issues/99))
+
 ## v3.1.0 (February 14, 2020)
 
 - Rewrite bio ([#97](https://github.com/pdhoopr/website/issues/97))
