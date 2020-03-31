@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types'
-import React from 'react'
-import Helmet from 'react-helmet'
-import site from '../data/site'
-import Layout from './layout'
+import PropTypes from 'prop-types';
+import React from 'react';
+import Helmet from 'react-helmet';
+import site from '../data/site';
+import Layout from './layout';
 
 export default function SEO({
   children,
@@ -26,7 +26,7 @@ export default function SEO({
       </Helmet>
       {children}
     </Layout>
-  )
+  );
 }
 
 SEO.propTypes = {
@@ -36,8 +36,8 @@ SEO.propTypes = {
   locale: PropTypes.string,
   title: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
-}
+};
 
 SEO.defaultProps = {
   locale: 'en_US',
-}
+};

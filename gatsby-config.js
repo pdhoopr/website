@@ -1,5 +1,5 @@
-const site = require('./src/data/site').default
-const theme = require('./src/data/theme').default
+const site = require('./src/data/site').default;
+const theme = require('./src/data/theme').default;
 
 module.exports = {
   siteMetadata: site,
@@ -34,4 +34,4 @@ module.exports = {
     },
     'gatsby-plugin-svgr',
   ],
-}
+};

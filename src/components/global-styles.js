@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components'
-import theme from '../data/theme'
+import { createGlobalStyle } from 'styled-components';
+import theme from '../data/theme';
 
 export default createGlobalStyle`
   html {
@@ -32,4 +32,4 @@ export default createGlobalStyle`
   main {
     display: block;
   }
-`
+`;

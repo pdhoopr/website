@@ -1,11 +1,11 @@
-import styled, { css } from 'styled-components'
-import theme from '../data/theme'
-import Link from './link'
+import styled, { css } from 'styled-components';
+import theme from '../data/theme';
+import Link from './link';
 
 function gradientBackground(invert) {
-  const colors = [theme.colors.blue, theme.colors.orange]
+  const colors = [theme.colors.blue, theme.colors.orange];
   if (invert) {
-    colors.reverse()
+    colors.reverse();
   }
   return css`
     background: linear-gradient(
@@ -13,7 +13,7 @@ function gradientBackground(invert) {
       ${colors[0]} 33%,
       ${colors[1]} 66%
     );
-  `
+  `;
 }
 
 export default styled(Link)`
@@ -63,4 +63,4 @@ export default styled(Link)`
   & + & {
     margin-left: 0.5rem;
   }
-`
+`;

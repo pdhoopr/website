@@ -1,9 +1,9 @@
-import PropTypes from 'prop-types'
-import React from 'react'
-import Helmet from 'react-helmet'
-import site from '../data/site'
-import GlobalStyles from './global-styles'
-import Header from './header'
+import PropTypes from 'prop-types';
+import React from 'react';
+import Helmet from 'react-helmet';
+import site from '../data/site';
+import GlobalStyles from './global-styles';
+import Header from './header';
 
 export default function Layout({ children, lang, title }) {
   return (
@@ -18,15 +18,15 @@ export default function Layout({ children, lang, title }) {
       <Header />
       <main>{children}</main>
     </>
-  )
+  );
 }
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   lang: PropTypes.string,
   title: PropTypes.string.isRequired,
-}
+};
 
 Layout.defaultProps = {
   lang: 'en',
-}
+};

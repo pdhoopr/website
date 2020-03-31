@@ -1,8 +1,8 @@
-import { Link as GatsbyLink } from 'gatsby'
-import PropTypes from 'prop-types'
-import React from 'react'
-import styled from 'styled-components'
-import theme from '../data/theme'
+import { Link as GatsbyLink } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
+import styled from 'styled-components';
+import theme from '../data/theme';
 
 const Wrapper = styled.a.attrs(({ title }) => ({
   'aria-label': title,
@@ -26,10 +26,10 @@ const Wrapper = styled.a.attrs(({ title }) => ({
   &:focus::after {
     transform: scaleX(1);
   }
-`
+`;
 
 export default function Link({ children, className, title, to }) {
-  const isInternal = /^\/(?!(static)?\/)/.test(to)
+  const isInternal = /^\/(?!(static)?\/)/.test(to);
   return isInternal ? (
     <Wrapper as={GatsbyLink} to={to} title={title} className={className}>
       {children}
@@ -38,7 +38,7 @@ export default function Link({ children, className, title, to }) {
     <Wrapper href={to} title={title} className={className}>
       {children}
     </Wrapper>
-  )
+  );
 }
 
 Link.propTypes = {
@@ -46,9 +46,9 @@ Link.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string,
   to: PropTypes.string.isRequired,
-}
+};
 
 Link.defaultProps = {
   className: null,
   title: null,
-}
+};
