@@ -20,4 +20,4 @@ export default {
     medium: '@media (min-width: 30em)',
     large: '@media (min-width: 50em)',
   },
-}
+};

@@ -1,6 +1,6 @@
-import styled from 'styled-components'
-import theme from '../data/theme'
-import headingStyles from './heading-styles'
+import styled from 'styled-components';
+import theme from '../data/theme';
+import headingStyles from './heading-styles';
 
 export default styled.h1`
   ${headingStyles};
@@ -13,4 +13,4 @@ export default styled.h1`
   ${theme.media.large} {
     font-size: 3rem;
   }
-`
+`;

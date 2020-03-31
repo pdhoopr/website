@@ -1,7 +1,0 @@
-.cache
-.DS_Store
-.vs
-.vscode
-*.log
-node_modules
-public

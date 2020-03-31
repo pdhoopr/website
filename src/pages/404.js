@@ -1,12 +1,12 @@
-import React from 'react'
-import styled from 'styled-components'
-import Background from '../components/background'
-import Container from '../components/container'
-import Heading1 from '../components/heading-1'
-import Layout from '../components/layout'
-import Link from '../components/link'
-import Paragraph from '../components/paragraph'
-import theme from '../data/theme'
+import React from 'react';
+import styled from 'styled-components';
+import Background from '../components/background';
+import Container from '../components/container';
+import Heading1 from '../components/heading-1';
+import Layout from '../components/layout';
+import Link from '../components/link';
+import Paragraph from '../components/paragraph';
+import theme from '../data/theme';
 
 const Content = styled(Container)`
   color: white;
@@ -17,10 +17,10 @@ const Content = styled(Container)`
     padding-bottom: 8.625rem;
     padding-top: 8.625rem;
   }
-`
+`;
 
 export default function NotFound() {
-  const title = 'Page Not Found'
+  const title = 'Page Not Found';
   return (
     <Layout title={title}>
       <Background />
@@ -33,5 +33,5 @@ export default function NotFound() {
         </Paragraph>
       </Content>
     </Layout>
-  )
+  );
 }

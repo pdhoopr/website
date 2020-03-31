@@ -1,6 +1,6 @@
-import styled from 'styled-components'
-import theme from '../data/theme'
-import connections from '../images/connections.svg'
+import styled from 'styled-components';
+import theme from '../data/theme';
+import connections from '../images/connections.svg';
 
 export default styled.div`
   background: ${theme.colors.blue};
@@ -17,4 +17,4 @@ export default styled.div`
     position: absolute;
     width: 100%;
   }
-`
+`;

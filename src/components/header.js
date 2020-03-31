@@ -1,9 +1,9 @@
-import React from 'react'
-import styled from 'styled-components'
-import site from '../data/site'
-import social from '../data/social'
-import theme from '../data/theme'
-import Link from './link'
+import React from 'react';
+import styled from 'styled-components';
+import site from '../data/site';
+import social from '../data/social';
+import theme from '../data/theme';
+import Link from './link';
 
 const Wrapper = styled.header`
   align-items: center;
@@ -21,7 +21,7 @@ const Wrapper = styled.header`
   ${theme.media.large} {
     max-width: none;
   }
-`
+`;
 
 const Item = styled.span`
   color: ${theme.colors.orange};
@@ -35,7 +35,7 @@ const Item = styled.span`
     border-bottom-width: 0.125rem;
     margin-top: 0.25rem;
   }
-`
+`;
 
 const FullName = styled(Item)`
   display: none;
@@ -43,7 +43,7 @@ const FullName = styled(Item)`
   ${theme.media.medium} {
     display: inline-block;
   }
-`
+`;
 
 const Initials = styled(Item)`
   font-size: 1.5rem;
@@ -52,20 +52,20 @@ const Initials = styled(Item)`
   ${theme.media.medium} {
     display: none;
   }
-`
+`;
 
 const Contact = styled.address`
   align-items: center;
   display: flex;
   justify-content: space-between;
-`
+`;
 
 const Icon = styled.svg`
   fill: currentColor;
   height: 1.25rem;
   vertical-align: -18%;
   width: 1.25rem;
-`
+`;
 
 export default function Header() {
   return (
@@ -73,7 +73,7 @@ export default function Header() {
       <FullName>{site.title}</FullName>
       <Initials title={site.title}>{site.shortTitle}</Initials>
       <Contact>
-        {social.map(profile => (
+        {social.map((profile) => (
           <Item
             key={profile.link}
             as={Link}
@@ -85,5 +85,5 @@ export default function Header() {
         ))}
       </Contact>
     </Wrapper>
-  )
+  );
 }

@@ -1,19 +1,19 @@
-import React from 'react'
-import styled from 'styled-components'
-import Background from '../components/background'
-import ButtonLink from '../components/button-link'
-import Container from '../components/container'
-import Heading1 from '../components/heading-1'
-import Heading2 from '../components/heading-2'
-import Heading3 from '../components/heading-3'
-import Link from '../components/link'
-import Paragraph from '../components/paragraph'
-import SEO from '../components/seo'
-import projects from '../data/projects'
-import site from '../data/site'
-import theme from '../data/theme'
-import opengraphPhoto from '../images/patrick-hooper-opengraph.jpg'
-import photo from '../images/patrick-hooper.jpg'
+import React from 'react';
+import styled from 'styled-components';
+import Background from '../components/background';
+import ButtonLink from '../components/button-link';
+import Container from '../components/container';
+import Heading1 from '../components/heading-1';
+import Heading2 from '../components/heading-2';
+import Heading3 from '../components/heading-3';
+import Link from '../components/link';
+import Paragraph from '../components/paragraph';
+import SEO from '../components/seo';
+import projects from '../data/projects';
+import site from '../data/site';
+import theme from '../data/theme';
+import opengraphPhoto from '../images/patrick-hooper-opengraph.jpg';
+import photo from '../images/patrick-hooper.jpg';
 
 const About = styled.div`
   color: white;
@@ -23,13 +23,13 @@ const About = styled.div`
   ${theme.media.large} {
     padding-top: 7.5rem;
   }
-`
+`;
 
 const Hero = styled(Background)`
   position: absolute;
   transform: skewY(-8deg);
   transform-origin: 0;
-`
+`;
 
 const Greeting = styled.div`
   display: flex;
@@ -39,7 +39,7 @@ const Greeting = styled.div`
     align-items: center;
     flex-direction: row;
   }
-`
+`;
 
 const Photo = styled.img`
   border-radius: 50%;
@@ -53,7 +53,7 @@ const Photo = styled.img`
     margin-right: 2rem;
     width: 6rem;
   }
-`
+`;
 
 const Projects = styled(Container)`
   padding-bottom: 3rem;
@@ -67,7 +67,7 @@ const Projects = styled(Container)`
   ${theme.media.large} {
     padding-bottom: 7.5rem;
   }
-`
+`;
 
 const List = styled.ul`
   list-style-type: none;
@@ -77,7 +77,7 @@ const List = styled.ul`
   ${theme.media.medium} {
     margin-top: 4rem;
   }
-`
+`;
 
 const Item = styled.li`
   border-left: 2px solid ${theme.colors.gray};
@@ -95,7 +95,7 @@ const Item = styled.li`
     min-width: 1.25rem;
     width: 1.25rem;
   }
-`
+`;
 
 const Wrapper = styled.div`
   margin-bottom: 3em;
@@ -113,12 +113,12 @@ const Wrapper = styled.div`
   ${/* sc-selector */ Item}:last-of-type & {
     margin-bottom: 0;
   }
-`
+`;
 
 const Description = styled(Paragraph)`
   padding-bottom: 1.25rem;
   padding-top: 1rem;
-`
+`;
 
 export default function Home() {
   return (
@@ -156,7 +156,7 @@ export default function Home() {
       <Projects>
         <Heading2>Projects</Heading2>
         <List>
-          {projects.map(project => (
+          {projects.map((project) => (
             <Item key={project.name}>
               <Wrapper>
                 <Heading3>{project.name}</Heading3>
@@ -175,5 +175,5 @@ export default function Home() {
         </List>
       </Projects>
     </SEO>
-  )
+  );
 }

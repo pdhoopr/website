@@ -33,4 +33,4 @@ export default [
     site: 'https://msomearasmultiage.netlify.com/',
     repo: 'https://github.com/pdhoopr/ms-omearas-multiage',
   },
-]
+];
